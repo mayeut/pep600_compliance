@@ -26,6 +26,20 @@ def get_docker_platform(machine):
     raise LookupError('No docker platform defined for {}'.format(machine))
 
 
+def get_docker_platform_prefix(machine):
+    if machine in ('i686'):
+        return 'i386'
+    if machine in ('aarch64'):
+        return 'arm64v8'
+    if machine in ('ppc64le'):
+        return 'ppc64le'
+    if machine in ('s390x'):
+        return 's390x'
+    if machine in ('armv7l'):
+        return 'arm32v7'
+    raise LookupError('No docker platform defined for {}'.format(machine))
+
+
 class Base:
     def __init__(self, image, name, version, package_manager, machines=['x86_64'], skip_lib=[], python='python3'):
         self.image = image
@@ -41,21 +55,32 @@ class Base:
         client = docker.from_env()
 
         image_name = self.image
-        # if platform.machine() != machine:
-        #    image_name = get_docker_platform(machine) + '/' + image_name
+        image = None
+        if machine != 'x86_64':
+            image_name = get_docker_platform_prefix(machine) + '/' + image_name
+            try:
+                image = client.images.get(image_name)
+                has_image = True
+            except docker.errors.ImageNotFound:
+                has_image = False
+                logger.info("Pulling image %r", image_name)
+                try:
+                    image = client.images.pull(*image_name.split(':'))
+                    logger.info("Pulled image %r", image_name)
+                except:
+                    image_name = self.image
 
-        try:
-            image = client.images.get(image_name)
-            if platform.machine() != machine:
-                raise docker.errors.ImageNotFound('Platform')
-                raise NotImplementedError("too dangerous")
-            has_image = True
-        except docker.errors.ImageNotFound:
-            has_image = False
-            logger.info("Pulling image %r", image_name)
-            image = client.images.pull(*image_name.split(':'),
-                                       platform=get_docker_platform(machine))
-            logger.info("Pulled image %r", image_name)
+        if image is None:
+            try:
+                image = client.images.get(image_name)
+                if platform.machine() != machine:
+                    raise NotImplementedError("too dangerous")
+                has_image = True
+            except docker.errors.ImageNotFound:
+                has_image = False
+                logger.info("Pulling image %r", image_name)
+                image = client.images.pull(*image_name.split(':'), platform=get_docker_platform(machine))
+                logger.info("Pulled image %r", image_name)
 
         src_folder = os.path.abspath(
             os.path.join(os.path.dirname(__file__), '..', 'tools'))
