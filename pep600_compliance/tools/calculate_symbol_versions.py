@@ -25,6 +25,12 @@ elif MACHINE == 'i686':
     LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu/mesa']
 elif MACHINE == 'aarch64':
     LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu/mesa']
+elif MACHINE == 'ppc64le':
+    LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu/mesa']
+elif MACHINE == 's390x':
+    LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu/mesa']
+elif MACHINE == 'armv7l':
+    LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf/mesa']
 else:
     raise NotImplementedError('Platform not supported')
 

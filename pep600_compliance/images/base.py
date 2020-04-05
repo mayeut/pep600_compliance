@@ -17,6 +17,8 @@ def get_docker_platform(machine):
         return 'linux/i386'
     if machine in ('aarch64'):
         return 'linux/arm64/v8'
+    if machine in ('ppc64le'):
+        return 'linux/ppc64le'
     raise LookupError('No docker platform defined for {}'.format(machine))
 
 
