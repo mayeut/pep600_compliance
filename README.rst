@@ -46,6 +46,15 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_28", "debian 10"
 .. end base_images_i686
 
+.. begin base_images_aarch64
+.. csv-table:: aarch64
+   :header: "policy", "distros"
+
+   "manylinux_2_17", "centos 7"
+   "manylinux_2_24", "debian 9"
+   "manylinux_2_28", "centos 8, debian 10"
+.. end base_images_aarch64
+
 Distro compatibility
 ====================
 
@@ -96,3 +105,18 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "alt sisyphus, debian bullseye, ubuntu 19.10"
    "manylinux_2_31", "opensuse tumbleweed"
 .. end compatibility_i686
+
+.. begin compatibility_aarch64
+.. csv-table:: aarch64
+   :header: "policy", "distros"
+
+   "manylinux_2_17", "centos 7"
+   "manylinux_2_24", "debian 9"
+   "manylinux_2_25", "fedora 26"
+   "manylinux_2_26", "amazonlinux 2, fedora 27"
+   "manylinux_2_27", "alt p9, fedora 28"
+   "manylinux_2_28", "centos 8, debian 10, fedora 29"
+   "manylinux_2_29", "fedora 30"
+   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31"
+   "manylinux_2_31", "fedora 32"
+.. end compatibility_aarch64
