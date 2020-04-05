@@ -1,17 +1,13 @@
 name: Test
 
-on:
-  push:
-    paths: 'pep600_compliance/**'
-  pull_request:
-    paths: 'pep600_compliance/**'
+on: [push, pull_request]
 
 jobs:
   build-cache:
     name: Build cache
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - uses: actions/setup-python@v1
       name: Install Python 3.8
       with:
@@ -22,3 +18,9 @@ jobs:
     - name: Build cache
       run: |
         python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine x86_64
+    - name: Create Pull Request
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v2
+      with:
+        commit-message: auto-update cache and/or README.rst
+        title: '[Bot] auto-update cache and/or README.rst'
