@@ -31,7 +31,7 @@ UBUNTU_LIST = [
     Ubuntu('ubuntu:17.10', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:17.04', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:16.10', machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
-    Ubuntu('ubuntu:16.04', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),  # TODO 's390x'
+    Ubuntu('ubuntu:16.04', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),  # TODO 's390x'
     Ubuntu('ubuntu:15.10', machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:15.04', machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:14.10', machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
