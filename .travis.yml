@@ -1,0 +1,14 @@
+#language: c
+language: python
+python: 3.8
+os: linux
+dist: bionic
+arch: ppc64le
+services:
+  - docker
+
+script:
+  - python -m pip install -r requirements.txt
+  - python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine ppc64le
+  - git add -A -N .
+  - git diff
