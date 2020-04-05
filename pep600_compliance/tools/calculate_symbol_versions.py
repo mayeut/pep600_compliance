@@ -8,12 +8,25 @@ import ctypes
 import os
 import platform
 import json
+import sys
 from elftools.elf.elffile import ELFFile
 
-if platform.architecture()[0] == '64bit':
+
+MACHINE = platform.machine()
+IS_64BITS = sys.maxsize > 2**32
+if MACHINE == 'x86_64' and not IS_64BITS:
+    MACHINE = 'i686'
+elif MACHINE in ['i386', 'i486', 'i586']:
+    MACHINE = 'i686'
+
+if MACHINE == 'x86_64':
     LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu/mesa']
-else:
+elif MACHINE == 'i686':
     LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu/mesa']
+elif MACHINE == 'aarch64':
+    LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu/mesa']
+else:
+    raise NotImplementedError('Platform not supported')
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("policy", help="The policy name")
