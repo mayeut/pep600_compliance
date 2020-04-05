@@ -3,10 +3,11 @@ language: python
 python: 3.8
 os: linux
 dist: bionic
-arch: s390x
+arch: ppc64le
 services:
   - docker
 
 script:
   - python -m pip install -r requirements.txt
-  - python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine s390x
+  - python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine ppc64le
+  - git diff
