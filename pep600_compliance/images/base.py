@@ -22,7 +22,7 @@ def get_docker_platform(machine):
     if machine in ('s390x'):
         return 'linux/s390x'
     if machine in ('armv7l'):
-        return 'linux/armv/v7'
+        return 'linux/arm/v7'
     raise LookupError('No docker platform defined for {}'.format(machine))
 
 

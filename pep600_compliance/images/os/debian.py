@@ -15,8 +15,8 @@ class Debian(base.Base):
 
 DEBIAN_PACKAGES = ['python3-pip', 'libx11-6', 'libxext6', 'libxrender1', 'libice6', 'libsm6', 'libgl1-mesa-glx', 'libglib2.0-0']
 DEBIAN_LIST = [
-    Debian('debian:bullseye-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7'], packages=[DEBIAN_PACKAGES]),
-    Debian('debian:10-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7'], packages=[DEBIAN_PACKAGES]),
-    Debian('debian:9-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7'], packages=[DEBIAN_PACKAGES]),
-    Debian('debian:8-slim', machines=['i686', 'x86_64', 'armv7'], packages=[DEBIAN_PACKAGES]),
+    Debian('debian:bullseye-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
+    Debian('debian:10-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
+    Debian('debian:9-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
+    Debian('debian:8-slim', machines=['i686', 'x86_64', 'armv7l'], packages=[DEBIAN_PACKAGES]),
 ]
