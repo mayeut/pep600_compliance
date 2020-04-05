@@ -20,7 +20,7 @@ OPENSUSE_LIST = [
     OpenSUSE('opensuse/leap:15.2', machines=['x86_64', 'aarch64', 'armv7'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:15.1', machines=['x86_64', 'aarch64', 'armv7'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:15.0', machines=['x86_64', 'aarch64', 'ppc64le'], packages=[OPENSUSE_PACKAGES]),
-    OpenSUSE('opensuse/leap:42.3', machines=['x86_64', 'aarch64', 'ppc64le'], packages=[OPENSUSE_PACKAGES]),
+    OpenSUSE('opensuse/leap:42.3', machines=['x86_64', 'ppc64le'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/archive:42.2', machines=['x86_64'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/archive:42.1', machines=['x86_64'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/archive:13.2', machines=['x86_64'], packages=[OPENSUSE_PACKAGES]),
