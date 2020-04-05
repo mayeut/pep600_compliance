@@ -13,8 +13,9 @@ class Ubuntu(base.Base):
 
 
 UBUNTU_APT_OLD = [
-    ['sed', '-i', 's/archive.ubuntu.com/old-releases.ubuntu.com/g', '/etc/apt/sources.list'],
-    ['sed', '-i', 's/security.ubuntu.com/old-releases.ubuntu.com/g', '/etc/apt/sources.list'],
+    ['sed', '-i', 's,archive.ubuntu.com,old-releases.ubuntu.com,g', '/etc/apt/sources.list'],
+    ['sed', '-i', 's,security.ubuntu.com,old-releases.ubuntu.com,g', '/etc/apt/sources.list'],
+    ['sed', '-i', 's,ports.ubuntu.com/ubuntu-ports,old-releases.ubuntu.com/ubuntu,g', '/etc/apt/sources.list'],
 ]
 UBUNTU_PYTHON_PPA = [
     'ppa:fkrull/deadsnakes'
