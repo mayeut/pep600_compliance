@@ -74,8 +74,8 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_24", "debian 9"
+   "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
-   "manylinux_2_30", "debian bullseye"
    "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_s390x
 
@@ -168,8 +168,11 @@ If your favorite distro does not appear here:
 .. csv-table:: s390x
    :header: "policy", "distros"
 
-   "manylinux_2_24", "debian 9"
-   "manylinux_2_28", "debian 10"
-   "manylinux_2_30", "debian bullseye"
+   "manylinux_2_24", "debian 9, ubuntu 17.04"
+   "manylinux_2_26", "ubuntu 17.10"
+   "manylinux_2_27", "fedora 28, ubuntu 18.04"
+   "manylinux_2_28", "debian 10, fedora 29, ubuntu 18.10"
+   "manylinux_2_29", "fedora 30, ubuntu 19.04"
+   "manylinux_2_30", "debian bullseye, fedora 31, ubuntu 19.10"
    "manylinux_2_31", "fedora 32, ubuntu 20.04"
 .. end compatibility_s390x
