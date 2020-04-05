@@ -20,17 +20,17 @@ elif MACHINE in ['i386', 'i486', 'i586']:
     MACHINE = 'i686'
 
 if MACHINE == 'x86_64':
-    LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu/mesa']
+    LIBRARY_PATHS = ['/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu/mesa', '/lib64', '/usr/lib64']
 elif MACHINE == 'i686':
-    LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu/mesa']
+    LIBRARY_PATHS = ['/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu/mesa', '/lib', '/usr/lib']
 elif MACHINE == 'aarch64':
-    LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu/mesa']
+    LIBRARY_PATHS = ['/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu/mesa', '/lib64', '/usr/lib64']
 elif MACHINE == 'ppc64le':
-    LIBRARY_PATHS = ['/lib64', '/usr/lib64', '/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu/mesa']
+    LIBRARY_PATHS = ['/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu/mesa', '/lib64', '/usr/lib64']
 elif MACHINE == 's390x':
-    LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu/mesa']
+    LIBRARY_PATHS = ['/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu/mesa', '/lib64', '/usr/lib64']
 elif MACHINE == 'armv7l':
-    LIBRARY_PATHS = ['/lib', '/usr/lib', '/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf/mesa']
+    LIBRARY_PATHS = ['/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf/mesa', '/lib', '/usr/lib']
 else:
     raise NotImplementedError('Platform not supported')
 

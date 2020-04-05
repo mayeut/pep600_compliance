@@ -16,7 +16,7 @@ class OpenSUSE(base.Base):
 
 OPENSUSE_PACKAGES = ['python3-pip', 'libX11-6', 'libXext6', 'libXrender1', 'libICE6', 'libSM6', 'Mesa-libGL1', 'libglib-2_0-0', 'libgobject-2_0-0', 'libgthread-2_0-0']
 OPENSUSE_LIST = [
-    OpenSUSE('opensuse/tumbleweed:latest', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7'], packages=[OPENSUSE_PACKAGES], version='tumbleweed'),
+    OpenSUSE('opensuse/tumbleweed:latest', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 'armv7'], packages=[OPENSUSE_PACKAGES], version='tumbleweed'),  # TODO 's390x'
     OpenSUSE('opensuse/leap:15.2', machines=['x86_64', 'aarch64', 'armv7'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:15.1', machines=['x86_64', 'aarch64', 'armv7'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:15.0', machines=['x86_64', 'aarch64', 'ppc64le'], packages=[OPENSUSE_PACKAGES]),
