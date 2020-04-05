@@ -15,12 +15,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install -r requirements.txt
+        docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
     - name: Build cache
       run: |
-        docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
         python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine x86_64 i686 aarch64
     - name: Create Pull Request
-      if: github.event_name == 'push'
+      if: github.event_name == 'push' and always()
       uses: peter-evans/create-pull-request@v2
       with:
         commit-message: auto-update cache and/or README.rst
