@@ -1,10 +1,11 @@
-language: c
+#language: c
+language: python
+python: 3.8
 os: linux
 dist: bionic
-sudo: required
 services:
   - docker
 
 script:
-  - python3 -m pip install -r requirements.txt
-  - python3 -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine s390x
+  - python -m pip install -r requirements.txt
+  - python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine s390x
