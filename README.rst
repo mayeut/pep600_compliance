@@ -67,6 +67,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "centos 8, debian 10"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -87,6 +88,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
+   "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
    "manylinux_2_30", "debian bullseye"
    "manylinux_2_31", "ubuntu 20.04"
@@ -150,7 +152,7 @@ If your favorite distro does not appear here:
    "manylinux_2_17", "centos 7, oraclelinux 7"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
-   "manylinux_2_24", "debian 9, ubuntu 17.04"
+   "manylinux_2_24", "debian 9, ubuntu 16.10, ubuntu 17.04"
    "manylinux_2_25", "fedora 26"
    "manylinux_2_26", "amazonlinux 2, fedora 27, opensuse 15.0, opensuse 15.1, opensuse 15.2, ubuntu 17.10"
    "manylinux_2_27", "alt p9, fedora 28, ubuntu 18.04"
@@ -167,14 +169,14 @@ If your favorite distro does not appear here:
    "manylinux_2_17", "centos 7"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
-   "manylinux_2_24", "debian 9, ubuntu 17.04"
+   "manylinux_2_24", "debian 9, ubuntu 16.10, ubuntu 17.04"
    "manylinux_2_25", "fedora 26"
    "manylinux_2_26", "fedora 27, opensuse 15.0, ubuntu 17.10"
    "manylinux_2_27", "alt p9, fedora 28, ubuntu 18.04"
    "manylinux_2_28", "centos 8, debian 10, fedora 29, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, ubuntu 19.04"
-   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31"
-   "manylinux_2_31", "fedora 32, opensuse tumbleweed"
+   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31, ubuntu 19.10"
+   "manylinux_2_31", "fedora 32, opensuse tumbleweed, ubuntu 20.04"
 .. end compatibility_ppc64le
 
 .. begin compatibility_s390x
@@ -198,9 +200,11 @@ If your favorite distro does not appear here:
 
    "manylinux_2_19", "debian 8, ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
-   "manylinux_2_24", "debian 9"
-   "manylinux_2_26", "opensuse 15.1, opensuse 15.2"
+   "manylinux_2_24", "debian 9, ubuntu 17.04"
+   "manylinux_2_26", "opensuse 15.1, opensuse 15.2, ubuntu 17.10"
+   "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10, ubuntu 18.10"
-   "manylinux_2_30", "debian bullseye"
+   "manylinux_2_29", "ubuntu 19.04"
+   "manylinux_2_30", "debian bullseye, ubuntu 19.10"
    "manylinux_2_31", "opensuse tumbleweed, ubuntu 20.04"
 .. end compatibility_armv7l
