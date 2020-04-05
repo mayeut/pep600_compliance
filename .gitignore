@@ -1,7 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files / other cache
 __pycache__/
 *.py[cod]
 *$py.class
+pep600_compliance/tools/pyelftools-0.26.tar.gz
 
 # C extensions
 *.so
