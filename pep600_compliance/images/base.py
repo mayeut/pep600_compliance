@@ -20,52 +20,6 @@ def get_docker_platform(machine):
     raise LookupError('No docker platform defined for {}'.format(machine))
 
 
-@contextmanager
-def docker_container(image_name, machine):
-    client = docker.from_env()
-
-    #if platform.machine() != machine:
-    #    image_name = get_docker_platform(machine) + '/' + image_name
-
-    try:
-        image = client.images.get(image_name)
-        if platform.machine() != machine:
-            raise docker.errors.ImageNotFound('Platform')
-            raise NotImplementedError("too dangerous")
-        has_image = True
-    except docker.errors.ImageNotFound:
-        has_image = False
-        logger.info("Pulling image %r", image_name)
-        image = client.images.pull(*image_name.split(':'), platform=get_docker_platform(machine))
-        logger.info("Pulled image %r", image_name)
-
-    src_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'tools'))
-    volumes = {src_folder: {'bind': '/home/pep600_compliance', 'mode': 'rw'}}
-
-    logger.info("Starting container with image %r (%r)", image_name, image.id)
-    if self.name == 'opensuse' and self.version == 'tumbleweed' and machine == 'i686':
-        container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes, security_opt=['seccomp:unconfined'])
-    else:
-        container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes)
-    logger.info("Started container %s", container.id[:12])
-
-    try:
-        exit_code, output = container.exec_run(['uname', '-m'], demux=True)
-        assert exit_code == 0, output[1].decode('utf-8')
-        machine_started = output[0].decode('utf-8').strip()
-        if machine == 'i686':
-            assert machine_started in ['i686', 'x86_64']
-        else:
-            assert machine_started == machine, '{} vs {}'.format(machine_started, machine)
-        yield container
-    finally:
-        container.remove(force=True)
-        if not has_image:
-            logger.info("Removing image %r", image_name)
-            client.images.remove(image.id)
-            logger.info("Removed image %r", image_name)
-
-
 class Base:
     def __init__(self, image, name, version, package_manager, machines=['x86_64'], skip_lib=[], python='python3'):
         self.image = image
@@ -75,6 +29,61 @@ class Base:
         self.machines = machines
         self.skip_lib = skip_lib
         self.python = python
+
+    @contextmanager
+    def docker_container(self, machine):
+        client = docker.from_env()
+
+        image_name = self.image
+        # if platform.machine() != machine:
+        #    image_name = get_docker_platform(machine) + '/' + image_name
+
+        try:
+            image = client.images.get(image_name)
+            if platform.machine() != machine:
+                raise docker.errors.ImageNotFound('Platform')
+                raise NotImplementedError("too dangerous")
+            has_image = True
+        except docker.errors.ImageNotFound:
+            has_image = False
+            logger.info("Pulling image %r", image_name)
+            image = client.images.pull(*image_name.split(':'),
+                                       platform=get_docker_platform(machine))
+            logger.info("Pulled image %r", image_name)
+
+        src_folder = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', 'tools'))
+        volumes = {
+            src_folder: {'bind': '/home/pep600_compliance', 'mode': 'rw'}}
+
+        logger.info("Starting container with image %r (%r)", image_name,
+                    image.id)
+        if self.name == 'opensuse' and self.version == 'tumbleweed' and machine == 'i686':
+            container = client.containers.run(image.id, ['sleep', '10000'],
+                                              detach=True, volumes=volumes,
+                                              security_opt=[
+                                                  'seccomp:unconfined'])
+        else:
+            container = client.containers.run(image.id, ['sleep', '10000'],
+                                              detach=True, volumes=volumes)
+        logger.info("Started container %s", container.id[:12])
+
+        try:
+            exit_code, output = container.exec_run(['uname', '-m'], demux=True)
+            assert exit_code == 0, output[1].decode('utf-8')
+            machine_started = output[0].decode('utf-8').strip()
+            if machine == 'i686':
+                assert machine_started in ['i686', 'x86_64']
+            else:
+                assert machine_started == machine, '{} vs {}'.format(
+                    machine_started, machine)
+            yield container
+        finally:
+            container.remove(force=True)
+            if not has_image:
+                logger.info("Removing image %r", image_name)
+                client.images.remove(image.id)
+                logger.info("Removed image %r", image_name)
 
     def _install_packages(self, container, machine, packages):
         logger.info("Installing system packages %r", packages)
@@ -112,7 +121,7 @@ class Base:
 
     def run_check(self, machine):
         assert machine in self.machines
-        with docker_container(self.image, machine) as container:
+        with self.docker_container(machine) as container:
             self.install_packages(container, machine)
             self._install_pyelftools(container)
             return self._get_symbols(container)
