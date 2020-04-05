@@ -51,8 +51,10 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "centos 7"
+   "manylinux_2_19", "ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
-   "manylinux_2_28", "centos 8, debian 10"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_aarch64
 
 Distro compatibility
@@ -110,13 +112,15 @@ If your favorite distro does not appear here:
 .. csv-table:: aarch64
    :header: "policy", "distros"
 
-   "manylinux_2_17", "centos 7"
-   "manylinux_2_24", "debian 9"
+   "manylinux_2_17", "centos 7, oraclelinux 7"
+   "manylinux_2_19", "ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
+   "manylinux_2_24", "debian 9, ubuntu 17.04"
    "manylinux_2_25", "fedora 26"
-   "manylinux_2_26", "amazonlinux 2, fedora 27"
-   "manylinux_2_27", "alt p9, fedora 28"
-   "manylinux_2_28", "centos 8, debian 10, fedora 29"
-   "manylinux_2_29", "fedora 30"
-   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31"
-   "manylinux_2_31", "fedora 32"
+   "manylinux_2_26", "amazonlinux 2, fedora 27, opensuse 15.0, opensuse 15.1, opensuse 15.2, ubuntu 17.10"
+   "manylinux_2_27", "alt p9, fedora 28, ubuntu 18.04"
+   "manylinux_2_28", "centos 8, debian 10, fedora 29, oraclelinux 8, photon 3.0, ubuntu 18.10"
+   "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
+   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31, ubuntu 19.10"
+   "manylinux_2_31", "fedora 32, opensuse tumbleweed, ubuntu 20.04"
 .. end compatibility_aarch64
