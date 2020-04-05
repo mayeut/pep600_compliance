@@ -18,5 +18,5 @@ DEBIAN_LIST = [
     Debian('debian:bullseye-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
     Debian('debian:10-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
     Debian('debian:9-slim', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
-    Debian('debian:8-slim', machines=['i686', 'x86_64', 'armv7l'], packages=[DEBIAN_PACKAGES]),
+    Debian('debian:8-slim', machines=['i686', 'x86_64', 'armv7l'], packages=[DEBIAN_PACKAGES]),  # TODO 'aarch64', 'ppc64le', 's390x'
 ]
