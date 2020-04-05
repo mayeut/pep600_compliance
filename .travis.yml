@@ -3,6 +3,7 @@ language: python
 python: 3.8
 os: linux
 dist: bionic
+arch: s390x
 services:
   - docker
 
