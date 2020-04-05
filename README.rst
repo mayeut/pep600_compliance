@@ -62,7 +62,11 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "centos 7"
+   "manylinux_2_19", "ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
+   "manylinux_2_27", "ubuntu 18.04"
+   "manylinux_2_28", "centos 8, debian 10"
 .. end base_images_ppc64le
 
 Distro compatibility
@@ -138,7 +142,14 @@ If your favorite distro does not appear here:
    :header: "policy", "distros"
 
    "manylinux_2_17", "centos 7"
-   "manylinux_2_24", "debian 9"
+   "manylinux_2_19", "ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
+   "manylinux_2_24", "debian 9, ubuntu 17.04"
+   "manylinux_2_25", "fedora 26"
+   "manylinux_2_26", "fedora 27, opensuse 15.0, ubuntu 17.10"
+   "manylinux_2_27", "alt p9, fedora 28, ubuntu 18.04"
+   "manylinux_2_28", "centos 8, debian 10, fedora 29, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, ubuntu 19.04"
-   "manylinux_2_30", "alt sisyphus"
+   "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31"
+   "manylinux_2_31", "fedora 32, opensuse tumbleweed"
 .. end compatibility_ppc64le
