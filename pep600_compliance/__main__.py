@@ -31,6 +31,7 @@ def create_cache(path, machine):
         cache_file = os.path.join(cache_path, cache_name + '.json')
         if not os.path.exists(cache_file):
             symbols = image.run_check(machine)
+            print(symbols)
             with open(cache_file, 'wt') as f:
                 json.dump(symbols, f, sort_keys=True)
 
