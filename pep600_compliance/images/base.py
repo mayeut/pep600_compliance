@@ -43,8 +43,10 @@ def docker_container(image_name, machine):
     volumes = {src_folder: {'bind': '/home/pep600_compliance', 'mode': 'rw'}}
 
     logger.info("Starting container with image %r (%r)", image_name, image.id)
-    #container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes, security_opt=['seccomp:unconfined'])
-    container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes)
+    if self.name == 'opensuse' and self.version == 'tumbleweed' and machine == 'i686':
+        container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes, security_opt=['seccomp:unconfined'])
+    else:
+        container = client.containers.run(image.id, ['sleep', '10000'], detach=True, volumes=volumes)
     logger.info("Started container %s", container.id[:12])
 
     try:
