@@ -79,6 +79,18 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_s390x
 
+.. begin base_images_armv7l
+.. csv-table:: armv7l
+   :header: "policy", "distros"
+
+   "manylinux_2_19", "ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
+   "manylinux_2_24", "debian 9"
+   "manylinux_2_28", "debian 10"
+   "manylinux_2_30", "debian bullseye"
+   "manylinux_2_31", "ubuntu 20.04"
+.. end base_images_armv7l
+
 Distro compatibility
 ====================
 
@@ -177,3 +189,16 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "debian bullseye, fedora 31, ubuntu 19.10"
    "manylinux_2_31", "fedora 32, ubuntu 20.04"
 .. end compatibility_s390x
+
+.. begin compatibility_armv7l
+.. csv-table:: armv7l
+   :header: "policy", "distros"
+
+   "manylinux_2_19", "debian 8, ubuntu 14.04"
+   "manylinux_2_23", "ubuntu 16.04"
+   "manylinux_2_24", "debian 9"
+   "manylinux_2_26", "opensuse 15.1, opensuse 15.2"
+   "manylinux_2_28", "debian 10, ubuntu 18.10"
+   "manylinux_2_30", "debian bullseye"
+   "manylinux_2_31", "opensuse tumbleweed, ubuntu 20.04"
+.. end compatibility_armv7l

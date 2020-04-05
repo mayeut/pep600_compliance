@@ -19,9 +19,9 @@ FEDORA_LIST = [
     Fedora('fedora:30', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:29', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),  # TODO 'armv7l'
     Fedora('fedora:28', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),  # TODO 'armv7l'
-    Fedora('fedora:27', machines=['x86_64', 'aarch64', 'ppc64le', 'armv7l'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
-    Fedora('fedora:26', machines=['x86_64', 'aarch64', 'ppc64le', 'armv7l'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
-    Fedora('fedora:25', machines=['x86_64', 'armv7l'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
+    Fedora('fedora:27', machines=['x86_64', 'aarch64', 'ppc64le'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),  # TODO 'armv7l'
+    Fedora('fedora:26', machines=['x86_64', 'aarch64', 'ppc64le'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),  # TODO 'armv7l'
+    Fedora('fedora:25', machines=['x86_64'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),  # TODO 'armv7l'
     Fedora('fedora:24', machines=['x86_64'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
     Fedora('fedora:23', machines=['x86_64'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
     Fedora('fedora:22', machines=['x86_64'], pkg_manager=DNF(), packages=[FEDORA_PACKAGES]),
