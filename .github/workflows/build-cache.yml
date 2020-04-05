@@ -20,7 +20,7 @@ jobs:
       run: |
         python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine x86_64 i686 aarch64
     - name: Create Pull Request
-      if: github.event_name == 'push' and always()
+      if: github.event_name == 'push' && always()
       uses: peter-evans/create-pull-request@v2
       with:
         commit-message: auto-update cache and/or README.rst
