@@ -17,7 +17,7 @@ jobs:
         python -m pip install -r requirements.txt
     - name: Build cache
       run: |
-        python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine x86_64
+        python -m pep600_compliance --cache-folder ./cache --readme ./README.rst --machine x86_64 i686
     - name: Create Pull Request
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v2
