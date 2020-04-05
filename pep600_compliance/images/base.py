@@ -26,7 +26,7 @@ def get_docker_platform(machine):
     raise LookupError('No docker platform defined for {}'.format(machine))
 
 
-def get_docker_platform_prefix():
+def get_docker_platform_prefix(machine):
     if machine in ('i686'):
         return 'i386'
     if machine in ('aarch64'):
