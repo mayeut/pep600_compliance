@@ -73,6 +73,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: s390x
    :header: "policy", "distros"
 
+   "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
@@ -182,6 +183,7 @@ If your favorite distro does not appear here:
    :header: "policy", "distros"
 
    "manylinux_2_17", "clefos 7"
+   "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9, ubuntu 17.04"
    "manylinux_2_26", "ubuntu 17.10"
    "manylinux_2_27", "fedora 28, ubuntu 18.04"
