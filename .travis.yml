@@ -1,0 +1,14 @@
+#language: c
+language: python
+python: 3.8
+os: linux
+dist: bionic
+arch: s390x
+services:
+  - docker
+
+script:
+  - python -m pip install -r requirements.txt
+  - python -m pep600_compliance --machine s390x
+  - git add -A -N .
+  - git diff
