@@ -125,6 +125,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, archlinux 20191006, archlinux 20191105, archlinux 20191205, archlinux 20200106, archlinux 20200205, debian bullseye, fedora 31, ubuntu 19.10"
    "manylinux_2_31", "archlinux 20200306, clearlinux latest, fedora 32, opensuse tumbleweed, ubuntu 20.04"
+   "manylinux_2_32", "archlinux 20200908, fedora 33"
+   "manylinux_2_32_9000", "fedora 34"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -161,6 +163,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, debian bullseye, fedora 31, ubuntu 19.10"
    "manylinux_2_31", "fedora 32, opensuse tumbleweed, ubuntu 20.04"
+   "manylinux_2_32", "fedora 33"
+   "manylinux_2_32_9000", "fedora 34"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
