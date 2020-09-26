@@ -109,8 +109,14 @@ def make_distros(distros):
         distro_name = distro['distro_name']
         distro_version = distro['distro_version']
         distro_glibc_version = tuple([int(v) for v in distro['glibc_version'].split('.')])
-        distro_description = '{} {}'.format(distro_name, distro_version)
-        policy_name = 'manylinux_{}_{}'.format(*distro_glibc_version)
+        distro_description = f'{distro_name} {distro_version}'
+        if len(distro_glibc_version) == 3:
+            # using a future version, seen on fedora upcoming release
+            assert distro_glibc_version[2] == 9000
+            policy_name = 'manylinux_{}_{}_{}'.format(*distro_glibc_version)
+        else:
+            assert len(distro_glibc_version) == 2
+            policy_name = 'manylinux_{}_{}'.format(*distro_glibc_version)
         result[policy_name].append(distro_description)
     return result
 

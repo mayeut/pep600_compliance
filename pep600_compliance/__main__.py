@@ -27,7 +27,7 @@ def create_cache(path, machine):
     ])
 
     for image in get_images(machine):
-        cache_name = '{}-{}'.format(image.name, image.version)
+        cache_name = f'{image.name}-{image.version}'
         cache_file = os.path.join(cache_path, cache_name + '.json')
         if not os.path.exists(cache_file):
             symbols = image.run_check(machine)
@@ -41,28 +41,28 @@ def update_readme(path, machine, base_images, distros):
     lines = content.splitlines()
 
     for i in range(len(lines)):
-        if '.. begin base_images_{}'.format(machine) in lines[i]:
+        if f'.. begin base_images_{machine}' in lines[i]:
             start = i
-        if '.. end base_images_{}'.format(machine) in lines[i]:
+        if f'.. end base_images_{machine}' in lines[i]:
             end = i
             break
-    new_lines = ['.. csv-table:: {}'.format(machine),'   :header: "policy", "distros"', '']
+    new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
     for policy_name in sorted(base_images.keys()):
         distros_ = ', '.join([d for d in sorted(base_images[policy_name])])
-        line = '   "{}", "{}"'.format(policy_name, distros_)
+        line = f'   "{policy_name}", "{distros_}"'
         new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
 
     for i in range(len(lines)):
-        if '.. begin compatibility_{}'.format(machine) in lines[i]:
+        if f'.. begin compatibility_{machine}' in lines[i]:
             start = i
-        if '.. end compatibility_{}'.format(machine) in lines[i]:
+        if f'.. end compatibility_{machine}' in lines[i]:
             end = i
             break
-    new_lines = ['.. csv-table:: {}'.format(machine),'   :header: "policy", "distros"', '']
+    new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
     for policy_name in sorted(distros.keys()):
         distros_ = ', '.join([d for d in sorted(distros[policy_name])])
-        line = '   "{}", "{}"'.format(policy_name, distros_)
+        line = f'   "{policy_name}", "{distros_}"'
         new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
 
@@ -84,7 +84,7 @@ def main():
         create_cache(args.cache_folder, machine)
         base_images, distros = manylinux_analysis(args.cache_folder, machine)
         for policy_name in sorted(base_images.keys()):
-            print('{}: {}'.format(policy_name, base_images[policy_name]))
+            print(f'{policy_name}: {base_images[policy_name]}')
         if args.readme:
             update_readme(args.readme, machine, base_images, distros)
 
