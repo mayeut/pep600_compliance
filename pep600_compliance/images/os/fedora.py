@@ -14,7 +14,9 @@ class Fedora(base.Base):
 
 FEDORA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']
 FEDORA_LIST = [
-    Fedora('fedora:32', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'],  pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:34', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:33', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:32', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:31', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:30', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:29', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),  # TODO 'armv7l'

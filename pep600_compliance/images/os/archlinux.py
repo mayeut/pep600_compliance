@@ -13,6 +13,7 @@ class ArchLinux(base.Base):
 
 ARCHLINUX_PACKAGES = ['python-pip', 'glib2', 'libx11', 'libxext', 'libxrender', 'libice', 'libsm', 'mesa']
 ARCHLINUX_LIST = [
+    ArchLinux('archlinux:20200908', [ARCHLINUX_PACKAGES]),
     ArchLinux('archlinux:20200306', [ARCHLINUX_PACKAGES]),
     ArchLinux('archlinux:20200205', [ARCHLINUX_PACKAGES]),
     ArchLinux('archlinux:20200106', [ARCHLINUX_PACKAGES]),
