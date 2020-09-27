@@ -84,6 +84,7 @@ class YUM(_PackageManager):
             assert exit_code == 0, output.decode('utf-8')
         super().install(container, machine, packages)
 
+
 class ZYPPER(_PackageManager):
     def __init__(self):
         super().__init__(['zypper', 'install', '-y'])
@@ -92,4 +93,14 @@ class ZYPPER(_PackageManager):
         if machine == 'i686':
             exit_code, output = container.exec_run(['bash', '-c', 'echo "arch = i586" >> /etc/zypp/zypp.conf'])
             assert exit_code == 0, output.decode('utf-8')
+        super().install(container, machine, packages)
+
+
+class SLACKPKG(_PackageManager):
+    def __init__(self):
+        install_prefix = ['slackpkg', '-default_answer=yes', '-batch=on', 'install']
+        update_command = ['slackpkg', '-default_answer=yes', '-batch=on', 'update']
+        super().__init__(install_prefix, update_command)
+
+    def install(self, container, machine, packages):
         super().install(container, machine, packages)
