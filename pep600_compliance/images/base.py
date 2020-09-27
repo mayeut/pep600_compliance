@@ -11,31 +11,31 @@ logger = logging.getLogger(__name__)
 
 
 def get_docker_platform(machine):
-    if machine in ('x86_64'):
+    if machine == 'x86_64':
         return 'linux/amd64'
-    if machine in ('i686'):
+    if machine == 'i686':
         return 'linux/i386'
-    if machine in ('aarch64'):
+    if machine == 'aarch64':
         return 'linux/arm64/v8'
-    if machine in ('ppc64le'):
+    if machine == 'ppc64le':
         return 'linux/ppc64le'
-    if machine in ('s390x'):
+    if machine == 's390x':
         return 'linux/s390x'
-    if machine in ('armv7l'):
+    if machine == 'armv7l':
         return 'linux/arm/v7'
     raise LookupError(f'No docker platform defined for {machine}')
 
 
 def get_docker_platform_prefix(machine):
-    if machine in ('i686'):
+    if machine == 'i686':
         return 'i386'
-    if machine in ('aarch64'):
+    if machine == 'aarch64':
         return 'arm64v8'
-    if machine in ('ppc64le'):
+    if machine == 'ppc64le':
         return 'ppc64le'
-    if machine in ('s390x'):
+    if machine == 's390x':
         return 's390x'
-    if machine in ('armv7l'):
+    if machine == 'armv7l':
         return 'arm32v7'
     raise LookupError(f'No docker platform defined for {machine}')
 
