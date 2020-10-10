@@ -41,10 +41,11 @@ def get_docker_platform_prefix(machine):
 
 
 class Base:
-    def __init__(self, image, name, version, package_manager, machines=['x86_64'], skip_lib=[], python='python3'):
+    def __init__(self, image, name, version, eol, package_manager, machines=['x86_64'], skip_lib=[], python='python3'):
         self.image = image
         self.name = name
         self.version = version
+        self.eol = eol
         self.package_manager = package_manager
         self.machines = machines
         self.skip_lib = skip_lib

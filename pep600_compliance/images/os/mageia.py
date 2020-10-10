@@ -3,10 +3,10 @@ from pep600_compliance.images import package_manager
 
 
 class Mageia(base.Base):
-    def __init__(self, image, pkg_manager, packages, machines):
+    def __init__(self, image, eol, pkg_manager, packages, machines):
         name, version = image.split(':')
         self._packages = packages
-        super().__init__(image, name, version, pkg_manager, machines)
+        super().__init__(image, name, version, eol, pkg_manager, machines)
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
@@ -14,7 +14,8 @@ class Mageia(base.Base):
 
 MAGEIA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libx11', 'libxext', 'libxrender', 'libmesagl', 'libice', 'libsm']
 MAGEIA_LIST = [
-    Mageia('mageia:7', machines=['x86_64', 'aarch64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
-    Mageia('mageia:6', machines=['x86_64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
-    Mageia('mageia:5', machines=['x86_64'], pkg_manager=package_manager.URPM(), packages=[MAGEIA_PACKAGES]),
+    # eol info https://www.mageia.org/en/support/
+    Mageia('mageia:7', '2020-12-30', machines=['x86_64', 'aarch64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
+    Mageia('mageia:6', '2019-09-30', machines=['x86_64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
+    Mageia('mageia:5', '2017-12-31', machines=['x86_64'], pkg_manager=package_manager.URPM(), packages=[MAGEIA_PACKAGES]),
 ]
