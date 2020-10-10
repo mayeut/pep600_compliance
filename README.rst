@@ -24,7 +24,8 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: x86_64
    :header: "policy", "distros"
 
-   "manylinux_2_12", "centos 6"
+   "manylinux_2_5", "manylinux 1"
+   "manylinux_2_12", "centos 6, manylinux 2010"
    "manylinux_2_15", "ubuntu 12.04"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
@@ -36,9 +37,10 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: i686
    :header: "policy", "distros"
 
-   "manylinux_2_12", "centos 6"
+   "manylinux_2_5", "manylinux 1"
+   "manylinux_2_12", "centos 6, manylinux 2010"
    "manylinux_2_15", "ubuntu 12.04"
-   "manylinux_2_17", "centos 7"
+   "manylinux_2_17", "centos 7, manylinux 2014"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
@@ -51,7 +53,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: aarch64
    :header: "policy", "distros"
 
-   "manylinux_2_17", "centos 7"
+   "manylinux_2_17", "centos 7, manylinux 2014"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
@@ -62,7 +64,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: ppc64le
    :header: "policy", "distros"
 
-   "manylinux_2_17", "centos 7"
+   "manylinux_2_17", "centos 7, manylinux 2014"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
@@ -75,7 +77,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: s390x
    :header: "policy", "distros"
 
-   "manylinux_2_17", "clefos 7"
+   "manylinux_2_17", "clefos 7, manylinux 2014"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
@@ -109,10 +111,11 @@ If your favorite distro does not appear here:
 .. csv-table:: x86_64
    :header: "policy", "distros"
 
-   "manylinux_2_12", "centos 6, oraclelinux 6"
+   "manylinux_2_5", "manylinux 1"
+   "manylinux_2_12", "centos 6, manylinux 2010, oraclelinux 6"
    "manylinux_2_13", "debian 7"
    "manylinux_2_15", "slackware 14.0, ubuntu 12.04, ubuntu 12.10"
-   "manylinux_2_17", "amazonlinux 1, centos 7, oraclelinux 7, rhubi 7, slackware 14.1, ubuntu 13.04, ubuntu 13.10"
+   "manylinux_2_17", "amazonlinux 1, centos 7, manylinux 2014, oraclelinux 7, rhubi 7, slackware 14.1, ubuntu 13.04, ubuntu 13.10"
    "manylinux_2_18", "fedora 20"
    "manylinux_2_19", "debian 8, opensuse 13.2, opensuse 42.1, ubuntu 14.04, ubuntu 14.10"
    "manylinux_2_20", "fedora 21, mageia 5"
@@ -135,10 +138,11 @@ If your favorite distro does not appear here:
 .. csv-table:: i686
    :header: "policy", "distros"
 
-   "manylinux_2_12", "centos 6"
+   "manylinux_2_5", "manylinux 1"
+   "manylinux_2_12", "centos 6, manylinux 2010"
    "manylinux_2_13", "debian 7"
    "manylinux_2_15", "ubuntu 12.04"
-   "manylinux_2_17", "centos 7"
+   "manylinux_2_17", "centos 7, manylinux 2014"
    "manylinux_2_19", "debian 8, ubuntu 14.04"
    "manylinux_2_21", "ubuntu 15.04, ubuntu 15.10"
    "manylinux_2_23", "alt p8, ubuntu 16.04"
@@ -155,7 +159,7 @@ If your favorite distro does not appear here:
 .. csv-table:: aarch64
    :header: "policy", "distros"
 
-   "manylinux_2_17", "centos 7, oraclelinux 7"
+   "manylinux_2_17", "centos 7, manylinux 2014, oraclelinux 7"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9, ubuntu 16.10, ubuntu 17.04"
@@ -174,7 +178,7 @@ If your favorite distro does not appear here:
 .. csv-table:: ppc64le
    :header: "policy", "distros"
 
-   "manylinux_2_17", "centos 7, rhubi 7"
+   "manylinux_2_17", "centos 7, manylinux 2014, rhubi 7"
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9, ubuntu 16.10, ubuntu 17.04"
@@ -192,7 +196,7 @@ If your favorite distro does not appear here:
 .. csv-table:: s390x
    :header: "policy", "distros"
 
-   "manylinux_2_17", "clefos 7, rhubi 7"
+   "manylinux_2_17", "clefos 7, manylinux 2014, rhubi 7"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9, ubuntu 16.10, ubuntu 17.04"
    "manylinux_2_26", "ubuntu 17.10"

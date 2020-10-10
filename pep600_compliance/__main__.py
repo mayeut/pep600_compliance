@@ -47,7 +47,11 @@ def update_readme(path, machine, base_images, distros):
             end = i
             break
     new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
-    for policy_name in sorted(base_images.keys()):
+    policy_names = sorted(
+        base_images.keys(),
+        key=lambda x: [int(v) for v in x.split('_')[1:]]
+    )
+    for policy_name in policy_names:
         distros_ = ', '.join([d for d in sorted(base_images[policy_name])])
         line = f'   "{policy_name}", "{distros_}"'
         new_lines.append(line)
@@ -60,7 +64,11 @@ def update_readme(path, machine, base_images, distros):
             end = i
             break
     new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
-    for policy_name in sorted(distros.keys()):
+    policy_names = sorted(
+        distros.keys(),
+        key=lambda x: [int(v) for v in x.split('_')[1:]]
+    )
+    for policy_name in policy_names:
         distros_ = ', '.join([d for d in sorted(distros[policy_name])])
         line = f'   "{policy_name}", "{distros_}"'
         new_lines.append(line)
