@@ -3,11 +3,10 @@ from pep600_compliance.images import base
 
 class Manylinux(base.Base):
     def __init__(self, image, eol, machines):
-        name = 'manylinux'
         version = image.split('/')[-1].split('_')[0][9:]
         python = '/opt/python/cp39-cp39/bin/python'
         self._packages = []
-        super().__init__(image, name, version, eol, None, machines, python=python)
+        super().__init__(image, 'manylinux', version, eol, None, machines, python=python)
 
     def install_packages(self, container, machine):
         pass

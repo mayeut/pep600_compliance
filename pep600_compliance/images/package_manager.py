@@ -52,7 +52,7 @@ class MICRODNF(_PackageManager):
 
 class PACMAN(_PackageManager):
     def __init__(self):
-        super().__init__(['pacman', '-Sy', '--noconfirm'])
+        super().__init__(['pacman', '-Sy', '--noconfirm'], ['pacman', '-Syu', '--noconfirm'])
 
 
 class SWUPD(_PackageManager):

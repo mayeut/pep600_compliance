@@ -4,9 +4,9 @@ from pep600_compliance.images.package_manager import DNF, YUM
 
 class Fedora(base.Base):
     def __init__(self, image, eol, pkg_manager, packages, machines):
-        name, version = image.split(':')
+        _, version = image.split(':')
         self._packages = packages
-        super().__init__(image, name, version, eol, pkg_manager, machines=machines)
+        super().__init__(image, 'fedora', version, eol, pkg_manager, machines=machines)
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
@@ -14,9 +14,9 @@ class Fedora(base.Base):
 
 FEDORA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']
 FEDORA_LIST = [
-    Fedora('fedora:34', None, machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
-    Fedora('fedora:33', None, machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
-    Fedora('fedora:32', None, machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:rawhide', 'rolling', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:33', 'unknown', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:32', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:31', '2020-11-17', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     # EOL: https://fedoraproject.org/wiki/End_of_life
     Fedora('fedora:30', '2020-05-26', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),

@@ -90,7 +90,7 @@ class Base:
 
         logger.info("Starting container with image %r (%r)", image_name,
                     image.id)
-        if f'{self.name}-{self.version}' in ['opensuse-tumbleweed', 'debian-bullseye'] and machine == 'i686':
+        if f'{self.name}-{self.version}' in ['opensuse-tumbleweed', 'debian-testing', 'debian-unstable'] and machine == 'i686':
             container = client.containers.run(image.id, ['sleep', '10000'],
                                               detach=True, volumes=volumes,
                                               security_opt=[
@@ -132,7 +132,7 @@ class Base:
         assert exit_code == 0
         version = output.decode('utf-8').strip()
         version_url = ''
-        if version in ['3.2', '3.3', '3.4']:
+        if version in ['2.6', '3.2', '3.3', '3.4']:
             version_url = version + '/'
         exit_code, output = container.exec_run(['bash', '-exo', 'pipefail', '-c', f'curl -fksSL https://bootstrap.pypa.io/{version_url}get-pip.py | {self.python}'])
         assert exit_code == 0, output.decode('utf-8')

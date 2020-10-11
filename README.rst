@@ -30,7 +30,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
-   "manylinux_2_31", "debian bullseye, ubuntu 20.04"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_x86_64
 
 .. begin base_images_i686
@@ -46,7 +46,6 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
-   "manylinux_2_31", "debian bullseye"
 .. end base_images_i686
 
 .. begin base_images_aarch64
@@ -57,7 +56,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_19", "ubuntu 14.04"
    "manylinux_2_23", "ubuntu 16.04"
    "manylinux_2_24", "debian 9"
-   "manylinux_2_31", "debian bullseye, ubuntu 20.04"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
@@ -70,7 +69,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "centos 8, debian 10"
-   "manylinux_2_31", "debian bullseye, ubuntu 20.04"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -82,7 +81,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
-   "manylinux_2_31", "debian bullseye, ubuntu 20.04"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -95,7 +94,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "debian 9"
    "manylinux_2_27", "ubuntu 18.04"
    "manylinux_2_28", "debian 10"
-   "manylinux_2_31", "debian bullseye, ubuntu 20.04"
+   "manylinux_2_31", "ubuntu 20.04"
 .. end base_images_armv7l
 
 Distro compatibility
@@ -128,10 +127,10 @@ If your favorite distro does not appear here:
    "manylinux_2_27", "alt p9, fedora 28, ubuntu 18.04"
    "manylinux_2_28", "centos 8, debian 10, fedora 29, oraclelinux 8, photon 3.0, rhubi 8, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
-   "manylinux_2_30", "alt sisyphus, archlinux 20191006, archlinux 20191105, archlinux 20191205, archlinux 20200106, archlinux 20200205, fedora 31, ubuntu 19.10"
-   "manylinux_2_31", "archlinux 20200306, clearlinux latest, debian bullseye, fedora 32, opensuse tumbleweed, ubuntu 20.04"
-   "manylinux_2_32", "archlinux 20200908, fedora 33, ubuntu 20.10"
-   "manylinux_2_32_9000", "fedora 34"
+   "manylinux_2_30", "alt sisyphus, fedora 31, ubuntu 19.10"
+   "manylinux_2_31", "clearlinux latest, debian testing, debian unstable, fedora 32, ubuntu 20.04"
+   "manylinux_2_32", "archlinux latest, fedora 33, opensuse tumbleweed, ubuntu 20.10"
+   "manylinux_2_32_9000", "fedora rawhide"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -152,7 +151,8 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "debian 10, ubuntu 18.10"
    "manylinux_2_29", "ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, ubuntu 19.10"
-   "manylinux_2_31", "debian bullseye, opensuse tumbleweed"
+   "manylinux_2_31", "debian testing, debian unstable"
+   "manylinux_2_32", "opensuse tumbleweed"
 .. end compatibility_i686
 
 .. begin compatibility_aarch64
@@ -169,9 +169,9 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "centos 8, debian 10, fedora 29, oraclelinux 8, photon 3.0, rhubi 8, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, fedora 31, ubuntu 19.10"
-   "manylinux_2_31", "debian bullseye, fedora 32, opensuse tumbleweed, ubuntu 20.04"
+   "manylinux_2_31", "debian testing, debian unstable, fedora 32, opensuse tumbleweed, ubuntu 20.04"
    "manylinux_2_32", "fedora 33, ubuntu 20.10"
-   "manylinux_2_32_9000", "fedora 34"
+   "manylinux_2_32_9000", "fedora rawhide"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
@@ -188,7 +188,7 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "centos 8, debian 10, fedora 29, rhubi 8, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, fedora 31, ubuntu 19.10"
-   "manylinux_2_31", "debian bullseye, fedora 32, opensuse tumbleweed, ubuntu 20.04"
+   "manylinux_2_31", "debian testing, debian unstable, fedora 32, opensuse tumbleweed, ubuntu 20.04"
    "manylinux_2_32", "ubuntu 20.10"
 .. end compatibility_ppc64le
 
@@ -204,7 +204,7 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "debian 10, fedora 29, rhubi 8, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, ubuntu 19.04"
    "manylinux_2_30", "fedora 31, ubuntu 19.10"
-   "manylinux_2_31", "debian bullseye, fedora 32, ubuntu 20.04"
+   "manylinux_2_31", "debian testing, debian unstable, fedora 32, ubuntu 20.04"
    "manylinux_2_32", "ubuntu 20.10"
 .. end compatibility_s390x
 
@@ -221,6 +221,6 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "debian 10, ubuntu 18.10"
    "manylinux_2_29", "ubuntu 19.04"
    "manylinux_2_30", "ubuntu 19.10"
-   "manylinux_2_31", "debian bullseye, opensuse tumbleweed, ubuntu 20.04"
+   "manylinux_2_31", "debian testing, debian unstable, opensuse tumbleweed, ubuntu 20.04"
    "manylinux_2_32", "ubuntu 20.10"
 .. end compatibility_armv7l

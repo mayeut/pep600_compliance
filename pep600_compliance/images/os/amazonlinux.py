@@ -4,9 +4,9 @@ from pep600_compliance.images import package_manager
 
 class AmazonLinux(base.Base):
     def __init__(self, image, eol, pkg_manager, packages, machines):
-        name, version = image.split(':')
+        _, version = image.split(':')
         self._packages = packages
-        super().__init__(image, name, version, eol, pkg_manager, machines=machines)
+        super().__init__(image, 'amazonlinux', version, eol, pkg_manager, machines=machines)
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)

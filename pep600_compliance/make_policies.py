@@ -69,8 +69,11 @@ def can_create_manylinux_wheel(distro, policy):
 
 def filter_image(distro_name, distro_version):
     #return False
-    if distro_name not in ['centos', 'clefos', 'ubuntu', 'debian', 'manylinux']:
+    if distro_name not in ['centos', 'clefos', 'debian', 'ubuntu', 'manylinux']:
         return True
+    if distro_name == 'debian':
+        if distro_version in {'testing', 'unstable'}:
+            return True
     if distro_name == 'ubuntu':
         major, minor = [int(v) for v in distro_version.split('.')]
         if major & 1:

@@ -4,10 +4,10 @@ from pep600_compliance.images import package_manager
 
 class OracleLinux(base.Base):
     def __init__(self, image, eol, pkg_manager, packages, machines, python='python3'):
-        name, version = image.split(':')
+        _, version = image.split(':')
         version = version.split('-')[0]
         self._packages = packages
-        super().__init__(image, name, version, eol, pkg_manager, python=python, machines=machines)
+        super().__init__(image, 'oraclelinux', version, eol, pkg_manager, python=python, machines=machines)
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
