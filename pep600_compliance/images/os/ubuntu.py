@@ -25,7 +25,7 @@ UBUNTU_PACKAGES = ['libx11-6', 'libxext6', 'libxrender1', 'libice6', 'libsm6', '
 UBUNTU_LIST = [
     # EOL info: https://wiki.ubuntu.com/Releases
     Ubuntu('ubuntu:20.10', '2021-07-17', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
-    Ubuntu('ubuntu:20.04', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
+    Ubuntu('ubuntu:20.04', '2030-04-30', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:19.10', '2020-07-17', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:19.04', '2020-01-23', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:18.10', '2019-07-18', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
