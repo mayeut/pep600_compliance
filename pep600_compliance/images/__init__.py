@@ -31,5 +31,5 @@ IMAGE_LIST = \
 
 def get_images(machine):
     for image in IMAGE_LIST:
-        if machine in image.machines:
+        if machine is None or machine in image.machines:
             yield image
