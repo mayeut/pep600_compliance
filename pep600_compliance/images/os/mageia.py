@@ -15,7 +15,7 @@ class Mageia(base.Base):
 MAGEIA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libx11', 'libxext', 'libxrender', 'libmesagl', 'libice', 'libsm']
 MAGEIA_LIST = [
     # eol info https://www.mageia.org/en/support/
-    Mageia('mageia:7', '2020-12-30', machines=['x86_64', 'aarch64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
-    Mageia('mageia:6', '2019-09-30', machines=['x86_64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
-    Mageia('mageia:5', '2017-12-31', machines=['x86_64'], pkg_manager=package_manager.URPM(), packages=[MAGEIA_PACKAGES]),
+    Mageia('mageia:7', ('EOL:2020-12-30',), machines=['x86_64', 'aarch64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
+    Mageia('mageia:6', ('EOL:2019-09-30',), machines=['x86_64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'
+    Mageia('mageia:5', ('EOL:2017-12-31',), machines=['x86_64'], pkg_manager=package_manager.URPM(), packages=[MAGEIA_PACKAGES]),
 ]

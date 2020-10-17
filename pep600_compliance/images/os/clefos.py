@@ -13,5 +13,5 @@ class ClefOS(base.Base):
 
 
 CLEFOS_LIST = [
-    ClefOS('clefos:7', '2024-06-30', machines=['s390x'], pkg_manager=package_manager.YUM(), packages=[['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
+    ClefOS('clefos:7', ('EOL:2024-06-30',), machines=['s390x'], pkg_manager=package_manager.YUM(), packages=[['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
 ]
