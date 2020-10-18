@@ -214,7 +214,7 @@ def update_readme():
         '',
     ]
     for distro in incompatibilities.keys():
-        name = distro.replace(" ", "-")
+        name = f'|{distro.replace(" ", "-")}|'
         policy = ''
         libraries = ''
         if 'policy' in incompatibilities[distro].keys():

@@ -161,9 +161,9 @@ List of known compatibility issues
 .. csv-table:: Compatibility Issues
    :header: "distro", "incompatible policy", "unavailable libraries"
 
-   "photon-1.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
-   "photon-2.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
-   "photon-3.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
-   "rhubi-8", "", "libnsl.so.1"
-   "ubuntu-13.04", "manylinux_2_17", ""
+   "|photon-1.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "|photon-2.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "|photon-3.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "|rhubi-8|", "", "libnsl.so.1"
+   "|ubuntu-13.04|", "manylinux_2_17", ""
 .. end compatibility_issues
