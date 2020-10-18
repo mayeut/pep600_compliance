@@ -109,7 +109,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_5", "|manylinux-1|"
    "manylinux_2_12", "|centos-6| |manylinux-2010|"
    "manylinux_2_15", "|ubuntu-12.04|"
-   "manylinux_2_17", "|clefos-7|"
+   "manylinux_2_17", "|centos-7| |clefos-7| |manylinux-2014|"
    "manylinux_2_19", "|ubuntu-14.04|"
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9|"
@@ -151,3 +151,19 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|archlinux-latest| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_32_9000", "|fedora-rawhide|"
 .. end compatibility
+
+Known compatibility issues
+==========================
+
+List of known compatibility issues
+
+.. begin compatibility_issues
+.. csv-table:: Compatibility Issues
+   :header: "distro", "incompatible policy", "unavailable libraries"
+
+   "photon-1.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "photon-2.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "photon-3.0", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "rhubi-8", "", "libnsl.so.1"
+   "ubuntu-13.04", "manylinux_2_17", ""
+.. end compatibility_issues

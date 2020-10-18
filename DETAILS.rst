@@ -95,6 +95,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_5", "|manylinux-1|"
    "manylinux_2_12", "|centos-6| |manylinux-2010|"
    "manylinux_2_15", "|ubuntu-12.04|"
+   "manylinux_2_17", "|centos-7| |manylinux-2014|"
    "manylinux_2_19", "|ubuntu-14.04|"
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9|"

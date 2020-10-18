@@ -4,6 +4,7 @@ import logging
 import os
 import platform
 import docker
+import docker.errors
 
 
 logging.basicConfig(level=logging.INFO)
@@ -41,7 +42,9 @@ def get_docker_platform_prefix(machine):
 
 
 class Base:
-    def __init__(self, image, name, version, eol, package_manager, machines=['x86_64'], skip_lib=[], python='python3'):
+    def __init__(
+            self, image, name, version, eol, package_manager,
+            machines=['x86_64'], skip_lib=[], python='python3'):
         self.image = image
         self.name = name
         self.version = version
@@ -57,6 +60,7 @@ class Base:
 
         image_name = self.image
         image = None
+        has_image = True
         if machine != 'x86_64':
             image_name = get_docker_platform_prefix(machine) + '/' + image_name
             try:
@@ -80,7 +84,10 @@ class Base:
             except docker.errors.ImageNotFound:
                 has_image = False
                 logger.info("Pulling image %r", image_name)
-                image = client.images.pull(*image_name.split(':'), platform=get_docker_platform(machine))
+                image = client.images.pull(
+                    *image_name.split(':'),
+                    platform=get_docker_platform(machine)
+                )
                 logger.info("Pulled image %r", image_name)
 
         src_folder = os.path.abspath(
@@ -90,7 +97,9 @@ class Base:
 
         logger.info("Starting container with image %r (%r)", image_name,
                     image.id)
-        if f'{self.name}-{self.version}' in ['opensuse-tumbleweed', 'debian-testing', 'debian-unstable'] and machine == 'i686':
+        if f'{self.name}-{self.version}' in \
+                {'opensuse-tumbleweed', 'debian-testing', 'debian-unstable'}\
+                and machine == 'i686':
             container = client.containers.run(image.id, ['sleep', '10000'],
                                               detach=True, volumes=volumes,
                                               security_opt=[
@@ -107,7 +116,8 @@ class Base:
             if machine == 'i686':
                 assert machine_started in ['i686', 'x86_64']
             else:
-                assert machine_started == machine, f'{machine_started} vs {machine}'
+                assert machine_started == machine, \
+                    f'{machine_started} vs {machine}'
             yield container
         finally:
             container.remove(force=True)
@@ -120,6 +130,9 @@ class Base:
         logger.info("Installing system packages %r", packages)
         self.package_manager.install(container, machine, packages)
 
+    def install_packages(self, container, machine):
+        raise NotImplementedError()
+
     def _ensure_pip(self, container):
         logger.info("Installing pip")
         exit_code, _ = container.exec_run([self.python, '-m', 'pip', '-V'])
@@ -128,13 +141,20 @@ class Base:
         exit_code, output = container.exec_run([self.python, '-m', 'ensurepip'])
         if exit_code == 0:
             return
-        exit_code, output = container.exec_run([self.python, '-c', 'import sys; print("{}.{}".format(*sys.version_info[0:2]))'])
+        exit_code, output = container.exec_run([
+            self.python, '-c',
+            'import sys; print("{}.{}".format(*sys.version_info[0:2]))'
+        ])
         assert exit_code == 0
         version = output.decode('utf-8').strip()
         version_url = ''
         if version in ['2.6', '3.2', '3.3', '3.4']:
             version_url = version + '/'
-        exit_code, output = container.exec_run(['bash', '-exo', 'pipefail', '-c', f'curl -fksSL https://bootstrap.pypa.io/{version_url}get-pip.py | {self.python}'])
+        exit_code, output = container.exec_run([
+            'bash', '-exo', 'pipefail', '-c',
+            f'curl -fksSL https://bootstrap.pypa.io/{version_url}get-pip.py '
+            f'| {self.python}'
+        ])
         assert exit_code == 0, output.decode('utf-8')
         exit_code, _ = container.exec_run([self.python, '-m', 'pip', '-V'])
         assert exit_code == 0
@@ -142,17 +162,25 @@ class Base:
     def _install_pyelftools(self, container):
         self._ensure_pip(container)
         logger.info("Installing pyelftools")
-        exit_code, output = container.exec_run([self.python, '-m', 'pip', 'install', 'pyelftools'])
+        exit_code, output = container.exec_run([
+            self.python, '-m', 'pip', 'install', 'pyelftools'
+        ])
         if exit_code == 0:
             return
-        exit_code, output = container.exec_run([self.python, '-m', 'pip', 'install', '/home/pep600_compliance/pyelftools-0.26.tar.gz'])
+        exit_code, output = container.exec_run([
+            self.python, '-m', 'pip', 'install',
+            '/home/pep600_compliance/pyelftools-0.26.tar.gz'
+        ])
         assert exit_code == 0, output.decode('utf-8')
 
     def _get_symbols(self, container):
         logger.info("Running symbol script")
         exit_code, output = container.exec_run(
-            [self.python, '/home/pep600_compliance/calculate_symbol_versions.py',
-             'manylinux2010', '/home/pep600_compliance/policy.json'] + self.skip_lib,
+            [
+                self.python,
+                '/home/pep600_compliance/calculate_symbol_versions.py',
+                'manylinux_2_17', '/home/pep600_compliance/policy.json'
+            ] + self.skip_lib,
             demux=True
         )
         assert exit_code == 0, output[1].decode('utf-8')

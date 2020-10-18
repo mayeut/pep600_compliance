@@ -20,24 +20,62 @@ elif MACHINE in ['i386', 'i486', 'i586']:
     MACHINE = 'i686'
 
 if MACHINE == 'x86_64':
-    LIBRARY_PATHS = ['/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu', '/usr/lib/x86_64-linux-gnu/mesa', '/lib64', '/usr/lib64']
+    LIBRARY_PATHS = [
+        '/lib/x86_64-linux-gnu',
+        '/usr/lib/x86_64-linux-gnu',
+        '/usr/lib/x86_64-linux-gnu/mesa',
+        '/lib64',
+        '/usr/lib64'
+    ]
 elif MACHINE == 'i686':
-    LIBRARY_PATHS = ['/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu', '/usr/lib/i386-linux-gnu/mesa', '/lib', '/usr/lib']
+    LIBRARY_PATHS = [
+        '/lib/i386-linux-gnu',
+        '/usr/lib/i386-linux-gnu',
+        '/usr/lib/i386-linux-gnu/mesa',
+        '/lib',
+        '/usr/lib'
+    ]
 elif MACHINE == 'aarch64':
-    LIBRARY_PATHS = ['/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu', '/usr/lib/aarch64-linux-gnu/mesa', '/lib64', '/usr/lib64']
+    LIBRARY_PATHS = [
+        '/lib/aarch64-linux-gnu',
+        '/usr/lib/aarch64-linux-gnu',
+        '/usr/lib/aarch64-linux-gnu/mesa',
+        '/lib64',
+        '/usr/lib64'
+    ]
 elif MACHINE == 'ppc64le':
-    LIBRARY_PATHS = ['/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu', '/usr/lib/powerpc64le-linux-gnu/mesa', '/lib64', '/usr/lib64']
+    LIBRARY_PATHS = [
+        '/lib/powerpc64le-linux-gnu',
+        '/usr/lib/powerpc64le-linux-gnu',
+        '/usr/lib/powerpc64le-linux-gnu/mesa',
+        '/lib64',
+        '/usr/lib64'
+    ]
 elif MACHINE == 's390x':
-    LIBRARY_PATHS = ['/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu', '/usr/lib/s390x-linux-gnu/mesa', '/lib64', '/usr/lib64']
+    LIBRARY_PATHS = [
+        '/lib/s390x-linux-gnu',
+        '/usr/lib/s390x-linux-gnu',
+        '/usr/lib/s390x-linux-gnu/mesa',
+        '/lib64',
+        '/usr/lib64'
+    ]
 elif MACHINE == 'armv7l':
-    LIBRARY_PATHS = ['/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf', '/usr/lib/arm-linux-gnueabihf/mesa', '/lib', '/usr/lib']
+    LIBRARY_PATHS = [
+        '/lib/arm-linux-gnueabihf',
+        '/usr/lib/arm-linux-gnueabihf',
+        '/usr/lib/arm-linux-gnueabihf/mesa',
+        '/lib',
+        '/usr/lib'
+    ]
 else:
     raise NotImplementedError('Platform not supported')
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("policy", help="The policy name")
 parser.add_argument("policyjson", help="The policy.json file.")
-parser.add_argument("skip_lib", nargs=argparse.REMAINDER, help="libraries to skip in the check")
+parser.add_argument(
+    "skip_lib", nargs=argparse.REMAINDER, help="libraries to skip in the check"
+)
 
 
 def load_policies(path):
@@ -80,14 +118,18 @@ def calculate_symbol_versions(libraries, symbol_versions, skip_lib):
                 continue
             raise e
         if library in skip_lib:
-            raise RuntimeError("Library {} has been found but is in the skip_lib list".format(library))
+            raise RuntimeError(
+                "Library {} has been found but is in the skip_lib list".format(
+                    library
+                )
+            )
         with open(library_path, 'rb') as f:
             e = ELFFile(f)
             section = e.get_section_by_name('.gnu.version_d')
             if section:
                 for _, verdef_iter in section.iter_versions():
                     for vernaux in verdef_iter:
-                        for symbol_name in symbol_versions:
+                        for _ in symbol_versions:
                             try:
                                 name, version = vernaux.name.split('_', 1)
                             except ValueError:
@@ -136,7 +178,7 @@ def main():
             'glibc_version': _glibc_version_string_ctypes(),
             'symbols': calculate_symbol_versions(
                 policy['lib_whitelist'],
-                policy['symbol_versions'],
+                policy['symbol_versions'][MACHINE],
                 args.skip_lib,
             )
         }, sort_keys=True)

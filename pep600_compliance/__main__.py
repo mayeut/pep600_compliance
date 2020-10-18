@@ -7,7 +7,6 @@ import platform
 import subprocess
 import sys
 import urllib.parse
-from collections import defaultdict
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import manylinux_analysis
 
@@ -21,6 +20,22 @@ README_PATH = os.path.abspath(os.path.join(HERE, '..', 'README.rst'))
 DETAILS_PATH = os.path.abspath(os.path.join(HERE, '..', 'DETAILS.rst'))
 EOL_PATH = os.path.abspath(os.path.join(HERE, '..', 'EOL.rst'))
 MACHINES = {'x86_64', 'i686', 'aarch64', 'ppc64le', 's390x', 'armv7l'}
+
+
+def get_start_end(lines, start_tag, end_tag):
+    start = None
+    end = None
+    for i in range(len(lines)):
+        if start_tag in lines[i]:
+            start = i
+        if end_tag in lines[i]:
+            end = i
+            break
+    if start is None:
+        raise LookupError(start_tag)
+    if end is None:
+        raise LookupError(end_tag)
+    return start, end
 
 
 def create_cache(machine):
@@ -42,12 +57,9 @@ def create_cache(machine):
 
 
 def replace_badges(lines):
-    for i in range(len(lines)):
-        if f'.. begin distro_badges' in lines[i]:
-            start = i
-        if f'.. end distro_badges' in lines[i]:
-            end = i
-            break
+    start, end = get_start_end(
+        lines, '.. begin distro_badges', '.. end distro_badges'
+    )
     new_lines = []
     keys = []
     six_months = datetime.timedelta(days=182)
@@ -82,7 +94,9 @@ def replace_badges(lines):
             free_eol_date = datetime.date.fromisoformat(last_eol_date)
             paid_eol_date = free_eol_date
             if last_eol_type == 'ELTS':
-                free_eol_date = datetime.date.fromisoformat(image.eol[-2].split(':')[1])
+                free_eol_date = datetime.date.fromisoformat(
+                    image.eol[-2].split(':')[1]
+                )
             eol = ' / '.join([date for date in image.eol])
             if paid_eol_date < today:
                 color = 'black'
@@ -95,7 +109,11 @@ def replace_badges(lines):
         logo = ''
         if shortname in logos.keys():
             logo = f'&logo={logos[shortname]}&logoColor=white'
-        line = f'.. |{key}| image:: https://img.shields.io/static/v1?label={urllib.parse.quote(shortname)}&message={urllib.parse.quote(image.version)}%20({urllib.parse.quote(eol)})&color={color}{logo}'
+        line = f'.. |{key}| image:: https://img.shields.io/static/v1?' \
+               f'label={urllib.parse.quote(shortname)}&' \
+               f'message={urllib.parse.quote(image.version)}%20' \
+               f'({urllib.parse.quote(eol)})&' \
+               f'color={color}{logo}'
         new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
     return lines
@@ -109,37 +127,35 @@ def update_details():
     lines = replace_badges(lines)
 
     for machine in MACHINES:
-        base_images, distros = manylinux_analysis(CACHE_PATH, machine)
-        for i in range(len(lines)):
-            if f'.. begin base_images_{machine}' in lines[i]:
-                start = i
-            if f'.. end base_images_{machine}' in lines[i]:
-                end = i
-                break
-        new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
-        policy_names = sorted(
-            base_images.keys(),
-            key=lambda x: [int(v) for v in x.split('_')[1:]]
+        base_images, distros, _ = manylinux_analysis(CACHE_PATH, machine)
+        start, end = get_start_end(
+            lines,
+            f'.. begin base_images_{machine}',
+            f'.. end base_images_{machine}'
         )
-        for policy_name in policy_names:
-            distros_ = ' '.join([f'|{d.replace(" ", "-")}|' for d in sorted(base_images[policy_name])])
+        new_lines = [
+            f'.. csv-table:: {machine}', '   :header: "policy", "distros"', ''
+        ]
+        for policy_name in base_images.keys():
+            distros_ = ' '.join([
+                f'|{d.replace(" ", "-")}|' for d in base_images[policy_name]
+            ])
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
         lines = lines[:start + 1] + new_lines + lines[end:]
 
-        for i in range(len(lines)):
-            if f'.. begin compatibility_{machine}' in lines[i]:
-                start = i
-            if f'.. end compatibility_{machine}' in lines[i]:
-                end = i
-                break
-        new_lines = [f'.. csv-table:: {machine}', '   :header: "policy", "distros"', '']
-        policy_names = sorted(
-            distros.keys(),
-            key=lambda x: [int(v) for v in x.split('_')[1:]]
+        start, end = get_start_end(
+            lines,
+            f'.. begin compatibility_{machine}',
+            f'.. end compatibility_{machine}'
         )
-        for policy_name in policy_names:
-            distros_ = ' '.join([f'|{d.replace(" ", "-")}|' for d in sorted(distros[policy_name])])
+        new_lines = [
+            f'.. csv-table:: {machine}', '   :header: "policy", "distros"', ''
+        ]
+        for policy_name in distros.keys():
+            distros_ = ' '.join([
+                f'|{d.replace(" ", "-")}|' for d in distros[policy_name]
+            ])
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
         lines = lines[:start + 1] + new_lines + lines[end:]
@@ -156,64 +172,56 @@ def update_readme():
 
     lines = replace_badges(lines)
 
-    base_images = defaultdict(set)
-    distros = defaultdict(set)
-    for machine in MACHINES:
-        machine_base_images, machine_distros = manylinux_analysis(CACHE_PATH, machine)
-        # we want a kind of intersection for base_images
-        for policy_name in machine_distros.keys():
-            # remove invalid base_image
-            for base_image in machine_distros[policy_name]:
-                if base_image in base_images[policy_name] and base_image not in machine_base_images[policy_name]:
-                    base_images[policy_name].remove(base_image)
-            # add new base_image
-            for base_image in machine_base_images[policy_name]:
-                if base_image not in distros[policy_name]:
-                    base_images[policy_name].add(base_image)
-        # update distros
-        for policy_name in machine_distros.keys():
-            distros[policy_name] |= set(machine_distros[policy_name])
-    for i in range(len(lines)):
-        if f'.. begin base_images' in lines[i]:
-            start = i
-        if f'.. end base_images' in lines[i]:
-            end = i
-            break
-    new_lines = [f'.. csv-table:: base images', '   :header: "policy", "distros"', '']
-    policy_names = sorted(
-        base_images.keys(),
-        key=lambda x: [int(v) for v in x.split('_')[1:]]
+    base_images, distros, incompatibilities = manylinux_analysis(
+        CACHE_PATH, None
     )
-    for policy_name in policy_names:
+
+    start, end = get_start_end(
+        lines, '.. begin base_images', '.. end base_images'
+    )
+    new_lines = [
+        f'.. csv-table:: base images', '   :header: "policy", "distros"', ''
+    ]
+    for policy_name in base_images.keys():
         if base_images[policy_name]:
             distros_ = ' '.join([
-                f'|{d.replace(" ", "-")}|' for d in sorted(base_images[policy_name])
+                f'|{d.replace(" ", "-")}|' for d in base_images[policy_name]
             ])
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
 
-    for i in range(len(lines)):
-        if f'.. begin compatibility' in lines[i]:
-            start = i
-        if f'.. end compatibility' in lines[i]:
-            end = i
-            break
+    start, end = get_start_end(
+        lines, '.. begin compatibility', '.. end compatibility'
+    )
     new_lines = [
         f'.. csv-table:: compatibility', '   :header: "policy", "distros"', ''
     ]
-    policy_names = sorted(
-        distros.keys(),
-        key=lambda x: [int(v) for v in x.split('_')[1:]]
-    )
-    all_distros = set()
-    for policy_name in policy_names:
-        current_distros = distros[policy_name] - all_distros
-        all_distros |= current_distros
+    for policy_name in distros.keys():
         distros_ = ' '.join([
-            f'|{d.replace(" ", "-")}|' for d in sorted(current_distros)
+            f'|{d.replace(" ", "-")}|' for d in distros[policy_name]
         ])
         line = f'   "{policy_name}", "{distros_}"'
+        new_lines.append(line)
+    lines = lines[:start + 1] + new_lines + lines[end:]
+
+    start, end = get_start_end(
+        lines, '.. begin compatibility_issues', '.. end compatibility_issues'
+    )
+    new_lines = [
+        f'.. csv-table:: Compatibility Issues',
+        '   :header: "distro", "incompatible policy", "unavailable libraries"',
+        '',
+    ]
+    for distro in incompatibilities.keys():
+        name = distro.replace(" ", "-")
+        policy = ''
+        libraries = ''
+        if 'policy' in incompatibilities[distro].keys():
+            policy = incompatibilities[distro]['policy']
+        if 'lib' in incompatibilities[distro].keys():
+            libraries = ', '.join(sorted(incompatibilities[distro]['lib']))
+        line = f'   "{name}", "{policy}", "{libraries}"'
         new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
 
@@ -226,13 +234,9 @@ def update_eol():
     with open(EOL_PATH, 'rt') as f:
         content = f.read()
     lines = content.splitlines()
-    for i in range(len(lines)):
-        if f'.. begin eol_information' in lines[i]:
-            start = i
-        if f'.. end eol_information' in lines[i]:
-            end = i
-            break
-
+    start, end = get_start_end(
+        lines, '.. begin eol_information', '.. end eol_information'
+    )
     old_name = ''
     new_lines = []
     done = set()
@@ -241,7 +245,9 @@ def update_eol():
         if shortname != old_name:
             old_name = shortname
             new_lines.extend([
-                f'.. csv-table:: {shortname}', '   :header: "distro", "EOL", "LTS", "ELTS"', ''
+                f'.. csv-table:: {shortname}',
+                '   :header: "distro", "EOL", "LTS", "ELTS"',
+                '',
             ])
         distro_version = f'{shortname} {image.version}'
         if distro_version in done:
@@ -258,13 +264,15 @@ def update_eol():
             for eol_info in image.eol:
                 kind, date = eol_info.split(':')
                 dates[kind] = date
-        line = f'   "{distro_version}", "{dates["EOL"]}", "{dates["LTS"]}", "{dates["ELTS"]}"'
+        line = f'   "{distro_version}",' \
+               f' "{dates["EOL"]}", "{dates["LTS"]}", "{dates["ELTS"]}"'
         new_lines.append(line)
     lines = lines[:start + 1] + new_lines + lines[end:]
 
     content = '\n'.join(lines) + '\n'
     with open(EOL_PATH, 'wt') as f:
         f.write(content)
+
 
 def main():
     default_machine = [platform.machine()]
@@ -273,13 +281,8 @@ def main():
     args = parser.parse_args()
     for machine in args.machine:
         create_cache(machine)
-
-        base_images, distros = manylinux_analysis(CACHE_PATH, machine)
-        policy_names = sorted(
-            base_images.keys(),
-            key=lambda x: [int(v) for v in x.split('_')[1:]]
-        )
-        for policy_name in policy_names:
+        base_images, _, _ = manylinux_analysis(CACHE_PATH, machine)
+        for policy_name in base_images.keys():
             distros_ = base_images[policy_name]
             print(f'{policy_name}: {distros_}')
     update_readme()

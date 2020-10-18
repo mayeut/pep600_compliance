@@ -13,12 +13,15 @@ class _PackageManager:
     def install(self, container, machine, packages):
         for packages_ in packages:
             self._update(container)
-            exit_code, output = container.exec_run(self._install_prefix + packages_, environment=self._environment)
+            exit_code, output = container.exec_run(
+                self._install_prefix + packages_, environment=self._environment
+            )
             assert exit_code == 0, output.decode('utf-8')
 
 
 class APT(_PackageManager):
-    def __init__(self, has_no_install_recommends=True, run_once=[], ppa_list=[]):
+    def __init__(
+            self, has_no_install_recommends=True, run_once=[], ppa_list=[]):
         install_prefix = ['apt-get', 'install', '-qq', '-y']
         if has_no_install_recommends:
             install_prefix += ['--no-install-recommends']
@@ -30,12 +33,20 @@ class APT(_PackageManager):
 
     def install(self, container, machine, packages):
         for command in self._run_once:
-            exit_code, output = container.exec_run(command, environment=self._environment)
+            exit_code, output = container.exec_run(
+                command, environment=self._environment
+            )
             assert exit_code == 0, output.decode('utf-8')
         if self._ppa_list:
-            super().install(container, machine, [['software-properties-common', 'python-software-properties']])
+            super().install(
+                container,
+                machine,
+                [['software-properties-common', 'python-software-properties']]
+            )
             for ppa in self._ppa_list:
-                exit_code, output = container.exec_run(['add-apt-repository', ppa], environment=self._environment)
+                exit_code, output = container.exec_run(
+                    ['add-apt-repository', ppa], environment=self._environment
+                )
                 assert exit_code == 0, output.decode('utf-8')
         super().install(container, machine, packages)
 
@@ -52,7 +63,9 @@ class MICRODNF(_PackageManager):
 
 class PACMAN(_PackageManager):
     def __init__(self):
-        super().__init__(['pacman', '-Sy', '--noconfirm'], ['pacman', '-Syu', '--noconfirm'])
+        super().__init__(
+            ['pacman', '-Sy', '--noconfirm'], ['pacman', '-Syu', '--noconfirm']
+        )
 
 
 class SWUPD(_PackageManager):
@@ -77,10 +90,14 @@ class YUM(_PackageManager):
 
     def install(self, container, machine, packages):
         if machine == 'i686':
-            exit_code, output = container.exec_run(['bash', '-c', 'echo "i386" > /etc/yum/vars/basearch'])
+            exit_code, output = container.exec_run([
+                'bash', '-c', 'echo "i386" > /etc/yum/vars/basearch'
+            ])
             assert exit_code == 0, output.decode('utf-8')
         for command in self._run_once:
-            exit_code, output = container.exec_run(command, environment=self._environment)
+            exit_code, output = container.exec_run(
+                command, environment=self._environment
+            )
             assert exit_code == 0, output.decode('utf-8')
         super().install(container, machine, packages)
 
@@ -91,15 +108,21 @@ class ZYPPER(_PackageManager):
 
     def install(self, container, machine, packages):
         if machine == 'i686':
-            exit_code, output = container.exec_run(['bash', '-c', 'echo "arch = i586" >> /etc/zypp/zypp.conf'])
+            exit_code, output = container.exec_run([
+                'bash', '-c', 'echo "arch = i586" >> /etc/zypp/zypp.conf'
+            ])
             assert exit_code == 0, output.decode('utf-8')
         super().install(container, machine, packages)
 
 
 class SLACKPKG(_PackageManager):
     def __init__(self):
-        install_prefix = ['slackpkg', '-default_answer=yes', '-batch=on', 'install']
-        update_command = ['slackpkg', '-default_answer=yes', '-batch=on', 'update']
+        install_prefix = [
+            'slackpkg', '-default_answer=yes', '-batch=on', 'install'
+        ]
+        update_command = [
+            'slackpkg', '-default_answer=yes', '-batch=on', 'update'
+        ]
         super().__init__(install_prefix, update_command)
 
     def install(self, container, machine, packages):
