@@ -169,8 +169,8 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "centos 8, debian 10, fedora 29, oraclelinux 8, photon 3.0, rhubi 8, ubuntu 18.10"
    "manylinux_2_29", "fedora 30, mageia 7, ubuntu 19.04"
    "manylinux_2_30", "alt sisyphus, fedora 31, ubuntu 19.10"
-   "manylinux_2_31", "debian testing, debian unstable, fedora 32, opensuse tumbleweed, ubuntu 20.04"
-   "manylinux_2_32", "fedora 33, ubuntu 20.10"
+   "manylinux_2_31", "debian testing, debian unstable, fedora 32, ubuntu 20.04"
+   "manylinux_2_32", "fedora 33, opensuse tumbleweed, ubuntu 20.10"
    "manylinux_2_32_9000", "fedora rawhide"
 .. end compatibility_aarch64
 
@@ -221,6 +221,6 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "debian 10, ubuntu 18.10"
    "manylinux_2_29", "ubuntu 19.04"
    "manylinux_2_30", "ubuntu 19.10"
-   "manylinux_2_31", "debian testing, debian unstable, opensuse tumbleweed, ubuntu 20.04"
-   "manylinux_2_32", "ubuntu 20.10"
+   "manylinux_2_31", "debian testing, debian unstable, ubuntu 20.04"
+   "manylinux_2_32", "opensuse tumbleweed, ubuntu 20.10"
 .. end compatibility_armv7l
