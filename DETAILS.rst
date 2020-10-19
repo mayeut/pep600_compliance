@@ -252,7 +252,7 @@ If your favorite distro does not appear here:
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |ubuntu-16.10| |ubuntu-17.04|"
    "manylinux_2_25", "|fedora-26|"
-   "manylinux_2_26", "|fedora-27| |opensuse-15.0| |ubuntu-17.10|"
+   "manylinux_2_26", "|fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
    "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
