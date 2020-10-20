@@ -14,9 +14,9 @@ class Fedora(base.Base):
 
 FEDORA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']
 FEDORA_LIST = [
-    Fedora('fedora:rawhide', 'rolling', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
-    Fedora('fedora:33', 'unknown', machines=['x86_64', 'aarch64'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
-    Fedora('fedora:32', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:rawhide', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:33', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
+    Fedora('fedora:32', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:31', ('EOL:2020-11-17',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     # EOL: https://fedoraproject.org/wiki/End_of_life
     Fedora('fedora:30', ('EOL:2020-05-26',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
