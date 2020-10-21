@@ -76,6 +76,7 @@ def replace_badges(lines):
         'photon': 'vmware',
         'archlinux': 'arch-linux',
         'slackware': 'slackware',
+        'manylinux': 'python',
     }
     for image in get_images(None):
         shortname = image.name.replace("-slim", "")

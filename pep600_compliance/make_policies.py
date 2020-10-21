@@ -19,11 +19,8 @@ def load_distros(path):
         distro_parts = filename.split('-', 1)
         distro_name = distro_parts[0]
         distro_version = distro_parts[1].replace('-slim', '')
-        try:
-            with open(path, 'rt') as f:
-                distro_dict = json.load(f)
-        except:
-            raise
+        with open(path, 'rt') as f:
+            distro_dict = json.load(f)
         distro_dict['distro_name'] = distro_name
         distro_dict['distro_version'] = distro_version
         result.append(distro_dict)
