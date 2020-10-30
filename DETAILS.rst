@@ -65,7 +65,7 @@
 .. |ubuntu-17.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=17.10%20(EOL%3A2018-07-19)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-17.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=17.04%20(EOL%3A2018-01-13)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-16.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=16.10%20(EOL%3A2017-07-20)&color=black&logo=ubuntu&logoColor=white
-.. |ubuntu-16.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=16.04%20(EOL%3A2021-04-30%20/%20ELTS%3A2024-04-30)&color=green&logo=ubuntu&logoColor=white
+.. |ubuntu-16.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=16.04%20(EOL%3A2021-04-30%20/%20ELTS%3A2024-04-30)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-15.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=15.10%20(EOL%3A2016-07-28)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-15.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=15.04%20(EOL%3A2016-02-04)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-14.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=14.10%20(EOL%3A2015-07-23)&color=black&logo=ubuntu&logoColor=white
@@ -257,8 +257,8 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|alt-sisyphus| |fedora-31| |ubuntu-19.10|"
-   "manylinux_2_31", "|debian-testing| |debian-unstable| |fedora-32| |opensuse-tumbleweed| |ubuntu-20.04|"
-   "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
+   "manylinux_2_31", "|debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
+   "manylinux_2_32", "|fedora-33| |opensuse-tumbleweed| |ubuntu-20.10|"
    "manylinux_2_32_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
