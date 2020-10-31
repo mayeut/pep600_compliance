@@ -1,6 +1,9 @@
-name: Test
+name: Cron Update
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 5'
 
 jobs:
   build-cache:
@@ -20,7 +23,10 @@ jobs:
         docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
     - name: Build cache
       run: |
-        python -m pep600_compliance --machine x86_64 i686 aarch64 ppc64le s390x armv7l
+        python -m pep600_compliance --force-rolling --machine x86_64
+        if ! git diff --exit-code --quiet cache; then
+          python -m pep600_compliance --force-rolling --machine i686 aarch64 ppc64le s390x armv7l
+        fi
     - name: Create Pull Request
       if: github.event_name == 'push' && github.ref == 'refs/heads/master' && always()
       uses: peter-evans/create-pull-request@v2

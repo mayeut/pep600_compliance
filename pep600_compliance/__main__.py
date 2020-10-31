@@ -38,7 +38,7 @@ def get_start_end(lines, start_tag, end_tag):
     return start, end
 
 
-def create_cache(machine):
+def create_cache(machine, force_rolling):
     machine_cache_path = os.path.join(CACHE_PATH, machine)
     if not os.path.exists(machine_cache_path):
         os.makedirs(machine_cache_path)
@@ -50,7 +50,9 @@ def create_cache(machine):
     for image in get_images(machine):
         cache_name = f'{image.name}-{image.version}'
         cache_file = os.path.join(machine_cache_path, cache_name + '.json')
-        if not os.path.exists(cache_file):
+        run = (not os.path.exists(cache_file)) or \
+              (force_rolling and image.eol == 'rolling')
+        if run:
             symbols = image.run_check(machine)
             with open(cache_file, 'wt') as f:
                 json.dump(symbols, f, sort_keys=True)
@@ -278,10 +280,11 @@ def update_eol():
 def main():
     default_machine = [platform.machine()]
     parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--force-rolling", action='store_true')
     parser.add_argument("--machine", nargs='*', default=default_machine)
     args = parser.parse_args()
     for machine in args.machine:
-        create_cache(machine)
+        create_cache(machine, args.force_rolling)
         base_images, _, _ = manylinux_analysis(CACHE_PATH, machine)
         for policy_name in base_images.keys():
             distros_ = base_images[policy_name]
