@@ -29,7 +29,7 @@ jobs:
         fi
     - name: Create Pull Request
       if: github.event_name == 'push' && github.ref == 'refs/heads/master' && always()
-      uses: peter-evans/create-pull-request@v2
+      uses: peter-evans/create-pull-request@v3
       with:
         commit-message: auto-update cache and/or README.rst
         title: '[Bot] auto-update cache and/or README.rst'
