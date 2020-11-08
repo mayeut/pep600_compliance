@@ -1,7 +1,8 @@
 class _PackageManager:
-    def __init__(self, install_prefix, update_command=None, environment=None):
+    def __init__(self, install_prefix, update_command=None, upgrade_command=None, environment=None):
         self._install_prefix = install_prefix
         self._update_command = update_command
+        self._upgrade_command = upgrade_command
         self._environment = environment
 
     def _update(self, container):
@@ -10,9 +11,16 @@ class _PackageManager:
                 self._update_command, environment=self._environment)
             assert exit_code == 0, output.decode('utf-8')
 
+    def _upgrade(self, container):
+        if self._upgrade_command is not None:
+            exit_code, output = container.exec_run(
+                self._upgrade_command, environment=self._environment)
+            assert exit_code == 0, output.decode('utf-8')
+
     def install(self, container, machine, packages):
         for packages_ in packages:
             self._update(container)
+            self._upgrade(container)
             exit_code, output = container.exec_run(
                 self._install_prefix + packages_, environment=self._environment
             )
@@ -20,16 +28,16 @@ class _PackageManager:
 
 
 class APT(_PackageManager):
-    def __init__(
-            self, has_no_install_recommends=True, run_once=[], ppa_list=[]):
+    def __init__(self, has_no_install_recommends=True, run_once=[], ppa_list=[], upgrade=False):
         install_prefix = ['apt-get', 'install', '-qq', '-y']
         if has_no_install_recommends:
             install_prefix += ['--no-install-recommends']
         update_command = ['apt-get', 'update', '-qq']
+        upgrade_command = ['apt-get', 'upgrade', '-qq', '-y'] if upgrade else None
         environment = {'DEBIAN_FRONTEND': 'noninteractive'}
         self._run_once = run_once
         self._ppa_list = ppa_list
-        super().__init__(install_prefix, update_command, environment)
+        super().__init__(install_prefix, update_command, upgrade_command, environment)
 
     def install(self, container, machine, packages):
         for command in self._run_once:

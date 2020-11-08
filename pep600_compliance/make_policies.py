@@ -102,9 +102,11 @@ def filter_image(distro_name, distro_version):
     if distro_name not in ['centos', 'clefos', 'debian', 'ubuntu', 'manylinux']:
         return True
     if distro_name == 'debian':
-        if distro_version in {'testing', 'unstable'}:
+        if distro_version in {'testing', 'unstable', 'experimental'}:
             return True
     if distro_name == 'ubuntu':
+        if distro_version in {'rolling'}:
+            return True
         major, minor = [int(v) for v in distro_version.split('.')]
         if major & 1:
             return True

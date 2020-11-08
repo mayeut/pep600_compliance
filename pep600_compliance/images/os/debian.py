@@ -3,11 +3,11 @@ from pep600_compliance.images import package_manager
 
 
 class Debian(base.Base):
-    def __init__(self, image, eol, packages, machines, apt_sources_update=[], python='python3'):
+    def __init__(self, image, eol, packages, machines, apt_sources_update=[], python='python3', upgrade=False):
         _, version = image.split(':')
         version = version.split('-')[0]
         self._packages = packages
-        super().__init__(image, 'debian', version, eol, package_manager.APT(run_once=apt_sources_update), machines=machines, python=python)
+        super().__init__(image, 'debian', version, eol, package_manager.APT(run_once=apt_sources_update, upgrade=upgrade), machines=machines, python=python)
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
@@ -20,6 +20,7 @@ DEBIAN_APT_OLD = [
 ]
 DEBIAN_PACKAGES = ['python3-pip', 'libx11-6', 'libxext6', 'libxrender1', 'libice6', 'libsm6', 'libgl1-mesa-glx', 'libglib2.0-0']
 DEBIAN_LIST = [
+    Debian('debian:experimental', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES], upgrade=True),
     Debian('debian:unstable-slim', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
     Debian('debian:testing-slim', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[DEBIAN_PACKAGES]),
     # LTS: https://wiki.debian.org/LTS

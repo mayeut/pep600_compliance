@@ -43,6 +43,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: debian
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "debian experimental", "rolling", "", ""
    "debian unstable", "rolling", "", ""
    "debian testing", "rolling", "", ""
    "debian 10", "2022-07-31", "2024-06-30", ""
@@ -116,6 +117,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: ubuntu
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "ubuntu rolling", "rolling", "", ""
    "ubuntu 20.10", "2021-07-17", "", ""
    "ubuntu 20.04", "2025-04-30", "", "2030-04-30"
    "ubuntu 19.10", "2020-07-17", "", ""

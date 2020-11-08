@@ -97,16 +97,15 @@ class Base:
 
         logger.info("Starting container with image %r (%r)", image_name,
                     image.id)
-        if f'{self.name}-{self.version}' in \
-                {'opensuse-tumbleweed', 'debian-testing', 'debian-unstable'}\
-                and machine == 'i686':
-            container = client.containers.run(image.id, ['sleep', '10000'],
-                                              detach=True, volumes=volumes,
-                                              security_opt=[
-                                                  'seccomp:unconfined'])
-        else:
-            container = client.containers.run(image.id, ['sleep', '10000'],
-                                              detach=True, volumes=volumes)
+        run_kwargs = {}
+        if machine == 'i686' and f'{self.name}-{self.version}' in {
+            'opensuse-tumbleweed', 'debian-testing', 'debian-unstable',
+            'debian-experimental'}:
+            run_kwargs['security_opt'] = ['seccomp:unconfined']
+        container = client.containers.run(
+            image.id, ['sleep', '10000'], detach=True, volumes=volumes,
+            **run_kwargs
+        )
         logger.info("Started container %s", container.id[:12])
 
         try:
