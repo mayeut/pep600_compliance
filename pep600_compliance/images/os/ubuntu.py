@@ -27,7 +27,7 @@ UBUNTU_LIST = [
     Ubuntu('ubuntu:20.10', ('EOL:2021-07-17',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:20.04', ('EOL:2025-04-30', 'ELTS:2030-04-30',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:19.10', ('EOL:2020-07-17',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
-    Ubuntu('ubuntu:19.04', ('EOL:2020-01-23',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
+    Ubuntu('ubuntu:19.04', ('EOL:2020-01-23',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:18.10', ('EOL:2019-07-18',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:18.04', ('EOL:2023-04-30', 'ELTS:2028-04-30',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:17.10', ('EOL:2018-07-19',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
