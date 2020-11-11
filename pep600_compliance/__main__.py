@@ -291,12 +291,13 @@ def main():
     default_machine = [platform.machine()]
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--force-rolling", action='store_true')
-    parser.add_argument("-c", "---continue-on-error", action='store_true')
+    parser.add_argument("-c", "--continue-on-error", action='store_true')
     parser.add_argument("--machine", nargs='*', default=default_machine)
     args = parser.parse_args()
     exit_code = 0
     for machine in args.machine:
-        exit_code |= create_cache(machine, args.force_rolling, args.continue_on_error)
+        exit_code |= create_cache(machine, args.force_rolling,
+                                  args.continue_on_error)
         base_images, _, _ = manylinux_analysis(CACHE_PATH, machine)
         for policy_name in base_images.keys():
             distros_ = base_images[policy_name]
