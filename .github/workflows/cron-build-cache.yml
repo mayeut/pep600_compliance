@@ -34,3 +34,4 @@ jobs:
       with:
         commit-message: auto-update cache and/or README.rst
         title: '[Bot] auto-update cache and/or README.rst'
+        branch: create-pull-request/cron
