@@ -15,7 +15,7 @@ class Photon(base.Base):
 
 
 PHOTON_LIST = [
-    Photon('photon:3.0', 'unknown', machines=['x86_64', 'aarch64'], packages=[['python3-pip', 'libnsl', 'libstdc++', 'glib']]),
-    Photon('photon:2.0', 'unknown', machines=['x86_64'], packages=[['python3-pip', 'libnsl', 'libstdc++', 'glib']]),
-    Photon('photon:1.0', 'unknown', machines=['x86_64'], packages=[['python3', 'libstdc++', 'glib']]),
+    Photon('photon:3.0', 'unknown', machines=['x86_64', 'aarch64'], packages=[['which', 'python2', 'python3-pip', 'libnsl', 'libstdc++', 'glib']]),
+    Photon('photon:2.0', 'unknown', machines=['x86_64'], packages=[['python2', 'python3-pip', 'libnsl', 'libstdc++', 'glib']]),
+    Photon('photon:1.0', 'unknown', machines=['x86_64'], packages=[['which', 'python2', 'python3', 'libstdc++', 'glib']]),
 ]

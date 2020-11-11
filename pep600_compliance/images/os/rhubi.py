@@ -14,6 +14,6 @@ class RHUBI(base.Base):
 
 RHUBI_LIST = [
     # EOL info: https://access.redhat.com/support/policy/updates/errata#Life_Cycle_Dates
-    RHUBI('registry.access.redhat.com/ubi8/ubi:8.2', ('EOL:2029-05-31',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=package_manager.DNF(), packages=[['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']], skip_lib=['libnsl.so.1']),
-    RHUBI('registry.access.redhat.com/ubi7/ubi:7.8', ('EOL:2024-06-30',), machines=['x86_64', 'ppc64le', 's390x'], pkg_manager=package_manager.YUM(), packages=[['rh-python36', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']], python='/opt/rh/rh-python36/root/usr/bin/python3'),
+    RHUBI('registry.access.redhat.com/ubi8/ubi:8.2', ('EOL:2029-05-31',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=package_manager.DNF(), packages=[['which', 'python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']], skip_lib=['libnsl.so.1']),
+    RHUBI('registry.access.redhat.com/ubi7/ubi:7.8', ('EOL:2024-06-30',), machines=['x86_64', 'ppc64le', 's390x'], pkg_manager=package_manager.YUM(), packages=[['which', 'python', 'rh-python36', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']], python='/opt/rh/rh-python36/root/usr/bin/python3'),
 ]

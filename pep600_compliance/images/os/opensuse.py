@@ -13,7 +13,7 @@ class OpenSUSE(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-OPENSUSE_PACKAGES = ['python3-pip', 'libX11-6', 'libXext6', 'libXrender1', 'libICE6', 'libSM6', 'Mesa-libGL1', 'libglib-2_0-0', 'libgobject-2_0-0', 'libgthread-2_0-0']
+OPENSUSE_PACKAGES = ['which', 'python', 'python3-pip', 'libX11-6', 'libXext6', 'libXrender1', 'libICE6', 'libSM6', 'Mesa-libGL1', 'libglib-2_0-0', 'libgobject-2_0-0', 'libgthread-2_0-0']
 OPENSUSE_LIST = [
     #EOL info: https://en.opensuse.org/Lifetime
     OpenSUSE('opensuse/tumbleweed:latest', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[OPENSUSE_PACKAGES], version='tumbleweed'),  # TODO 's390x'

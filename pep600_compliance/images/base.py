@@ -185,9 +185,76 @@ class Base:
         assert exit_code == 0, output[1].decode('utf-8')
         return json.loads(output[0].decode('utf-8'))
 
+    def _get_python_dependencies(self, container):
+        def _get_dependencies(python_path_):
+            result_ = []
+            exit_code_, output_ = container.exec_run(
+                ['ldd', python_path_],
+                demux=True
+            )
+            assert exit_code_ == 0, output_[1].decode('utf-8')
+            for line in output_[0].decode('utf-8').splitlines():
+                lib = line.strip().split()[0]
+                if lib in {'linux-gate.so.1', 'linux-vdso.so.1',
+                           'libpthread.so.0', 'libdl.so.2', 'libutil.so.1',
+                           'libm.so.6', 'libc.so.6', 'librt.so.1',
+                           'libgcc_s.so.1'}:
+                    continue
+                if lib.startswith('/lib'):
+                    continue
+                if lib.startswith('libpython'):
+                    continue
+                result_.append(lib)
+            return result_
+
+        logger.info("Running python dependencies")
+        result = []
+        # check self.python
+        exit_code, output = container.exec_run(
+            ['which', self.python],
+            demux=True
+        )
+        assert exit_code == 0, output[1].decode('utf-8')
+        python_path = output[0].decode('utf-8').strip()
+        result.extend(_get_dependencies(python_path))
+        if python_path.startswith('/opt/python/cp'):
+            # we are on manylinux, check all versions
+            exit_code, output = container.exec_run(
+                ['find', '/opt/python', '-mindepth', '1', '-maxdepth', '1'],
+                demux=True
+            )
+            assert exit_code == 0, output[1].decode('utf-8')
+            for line in output[0].decode('utf-8').strip().splitlines():
+                line = line.strip() + '/bin/python'
+                if line != python_path:
+                    result.extend(_get_dependencies(line))
+
+        # check python2
+        exit_code, output = container.exec_run(
+            ['which', 'python'],
+            demux=True
+        )
+        if exit_code == 0:
+            python2_path = output[0].decode('utf-8').strip()
+            if python2_path != python_path:
+                result.extend(_get_dependencies(python2_path))
+        # check python3
+        exit_code, output = container.exec_run(
+            ['which', 'python3'],
+            demux=True
+        )
+        if exit_code == 0:
+            python3_path = output[0].decode('utf-8').strip()
+            if python3_path != python_path:
+                result.extend(_get_dependencies(python3_path))
+        return sorted(set(result))
+
     def run_check(self, machine):
         assert machine in self.machines
         with self.docker_container(machine) as container:
             self.install_packages(container, machine)
             self._install_pyelftools(container)
-            return self._get_symbols(container)
+            extra = self._get_python_dependencies(container)
+            result = self._get_symbols(container)
+            result['extra'] = extra
+            return result

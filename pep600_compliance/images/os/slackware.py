@@ -16,5 +16,4 @@ SLACKWARE_LIST = [
     Slackware('vbatts/slackware:14.2', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),
     Slackware('vbatts/slackware:14.1', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),
     Slackware('vbatts/slackware:14.0', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),
-
 ]

@@ -12,7 +12,7 @@ class ClearLinux(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-CLEARLINUX_PACKAGES = ['python3-basic', 'libX11client']
+CLEARLINUX_PACKAGES = ['which', 'python-basic', 'python3-basic', 'libX11client']
 CLEARLINUX_LIST = [
     ClearLinux('clearlinux:latest', [CLEARLINUX_PACKAGES]),
 ]

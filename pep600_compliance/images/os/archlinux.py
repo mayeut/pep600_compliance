@@ -12,7 +12,7 @@ class ArchLinux(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-ARCHLINUX_PACKAGES = ['python-pip', 'glib2', 'libx11', 'libxext', 'libxrender', 'libice', 'libsm', 'mesa']
+ARCHLINUX_PACKAGES = ['which', 'python-pip', 'glib2', 'libx11', 'libxext', 'libxrender', 'libice', 'libsm', 'mesa']
 ARCHLINUX_LIST = [
     ArchLinux('archlinux:latest', [ARCHLINUX_PACKAGES]),
 ]

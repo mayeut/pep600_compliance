@@ -12,7 +12,7 @@ class Fedora(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-FEDORA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']
+FEDORA_PACKAGES = ['which', 'python', 'python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']
 FEDORA_LIST = [
     Fedora('fedora:rawhide', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:33', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),

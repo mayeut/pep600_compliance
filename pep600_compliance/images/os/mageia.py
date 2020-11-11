@@ -12,7 +12,7 @@ class Mageia(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-MAGEIA_PACKAGES = ['python3-pip', 'libstdc++', 'glib2', 'libx11', 'libxext', 'libxrender', 'libmesagl', 'libice', 'libsm']
+MAGEIA_PACKAGES = ['which', 'python', 'python3-pip', 'libstdc++', 'glib2', 'libx11', 'libxext', 'libxrender', 'libmesagl', 'libice', 'libsm']
 MAGEIA_LIST = [
     # eol info https://www.mageia.org/en/support/
     Mageia('mageia:7', ('EOL:2021-02-08',), machines=['x86_64', 'aarch64'], pkg_manager=package_manager.DNF(), packages=[MAGEIA_PACKAGES]),  # TODO 'armv7l'

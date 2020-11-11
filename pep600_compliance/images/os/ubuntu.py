@@ -21,7 +21,7 @@ UBUNTU_PYTHON_PPA = [
     'ppa:fkrull/deadsnakes'
 ]
 
-UBUNTU_PACKAGES = ['libx11-6', 'libxext6', 'libxrender1', 'libice6', 'libsm6', 'libgl1-mesa-glx', 'libglib2.0-0']
+UBUNTU_PACKAGES = ['python', 'libx11-6', 'libxext6', 'libxrender1', 'libice6', 'libsm6', 'libgl1-mesa-glx', 'libglib2.0-0']
 UBUNTU_LIST = [
     # EOL info: https://wiki.ubuntu.com/Releases
     Ubuntu('ubuntu:rolling', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),

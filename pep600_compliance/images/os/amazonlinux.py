@@ -14,7 +14,7 @@ class AmazonLinux(base.Base):
 
 AMAZONLINUX_LIST = [
     # standard eol: https://aws.amazon.com/fr/amazon-linux-2/faqs/
-    AmazonLinux('amazonlinux:2', ('EOL:2023-06-30',), machines=['x86_64', 'aarch64'], pkg_manager=package_manager.YUM(), packages=[['python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
+    AmazonLinux('amazonlinux:2', ('EOL:2023-06-30',), machines=['x86_64', 'aarch64'], pkg_manager=package_manager.YUM(), packages=[['which', 'python', 'python3-pip', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
     # extended support date rather than eol: https://aws.amazon.com/fr/blogs/aws/update-on-amazon-linux-ami-end-of-life/
-    AmazonLinux('amazonlinux:1', ('EOL:2020-12-31', 'LTS:2023-06-30'), machines=['x86_64'], pkg_manager=package_manager.YUM(), packages=[['epel-release'], ['python34', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
+    AmazonLinux('amazonlinux:1', ('EOL:2020-12-31', 'LTS:2023-06-30'), machines=['x86_64'], pkg_manager=package_manager.YUM(), packages=[['epel-release'], ['which', 'python', 'python34', 'libstdc++', 'glib2', 'libX11', 'libXext', 'libXrender', 'mesa-libGL', 'libICE', 'libSM']]),
 ]
