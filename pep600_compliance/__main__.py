@@ -38,7 +38,8 @@ def get_start_end(lines, start_tag, end_tag):
     return start, end
 
 
-def create_cache(machine, force_rolling):
+def create_cache(machine, force_rolling, continue_on_error):
+    exit_code = 0
     machine_cache_path = os.path.join(CACHE_PATH, machine)
     if not os.path.exists(machine_cache_path):
         os.makedirs(machine_cache_path)
@@ -53,9 +54,18 @@ def create_cache(machine, force_rolling):
         run = (not os.path.exists(cache_file)) or \
               (force_rolling and image.eol == 'rolling')
         if run:
-            symbols = image.run_check(machine)
-            with open(cache_file, 'wt') as f:
-                json.dump(symbols, f, sort_keys=True)
+            try:
+                symbols = image.run_check(machine)
+                with open(cache_file, 'wt') as f:
+                    json.dump(symbols, f, sort_keys=True)
+            except BaseException as e:
+                if continue_on_error:
+                    exit_code |= 1
+                    logger.exception('Exception occurred while creating cache '
+                                     f'for {cache_name}')
+                else:
+                    raise e
+    return exit_code
 
 
 def replace_badges(lines):
@@ -281,10 +291,12 @@ def main():
     default_machine = [platform.machine()]
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--force-rolling", action='store_true')
+    parser.add_argument("-c", "---continue-on-error", action='store_true')
     parser.add_argument("--machine", nargs='*', default=default_machine)
     args = parser.parse_args()
+    exit_code = 0
     for machine in args.machine:
-        create_cache(machine, args.force_rolling)
+        exit_code |= create_cache(machine, args.force_rolling, args.continue_on_error)
         base_images, _, _ = manylinux_analysis(CACHE_PATH, machine)
         for policy_name in base_images.keys():
             distros_ = base_images[policy_name]
@@ -292,6 +304,7 @@ def main():
     update_readme()
     update_details()
     update_eol()
+    exit(exit_code)
 
 
 if __name__ == '__main__':
