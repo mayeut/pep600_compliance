@@ -12,7 +12,7 @@ class Alt(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-ALT_PACKAGES = ['which', 'python', 'python3-module-pip', 'libX11', 'libXext', 'libXrender', 'libICE', 'libSM', 'libGL', 'glib2']
+ALT_PACKAGES = ['which', 'python-strict', 'python3-module-pip', 'libX11', 'libXext', 'libXrender', 'libICE', 'libSM', 'libGL', 'glib2']
 ALT_LIST = [
     Alt('alt:sisyphus', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le'], packages=[['libnsl1'] + ALT_PACKAGES]),
     Alt('alt:p9', 'unknown', machines=['i686', 'x86_64', 'aarch64', 'ppc64le'], packages=[['libnsl1'] + ALT_PACKAGES]),

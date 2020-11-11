@@ -226,27 +226,22 @@ class Base:
             assert exit_code == 0, output[1].decode('utf-8')
             for line in output[0].decode('utf-8').strip().splitlines():
                 line = line.strip() + '/bin/python'
-                if line != python_path:
-                    result.extend(_get_dependencies(line))
-
+                result.extend(_get_dependencies(line))
+        # check python
+        exit_code, output = container.exec_run(['which', 'python'], demux=True)
+        if exit_code == 0:
+            python_path = output[0].decode('utf-8').strip()
+            result.extend(_get_dependencies(python_path))
         # check python2
-        exit_code, output = container.exec_run(
-            ['which', 'python'],
-            demux=True
-        )
+        exit_code, output = container.exec_run(['which', 'python2'], demux=True)
         if exit_code == 0:
-            python2_path = output[0].decode('utf-8').strip()
-            if python2_path != python_path:
-                result.extend(_get_dependencies(python2_path))
+            python_path = output[0].decode('utf-8').strip()
+            result.extend(_get_dependencies(python_path))
         # check python3
-        exit_code, output = container.exec_run(
-            ['which', 'python3'],
-            demux=True
-        )
+        exit_code, output = container.exec_run(['which', 'python3'], demux=True)
         if exit_code == 0:
-            python3_path = output[0].decode('utf-8').strip()
-            if python3_path != python_path:
-                result.extend(_get_dependencies(python3_path))
+            python_path = output[0].decode('utf-8').strip()
+            result.extend(_get_dependencies(python_path))
         return sorted(set(result))
 
     def run_check(self, machine):
