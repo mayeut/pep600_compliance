@@ -42,5 +42,5 @@ UBUNTU_LIST = [
     Ubuntu('ubuntu:13.10', ('EOL:2014-07-17',), machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:13.04', ('EOL:2014-01-27',), machines=['x86_64'], packages=[['python3-pip'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD),
     Ubuntu('ubuntu:12.10', ('EOL:2014-05-16',), machines=['x86_64'], packages=[['python3.4'] + UBUNTU_PACKAGES], apt_sources_update=UBUNTU_APT_OLD, python='python3.4', ppa_list=UBUNTU_PYTHON_PPA),
-    Ubuntu('ubuntu:12.04', ('EOL:2017-04-28', 'ELTS:2019-04-30',), machines=['x86_64'], packages=[['python3.5', 'curl'] + UBUNTU_PACKAGES], python='python3.5', ppa_list=UBUNTU_PYTHON_PPA),
+    Ubuntu('ubuntu:12.04', ('EOL:2017-04-28', 'ELTS:2019-04-30',), machines=['i686', 'x86_64'], packages=[['python3.5', 'curl'] + UBUNTU_PACKAGES], python='python3.5', ppa_list=UBUNTU_PYTHON_PPA),
 ]
