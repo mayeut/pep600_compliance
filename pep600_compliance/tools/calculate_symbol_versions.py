@@ -10,6 +10,9 @@ import platform
 import json
 import sys
 from elftools.elf.elffile import ELFFile
+from elftools.elf.gnuversions import GNUVerSymSection, GNUVerDefSection, GNUVerNeedSection
+from elftools.elf.dynamic import DynamicSection
+from elftools.elf.sections import SymbolTableSection
 
 
 MACHINE = platform.machine()
@@ -168,6 +171,92 @@ def _glibc_version_string_ctypes():
     return version_str
 
 
+def _symbol_version(versioninfo, nsym):
+    symbol_version = dict.fromkeys(('index', 'name', 'filename', 'hidden'))
+
+    if (not versioninfo['versym'] or nsym >= versioninfo['versym'].num_symbols()):
+        return None
+
+    symbol = versioninfo['versym'].get_symbol(nsym)
+    index = symbol.entry['ndx']
+    if not index in ('VER_NDX_LOCAL', 'VER_NDX_GLOBAL'):
+        index = int(index)
+
+        if versioninfo['type'] == 'GNU':
+            # In GNU versioning mode, the highest bit is used to
+            # store whether the symbol is hidden or not
+            if index & 0x8000:
+                index &= ~0x8000
+                symbol_version['hidden'] = True
+
+        if (versioninfo['verdef'] and index <= versioninfo['verdef'].num_versions()):
+            _, verdaux_iter = versioninfo['verdef'].get_version(index)
+            symbol_version['name'] = next(verdaux_iter).name
+        else:
+            verneed, vernaux = versioninfo['verneed'].get_version(index)
+            symbol_version['name'] = vernaux.name
+            symbol_version['filename'] = verneed.name
+
+    symbol_version['index'] = index
+    return symbol_version
+
+
+def _get_symbols(library):
+    library_path = find_library(library)
+    with open(library_path, 'rb') as f:
+        e = ELFFile(f)
+
+        version_info = {'versym': None, 'verdef': None, 'verneed': None,
+                        'type': None}
+        for section in e.iter_sections():
+            if isinstance(section, GNUVerSymSection):
+                version_info['versym'] = section
+            elif isinstance(section, GNUVerDefSection):
+                version_info['verdef'] = section
+            elif isinstance(section, GNUVerNeedSection):
+                version_info['verneed'] = section
+            elif isinstance(section, DynamicSection):
+                for tag in section.iter_tags():
+                    if tag['d_tag'] == 'DT_VERSYM':
+                        version_info['type'] = 'GNU'
+                        break
+        if not version_info['type'] and (
+                version_info['verneed'] or version_info['verdef']):
+            version_info['type'] = 'Solaris'
+
+        assert version_info['type'] == 'GNU'
+
+        symbol_tables = [(idx, s) for idx, s in enumerate(e.iter_sections()) if
+                         isinstance(s, SymbolTableSection)]
+        symbols = []
+        for section_index, section in symbol_tables:
+            for nsym, symbol in enumerate(section.iter_symbols()):
+                version_str = ''
+                version = _symbol_version(version_info, nsym)
+                if (version['name'] != symbol.name and version['index'] not in (
+                'VER_NDX_LOCAL', 'VER_NDX_GLOBAL')):
+                    if version['filename']:
+                        # external symbol
+                        version_str = '@%(name)s (%(index)i)' % version
+                    else:
+                        # internal symbol
+                        if version['hidden']:
+                            version_str = '@%(name)s' % version
+                        else:
+                            version_str = '@@%(name)s' % version
+                if symbol['st_info']['bind'] == 'STB_LOCAL':
+                    continue
+                if symbol['st_other']['visibility'] == 'STV_HIDDEN':
+                    continue
+                if symbol['st_shndx'] == 'SHN_UNDEF':
+                    continue
+                if symbol.name in {'__bss_start', '_end', '_edata', '_fini',
+                                   '_init'}:
+                    continue
+                symbols.append('{}{}'.format(symbol.name, version_str))
+    return sorted(symbols)
+
+
 def main():
     args = parser.parse_args()
     policies = load_policies(args.policyjson)
@@ -179,8 +268,9 @@ def main():
             'symbols': calculate_symbol_versions(
                 policy['lib_whitelist'],
                 policy['symbol_versions'][MACHINE],
-                args.skip_lib,
-            )
+                args.skip_lib
+            ),
+            'libz.so.1': _get_symbols('libz.so.1'),
         }, sort_keys=True)
     )
 
