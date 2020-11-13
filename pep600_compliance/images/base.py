@@ -208,6 +208,14 @@ class Base:
             return result_
 
         logger.info("Running python dependencies")
+        if self.image == 'fedora:rawhide':
+            # workaround ldd not working (in fact bash builtin 'test -r'...)
+            exit_code, output = container.exec_run(
+                ['sed', '-i', 's; test ; /usr/bin/test ;g', '/usr/bin/ldd'],
+                demux=True
+            )
+            assert exit_code == 0, output[1].decode('utf-8')
+
         result = []
         # check self.python
         exit_code, output = container.exec_run(
