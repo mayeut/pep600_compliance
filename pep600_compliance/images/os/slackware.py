@@ -13,6 +13,7 @@ class Slackware(base.Base):
 
 
 SLACKWARE_LIST = [
+    Slackware('vbatts/slackware:current', 'rolling', pkg_manager=package_manager.SLACKPKG(True), packages=[['python2', 'python3', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM', 'libglvnd']], python='python3'),
     Slackware('vbatts/slackware:14.2', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),
     Slackware('vbatts/slackware:14.1', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),
     Slackware('vbatts/slackware:14.0', 'unknown', pkg_manager=package_manager.SLACKPKG(), packages=[['python-2.7.17', 'cxxlibs', 'libX11', 'libXext', 'libXrender', 'mesa', 'libICE', 'libSM']]),

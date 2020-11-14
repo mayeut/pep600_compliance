@@ -124,7 +124,8 @@ class ZYPPER(_PackageManager):
 
 
 class SLACKPKG(_PackageManager):
-    def __init__(self):
+    def __init__(self, current=False):
+        self.current = current
         install_prefix = [
             'slackpkg', '-default_answer=yes', '-batch=on', 'install'
         ]
@@ -135,3 +136,11 @@ class SLACKPKG(_PackageManager):
 
     def install(self, container, machine, packages):
         super().install(container, machine, packages)
+
+    def _update(self, container):
+        if self.current:
+            exit_code, output = container.exec_run([
+                'touch', '/var/lib/slackpkg/current'
+            ])
+            assert exit_code == 0, output.decode('utf-8')
+        super()._update(container)

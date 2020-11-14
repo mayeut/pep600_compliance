@@ -54,6 +54,7 @@
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-7| image:: https://img.shields.io/static/v1?label=rhubi&message=7%20(EOL%3A2024-06-30)&color=green&logo=red-hat&logoColor=white
+.. |slackware-current| image:: https://img.shields.io/static/v1?label=slackware&message=current%20(rolling)&color=purple&logo=slackware&logoColor=white
 .. |slackware-14.2| image:: https://img.shields.io/static/v1?label=slackware&message=14.2%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.1| image:: https://img.shields.io/static/v1?label=slackware&message=14.1%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
@@ -198,7 +199,7 @@ If your favorite distro does not appear here:
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
    "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
-   "manylinux_2_30", "|alt-sisyphus| |fedora-31| |ubuntu-19.10|"
+   "manylinux_2_30", "|alt-sisyphus| |fedora-31| |slackware-current| |ubuntu-19.10|"
    "manylinux_2_31", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|archlinux-latest| |fedora-33| |opensuse-tumbleweed| |ubuntu-20.10| |ubuntu-rolling|"
    "manylinux_2_32_9000", "|fedora-rawhide|"

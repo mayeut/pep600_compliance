@@ -111,6 +111,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: slackware
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "slackware current", "rolling", "", ""
    "slackware 14.2", "unknown", "", ""
    "slackware 14.1", "unknown", "", ""
    "slackware 14.0", "unknown", "", ""
