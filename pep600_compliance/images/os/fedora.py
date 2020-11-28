@@ -17,8 +17,8 @@ FEDORA_LIST = [
     Fedora('fedora:rawhide', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:33', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:32', 'unknown', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
-    Fedora('fedora:31', ('EOL:2020-11-17',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     # EOL: https://fedoraproject.org/wiki/End_of_life
+    Fedora('fedora:31', ('EOL:2020-11-24',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:30', ('EOL:2020-05-26',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),
     Fedora('fedora:29', ('EOL:2019-11-26',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),  # TODO 'armv7l'
     Fedora('fedora:28', ('EOL:2019-05-28',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x'], pkg_manager=DNF(), packages=[['libnsl'] + FEDORA_PACKAGES]),  # TODO 'armv7l'
