@@ -18,7 +18,7 @@ OPENSUSE_LIST = [
     #EOL info: https://en.opensuse.org/Lifetime
     OpenSUSE('opensuse/tumbleweed:latest', 'rolling', machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[OPENSUSE_PACKAGES], version='tumbleweed'),  # TODO 's390x'
     OpenSUSE('opensuse/leap:15.2', ('EOL:2021-12-31',), machines=['x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[OPENSUSE_PACKAGES]),
-    OpenSUSE('opensuse/leap:15.1', ('EOL:2020-11-30',), machines=['x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[OPENSUSE_PACKAGES]),
+    OpenSUSE('opensuse/leap:15.1', ('EOL:2021-01-31',), machines=['x86_64', 'aarch64', 'ppc64le', 'armv7l'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:15.0', ('EOL:2019-12-03',), machines=['x86_64', 'aarch64', 'ppc64le'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/leap:42.3', ('EOL:2019-07-01',), machines=['x86_64'], packages=[OPENSUSE_PACKAGES]),
     OpenSUSE('opensuse/archive:42.2', ('EOL:2018-01-26',), machines=['x86_64'], packages=[OPENSUSE_PACKAGES]),

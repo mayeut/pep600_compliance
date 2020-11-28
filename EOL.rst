@@ -85,7 +85,7 @@ This mostly mimics Debian lifecycle.
 
    "opensuse tumbleweed", "rolling", "", ""
    "opensuse 15.2", "2021-12-31", "", ""
-   "opensuse 15.1", "2020-11-30", "", ""
+   "opensuse 15.1", "2021-01-31", "", ""
    "opensuse 15.0", "2019-12-03", "", ""
    "opensuse 42.3", "2019-07-01", "", ""
    "opensuse 42.2", "2018-01-26", "", ""
