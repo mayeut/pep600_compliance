@@ -105,7 +105,7 @@ def filter_image(distro_name, distro_version):
         if distro_version in {'testing', 'unstable', 'experimental'}:
             return True
     if distro_name == 'ubuntu':
-        if distro_version in {'rolling'}:
+        if distro_version in {'rolling', 'devel'}:
             return True
         major, minor = [int(v) for v in distro_version.split('.')]
         if major & 1:
