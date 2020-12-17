@@ -3,7 +3,7 @@ chardet==3.0.4
 docker==4.4.0
 idna==2.10
 pyelftools==0.27
-requests==2.25.0
+requests==2.25.1
 six==1.15.0
 urllib3==1.26.2
 websocket-client==0.57.0
