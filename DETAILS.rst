@@ -32,7 +32,8 @@
 .. |fedora-22| image:: https://img.shields.io/static/v1?label=fedora&message=22%20(EOL%3A2016-07-19)&color=black&logo=fedora&logoColor=white
 .. |fedora-21| image:: https://img.shields.io/static/v1?label=fedora&message=21%20(EOL%3A2015-12-01)&color=black&logo=fedora&logoColor=white
 .. |fedora-20| image:: https://img.shields.io/static/v1?label=fedora&message=20%20(EOL%3A2015-06-23)&color=black&logo=fedora&logoColor=white
-.. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-02-08)&color=yellow
+.. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
+.. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-04-23)&color=yellow
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=green&logo=python&logoColor=white
@@ -60,7 +61,7 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
-.. |ubuntu-20.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.10%20(EOL%3A2021-07-17)&color=green&logo=ubuntu&logoColor=white
+.. |ubuntu-20.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.10%20(EOL%3A2021-07-17)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-20.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.04%20(EOL%3A2025-04-30%20/%20ELTS%3A2030-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-19.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=19.10%20(EOL%3A2020-07-17)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-19.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=19.04%20(EOL%3A2020-01-23)&color=black&logo=ubuntu&logoColor=white
@@ -202,7 +203,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |slackware-current| |ubuntu-19.10|"
    "manylinux_2_31", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |archlinux-latest| |fedora-33| |opensuse-tumbleweed| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_32", "|alt-sisyphus| |archlinux-latest| |fedora-33| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_32_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -243,7 +244,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |opensuse-tumbleweed| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_32_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 

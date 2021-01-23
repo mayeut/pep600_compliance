@@ -71,7 +71,8 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: mageia
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "mageia 7", "2021-02-08", "", ""
+   "mageia cauldron", "rolling", "", ""
+   "mageia 7", "2021-04-23", "", ""
    "mageia 6", "2019-09-30", "", ""
    "mageia 5", "2017-12-31", "", ""
 .. csv-table:: manylinux
