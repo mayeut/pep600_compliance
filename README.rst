@@ -41,6 +41,7 @@
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-04-23)&color=yellow
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
+.. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=green&logo=python&logoColor=white
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=green&logo=python&logoColor=white
 .. |manylinux-2010| image:: https://img.shields.io/static/v1?label=manylinux&message=2010%20(EOL%3A2020-11-30)&color=black&logo=python&logoColor=white
 .. |manylinux-1| image:: https://img.shields.io/static/v1?label=manylinux&message=1%20(EOL%3A2017-03-31)&color=black&logo=python&logoColor=white
@@ -117,7 +118,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_17", "|centos-7| |clefos-7| |manylinux-2014|"
    "manylinux_2_19", "|ubuntu-14.04|"
    "manylinux_2_23", "|ubuntu-16.04|"
-   "manylinux_2_24", "|debian-9|"
+   "manylinux_2_24", "|debian-9| |manylinux-2_24|"
    "manylinux_2_31", "|ubuntu-20.04|"
 .. end base_images
 
@@ -145,7 +146,7 @@ If your favorite distro does not appear here:
    "manylinux_2_21", "|fedora-22| |ubuntu-15.04| |ubuntu-15.10|"
    "manylinux_2_22", "|fedora-23| |mageia-6| |opensuse-42.2| |opensuse-42.3| |photon-1.0|"
    "manylinux_2_23", "|alt-p8| |fedora-24| |slackware-14.2| |ubuntu-16.04|"
-   "manylinux_2_24", "|debian-9| |fedora-25| |ubuntu-16.10| |ubuntu-17.04|"
+   "manylinux_2_24", "|debian-9| |fedora-25| |manylinux-2_24| |ubuntu-16.10| |ubuntu-17.04|"
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |photon-2.0| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
