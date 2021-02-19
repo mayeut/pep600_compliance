@@ -147,7 +147,7 @@ class Base:
         assert exit_code == 0
         version = output.decode('utf-8').strip()
         version_url = ''
-        if version in ['2.6', '3.2', '3.3', '3.4']:
+        if version in ['2.6', '2.7', '3.2', '3.3', '3.4', '3.5']:
             version_url = version + '/'
         exit_code, output = container.exec_run([
             'bash', '-exo', 'pipefail', '-c',
