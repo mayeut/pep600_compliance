@@ -97,14 +97,15 @@ class Base:
 
         logger.info("Starting container with image %r (%r)", image_name,
                     image.id)
-        run_kwargs = {}
-        if machine == 'i686' and f'{self.name}-{self.version}' in {
-            'opensuse-tumbleweed', 'debian-testing', 'debian-unstable',
-            'debian-experimental'}:
-            run_kwargs['security_opt'] = ['seccomp:unconfined']
+        # The default seccomp is buggy in older docker / dependencies
+        # This makes recent glibc misbehave (e.g. ldd failing, ...)
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1900021
+        # https://github.com/moby/moby/pull/41353
+        # https://github.com/opencontainers/runc/issues/2151
+        # Run with 'seccomp:unconfined'
         container = client.containers.run(
             image.id, ['sleep', '10000'], detach=True, volumes=volumes,
-            **run_kwargs
+            security_opt=['seccomp:unconfined']
         )
         logger.info("Started container %s", container.id[:12])
 
@@ -208,16 +209,6 @@ class Base:
             return result_
 
         logger.info("Running python dependencies")
-        if self.image in {'fedora:rawhide', 'opensuse/tumbleweed:latest',
-                          'vbatts/slackware:current'}:
-            logger.info("Patch ldd")
-            # workaround ldd not working (in fact bash builtin 'test -r'...)
-            exit_code, output = container.exec_run(
-                ['sed', '-i', 's; test ; /usr/bin/test ;g', '/usr/bin/ldd'],
-                demux=True
-            )
-            assert exit_code == 0, output[1].decode('utf-8')
-
         result = []
         # check self.python
         exit_code, output = container.exec_run(
