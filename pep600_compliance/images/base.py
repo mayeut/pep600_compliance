@@ -208,7 +208,8 @@ class Base:
             return result_
 
         logger.info("Running python dependencies")
-        if self.image in {'fedora:rawhide', 'opensuse/tumbleweed:latest'}:
+        if self.image in {'fedora:rawhide', 'opensuse/tumbleweed:latest',
+                          'vbatts/slackware:current'}:
             logger.info("Patch ldd")
             # workaround ldd not working (in fact bash builtin 'test -r'...)
             exit_code, output = container.exec_run(
