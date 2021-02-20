@@ -204,8 +204,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |archlinux-latest| |fedora-33| |mageia-cauldron| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33", "|opensuse-tumbleweed| |slackware-current|"
+   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-cauldron| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_33", "|archlinux-latest| |opensuse-tumbleweed| |slackware-current|"
    "manylinux_2_33_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
