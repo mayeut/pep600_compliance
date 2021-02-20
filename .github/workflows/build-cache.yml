@@ -19,10 +19,11 @@ jobs:
         python-version: 3.8
         architecture: x64
     - name: Install dependencies
-      run: |
-        python -m pip install -r requirements.txt
-        docker pull multiarch/qemu-user-static
-        docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+      run: python -m pip install -r requirements.txt
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1.0.1
+      with:
+        platforms: 'arm,arm64,ppc64le,s390x'
     - name: Build cache
       run: |
         python -m pep600_compliance --machine x86_64 i686 aarch64 ppc64le s390x armv7l
