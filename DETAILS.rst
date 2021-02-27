@@ -33,7 +33,8 @@
 .. |fedora-21| image:: https://img.shields.io/static/v1?label=fedora&message=21%20(EOL%3A2015-12-01)&color=black&logo=fedora&logoColor=white
 .. |fedora-20| image:: https://img.shields.io/static/v1?label=fedora&message=20%20(EOL%3A2015-06-23)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
-.. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-04-23)&color=yellow
+.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2022-08-31)&color=green
+.. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=yellow
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
 .. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=green&logo=python&logoColor=white
@@ -205,7 +206,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-cauldron| |photon-4.0| |ubuntu-20.10| |ubuntu-rolling|"
+   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |mageia-cauldron| |photon-4.0| |ubuntu-20.10| |ubuntu-rolling|"
    "manylinux_2_33", "|archlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_33_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
@@ -248,7 +249,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-cauldron| |opensuse-tumbleweed| |photon-4.0| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |mageia-cauldron| |opensuse-tumbleweed| |photon-4.0| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_33_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
