@@ -18,8 +18,9 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2022-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-34| image:: https://img.shields.io/static/v1?label=fedora&message=34%20(unknown)&color=lightgray&logo=fedora&logoColor=white
 .. |fedora-33| image:: https://img.shields.io/static/v1?label=fedora&message=33%20(unknown)&color=lightgray&logo=fedora&logoColor=white
-.. |fedora-32| image:: https://img.shields.io/static/v1?label=fedora&message=32%20(unknown)&color=lightgray&logo=fedora&logoColor=white
+.. |fedora-32| image:: https://img.shields.io/static/v1?label=fedora&message=32%20(EOL%3A2021-05-18)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-31| image:: https://img.shields.io/static/v1?label=fedora&message=31%20(EOL%3A2020-11-24)&color=black&logo=fedora&logoColor=white
 .. |fedora-30| image:: https://img.shields.io/static/v1?label=fedora&message=30%20(EOL%3A2020-05-26)&color=black&logo=fedora&logoColor=white
 .. |fedora-29| image:: https://img.shields.io/static/v1?label=fedora&message=29%20(EOL%3A2019-11-26)&color=black&logo=fedora&logoColor=white
@@ -207,7 +208,7 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |mageia-cauldron| |photon-4.0| |ubuntu-20.10| |ubuntu-rolling|"
-   "manylinux_2_33", "|archlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_33", "|archlinux-latest| |fedora-34| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_33_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -250,7 +251,7 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |mageia-cauldron| |photon-4.0| |ubuntu-20.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33", "|opensuse-tumbleweed|"
+   "manylinux_2_33", "|fedora-34| |opensuse-tumbleweed|"
    "manylinux_2_33_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -270,7 +271,6 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |ubuntu-20.10| |ubuntu-rolling|"
-   "manylinux_2_32_9000", "|fedora-rawhide|"
    "manylinux_2_33", "|opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_ppc64le
 
@@ -288,7 +288,6 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10| |ubuntu-rolling|"
-   "manylinux_2_32_9000", "|fedora-rawhide|"
    "manylinux_2_33", "|ubuntu-devel|"
 .. end compatibility_s390x
 
@@ -307,6 +306,5 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10| |ubuntu-rolling|"
-   "manylinux_2_32_9000", "|fedora-rawhide|"
    "manylinux_2_33", "|opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_armv7l
