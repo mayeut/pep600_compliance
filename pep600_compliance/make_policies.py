@@ -71,6 +71,15 @@ def make_policies(distros, machine):
             symbols = policy['symbols']
             for symbol in distro['symbols'].keys():
                 symbols[symbol] &= set(distro['symbols'][symbol])
+    # make sure symbol policies from official policies are in the next ones
+    for i in range(0, len(result) - 1):
+        if not result[i]['official']:
+            continue
+        official_symbols = result[i]['symbols']
+        for j in range(i + 1, len(result)):
+            current_symbols = result[j]['symbols']
+            for symbol in official_symbols.keys():
+                current_symbols[symbol] |= official_symbols[symbol]
     # make sure a previous policy is compatible with the next one
     for i in range(len(result) - 1, 0, -1):
         next_symbols = result[i]['symbols']
