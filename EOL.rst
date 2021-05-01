@@ -88,6 +88,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "opensuse tumbleweed", "rolling", "", ""
+   "opensuse 15.3", "2022-12-31", "", ""
    "opensuse 15.2", "2021-12-31", "", ""
    "opensuse 15.1", "2021-01-31", "", ""
    "opensuse 15.0", "2019-12-03", "", ""
@@ -125,6 +126,7 @@ This mostly mimics Debian lifecycle.
 
    "ubuntu devel", "rolling", "", ""
    "ubuntu rolling", "rolling", "", ""
+   "ubuntu 21.04", "2022-01-31", "", ""
    "ubuntu 20.10", "2021-07-17", "", ""
    "ubuntu 20.04", "2025-04-30", "", "2030-04-30"
    "ubuntu 19.10", "2020-07-17", "", ""

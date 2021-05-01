@@ -26,6 +26,7 @@ UBUNTU_LIST = [
     # EOL info: https://wiki.ubuntu.com/Releases
     Ubuntu('ubuntu:devel', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:rolling', 'rolling', machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
+    Ubuntu('ubuntu:21.04', ('EOL:2022-01-31',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:20.10', ('EOL:2021-07-17',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:20.04', ('EOL:2025-04-30', 'ELTS:2030-04-30',), machines=['x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
     Ubuntu('ubuntu:19.10', ('EOL:2020-07-17',), machines=['i686', 'x86_64', 'aarch64', 'ppc64le', 's390x', 'armv7l'], packages=[['python3-pip'] + UBUNTU_PACKAGES]),
