@@ -193,15 +193,30 @@ class Base:
                 ['ldd', python_path_],
                 demux=True
             )
-            assert exit_code_ == 0, output_[1].decode('utf-8')
-            for line in output_[0].decode('utf-8').splitlines():
-                lib = line.strip().split()[0]
+            if exit_code_ != 0:
+                exit_code_, output_ = container.exec_run(
+                    [
+                        self.python,
+                        '/home/pep600_compliance/ldd.py',
+                        python_path_
+                    ],
+                    demux=True
+                )
+                assert exit_code == 0, output[1].decode('utf-8')
+            for line_ in output_[0].decode('utf-8').splitlines():
+                lib = line_.strip().split()[0]
                 if lib in {'linux-gate.so.1', 'linux-vdso.so.1',
                            'libpthread.so.0', 'libdl.so.2', 'libutil.so.1',
                            'libm.so.6', 'libc.so.6', 'librt.so.1',
                            'libgcc_s.so.1'}:
                     continue
                 if lib.startswith('/lib'):
+                    continue
+                if 'ld-linux' in lib or lib in ['ld64.so.2', 'ld64.so.1']:
+                    # always exclude ELF dynamic linker/loader
+                    # 'ld64.so.2' on s390x
+                    # 'ld64.so.1' on ppc64le
+                    # 'ld-linux*' on other platforms
                     continue
                 if lib.startswith('libpython'):
                     continue
