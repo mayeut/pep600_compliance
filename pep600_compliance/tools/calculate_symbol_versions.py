@@ -5,73 +5,77 @@ This should be run inside a manylinux Docker container.
 """
 import argparse
 import ctypes
+import json
 import os
 import platform
-import json
 import sys
-from elftools.elf.elffile import ELFFile
-from elftools.elf.gnuversions import GNUVerSymSection, GNUVerDefSection, GNUVerNeedSection
+
 from elftools.elf.dynamic import DynamicSection
+from elftools.elf.elffile import ELFFile
+from elftools.elf.gnuversions import (
+    GNUVerDefSection,
+    GNUVerNeedSection,
+    GNUVerSymSection,
+)
 from elftools.elf.sections import SymbolTableSection
 
-
 MACHINE = platform.machine()
-IS_64BITS = sys.maxsize > 2**32
-if MACHINE == 'x86_64' and not IS_64BITS:
-    MACHINE = 'i686'
-elif MACHINE in ['i386', 'i486', 'i586']:
-    MACHINE = 'i686'
+IS_64BITS = sys.maxsize > 2 ** 32
+if MACHINE == "x86_64" and not IS_64BITS:
+    MACHINE = "i686"
+elif MACHINE in ["i386", "i486", "i586"]:
+    MACHINE = "i686"
 
-if MACHINE == 'x86_64':
+if MACHINE == "x86_64":
     LIBRARY_PATHS = [
-        '/lib/x86_64-linux-gnu',
-        '/usr/lib/x86_64-linux-gnu',
-        '/usr/lib/x86_64-linux-gnu/mesa',
-        '/lib64',
-        '/usr/lib64'
+        "/lib/x86_64-linux-gnu",
+        "/usr/lib/x86_64-linux-gnu",
+        "/usr/lib/x86_64-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
     ]
-elif MACHINE == 'i686':
+elif MACHINE == "i686":
     LIBRARY_PATHS = [
-        '/lib/i386-linux-gnu',
-        '/usr/lib/i386-linux-gnu',
-        '/usr/lib/i386-linux-gnu/mesa',
-        '/lib',
-        '/usr/lib'
+        "/lib/i386-linux-gnu",
+        "/usr/lib/i386-linux-gnu",
+        "/usr/lib/i386-linux-gnu/mesa",
+        "/lib",
+        "/usr/lib",
     ]
-elif MACHINE == 'aarch64':
+elif MACHINE == "aarch64":
     LIBRARY_PATHS = [
-        '/lib/aarch64-linux-gnu',
-        '/usr/lib/aarch64-linux-gnu',
-        '/usr/lib/aarch64-linux-gnu/mesa',
-        '/lib64',
-        '/usr/lib64'
+        "/lib/aarch64-linux-gnu",
+        "/usr/lib/aarch64-linux-gnu",
+        "/usr/lib/aarch64-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
     ]
-elif MACHINE == 'ppc64le':
+elif MACHINE == "ppc64le":
     LIBRARY_PATHS = [
-        '/lib/powerpc64le-linux-gnu',
-        '/usr/lib/powerpc64le-linux-gnu',
-        '/usr/lib/powerpc64le-linux-gnu/mesa',
-        '/lib64',
-        '/usr/lib64'
+        "/lib/powerpc64le-linux-gnu",
+        "/usr/lib/powerpc64le-linux-gnu",
+        "/usr/lib/powerpc64le-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
     ]
-elif MACHINE == 's390x':
+elif MACHINE == "s390x":
     LIBRARY_PATHS = [
-        '/lib/s390x-linux-gnu',
-        '/usr/lib/s390x-linux-gnu',
-        '/usr/lib/s390x-linux-gnu/mesa',
-        '/lib64',
-        '/usr/lib64'
+        "/lib/s390x-linux-gnu",
+        "/usr/lib/s390x-linux-gnu",
+        "/usr/lib/s390x-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
     ]
-elif MACHINE == 'armv7l':
+elif MACHINE == "armv7l":
     LIBRARY_PATHS = [
-        '/lib/arm-linux-gnueabihf',
-        '/usr/lib/arm-linux-gnueabihf',
-        '/usr/lib/arm-linux-gnueabihf/mesa',
-        '/lib',
-        '/usr/lib'
+        "/lib/arm-linux-gnueabihf",
+        "/usr/lib/arm-linux-gnueabihf",
+        "/usr/lib/arm-linux-gnueabihf/mesa",
+        "/lib",
+        "/usr/lib",
     ]
 else:
-    raise NotImplementedError('Platform not supported')
+    raise NotImplementedError("Platform not supported")
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("policy", help="The policy name")
@@ -88,9 +92,9 @@ def load_policies(path):
 
 def choose_policy(name, policies):
     try:
-        return next(policy for policy in policies if policy['name'] == name)
+        return next(policy for policy in policies if policy["name"] == name)
     except StopIteration:
-        raise RuntimeError("Unknown policy {}".format(name))
+        raise RuntimeError(f"Unknown policy {name}")
 
 
 def find_library(library):
@@ -99,12 +103,12 @@ def find_library(library):
         if os.path.exists(path):
             return path
     else:
-        raise RuntimeError("Unknown library {}".format(library))
+        raise RuntimeError(f"Unknown library {library}")
 
 
 def versionify(version_string):
     try:
-        result = [int(n) for n in version_string.split('.')]
+        result = [int(n) for n in version_string.split(".")]
         assert len(result) <= 3
     except ValueError:
         result = [999999, 999999, 999999, version_string]
@@ -122,32 +126,28 @@ def calculate_symbol_versions(libraries, symbol_versions, skip_lib):
             raise e
         if library in skip_lib:
             raise RuntimeError(
-                "Library {} has been found but is in the skip_lib list".format(
-                    library
-                )
+                f"Library {library} has been found but is in the skip_lib list"
             )
-        with open(library_path, 'rb') as f:
-            e = ELFFile(f)
-            section = e.get_section_by_name('.gnu.version_d')
+        with open(library_path, "rb") as f:
+            elf = ELFFile(f)
+            section = elf.get_section_by_name(".gnu.version_d")
             if section:
                 for _, verdef_iter in section.iter_versions():
                     for vernaux in verdef_iter:
                         for _ in symbol_versions:
                             try:
-                                name, version = vernaux.name.split('_', 1)
+                                name, version = vernaux.name.split("_", 1)
                             except ValueError:
                                 pass
-                            if name in calculated_symbol_versions \
-                               and version != 'PRIVATE':
+                            if (
+                                name in calculated_symbol_versions
+                                and version != "PRIVATE"
+                            ):
                                 calculated_symbol_versions[name].add(version)
-    return {
-        k: sorted(v, key=versionify)
-        for k, v in calculated_symbol_versions.items()
-    }
+    return {k: sorted(v, key=versionify) for k, v in calculated_symbol_versions.items()}
 
 
-def _glibc_version_string_ctypes():
-    # type: () -> Optional[str]
+def _glibc_version_string_ctypes() -> str:
     """
     Fallback implementation of glibc_version_string using ctypes.
     """
@@ -172,89 +172,91 @@ def _glibc_version_string_ctypes():
 
 
 def _symbol_version(versioninfo, nsym):
-    symbol_version = dict.fromkeys(('index', 'name', 'filename', 'hidden'))
+    symbol_version = dict.fromkeys(("index", "name", "filename", "hidden"))
 
-    if (not versioninfo['versym'] or nsym >= versioninfo['versym'].num_symbols()):
+    if not versioninfo["versym"] or nsym >= versioninfo["versym"].num_symbols():
         return None
 
-    symbol = versioninfo['versym'].get_symbol(nsym)
-    index = symbol.entry['ndx']
-    if not index in ('VER_NDX_LOCAL', 'VER_NDX_GLOBAL'):
+    symbol = versioninfo["versym"].get_symbol(nsym)
+    index = symbol.entry["ndx"]
+    if index not in ("VER_NDX_LOCAL", "VER_NDX_GLOBAL"):
         index = int(index)
 
-        if versioninfo['type'] == 'GNU':
+        if versioninfo["type"] == "GNU":
             # In GNU versioning mode, the highest bit is used to
             # store whether the symbol is hidden or not
             if index & 0x8000:
                 index &= ~0x8000
-                symbol_version['hidden'] = True
+                symbol_version["hidden"] = True
 
-        if (versioninfo['verdef'] and index <= versioninfo['verdef'].num_versions()):
-            _, verdaux_iter = versioninfo['verdef'].get_version(index)
-            symbol_version['name'] = next(verdaux_iter).name
+        if versioninfo["verdef"] and index <= versioninfo["verdef"].num_versions():
+            _, verdaux_iter = versioninfo["verdef"].get_version(index)
+            symbol_version["name"] = next(verdaux_iter).name
         else:
-            verneed, vernaux = versioninfo['verneed'].get_version(index)
-            symbol_version['name'] = vernaux.name
-            symbol_version['filename'] = verneed.name
+            verneed, vernaux = versioninfo["verneed"].get_version(index)
+            symbol_version["name"] = vernaux.name
+            symbol_version["filename"] = verneed.name
 
-    symbol_version['index'] = index
+    symbol_version["index"] = index
     return symbol_version
 
 
 def _get_symbols(library):
     library_path = find_library(library)
-    with open(library_path, 'rb') as f:
+    with open(library_path, "rb") as f:
         e = ELFFile(f)
 
-        version_info = {'versym': None, 'verdef': None, 'verneed': None,
-                        'type': None}
+        version_info = {"versym": None, "verdef": None, "verneed": None, "type": None}
         for section in e.iter_sections():
             if isinstance(section, GNUVerSymSection):
-                version_info['versym'] = section
+                version_info["versym"] = section
             elif isinstance(section, GNUVerDefSection):
-                version_info['verdef'] = section
+                version_info["verdef"] = section
             elif isinstance(section, GNUVerNeedSection):
-                version_info['verneed'] = section
+                version_info["verneed"] = section
             elif isinstance(section, DynamicSection):
                 for tag in section.iter_tags():
-                    if tag['d_tag'] == 'DT_VERSYM':
-                        version_info['type'] = 'GNU'
+                    if tag["d_tag"] == "DT_VERSYM":
+                        version_info["type"] = "GNU"
                         break
-        if not version_info['type'] and (
-                version_info['verneed'] or version_info['verdef']):
-            version_info['type'] = 'Solaris'
+        if not version_info["type"] and (
+            version_info["verneed"] or version_info["verdef"]
+        ):
+            version_info["type"] = "Solaris"
 
-        assert version_info['type'] == 'GNU'
+        assert version_info["type"] == "GNU"
 
-        symbol_tables = [(idx, s) for idx, s in enumerate(e.iter_sections()) if
-                         isinstance(s, SymbolTableSection)]
+        symbol_tables = [
+            (idx, s)
+            for idx, s in enumerate(e.iter_sections())
+            if isinstance(s, SymbolTableSection)
+        ]
         symbols = []
         for section_index, section in symbol_tables:
             for nsym, symbol in enumerate(section.iter_symbols()):
-                version_str = ''
+                version_str = ""
                 version = _symbol_version(version_info, nsym)
-                if version['name'] == symbol.name:
+                if version["name"] == symbol.name:
                     continue
-                if version['index'] not in ('VER_NDX_LOCAL', 'VER_NDX_GLOBAL'):
-                    if version['filename']:
+                if version["index"] not in ("VER_NDX_LOCAL", "VER_NDX_GLOBAL"):
+                    if version["filename"]:
                         # external symbol
-                        version_str = '@%(name)s (%(index)i)' % version
+                        version_str = "@%(name)s (%(index)i)" % version
                     else:
                         # internal symbol
-                        if version['hidden']:
-                            version_str = '@%(name)s' % version
+                        if version["hidden"]:
+                            version_str = "@%(name)s" % version
                         else:
-                            version_str = '@@%(name)s' % version
-                if symbol['st_info']['bind'] == 'STB_LOCAL':
+                            version_str = "@@%(name)s" % version
+                if symbol["st_info"]["bind"] == "STB_LOCAL":
                     continue
-                if symbol['st_other']['visibility'] == 'STV_HIDDEN':
+                if symbol["st_other"]["visibility"] == "STV_HIDDEN":
                     continue
-                if symbol['st_shndx'] == 'SHN_UNDEF':
+                if symbol["st_shndx"] == "SHN_UNDEF":
                     continue
-                if symbol.name in {'__bss_start', '_end', '_edata', '_fini',
-                                   '_init'}:
+                if symbol.name in {"__bss_start", "_end", "_edata", "_fini", "_init"}:
                     continue
-                symbols.append('{}{}'.format(symbol.name, version_str))
+                symbols.append(f"{symbol.name}{version_str}")
     return sorted(symbols)
 
 
@@ -264,15 +266,18 @@ def main():
     policy = choose_policy(args.policy, policies)
     arch, _ = platform.architecture()
     print(
-        json.dumps({
-            'glibc_version': _glibc_version_string_ctypes(),
-            'symbols': calculate_symbol_versions(
-                policy['lib_whitelist'],
-                policy['symbol_versions'][MACHINE],
-                args.skip_lib
-            ),
-            'libz.so.1': _get_symbols('libz.so.1'),
-        }, sort_keys=True)
+        json.dumps(
+            {
+                "glibc_version": _glibc_version_string_ctypes(),
+                "symbols": calculate_symbol_versions(
+                    policy["lib_whitelist"],
+                    policy["symbol_versions"][MACHINE],
+                    args.skip_lib,
+                ),
+                "libz.so.1": _get_symbols("libz.so.1"),
+            },
+            sort_keys=True,
+        )
     )
 
 
