@@ -15,18 +15,24 @@ from pep600_compliance.images.os.rhubi import RHUBI_LIST
 from pep600_compliance.images.os.slackware import SLACKWARE_LIST
 from pep600_compliance.images.os.ubuntu import UBUNTU_LIST
 
-
-IMAGE_LIST = \
-    ALT_LIST + AMAZONLINUX_LIST + ARCHLINUX_LIST + \
-    CENTOS_LIST + CLEARLINUX_LIST + CLEFOS_LIST + \
-    DEBIAN_LIST + \
-    FEDORA_LIST + \
-    MAGEIA_LIST + MANYLINUX_LIST + \
-    OPENSUSE_LIST + ORACLELINUX_LIST + \
-    PHOTON_LIST + \
-    RHUBI_LIST + \
-    SLACKWARE_LIST + \
-    UBUNTU_LIST
+IMAGE_LIST = (
+    ALT_LIST
+    + AMAZONLINUX_LIST
+    + ARCHLINUX_LIST
+    + CENTOS_LIST
+    + CLEARLINUX_LIST
+    + CLEFOS_LIST
+    + DEBIAN_LIST
+    + FEDORA_LIST
+    + MAGEIA_LIST
+    + MANYLINUX_LIST
+    + OPENSUSE_LIST
+    + ORACLELINUX_LIST
+    + PHOTON_LIST
+    + RHUBI_LIST
+    + SLACKWARE_LIST
+    + UBUNTU_LIST
+)
 
 
 def get_images(machine):
