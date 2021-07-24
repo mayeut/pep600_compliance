@@ -25,7 +25,7 @@ class RHUBI(base.Base):
 RHUBI_LIST: list[base.Base] = [
     # EOL info: https://access.redhat.com/support/policy/updates/errata#Life_Cycle_Dates
     RHUBI(
-        "registry.access.redhat.com/ubi8/ubi:8.2",
+        "redhat/ubi8:8.4",
         ("EOL:2029-05-31",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=package_manager.DNF(),
