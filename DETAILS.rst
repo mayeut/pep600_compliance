@@ -5,6 +5,7 @@
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
+.. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(rolling)&color=purple&logo=centos&logoColor=white
 .. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2029-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-7| image:: https://img.shields.io/static/v1?label=centos&message=7%20(EOL%3A2024-06-30)&color=green&logo=centos&logoColor=white
 .. |centos-6| image:: https://img.shields.io/static/v1?label=centos&message=6%20(EOL%3A2020-11-30)&color=black&logo=centos&logoColor=white
@@ -111,6 +112,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
    "manylinux_2_31", "|ubuntu-20.04|"
+   "manylinux_2_33", "|centos-stream9|"
 .. end base_images_x86_64
 
 .. begin base_images_i686
@@ -136,6 +138,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
    "manylinux_2_31", "|ubuntu-20.04|"
+   "manylinux_2_33", "|centos-stream9|"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
@@ -207,7 +210,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |clearlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33_9000", "|fedora-rawhide|"
+   "manylinux_2_33_9000", "|centos-stream9| |fedora-rawhide|"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -250,7 +253,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33_9000", "|fedora-rawhide|"
+   "manylinux_2_33_9000", "|centos-stream9| |fedora-rawhide|"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le

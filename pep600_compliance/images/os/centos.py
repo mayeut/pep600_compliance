@@ -4,6 +4,8 @@ from pep600_compliance.images import base, package_manager
 class CentOS(base.Base):
     def __init__(self, image, eol, pkg_manager, packages, machines):
         _, version = image.split(":")
+        if "-development" in version:
+            version = version.replace("-development", "")
         self._packages = packages
         super().__init__(image, "centos", version, eol, pkg_manager, machines)
 
@@ -28,6 +30,27 @@ CENTOS_YUM_OLD = [
 ]
 
 CENTOS_LIST: list[base.Base] = [
+    CentOS(
+        "quay.io/centos/centos:stream9-development",
+        "rolling",
+        machines=["x86_64", "aarch64"],  # TODO "ppc64le", "s390x"
+        pkg_manager=package_manager.DNF(),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+            ]
+        ],
+    ),
     CentOS(
         "centos:8",
         ("EOL:2029-05-31",),
