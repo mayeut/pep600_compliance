@@ -6,4 +6,4 @@ pyelftools==0.27
 requests==2.26.0
 six==1.16.0
 urllib3==1.26.6
-websocket-client==1.1.1
+websocket-client==1.2.0
