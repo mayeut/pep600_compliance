@@ -112,7 +112,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
    "manylinux_2_31", "|ubuntu-20.04|"
-   "manylinux_2_33", "|centos-stream9|"
+   "manylinux_2_34", "|centos-stream9|"
 .. end base_images_x86_64
 
 .. begin base_images_i686
@@ -138,7 +138,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
    "manylinux_2_31", "|ubuntu-20.04|"
-   "manylinux_2_33", "|centos-stream9|"
+   "manylinux_2_34", "|centos-stream9|"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
@@ -209,9 +209,8 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|archlinux-latest| |clearlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33_9000", "|centos-stream9|"
-   "manylinux_2_34", "|fedora-rawhide|"
+   "manylinux_2_33", "|archlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |fedora-rawhide|"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -254,8 +253,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_33_9000", "|centos-stream9|"
-   "manylinux_2_34", "|fedora-rawhide|"
+   "manylinux_2_34", "|centos-stream9| |fedora-rawhide|"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
