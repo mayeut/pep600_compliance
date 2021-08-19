@@ -67,6 +67,12 @@ DEBIAN_LIST: list[base.Base] = [
     ),
     # LTS: https://wiki.debian.org/LTS
     Debian(
+        "debian:11-slim",
+        ("EOL:2024-08-14", "LTS:2026-06-30"),
+        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        packages=[DEBIAN_PACKAGES],
+    ),
+    Debian(
         "debian:10-slim",
         ("EOL:2022-07-31", "LTS:2024-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],

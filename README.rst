@@ -19,6 +19,7 @@
 .. |debian-experimental| image:: https://img.shields.io/static/v1?label=debian&message=experimental%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-unstable| image:: https://img.shields.io/static/v1?label=debian&message=unstable%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-testing| image:: https://img.shields.io/static/v1?label=debian&message=testing%20(rolling)&color=purple&logo=debian&logoColor=white
+.. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-10| image:: https://img.shields.io/static/v1?label=debian&message=10%20(EOL%3A2022-07-31%20/%20LTS%3A2024-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2022-06-30)&color=red&logo=debian&logoColor=white
@@ -125,7 +126,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_19", "|ubuntu-14.04|"
    "manylinux_2_23", "|ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
-   "manylinux_2_31", "|ubuntu-20.04|"
+   "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
 .. end base_images
 
@@ -160,7 +161,7 @@ If your favorite distro does not appear here:
    "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
-   "manylinux_2_31", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
+   "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |fedora-rawhide|"
