@@ -164,7 +164,8 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |fedora-rawhide|"
+   "manylinux_2_34", "|centos-stream9| |clearlinux-latest|"
+   "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility
 
 Known compatibility issues
