@@ -201,7 +201,7 @@ class Base:
                 self.python,
                 "/home/pep600_compliance/calculate_symbol_versions.py",
                 "manylinux_2_17",
-                "/home/pep600_compliance/policy.json",
+                "/home/pep600_compliance/manylinux-policy.json",
             ]
             + self.skip_lib,
             demux=True,

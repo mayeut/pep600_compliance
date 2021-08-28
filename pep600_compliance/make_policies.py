@@ -7,7 +7,7 @@ from pep600_compliance.images import get_images
 
 MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l"}
 HERE = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(HERE, "tools", "policy.json"), "rb") as f:
+with open(os.path.join(HERE, "tools", "manylinux-policy.json"), "rb") as f:
     OFFICIAL_POLICIES = json.load(f)
 
 
