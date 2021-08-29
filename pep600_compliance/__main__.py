@@ -72,7 +72,7 @@ def create_cache(machine, force_rolling, continue_on_error):
                 if continue_on_error:
                     exit_code |= 1
                     logger.exception(
-                        "Exception occurred while creating cache " f"for {cache_name}"
+                        f"Exception occurred while creating cache for {cache_name}"
                     )
                 else:
                     raise e
