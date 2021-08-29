@@ -160,7 +160,7 @@ class Base:
         version = output.decode("utf-8").strip()
         version_url = ""
         if version in ["2.6", "2.7", "3.2", "3.3", "3.4", "3.5"]:
-            version_url = version + "/"
+            version_url = f"pip/{version}/"
         exit_code, output = container.exec_run(
             [
                 "bash",
@@ -196,11 +196,15 @@ class Base:
 
     def _get_symbols(self, container):
         logger.info("Running symbol script")
+        if self.name == "manylinux" and self.version == "1":
+            policy = "manylinux_2_5"
+        else:
+            policy = "manylinux_2_17"
         exit_code, output = container.exec_run(
             [
                 self.python,
                 "/home/pep600_compliance/calculate_symbol_versions.py",
-                "manylinux_2_17",
+                policy,
                 "/home/pep600_compliance/manylinux-policy.json",
             ]
             + self.skip_lib,
