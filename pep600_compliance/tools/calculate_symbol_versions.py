@@ -94,7 +94,7 @@ def choose_policy(name, policies):
     try:
         return next(policy for policy in policies if policy["name"] == name)
     except StopIteration:
-        raise RuntimeError(f"Unknown policy {name}")
+        raise RuntimeError("Unknown policy {}".format(name))
 
 
 def find_library(library):
@@ -103,13 +103,13 @@ def find_library(library):
         if os.path.exists(path):
             return path
     else:
-        raise RuntimeError(f"Unknown library {library}")
+        raise RuntimeError("Unknown library {}".format(library))
 
 
 def versionify(version_string):
     try:
         result = [int(n) for n in version_string.split(".")]
-        assert len(result) <= 3
+        assert len(result) <= 4
     except ValueError:
         result = [999999, 999999, 999999, version_string]
     return result
@@ -126,7 +126,7 @@ def calculate_symbol_versions(libraries, symbol_versions, skip_lib):
             raise e
         if library in skip_lib:
             raise RuntimeError(
-                f"Library {library} has been found but is in the skip_lib list"
+                "Library {} has been found but is in the skip_lib list".format(library)
             )
         with open(library_path, "rb") as f:
             elf = ELFFile(f)
@@ -147,7 +147,7 @@ def calculate_symbol_versions(libraries, symbol_versions, skip_lib):
     return {k: sorted(v, key=versionify) for k, v in calculated_symbol_versions.items()}
 
 
-def _glibc_version_string_ctypes() -> str:
+def _glibc_version_string_ctypes():
     """
     Fallback implementation of glibc_version_string using ctypes.
     """
@@ -256,7 +256,7 @@ def _get_symbols(library):
                     continue
                 if symbol.name in {"__bss_start", "_end", "_edata", "_fini", "_init"}:
                     continue
-                symbols.append(f"{symbol.name}{version_str}")
+                symbols.append("{}{}".format(symbol.name, version_str))
     return sorted(symbols)
 
 
