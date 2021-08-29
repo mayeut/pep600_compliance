@@ -33,7 +33,10 @@
          "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0",
          "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2",
          "libz.so.1"
-     ]},
+     ],
+     "blacklist": {
+       "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "bi_windup", "crc32_vpmsum", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "zcalloc", "zcfree"]
+      }},
     {"name": "manylinux_2_12",
      "aliases": ["manylinux2010"],
      "priority": 90,
@@ -63,7 +66,10 @@
          "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2",
          "libexpat.so.1",
          "libz.so.1"
-     ]},
+     ],
+     "blacklist": {
+       "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "bi_windup", "crc32_vpmsum", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "zcalloc", "zcfree"]
+      }},
     {"name": "manylinux_2_17",
      "aliases": ["manylinux2014"],
      "priority": 80,
@@ -128,7 +134,10 @@
          "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2",
          "libexpat.so.1",
          "libz.so.1"
-     ]},
+     ],
+     "blacklist": {
+       "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "bi_windup", "crc32_vpmsum", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "zcalloc", "zcfree"]
+      }},
     {"name": "manylinux_2_24",
      "aliases": [],
      "priority": 70,
@@ -186,7 +195,10 @@
          "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2",
          "libexpat.so.1",
          "libz.so.1"
-     ]},
+     ],
+     "blacklist": {
+       "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "bi_windup", "crc32_vpmsum", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "zcalloc", "zcfree"]
+      }},
     {"name": "manylinux_2_27",
      "aliases": [],
      "priority": 65,
@@ -244,5 +256,8 @@
          "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2",
          "libexpat.so.1",
          "libz.so.1"
-     ]}
+     ],
+     "blacklist": {
+       "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "bi_windup", "crc32_vpmsum", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "zcalloc", "zcfree"]
+      }}
 ]
