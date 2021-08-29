@@ -24,6 +24,16 @@ MAGEIA_PACKAGES = [
     "libice",
     "libsm",
 ]
+MAGEIA_ARCHIVE = "https://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia-archive"
+MAGEIA6_RUNONCE = [
+    "sed -i 's;mirrorlist=.*;#mirrorlist=;g' /etc/yum.repos.d/mageia-x86_64.repo",
+    f"sed -i 's;#baseurl=https://mirrors.kernel.org/mageia;baseurl={MAGEIA_ARCHIVE};g' "
+    "/etc/yum.repos.d/mageia-x86_64.repo",
+]
+MAGEIA5_RUNONCE = [
+    f"sed -i 's;mirrorlist:.*;mirrorlist: {MAGEIA_ARCHIVE}/distrib/5/x86_64;g' "
+    "/etc/urpmi/urpmi.cfg",
+]
 MAGEIA_LIST: list[base.Base] = [
     Mageia(
         "mageia:cauldron",
@@ -51,14 +61,14 @@ MAGEIA_LIST: list[base.Base] = [
         "mageia:6",
         ("EOL:2019-09-30",),
         machines=["x86_64"],
-        pkg_manager=package_manager.DNF(),
+        pkg_manager=package_manager.DNF(run_once=MAGEIA6_RUNONCE),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
     Mageia(
         "mageia:5",
         ("EOL:2017-12-31",),
         machines=["x86_64"],
-        pkg_manager=package_manager.URPM(),
+        pkg_manager=package_manager.URPM(run_once=MAGEIA5_RUNONCE),
         packages=[MAGEIA_PACKAGES],
     ),
 ]

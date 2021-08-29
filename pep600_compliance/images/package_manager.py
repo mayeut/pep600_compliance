@@ -70,8 +70,17 @@ class APT(_PackageManager):
 
 
 class DNF(_PackageManager):
-    def __init__(self):
+    def __init__(self, run_once=[]):
+        self._run_once = run_once
         super().__init__(["dnf", "-y", "install"])
+
+    def install(self, container, machine, packages):
+        for command in self._run_once:
+            exit_code, output = container.exec_run(
+                command, environment=self._environment
+            )
+            assert exit_code == 0, output.decode("utf-8")
+        super().install(container, machine, packages)
 
 
 class MICRODNF(_PackageManager):
@@ -97,8 +106,17 @@ class TDNF(_PackageManager):
 
 
 class URPM(_PackageManager):
-    def __init__(self):
+    def __init__(self, run_once=[]):
+        self._run_once = run_once
         super().__init__(["urpmi", "--auto", "--no-recommends"])
+
+    def install(self, container, machine, packages):
+        for command in self._run_once:
+            exit_code, output = container.exec_run(
+                command, environment=self._environment
+            )
+            assert exit_code == 0, output.decode("utf-8")
+        super().install(container, machine, packages)
 
 
 class YUM(_PackageManager):
