@@ -100,6 +100,7 @@ UBUNTU_LIST: list[base.Base] = [
         ("EOL:2020-07-17",),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python3-pip"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
         "ubuntu:19.04",
@@ -215,6 +216,7 @@ UBUNTU_LIST: list[base.Base] = [
         ),
         machines=["i686", "x86_64"],
         packages=[["python3.5", "curl"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
         python="python3.5",
         ppa_list=UBUNTU_PYTHON_PPA,
     ),
