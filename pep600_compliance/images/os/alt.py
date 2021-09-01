@@ -38,6 +38,12 @@ ALT_LIST: list[base.Base] = [
         packages=[["libnsl1"] + ALT_PACKAGES],
     ),
     Alt(
+        "alt:p10",
+        "unknown",
+        machines=["i686", "x86_64", "aarch64", "ppc64le"],
+        packages=[["libnsl1"] + ALT_PACKAGES],
+    ),
+    Alt(
         "alt:p9",
         "unknown",
         machines=["i686", "x86_64", "aarch64", "ppc64le"],

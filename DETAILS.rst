@@ -1,5 +1,6 @@
 .. begin distro_badges
 .. |alt-sisyphus| image:: https://img.shields.io/static/v1?label=alt&message=sisyphus%20(rolling)&color=purple
+.. |alt-p10| image:: https://img.shields.io/static/v1?label=alt&message=p10%20(unknown)&color=lightgray
 .. |alt-p9| image:: https://img.shields.io/static/v1?label=alt&message=p9%20(unknown)&color=lightgray
 .. |alt-p8| image:: https://img.shields.io/static/v1?label=alt&message=p8%20(unknown)&color=lightgray
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
@@ -210,7 +211,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
+   "manylinux_2_32", "|alt-p10| |alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34", "|centos-stream9| |clearlinux-latest|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
@@ -235,7 +236,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|ubuntu-19.04|"
    "manylinux_2_30", "|ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable|"
-   "manylinux_2_32", "|alt-sisyphus|"
+   "manylinux_2_32", "|alt-p10| |alt-sisyphus|"
    "manylinux_2_33", "|opensuse-tumbleweed|"
 .. end compatibility_i686
 
@@ -254,7 +255,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
+   "manylinux_2_32", "|alt-p10| |alt-sisyphus| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
@@ -275,7 +276,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |debian-experimental| |debian-testing| |debian-unstable| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-sisyphus| |fedora-33| |ubuntu-20.10|"
+   "manylinux_2_32", "|alt-p10| |alt-sisyphus| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|opensuse-tumbleweed| |ubuntu-21.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_ppc64le
 
