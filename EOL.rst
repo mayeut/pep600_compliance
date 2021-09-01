@@ -15,6 +15,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "alt sisyphus", "rolling", "", ""
+   "alt p10", "unknown", "", ""
    "alt p9", "unknown", "", ""
    "alt p8", "unknown", "", ""
 .. csv-table:: amazonlinux
