@@ -9,7 +9,7 @@ import sys
 import urllib.parse
 
 from pep600_compliance.images import get_images
-from pep600_compliance.make_policies import manylinux_analysis
+from pep600_compliance.make_policies import load_distros, manylinux_analysis
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -282,6 +282,45 @@ def update_eol():
         f.write(content)
 
 
+def versionify(version_string):
+    try:
+        result = [int(n) for n in version_string.split(".")]
+        assert len(result) <= 4
+    except ValueError:
+        result = [999999, 999999, 999999, version_string]
+    return result
+
+
+def print_zlib_blacklist():
+    zlib_symbols = {}
+    for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
+        cache_path = os.path.join(CACHE_PATH, machine)
+        distros = load_distros(cache_path)
+        for distro in distros:
+            zlib_versions = distro["symbols"]["ZLIB"]
+            zlib_version = "-1" if len(zlib_versions) == 0 else zlib_versions[-1]
+            symbols = [symbol.split("@")[0] for symbol in distro["libz.so.1"]]
+            if zlib_version not in zlib_symbols:
+                zlib_symbols[zlib_version] = {
+                    "union": set(symbols),
+                    "inter": set(symbols),
+                }
+            else:
+                zlib_symbols[zlib_version]["union"] |= set(symbols)
+                zlib_symbols[zlib_version]["inter"] &= set(symbols)
+    keys = list(zlib_symbols.keys())
+    keys.sort(key=versionify, reverse=True)
+    for i in range(len(keys) - 1):
+        zlib_symbols[keys[i + 1]]["inter"] &= zlib_symbols[keys[i]]["inter"]
+    keys.sort(key=versionify)
+    for i in range(len(keys) - 1):
+        zlib_symbols[keys[i + 1]]["union"] |= zlib_symbols[keys[i]]["union"]
+    blacklist = set()
+    for key in keys:
+        blacklist |= zlib_symbols[key]["union"] - zlib_symbols[key]["inter"]
+    print(f"zlib blacklist: {sorted(blacklist)}")
+
+
 def main():
     default_machine = [platform.machine()]
     parser = argparse.ArgumentParser()
@@ -299,6 +338,7 @@ def main():
     update_readme()
     update_details()
     update_eol()
+    print_zlib_blacklist()
     exit(exit_code)
 
 
