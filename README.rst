@@ -125,7 +125,6 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_15", "|ubuntu-12.04|"
    "manylinux_2_17", "|centos-7| |clefos-7| |manylinux-2014|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|centos-stream9|"
 .. end base_images
 
 Distro compatibility
@@ -161,8 +160,8 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|archlinux-latest| |fedora-34| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-rolling|"
-   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |ubuntu-devel|"
+   "manylinux_2_33", "|archlinux-latest| |fedora-34| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-rolling|"
+   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |mageia-cauldron| |ubuntu-devel|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility
 
