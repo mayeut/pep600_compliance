@@ -34,20 +34,28 @@ FEDORA_LIST: list[base.Base] = [
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
     Fedora(
-        "fedora:34",
+        "fedora:35",
         "unknown",
         machines=["x86_64", "aarch64"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
     Fedora(
-        "fedora:33",
-        "unknown",
-        machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        "fedora:34",
+        # https://fedorapeople.org/groups/schedule/f-36/f-36-key-tasks.html
+        ("EOL:2022-05-17",),
+        machines=["x86_64", "aarch64"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
     # EOL: https://fedoraproject.org/wiki/End_of_life
+    Fedora(
+        "fedora:33",
+        ("EOL:2021-11-16",),
+        machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        pkg_manager=DNF(),
+        packages=[["libnsl"] + FEDORA_PACKAGES],
+    ),
     Fedora(
         "fedora:32",
         ("EOL:2021-05-18",),

@@ -26,8 +26,9 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2022-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-35| image:: https://img.shields.io/static/v1?label=fedora&message=35%20(unknown)&color=lightgray&logo=fedora&logoColor=white
 .. |fedora-34| image:: https://img.shields.io/static/v1?label=fedora&message=34%20(unknown)&color=lightgray&logo=fedora&logoColor=white
-.. |fedora-33| image:: https://img.shields.io/static/v1?label=fedora&message=33%20(unknown)&color=lightgray&logo=fedora&logoColor=white
+.. |fedora-33| image:: https://img.shields.io/static/v1?label=fedora&message=33%20(EOL%3A2021-11-16)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-32| image:: https://img.shields.io/static/v1?label=fedora&message=32%20(EOL%3A2021-05-18)&color=black&logo=fedora&logoColor=white
 .. |fedora-31| image:: https://img.shields.io/static/v1?label=fedora&message=31%20(EOL%3A2020-11-24)&color=black&logo=fedora&logoColor=white
 .. |fedora-30| image:: https://img.shields.io/static/v1?label=fedora&message=30%20(EOL%3A2020-05-26)&color=black&logo=fedora&logoColor=white
@@ -161,7 +162,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |fedora-34| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04| |ubuntu-rolling|"
-   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |mageia-cauldron| |ubuntu-devel|"
+   "manylinux_2_34", "|centos-stream9| |clearlinux-latest| |fedora-35| |mageia-cauldron| |ubuntu-devel|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility
 
