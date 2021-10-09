@@ -58,7 +58,7 @@ This mostly mimics Debian lifecycle.
 
    "fedora rawhide", "rolling", "", ""
    "fedora 35", "unknown", "", ""
-   "fedora 34", "unknown", "", ""
+   "fedora 34", "2022-05-17", "", ""
    "fedora 33", "2021-11-16", "", ""
    "fedora 32", "2021-05-18", "", ""
    "fedora 31", "2020-11-24", "", ""
