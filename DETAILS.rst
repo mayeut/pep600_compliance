@@ -298,6 +298,6 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |ubuntu-20.04|"
    "manylinux_2_32", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
-   "manylinux_2_33", "|ubuntu-21.04| |ubuntu-rolling|"
-   "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel|"
+   "manylinux_2_33", "|ubuntu-21.04|"
+   "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_armv7l
