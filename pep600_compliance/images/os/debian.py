@@ -35,7 +35,6 @@ DEBIAN_APT_OLD = [
     ["sed", "-i", "s,.*updates.*,,g", "/etc/apt/sources.list"],
 ]
 DEBIAN_PACKAGES = [
-    "python",
     "python3-pip",
     "libx11-6",
     "libxext6",
@@ -70,32 +69,32 @@ DEBIAN_LIST: list[base.Base] = [
         "debian:11-slim",
         ("EOL:2024-08-14", "LTS:2026-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
-        packages=[DEBIAN_PACKAGES],
+        packages=[DEBIAN_PACKAGES + ["python"]],
     ),
     Debian(
         "debian:10-slim",
         ("EOL:2022-07-31", "LTS:2024-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
-        packages=[DEBIAN_PACKAGES],
+        packages=[DEBIAN_PACKAGES + ["python"]],
     ),
     Debian(
         "debian:9-slim",
         ("EOL:2020-07-05", "LTS:2022-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
-        packages=[DEBIAN_PACKAGES],
+        packages=[DEBIAN_PACKAGES + ["python"]],
     ),
     # ELTS: https://wiki.debian.org/LTS/Extended
     Debian(
         "debian:8-slim",
         ("EOL:2018-06-06", "LTS:2020-06-30", "ELTS:2022-06-30"),
         machines=["i686", "x86_64", "armv7l"],
-        packages=[DEBIAN_PACKAGES],
+        packages=[DEBIAN_PACKAGES + ["python"]],
     ),  # TODO 'aarch64', 'ppc64le', 's390x'
     Debian(
         "debian:7-slim",
         ("EOL:2016-04-26", "LTS:2018-05-31", "ELTS:2020-06-30"),
         machines=["i686", "x86_64", "armv7l"],
-        packages=[DEBIAN_PACKAGES + ["curl"]],
+        packages=[DEBIAN_PACKAGES + ["python", "curl"]],
         apt_sources_update=DEBIAN_APT_OLD,
     ),
 ]
