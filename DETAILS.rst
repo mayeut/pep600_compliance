@@ -195,8 +195,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|archlinux-latest| |fedora-34| |slackware-current| |ubuntu-21.04|"
+   "manylinux_2_32", "|alt-p10| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
+   "manylinux_2_33", "|archlinux-latest| |debian-experimental| |fedora-34| |slackware-current| |ubuntu-21.04|"
    "manylinux_2_34", "|alt-sisyphus| |centos-stream9| |clearlinux-latest| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
@@ -220,7 +220,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|ubuntu-19.04|"
    "manylinux_2_30", "|ubuntu-19.10|"
    "manylinux_2_31", "|debian-11|"
-   "manylinux_2_32", "|alt-p10| |debian-experimental| |debian-testing| |debian-unstable|"
+   "manylinux_2_32", "|alt-p10| |debian-testing| |debian-unstable|"
+   "manylinux_2_33", "|debian-experimental|"
    "manylinux_2_34", "|alt-sisyphus| |opensuse-tumbleweed|"
 .. end compatibility_i686
 
@@ -239,8 +240,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
+   "manylinux_2_32", "|alt-p10| |debian-testing| |debian-unstable| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
+   "manylinux_2_33", "|debian-experimental| |fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|alt-sisyphus| |centos-stream9| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
@@ -260,8 +261,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
-   "manylinux_2_33", "|opensuse-tumbleweed| |ubuntu-21.04|"
+   "manylinux_2_32", "|alt-p10| |debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
+   "manylinux_2_33", "|debian-experimental| |opensuse-tumbleweed| |ubuntu-21.04|"
    "manylinux_2_34", "|alt-sisyphus| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_ppc64le
 
@@ -278,8 +279,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
-   "manylinux_2_33", "|ubuntu-21.04|"
+   "manylinux_2_32", "|debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
+   "manylinux_2_33", "|debian-experimental| |ubuntu-21.04|"
    "manylinux_2_34", "|ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_s390x
 
@@ -297,7 +298,7 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|ubuntu-19.04|"
    "manylinux_2_30", "|ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |ubuntu-20.04|"
-   "manylinux_2_32", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
-   "manylinux_2_33", "|ubuntu-21.04|"
+   "manylinux_2_32", "|debian-testing| |debian-unstable| |fedora-33| |ubuntu-20.10|"
+   "manylinux_2_33", "|debian-experimental| |ubuntu-21.04|"
    "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_armv7l
