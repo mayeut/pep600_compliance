@@ -161,8 +161,8 @@ If your favorite distro does not appear here:
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |debian-testing| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|archlinux-latest| |debian-experimental| |debian-unstable| |fedora-34| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04|"
+   "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
+   "manylinux_2_33", "|archlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |opensuse-tumbleweed| |slackware-current| |ubuntu-21.04|"
    "manylinux_2_34", "|alt-sisyphus| |centos-stream9| |clearlinux-latest| |fedora-35| |mageia-cauldron| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility
