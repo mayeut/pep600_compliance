@@ -124,7 +124,6 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_12", "|centos-6| |manylinux-2010|"
    "manylinux_2_15", "|ubuntu-12.04|"
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
-   "manylinux_2_28", "|debian-10|"
    "manylinux_2_31", "|debian-11|"
 .. end base_images_i686
 
@@ -141,7 +140,6 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
-   "manylinux_2_28", "|centos-8| |debian-10|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
 .. end base_images_ppc64le
 
@@ -150,7 +148,6 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "|clefos-7| |manylinux-2014|"
-   "manylinux_2_28", "|debian-10|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
 .. end base_images_s390x
 
@@ -159,7 +156,6 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_13", "|debian-7|"
-   "manylinux_2_28", "|debian-10|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
 .. end base_images_armv7l
 

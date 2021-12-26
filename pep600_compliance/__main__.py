@@ -9,7 +9,11 @@ import sys
 import urllib.parse
 
 from pep600_compliance.images import get_images
-from pep600_compliance.make_policies import load_distros, manylinux_analysis
+from pep600_compliance.make_policies import (
+    load_distros,
+    make_policies,
+    manylinux_analysis,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -291,7 +295,7 @@ def versionify(version_string):
     return result
 
 
-def print_zlib_blacklist():
+def get_zlib_blacklist():
     zlib_symbols = {}
     for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
         cache_path = os.path.join(CACHE_PATH, machine)
@@ -318,7 +322,59 @@ def print_zlib_blacklist():
     blacklist = set()
     for key in keys:
         blacklist |= zlib_symbols[key]["union"] - zlib_symbols[key]["inter"]
-    print(f"zlib blacklist: {sorted(blacklist)}")
+    return sorted(blacklist)
+
+
+def print_zlib_blacklist():
+    print(f"zlib blacklist: {get_zlib_blacklist()}")
+
+
+def create_policy(glibc_version):
+    machines = ["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"]
+    policy = {
+        "name": f"manylinux_{glibc_version.replace('.', '_')}",
+        "aliases": [],
+        "priority": 64,
+        "symbol_versions": {},
+        "lib_whitelist": [
+            "libgcc_s.so.1",
+            "libstdc++.so.6",
+            "libm.so.6",
+            "libdl.so.2",
+            "librt.so.1",
+            "libc.so.6",
+            "libnsl.so.1",
+            "libutil.so.1",
+            "libpthread.so.0",
+            "libX11.so.6",
+            "libXext.so.6",
+            "libXrender.so.1",
+            "libICE.so.6",
+            "libSM.so.6",
+            "libGL.so.1",
+            "libgobject-2.0.so.0",
+            "libgthread-2.0.so.0",
+            "libglib-2.0.so.0",
+            "libresolv.so.2",
+            "libexpat.so.1",
+            "libz.so.1",
+        ],
+        "blacklist": {
+            "libz.so.1": get_zlib_blacklist(),
+        },
+    }
+    for machine in machines:
+        cache_path = os.path.join(CACHE_PATH, machine)
+        distros = load_distros(cache_path)
+        policies = make_policies(distros, machine)
+        machine_policy = next(
+            policy_ for policy_ in policies if policy_["glibc_version"] == glibc_version
+        )
+        policy["symbol_versions"][machine] = {
+            k: sorted(machine_policy["symbols"][k], key=lambda x: versionify(x))
+            for k in sorted(machine_policy["symbols"].keys())
+        }
+    print(json.dumps(policy))
 
 
 def main():
@@ -338,7 +394,8 @@ def main():
     update_readme()
     update_details()
     update_eol()
-    print_zlib_blacklist()
+    # print_zlib_blacklist()
+    # create_policy("2.31")
     exit(exit_code)
 
 
