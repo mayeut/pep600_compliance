@@ -278,7 +278,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-21.04|"
-   "manylinux_2_34", "|ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_s390x
 
 .. begin compatibility_armv7l

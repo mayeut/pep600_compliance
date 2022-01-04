@@ -33,10 +33,10 @@ OPENSUSE_LIST: list[base.Base] = [
     OpenSUSE(
         "opensuse/tumbleweed:latest",
         "rolling",
-        machines=["i686", "x86_64", "aarch64", "ppc64le", "armv7l"],
+        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[OPENSUSE_PACKAGES],
         version="tumbleweed",
-    ),  # TODO 's390x'
+    ),
     OpenSUSE(
         "opensuse/leap:15.4",
         ("EOL:2023-12-31",),
