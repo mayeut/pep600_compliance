@@ -38,8 +38,14 @@ OPENSUSE_LIST: list[base.Base] = [
         version="tumbleweed",
     ),  # TODO 's390x'
     OpenSUSE(
+        "opensuse/leap:15.4",
+        ("EOL:2023-12-31",),
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        packages=[OPENSUSE_PACKAGES],
+    ),
+    OpenSUSE(
         "opensuse/leap:15.3",
-        ("EOL:2022-12-31",),
+        ("EOL:2022-11-30",),
         machines=["x86_64", "aarch64", "ppc64le"],
         packages=[OPENSUSE_PACKAGES],
     ),
@@ -51,7 +57,7 @@ OPENSUSE_LIST: list[base.Base] = [
     ),
     OpenSUSE(
         "opensuse/leap:15.1",
-        ("EOL:2021-01-31",),
+        ("EOL:2021-02-02",),
         machines=["x86_64", "aarch64", "ppc64le", "armv7l"],
         packages=[OPENSUSE_PACKAGES],
     ),
