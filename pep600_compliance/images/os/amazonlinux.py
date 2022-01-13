@@ -14,6 +14,29 @@ class AmazonLinux(base.Base):
 
 
 AMAZONLINUX_LIST: list[base.Base] = [
+    # https://github.com/amazonlinux/amazon-linux-2022#notable-features-of-amazon-linux-2022
+    AmazonLinux(
+        "public.ecr.aws/amazonlinux/amazonlinux:2022",
+        ("EOL:2027-01-30",),
+        machines=["x86_64", "aarch64"],
+        pkg_manager=package_manager.DNF(),
+        packages=[
+            [
+                "which",
+                "python",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+            ]
+        ],
+    ),
     # standard eol: https://aws.amazon.com/fr/amazon-linux-2/faqs/
     AmazonLinux(
         "amazonlinux:2",

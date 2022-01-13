@@ -3,6 +3,7 @@
 .. |alt-p10| image:: https://img.shields.io/static/v1?label=alt&message=p10%20(unknown)&color=lightgray
 .. |alt-p9| image:: https://img.shields.io/static/v1?label=alt&message=p9%20(unknown)&color=lightgray
 .. |alt-p8| image:: https://img.shields.io/static/v1?label=alt&message=p8%20(unknown)&color=lightgray
+.. |amazonlinux-2022| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2022%20(EOL%3A2027-01-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
@@ -194,7 +195,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|archlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |slackware-current| |ubuntu-21.04|"
-   "manylinux_2_34", "|alt-sisyphus| |centos-stream9| |clearlinux-latest| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|alt-sisyphus| |amazonlinux-2022| |centos-stream9| |clearlinux-latest| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -239,7 +240,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|alt-sisyphus| |centos-stream9| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|alt-sisyphus| |amazonlinux-2022| |centos-stream9| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_34_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
