@@ -20,9 +20,9 @@ idna==3.3 \
     --hash=sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff \
     --hash=sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d
     # via requests
-pyelftools==0.27 \
-    --hash=sha256:5609aa6da1123fccfae2e8431a67b4146aa7fad5b3889f808df12b110f230937 \
-    --hash=sha256:cde854e662774c5457d688ca41615f6594187ba7067af101232df889a6b7a66b
+pyelftools==0.28 \
+    --hash=sha256:1509d30756a14a8c9a6670778144fb9a04b311751ddac019dcc0c2f28da03ccc \
+    --hash=sha256:53e5609cac016471d40bd88dc410cd90755942c25e58a61021cfdf7abdfeacff
     # via -r requirements.in
 requests==2.27.1 \
     --hash=sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61 \
