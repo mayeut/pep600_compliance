@@ -1,3 +1,4 @@
+from pep600_compliance.images.os.almalinux import ALMALINUX_LIST
 from pep600_compliance.images.os.alt import ALT_LIST
 from pep600_compliance.images.os.amazonlinux import AMAZONLINUX_LIST
 from pep600_compliance.images.os.archlinux import ARCHLINUX_LIST
@@ -16,7 +17,8 @@ from pep600_compliance.images.os.slackware import SLACKWARE_LIST
 from pep600_compliance.images.os.ubuntu import UBUNTU_LIST
 
 IMAGE_LIST = (
-    ALT_LIST
+    ALMALINUX_LIST
+    + ALT_LIST
     + AMAZONLINUX_LIST
     + ARCHLINUX_LIST
     + CENTOS_LIST

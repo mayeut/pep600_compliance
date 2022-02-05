@@ -1,4 +1,5 @@
 .. begin distro_badges
+.. |almalinux-8| image:: https://img.shields.io/static/v1?label=almalinux&message=8%20(EOL%3A2029-05-31)&color=green
 .. |alt-sisyphus| image:: https://img.shields.io/static/v1?label=alt&message=sisyphus%20(rolling)&color=purple
 .. |alt-p10| image:: https://img.shields.io/static/v1?label=alt&message=p10%20(unknown)&color=lightgray
 .. |alt-p9| image:: https://img.shields.io/static/v1?label=alt&message=p9%20(unknown)&color=lightgray
@@ -8,7 +9,8 @@
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
 .. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(rolling)&color=purple&logo=centos&logoColor=white
-.. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2029-05-31)&color=green&logo=centos&logoColor=white
+.. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=green&logo=centos&logoColor=white
+.. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
 .. |centos-7| image:: https://img.shields.io/static/v1?label=centos&message=7%20(EOL%3A2024-06-30)&color=green&logo=centos&logoColor=white
 .. |centos-6| image:: https://img.shields.io/static/v1?label=centos&message=6%20(EOL%3A2020-11-30)&color=black&logo=centos&logoColor=white
 .. |clearlinux-latest| image:: https://img.shields.io/static/v1?label=clearlinux&message=latest%20(rolling)&color=purple
@@ -189,7 +191,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |photon-2.0| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
@@ -234,7 +236,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
@@ -255,7 +257,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|centos-8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|centos-8| |centos-stream8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"

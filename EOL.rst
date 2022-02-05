@@ -11,6 +11,10 @@ This mostly mimics Debian lifecycle.
 3rd date is the commercial long-term support end date (ELTS).
 
 .. begin eol_information
+.. csv-table:: almalinux
+   :header: "distro", "EOL", "LTS", "ELTS"
+
+   "almalinux 8", "2029-05-31", "", ""
 .. csv-table:: alt
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -32,7 +36,8 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "centos stream9", "rolling", "", ""
-   "centos 8", "2029-05-31", "", ""
+   "centos stream8", "2024-05-31", "", ""
+   "centos 8", "2021-12-31", "", ""
    "centos 7", "2024-06-30", "", ""
    "centos 6", "2020-11-30", "", ""
 .. csv-table:: clearlinux
