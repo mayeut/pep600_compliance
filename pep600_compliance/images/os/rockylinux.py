@@ -5,7 +5,9 @@ class RockyLinux(base.Base):
     def __init__(self, image, eol, packages, machines):
         _, version = image.split(":")
         self._packages = packages
-        super().__init__(image, "rockylinux", version, eol, package_manager.DNF(), machines)
+        super().__init__(
+            image, "rockylinux", version, eol, package_manager.DNF(), machines
+        )
 
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)

@@ -12,8 +12,8 @@ from pep600_compliance.images.os.manylinux import MANYLINUX_LIST
 from pep600_compliance.images.os.opensuse import OPENSUSE_LIST
 from pep600_compliance.images.os.oraclelinux import ORACLELINUX_LIST
 from pep600_compliance.images.os.photon import PHOTON_LIST
-from pep600_compliance.images.os.rockylinux import ROCKYLINUX_LIST
 from pep600_compliance.images.os.rhubi import RHUBI_LIST
+from pep600_compliance.images.os.rockylinux import ROCKYLINUX_LIST
 from pep600_compliance.images.os.slackware import SLACKWARE_LIST
 from pep600_compliance.images.os.ubuntu import UBUNTU_LIST
 
