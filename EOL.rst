@@ -125,6 +125,10 @@ This mostly mimics Debian lifecycle.
 
    "rhubi 8", "2029-05-31", "", ""
    "rhubi 7", "2024-06-30", "", ""
+.. csv-table:: rockylinux
+   :header: "distro", "EOL", "LTS", "ELTS"
+
+   "rockylinux 8", "2029-05-31", "", ""
 .. csv-table:: slackware
    :header: "distro", "EOL", "LTS", "ELTS"
 

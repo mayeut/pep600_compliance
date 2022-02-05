@@ -68,6 +68,7 @@
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-7| image:: https://img.shields.io/static/v1?label=rhubi&message=7%20(EOL%3A2024-06-30)&color=green&logo=red-hat&logoColor=white
+.. |rockylinux-8| image:: https://img.shields.io/static/v1?label=rockylinux&message=8%20(EOL%3A2029-05-31)&color=green
 .. |slackware-current| image:: https://img.shields.io/static/v1?label=slackware&message=current%20(rolling)&color=purple&logo=slackware&logoColor=white
 .. |slackware-14.2| image:: https://img.shields.io/static/v1?label=slackware&message=14.2%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.1| image:: https://img.shields.io/static/v1?label=slackware&message=14.1%20(unknown)&color=lightgray&logo=slackware&logoColor=white
@@ -191,7 +192,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |photon-2.0| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
@@ -236,7 +237,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
