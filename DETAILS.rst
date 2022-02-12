@@ -8,7 +8,7 @@
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
-.. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(EOL%3A%7E2027-05-31)&color=green&logo=centos&logoColor=white
+.. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(EOL%3A2027-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
 .. |centos-7| image:: https://img.shields.io/static/v1?label=centos&message=7%20(EOL%3A2024-06-30)&color=green&logo=centos&logoColor=white
@@ -146,6 +146,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
+   "manylinux_2_34", "|centos-stream9|"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -154,6 +155,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_17", "|clefos-7| |manylinux-2014|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
+   "manylinux_2_34", "|centos-stream9|"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -267,7 +269,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-21.04|"
-   "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|centos-stream9| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_35", "|alt-sisyphus|"
 .. end compatibility_ppc64le
 
@@ -286,7 +288,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-21.04|"
-   "manylinux_2_34", "|opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_34", "|centos-stream9| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_s390x
 
 .. begin compatibility_armv7l
