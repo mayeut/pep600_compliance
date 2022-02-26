@@ -169,7 +169,8 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |slackware-current| |ubuntu-21.04|"
    "manylinux_2_34", "|amazonlinux-2022| |centos-stream9| |fedora-35| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-21.10| |ubuntu-rolling|"
-   "manylinux_2_35", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |fedora-rawhide| |ubuntu-devel|"
+   "manylinux_2_35", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |ubuntu-devel|"
+   "manylinux_2_35_9000", "|fedora-rawhide|"
 .. end compatibility
 
 Known compatibility issues
