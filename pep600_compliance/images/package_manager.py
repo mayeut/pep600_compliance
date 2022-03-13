@@ -72,7 +72,7 @@ class APT(_PackageManager):
 class DNF(_PackageManager):
     def __init__(self, run_once=[]):
         self._run_once = run_once
-        super().__init__(["dnf", "-y", "install"])
+        super().__init__(["dnf", "-y", "--allowerasing", "install"])
 
     def install(self, container, machine, packages):
         for command in self._run_once:
