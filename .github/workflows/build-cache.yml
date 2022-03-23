@@ -29,7 +29,7 @@ jobs:
         python -m pep600_compliance --machine x86_64 i686 aarch64 ppc64le s390x armv7l
     - name: Create Pull Request
       if: github.event_name == 'push' && github.ref == 'refs/heads/master' && always()
-      uses: peter-evans/create-pull-request@v3.14.0
+      uses: peter-evans/create-pull-request@v4
       with:
         commit-message: auto-update cache and/or README.rst
         title: '[Bot] auto-update cache and/or README.rst'
