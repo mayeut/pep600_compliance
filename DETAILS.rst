@@ -24,7 +24,8 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2022-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
-.. |fedora-35| image:: https://img.shields.io/static/v1?label=fedora&message=35%20(unknown)&color=lightgray&logo=fedora&logoColor=white
+.. |fedora-36| image:: https://img.shields.io/static/v1?label=fedora&message=36%20(EOL%3A2023-05-16)&color=green&logo=fedora&logoColor=white
+.. |fedora-35| image:: https://img.shields.io/static/v1?label=fedora&message=35%20(EOL%3A2022-11-15)&color=green&logo=fedora&logoColor=white
 .. |fedora-34| image:: https://img.shields.io/static/v1?label=fedora&message=34%20(EOL%3A2022-05-17)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-33| image:: https://img.shields.io/static/v1?label=fedora&message=33%20(EOL%3A2021-11-16)&color=black&logo=fedora&logoColor=white
 .. |fedora-32| image:: https://img.shields.io/static/v1?label=fedora&message=32%20(EOL%3A2021-05-18)&color=black&logo=fedora&logoColor=white
@@ -201,7 +202,7 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |slackware-current| |ubuntu-21.04|"
    "manylinux_2_34", "|amazonlinux-2022| |centos-stream9| |fedora-35| |ubuntu-21.10| |ubuntu-rolling|"
-   "manylinux_2_35", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_35", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |fedora-36| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
    "manylinux_2_35_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -247,7 +248,7 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|amazonlinux-2022| |centos-stream9| |fedora-35| |ubuntu-21.10| |ubuntu-rolling|"
-   "manylinux_2_35", "|alt-sisyphus| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_35", "|alt-sisyphus| |fedora-36| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
    "manylinux_2_35_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
