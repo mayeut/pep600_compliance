@@ -71,7 +71,13 @@ UBUNTU_LIST: list[base.Base] = [
         "ubuntu:rolling",
         "rolling",
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
-        packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
+        packages=[["python3-pip"] + UBUNTU_PACKAGES],
+    ),
+    Ubuntu(
+        "ubuntu:22.04",
+        ("EOL:2027-04-30", "ELTS:2032-04-30"),
+        machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        packages=[["python3-pip"] + UBUNTU_PACKAGES],
     ),
     Ubuntu(
         "ubuntu:21.10",
@@ -93,10 +99,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:20.04",
-        (
-            "EOL:2025-04-30",
-            "ELTS:2030-04-30",
-        ),
+        ("EOL:2025-04-30", "ELTS:2030-04-30"),
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
     ),
@@ -123,10 +126,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:18.04",
-        (
-            "EOL:2023-04-30",
-            "ELTS:2028-04-30",
-        ),
+        ("EOL:2023-04-30", "ELTS:2028-04-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
     ),
@@ -153,10 +153,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:16.04",
-        (
-            "EOL:2021-04-30",
-            "ELTS:2024-04-30",
-        ),
+        ("EOL:2021-04-30", "ELTS:2024-04-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
     ),
@@ -183,10 +180,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:14.04",
-        (
-            "EOL:2019-04-25",
-            "ELTS:2022-04-30",
-        ),
+        ("EOL:2019-04-25", "ELTS:2022-04-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
     ),
@@ -215,10 +209,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:12.04",
-        (
-            "EOL:2017-04-28",
-            "ELTS:2019-04-30",
-        ),
+        ("EOL:2017-04-28", "ELTS:2019-04-30"),
         machines=["i686", "x86_64"],
         packages=[["python", "python3.5", "curl"] + UBUNTU_PACKAGES],
         apt_sources_update=UBUNTU_APT_OLD,
