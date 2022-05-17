@@ -15,9 +15,29 @@ class AlmaLinux(base.Base):
 
 ALMALINUX_LIST: list[base.Base] = [
     AlmaLinux(
+        "almalinux:9",
+        ("EOL:2032-05-31",),
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+            ]
+        ],
+    ),
+    AlmaLinux(
         "almalinux:8",
         ("EOL:2029-05-31",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le"],
         packages=[
             [
                 "which",
