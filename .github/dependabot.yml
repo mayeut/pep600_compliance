@@ -11,6 +11,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    allow:
+    # Allow both direct and indirect updates for all packages
+    - dependency-type: "all"
 
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
