@@ -73,20 +73,20 @@ DEBIAN_LIST: list[base.Base] = [
     ),
     Debian(
         "debian:10-slim",
-        ("EOL:2022-07-31", "LTS:2024-06-30"),
+        ("EOL:2022-07-31", "LTS:2024-06-30", "ELTS:2029-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[DEBIAN_PACKAGES + ["python"]],
     ),
     Debian(
         "debian:9-slim",
-        ("EOL:2020-07-05", "LTS:2022-06-30"),
+        ("EOL:2020-07-05", "LTS:2022-06-30", "ELTS:2027-06-30"),
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[DEBIAN_PACKAGES + ["python"]],
     ),
     # ELTS: https://wiki.debian.org/LTS/Extended
     Debian(
         "debian:8-slim",
-        ("EOL:2018-06-06", "LTS:2020-06-30", "ELTS:2022-06-30"),
+        ("EOL:2018-06-06", "LTS:2020-06-30", "ELTS:2025-06-30"),
         machines=["i686", "x86_64", "armv7l"],
         packages=[DEBIAN_PACKAGES + ["python"]],
     ),  # TODO 'aarch64', 'ppc64le', 's390x'
