@@ -171,10 +171,11 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|debian-testing| |fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-unstable| |fedora-35| |ubuntu-21.10|"
+   "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |opensuse-tumbleweed| |ubuntu-22.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |fedora-rawhide| |mageia-cauldron| |slackware-current|"
+   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |slackware-current|"
+   "manylinux_2_36_9000", "|fedora-rawhide|"
 .. end compatibility
 
 Known compatibility issues
