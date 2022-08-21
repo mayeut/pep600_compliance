@@ -178,8 +178,10 @@ class SLACKPKG(_PackageManager):
             exit_code, output = container.exec_run(
                 ["slackpkg", "-default_answer=yes", "-batch=on", "upgrade-all"]
             )
-            assert exit_code == 0, output.decode("utf-8")
-            exit_code, output = container.exec_run(
-                ["slackpkg", "-default_answer=yes", "-batch=on", "upgrade-all"]
-            )
-            assert exit_code == 0, output.decode("utf-8")
+            assert exit_code in {0, 20, 50}, output.decode("utf-8")
+            if exit_code == 50:
+                # Slackpkg itself was upgraded and you need to re-run it.
+                exit_code, output = container.exec_run(
+                    ["slackpkg", "-default_answer=yes", "-batch=on", "upgrade-all"]
+                )
+                assert exit_code == {0, 20}, output.decode("utf-8")
