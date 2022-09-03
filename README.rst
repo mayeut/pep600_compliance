@@ -48,7 +48,7 @@
 .. |fedora-21| image:: https://img.shields.io/static/v1?label=fedora&message=21%20(EOL%3A2015-12-01)&color=black&logo=fedora&logoColor=white
 .. |fedora-20| image:: https://img.shields.io/static/v1?label=fedora&message=20%20(EOL%3A2015-06-23)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
-.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2022-08-31)&color=black
+.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2022-11-30)&color=yellow
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
@@ -173,8 +173,8 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |ubuntu-21.10|"
-   "manylinux_2_35", "|alt-sisyphus| |fedora-36| |opensuse-tumbleweed| |ubuntu-22.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |slackware-current|"
+   "manylinux_2_35", "|alt-sisyphus| |fedora-36| |opensuse-tumbleweed| |ubuntu-22.04| |ubuntu-rolling|"
+   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |slackware-current| |ubuntu-devel|"
    "manylinux_2_36_9000", "|fedora-rawhide|"
 .. end compatibility
 
