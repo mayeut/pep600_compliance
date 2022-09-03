@@ -36,6 +36,26 @@ SLACKWARE_LIST: list[base.Base] = [
         python="python3",
     ),
     Slackware(
+        "vbatts/slackware:15.0",
+        "unknown",
+        pkg_manager=package_manager.SLACKPKG(),
+        packages=[
+            [
+                "python2",
+                "python3",
+                "cxxlibs",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa",
+                "libICE",
+                "libSM",
+                "libglvnd",
+            ]
+        ],
+        python="python3",
+    ),
+    Slackware(
         "vbatts/slackware:14.2",
         "unknown",
         pkg_manager=package_manager.SLACKPKG(),

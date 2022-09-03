@@ -16,7 +16,7 @@ class AmazonLinux(base.Base):
 AMAZONLINUX_LIST: list[base.Base] = [
     # https://github.com/amazonlinux/amazon-linux-2022#notable-features-of-amazon-linux-2022
     AmazonLinux(
-        "public.ecr.aws/amazonlinux/amazonlinux:2022",
+        "amazonlinux:2022",
         ("EOL:2027-01-30",),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.DNF(),

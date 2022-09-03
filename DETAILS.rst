@@ -62,6 +62,7 @@
 .. |opensuse-42.2| image:: https://img.shields.io/static/v1?label=opensuse&message=42.2%20(EOL%3A2018-01-26)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-42.1| image:: https://img.shields.io/static/v1?label=opensuse&message=42.1%20(EOL%3A2017-05-17)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-13.2| image:: https://img.shields.io/static/v1?label=opensuse&message=13.2%20(EOL%3A2017-01-17)&color=black&logo=opensuse&logoColor=white
+.. |oraclelinux-9| image:: https://img.shields.io/static/v1?label=oraclelinux&message=9%20(EOL%3A2032-06-30)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-8| image:: https://img.shields.io/static/v1?label=oraclelinux&message=8%20(EOL%3A2029-07-31)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-7| image:: https://img.shields.io/static/v1?label=oraclelinux&message=7%20(EOL%3A2024-07-31)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-6| image:: https://img.shields.io/static/v1?label=oraclelinux&message=6%20(EOL%3A2021-03-31%20/%20ELTS%3A2024-03-31)&color=red&logo=oracle&logoColor=white
@@ -69,10 +70,13 @@
 .. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
+.. |rhubi-9| image:: https://img.shields.io/static/v1?label=rhubi&message=9%20(EOL%3A2032-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-7| image:: https://img.shields.io/static/v1?label=rhubi&message=7%20(EOL%3A2024-06-30)&color=green&logo=red-hat&logoColor=white
+.. |rockylinux-9| image:: https://img.shields.io/static/v1?label=rockylinux&message=9%20(EOL%3A2032-05-31)&color=green
 .. |rockylinux-8| image:: https://img.shields.io/static/v1?label=rockylinux&message=8%20(EOL%3A2029-05-31)&color=green
 .. |slackware-current| image:: https://img.shields.io/static/v1?label=slackware&message=current%20(rolling)&color=purple&logo=slackware&logoColor=white
+.. |slackware-15.0| image:: https://img.shields.io/static/v1?label=slackware&message=15.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.2| image:: https://img.shields.io/static/v1?label=slackware&message=14.2%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.1| image:: https://img.shields.io/static/v1?label=slackware&message=14.1%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
@@ -206,8 +210,8 @@ If your favorite distro does not appear here:
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |ubuntu-21.10|"
+   "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04| |ubuntu-rolling|"
    "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_36_9000", "|fedora-rawhide|"
@@ -255,7 +259,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04| |ubuntu-rolling|"
    "manylinux_2_36", "|mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
    "manylinux_2_36_9000", "|fedora-rawhide|"
@@ -278,7 +282,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |rhubi-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |opensuse-tumbleweed| |ubuntu-22.04| |ubuntu-rolling|"
    "manylinux_2_36", "|ubuntu-devel|"
 .. end compatibility_ppc64le
@@ -292,13 +296,13 @@ If your favorite distro does not appear here:
    "manylinux_2_24", "|debian-9| |manylinux-2_24| |ubuntu-16.10| |ubuntu-17.04|"
    "manylinux_2_26", "|ubuntu-17.10|"
    "manylinux_2_27", "|fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |debian-experimental| |debian-testing| |debian-unstable| |rhubi-9| |ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04| |ubuntu-rolling|"
    "manylinux_2_36", "|opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_s390x

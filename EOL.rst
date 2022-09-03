@@ -113,6 +113,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "oraclelinux 9", "2032-06-30", "", ""
    "oraclelinux 8", "2029-07-31", "", ""
    "oraclelinux 7", "2024-07-31", "", ""
    "oraclelinux 6", "2021-03-31", "", "2024-03-31"
@@ -126,16 +127,19 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: rhubi
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "rhubi 9", "2032-05-31", "", ""
    "rhubi 8", "2029-05-31", "", ""
    "rhubi 7", "2024-06-30", "", ""
 .. csv-table:: rockylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "rockylinux 9", "2032-05-31", "", ""
    "rockylinux 8", "2029-05-31", "", ""
 .. csv-table:: slackware
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "slackware current", "rolling", "", ""
+   "slackware 15.0", "unknown", "", ""
    "slackware 14.2", "unknown", "", ""
    "slackware 14.1", "unknown", "", ""
    "slackware 14.0", "unknown", "", ""
