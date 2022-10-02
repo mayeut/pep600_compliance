@@ -122,8 +122,8 @@ This mostly mimics Debian lifecycle.
 
    "photon 4.0", "unknown", "", ""
    "photon 3.0", "unknown", "", ""
-   "photon 2.0", "unknown", "", ""
-   "photon 1.0", "unknown", "", ""
+   "photon 2.0", "2022-12-31", "", ""
+   "photon 1.0", "2022-02-28", "", ""
 .. csv-table:: rhubi
    :header: "distro", "EOL", "LTS", "ELTS"
 

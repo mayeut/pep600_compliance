@@ -29,6 +29,7 @@ class Photon(base.Base):
 
 
 PHOTON_LIST: list[base.Base] = [
+    # EOL info: https://blogs.vmware.com/vsphere/2022/01/photon-1-x-end-of-support-announcement.html
     Photon(
         "photon:4.0",
         "unknown",
@@ -43,13 +44,13 @@ PHOTON_LIST: list[base.Base] = [
     ),
     Photon(
         "photon:2.0",
-        "unknown",
+        ("EOL:2022-12-31",),
         machines=["x86_64"],
         packages=[["python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:1.0",
-        "unknown",
+        ("EOL:2022-02-28",),
         machines=["x86_64"],
         packages=[["which", "python2", "python3", "libstdc++", "glib"]],
     ),
