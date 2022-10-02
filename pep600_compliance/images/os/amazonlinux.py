@@ -40,7 +40,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     # standard eol: https://aws.amazon.com/fr/amazon-linux-2/faqs/
     AmazonLinux(
         "amazonlinux:2",
-        ("EOL:2023-06-30",),
+        ("EOL:2024-06-30",),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.YUM(),
         packages=[
