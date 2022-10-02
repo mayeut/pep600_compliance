@@ -29,7 +29,8 @@ class Photon(base.Base):
 
 
 PHOTON_LIST: list[base.Base] = [
-    # EOL info: https://blogs.vmware.com/vsphere/2022/01/photon-1-x-end-of-support-announcement.html
+    # EOL info:
+    # https://blogs.vmware.com/vsphere/2022/01/photon-1-x-end-of-support-announcement.html
     Photon(
         "photon:4.0",
         "unknown",
