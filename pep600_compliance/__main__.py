@@ -70,7 +70,7 @@ def create_cache(machine, force_rolling, continue_on_error):
         if run:
             try:
                 symbols = image.run_check(machine)
-                with open(cache_file, "wt") as f:
+                with open(cache_file, "w") as f:
                     json.dump(symbols, f, sort_keys=True)
             except BaseException as e:
                 if continue_on_error:
@@ -181,7 +181,7 @@ def update_details():
         lines = lines[: start + 1] + new_lines + lines[end:]
 
     content = "\n".join(lines) + "\n"
-    with open(DETAILS_PATH, "wt") as f:
+    with open(DETAILS_PATH, "w") as f:
         f.write(content)
 
 
@@ -234,7 +234,7 @@ def update_readme():
     lines = lines[: start + 1] + new_lines + lines[end:]
 
     content = "\n".join(lines) + "\n"
-    with open(README_PATH, "wt") as f:
+    with open(README_PATH, "w") as f:
         f.write(content)
 
 
@@ -282,7 +282,7 @@ def update_eol():
     lines = lines[: start + 1] + new_lines + lines[end:]
 
     content = "\n".join(lines) + "\n"
-    with open(EOL_PATH, "wt") as f:
+    with open(EOL_PATH, "w") as f:
         f.write(content)
 
 
