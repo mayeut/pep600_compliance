@@ -378,7 +378,11 @@ def create_policy(glibc_version):
 
 
 def main():
-    default_machine = [platform.machine()]
+    platform_machine = platform.machine()
+    platform_machine = {
+        "arm64": "aarch64"
+    }.get(platform_machine, platform_machine)
+    default_machine = [platform_machine]
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--force-rolling", action="store_true")
     parser.add_argument("-c", "--continue-on-error", action="store_true")

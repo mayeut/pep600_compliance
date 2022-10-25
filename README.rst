@@ -87,6 +87,7 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
+.. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-21.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.10%20(EOL%3A2022-07-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-21.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.04%20(EOL%3A2022-01-31)&color=black&logo=ubuntu&logoColor=white
@@ -177,8 +178,8 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2022| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
-   "manylinux_2_35", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-36| |opensuse-tumbleweed| |ubuntu-22.04| |ubuntu-rolling|"
-   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_35", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-36| |opensuse-tumbleweed| |ubuntu-22.04|"
+   "manylinux_2_36", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |slackware-current| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_36_9000", "|fedora-rawhide|"
 .. end compatibility
 
