@@ -295,38 +295,43 @@ def versionify(version_string):
     return result
 
 
-def get_zlib_blacklist():
+def get_zlib_blacklist(min_glibc_version):
     zlib_symbols = {}
     for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
         cache_path = os.path.join(CACHE_PATH, machine)
         distros = load_distros(cache_path)
         for distro in distros:
+            glibc_version = tuple(
+                int(part) for part in distro["glibc_version"].split(".")
+            )
             zlib_versions = distro["symbols"]["ZLIB"]
             zlib_version = "-1" if len(zlib_versions) == 0 else zlib_versions[-1]
             symbols = [symbol.split("@")[0] for symbol in distro["libz.so.1"]]
             if zlib_version not in zlib_symbols:
-                zlib_symbols[zlib_version] = {
-                    "union": set(symbols),
-                    "inter": set(symbols),
-                }
-            else:
-                zlib_symbols[zlib_version]["union"] |= set(symbols)
-                zlib_symbols[zlib_version]["inter"] &= set(symbols)
+                zlib_symbols[zlib_version] = {"union": set()}
+            zlib_symbols[zlib_version]["union"] |= set(symbols)
+            if glibc_version >= min_glibc_version:
+                if "inter" not in zlib_symbols[zlib_version]:
+                    zlib_symbols[zlib_version]["inter"] = set(symbols)
+                else:
+                    zlib_symbols[zlib_version]["inter"] &= set(symbols)
     keys = list(zlib_symbols.keys())
     keys.sort(key=versionify, reverse=True)
     for i in range(len(keys) - 1):
-        zlib_symbols[keys[i + 1]]["inter"] &= zlib_symbols[keys[i]]["inter"]
+        if "inter" in zlib_symbols[keys[i + 1]]:
+            zlib_symbols[keys[i + 1]]["inter"] &= zlib_symbols[keys[i]]["inter"]
     keys.sort(key=versionify)
     for i in range(len(keys) - 1):
         zlib_symbols[keys[i + 1]]["union"] |= zlib_symbols[keys[i]]["union"]
     blacklist = set()
     for key in keys:
-        blacklist |= zlib_symbols[key]["union"] - zlib_symbols[key]["inter"]
+        if "inter" in zlib_symbols[key]:
+            blacklist |= zlib_symbols[key]["union"] - zlib_symbols[key]["inter"]
     return sorted(blacklist)
 
 
 def print_zlib_blacklist():
-    print(f"zlib blacklist: {get_zlib_blacklist()}")
+    print(f"zlib blacklist: {get_zlib_blacklist((2, 35))}")
 
 
 def create_policy(glibc_version):
@@ -360,16 +365,23 @@ def create_policy(glibc_version):
             "libz.so.1",
         ],
         "blacklist": {
-            "libz.so.1": get_zlib_blacklist(),
+            "libz.so.1": get_zlib_blacklist(
+                tuple(int(part) for part in glibc_version.split("."))
+            ),
         },
     }
     for machine in machines:
         cache_path = os.path.join(CACHE_PATH, machine)
         distros = load_distros(cache_path)
         policies = make_policies(distros, machine)
-        machine_policy = next(
-            policy_ for policy_ in policies if policy_["glibc_version"] == glibc_version
-        )
+        try:
+            machine_policy = next(
+                policy_
+                for policy_ in policies
+                if policy_["glibc_version"] == glibc_version
+            )
+        except StopIteration:
+            continue
         policy["symbol_versions"][machine] = {
             k: sorted(machine_policy["symbols"][k], key=lambda x: versionify(x))
             for k in sorted(machine_policy["symbols"].keys())
@@ -397,7 +409,7 @@ def main():
     update_details()
     update_eol()
     # print_zlib_blacklist()
-    # create_policy("2.31")
+    # create_policy("2.34")
     exit(exit_code)
 
 
