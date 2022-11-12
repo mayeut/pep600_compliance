@@ -128,6 +128,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_x86_64
 
 .. begin base_images_i686
@@ -147,6 +148,8 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
+   "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
