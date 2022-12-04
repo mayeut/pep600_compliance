@@ -38,6 +38,8 @@ def get_docker_platform_prefix(machine):
         return "s390x"
     if machine == "armv7l":
         return "arm32v7"
+    if machine == "riscv64":
+        return "riscv64"
     raise LookupError(f"No docker platform defined for {machine}")
 
 
@@ -194,10 +196,12 @@ class Base:
         )
         assert exit_code == 0, output.decode("utf-8")
 
-    def _get_symbols(self, container):
+    def _get_symbols(self, container, machine):
         logger.info("Running symbol script")
         if self.name == "manylinux" and self.version == "1":
             policy = "manylinux_2_5"
+        elif machine == "riscv64":
+            policy = "manylinux_2_31"
         else:
             policy = "manylinux_2_17"
         exit_code, output = container.exec_run(
@@ -289,6 +293,6 @@ class Base:
             self.install_packages(container, machine)
             self._install_pyelftools(container)
             extra = self._get_python_dependencies(container)
-            result = self._get_symbols(container)
+            result = self._get_symbols(container, machine)
             result["extra"] = extra
             return result

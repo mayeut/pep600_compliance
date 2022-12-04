@@ -48,14 +48,14 @@ DEBIAN_LIST: list[base.Base] = [
     Debian(
         "debian:experimental",
         "rolling",
-        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"],
         packages=[DEBIAN_PACKAGES],
         upgrade=True,
     ),
     Debian(
         "debian:unstable-slim",
         "rolling",
-        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
+        machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"],
         packages=[DEBIAN_PACKAGES],
     ),
     Debian(

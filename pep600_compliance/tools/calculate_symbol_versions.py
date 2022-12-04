@@ -74,6 +74,14 @@ elif MACHINE == "armv7l":
         "/lib",
         "/usr/lib",
     ]
+elif MACHINE == "riscv64":
+    LIBRARY_PATHS = [
+        "/lib/riscv64-linux-gnu",
+        "/usr/lib/riscv64-linux-gnu",
+        "/usr/lib/riscv64-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
+    ]
 else:
     raise NotImplementedError("Platform not supported")
 

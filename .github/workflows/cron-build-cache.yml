@@ -19,7 +19,7 @@ jobs:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2.1.0
       with:
-        platforms: 'arm,arm64,ppc64le,s390x'
+        platforms: 'arm,arm64,ppc64le,s390x,riscv64'
     - name: Build cache
       run: |
         EXIT_CODE=0
@@ -27,7 +27,7 @@ jobs:
           EXIT_CODE=1
         fi
         if ! git diff --exit-code --quiet cache; then
-          if ! nox -s run -- --force-rolling --continue-on-error --machine i686 aarch64 ppc64le s390x armv7l; then
+          if ! nox -s run -- --force-rolling --continue-on-error --machine i686 aarch64 ppc64le s390x armv7l riscv64; then
             EXIT_CODE=1
           fi
         fi

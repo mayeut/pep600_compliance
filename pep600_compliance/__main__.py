@@ -23,7 +23,7 @@ CACHE_PATH = os.path.abspath(os.path.join(HERE, "..", "cache"))
 README_PATH = os.path.abspath(os.path.join(HERE, "..", "README.rst"))
 DETAILS_PATH = os.path.abspath(os.path.join(HERE, "..", "DETAILS.rst"))
 EOL_PATH = os.path.abspath(os.path.join(HERE, "..", "EOL.rst"))
-MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l"}
+MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"}
 
 
 def get_start_end(lines, start_tag, end_tag):

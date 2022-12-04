@@ -182,6 +182,14 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_armv7l
 
+.. begin base_images_riscv64
+.. csv-table:: riscv64
+   :header: "policy", "distros"
+
+   "manylinux_2_31", "|ubuntu-20.04|"
+   "manylinux_2_35", "|ubuntu-22.04|"
+.. end base_images_riscv64
+
 Distro compatibility
 ====================
 
@@ -331,3 +339,12 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_armv7l
+
+.. begin compatibility_riscv64
+.. csv-table:: riscv64
+   :header: "policy", "distros"
+
+   "manylinux_2_31", "|ubuntu-20.04|"
+   "manylinux_2_35", "|ubuntu-22.04|"
+   "manylinux_2_36", "|debian-experimental| |debian-unstable| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
+.. end compatibility_riscv64
