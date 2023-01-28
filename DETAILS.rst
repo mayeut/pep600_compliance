@@ -44,7 +44,7 @@
 .. |fedora-21| image:: https://img.shields.io/static/v1?label=fedora&message=21%20(EOL%3A2015-12-01)&color=black&logo=fedora&logoColor=white
 .. |fedora-20| image:: https://img.shields.io/static/v1?label=fedora&message=20%20(EOL%3A2015-06-23)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
-.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-03-31)&color=yellow
+.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-04-30)&color=yellow
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
@@ -127,6 +127,8 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_12", "|centos-6| |manylinux-2010|"
    "manylinux_2_15", "|ubuntu-12.04|"
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_24", "|manylinux-2_24|"
+   "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_35", "|ubuntu-22.04|"
@@ -140,6 +142,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_12", "|centos-6| |manylinux-2010|"
    "manylinux_2_15", "|ubuntu-12.04|"
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_31", "|debian-11|"
 .. end base_images_i686
 
@@ -148,6 +151,8 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_24", "|manylinux-2_24|"
+   "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_35", "|ubuntu-22.04|"
@@ -158,6 +163,8 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_24", "|manylinux-2_24|"
+   "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_35", "|ubuntu-22.04|"
@@ -168,6 +175,7 @@ distros to build manylinux wheels given different manylinux policies.
    :header: "policy", "distros"
 
    "manylinux_2_17", "|clefos-7| |manylinux-2014|"
+   "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_35", "|ubuntu-22.04|"

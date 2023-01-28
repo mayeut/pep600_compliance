@@ -135,7 +135,7 @@ def make_manylinux_images(distros, policies):
             )
             if distro_glibc_version != policy_glibc_version:
                 continue
-            if can_create_manylinux_wheel(distro, policy):
+            if distro_name == "manylinux" or can_create_manylinux_wheel(distro, policy):
                 distro_description = f"{distro_name} {distro_version}"
                 policy_name = "manylinux_{}_{}".format(*policy_glibc_version)
                 result[policy_name].append(distro_description)
