@@ -26,7 +26,7 @@ _MANYLINUX_2_28: list[base.Base] = [
         ("EOL:2029-05-31",),
         machines=[f"{machine}"],
     )
-    for machine in {"x86_64", "aarch64", "ppc64le"}
+    for machine in {"x86_64", "aarch64", "ppc64le", "s390x"}
 ]
 _MANYLINUX_2_24: list[base.Base] = [
     Manylinux(

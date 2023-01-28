@@ -176,6 +176,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_17", "|clefos-7| |manylinux-2014|"
    "manylinux_2_24", "|manylinux-2_24|"
+   "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|centos-stream9|"
    "manylinux_2_35", "|ubuntu-22.04|"
@@ -316,7 +317,7 @@ If your favorite distro does not appear here:
    "manylinux_2_24", "|debian-9| |manylinux-2_24| |ubuntu-16.10| |ubuntu-17.04|"
    "manylinux_2_26", "|ubuntu-17.10|"
    "manylinux_2_27", "|fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|almalinux-8| |debian-10| |fedora-29| |rhubi-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |debian-10| |fedora-29| |manylinux-2_28| |rhubi-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.4| |ubuntu-20.04|"
