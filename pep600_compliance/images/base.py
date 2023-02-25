@@ -192,7 +192,8 @@ class Base:
                 "pip",
                 "install",
                 "/home/pep600_compliance/pyelftools-0.26.tar.gz",
-            ]
+            ],
+            environment={"PIP_BREAK_SYSTEM_PACKAGES": "1"},
         )
         assert exit_code == 0, output.decode("utf-8")
 
