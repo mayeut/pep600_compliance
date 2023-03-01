@@ -28,6 +28,8 @@ def get_docker_platform(machine):
 
 
 def get_docker_platform_prefix(machine):
+    if machine == "x86_64":
+        return "amd64"
     if machine == "i686":
         return "i386"
     if machine == "aarch64":
@@ -71,7 +73,7 @@ class Base:
         image_name = self.image
         image = None
         has_image = True
-        if machine != "x86_64":
+        if platform.machine() != machine:
             image_name = get_docker_platform_prefix(machine) + "/" + image_name
             try:
                 image = client.images.get(image_name)

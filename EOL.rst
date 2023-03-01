@@ -26,8 +26,8 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: amazonlinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "amazonlinux 2022", "2027-01-30", "", ""
-   "amazonlinux 2", "2024-06-30", "", ""
+   "amazonlinux 2023", "2028-01-01", "", ""
+   "amazonlinux 2", "2025-06-30", "", ""
    "amazonlinux 1", "2020-12-31", "2023-06-30", ""
 .. csv-table:: archlinux
    :header: "distro", "EOL", "LTS", "ELTS"

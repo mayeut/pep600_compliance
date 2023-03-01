@@ -14,10 +14,10 @@ class AmazonLinux(base.Base):
 
 
 AMAZONLINUX_LIST: list[base.Base] = [
-    # https://github.com/amazonlinux/amazon-linux-2022#notable-features-of-amazon-linux-2022
+    # https://docs.aws.amazon.com/linux/al2023/ug/release-cadence.html
     AmazonLinux(
-        "amazonlinux:2022",
-        ("EOL:2027-01-30",),
+        "amazonlinux:2023",
+        ("EOL:2028-01-01",),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.DNF(),
         packages=[
@@ -40,7 +40,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     # standard eol: https://aws.amazon.com/fr/amazon-linux-2/faqs/
     AmazonLinux(
         "amazonlinux:2",
-        ("EOL:2024-06-30",),
+        ("EOL:2025-06-30",),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.YUM(),
         packages=[
