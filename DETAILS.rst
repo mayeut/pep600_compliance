@@ -305,7 +305,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_ppc64le
@@ -325,7 +325,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37", "|opensuse-tumbleweed|"
