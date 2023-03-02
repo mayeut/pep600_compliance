@@ -40,13 +40,13 @@ OPENSUSE_LIST: list[base.Base] = [
     OpenSUSE(
         "opensuse/leap:15.4",
         ("EOL:2023-12-31",),
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[OPENSUSE_PACKAGES],
     ),
     OpenSUSE(
         "opensuse/leap:15.3",
         ("EOL:2022-11-30",),
-        machines=["x86_64", "aarch64", "ppc64le"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[OPENSUSE_PACKAGES],
     ),
     OpenSUSE(
