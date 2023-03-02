@@ -67,6 +67,7 @@
 .. |oraclelinux-8| image:: https://img.shields.io/static/v1?label=oraclelinux&message=8%20(EOL%3A2029-07-31)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-7| image:: https://img.shields.io/static/v1?label=oraclelinux&message=7%20(EOL%3A2024-07-31)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-6| image:: https://img.shields.io/static/v1?label=oraclelinux&message=6%20(EOL%3A2021-03-31%20/%20ELTS%3A2024-03-31)&color=red&logo=oracle&logoColor=white
+.. |photon-5.0| image:: https://img.shields.io/static/v1?label=photon&message=5.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(EOL%3A2022-12-31)&color=black&logo=vmware&logoColor=white
@@ -235,7 +236,7 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37", "|archlinux-latest| |clearlinux-latest| |fedora-rawhide| |opensuse-tumbleweed| |slackware-current|"
 .. end compatibility_x86_64
 
@@ -283,7 +284,7 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37", "|fedora-rawhide| |opensuse-tumbleweed|"
 .. end compatibility_aarch64
 

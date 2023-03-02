@@ -32,6 +32,12 @@ PHOTON_LIST: list[base.Base] = [
     # EOL info:
     # https://blogs.vmware.com/vsphere/2022/01/photon-1-x-end-of-support-announcement.html
     Photon(
+        "photon:5.0",
+        "unknown",
+        machines=["x86_64", "aarch64"],
+        packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
+    ),
+    Photon(
         "photon:4.0",
         "unknown",
         machines=["x86_64", "aarch64"],

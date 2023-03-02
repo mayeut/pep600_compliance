@@ -121,6 +121,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: photon
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "photon 5.0", "unknown", "", ""
    "photon 4.0", "unknown", "", ""
    "photon 3.0", "unknown", "", ""
    "photon 2.0", "2022-12-31", "", ""
