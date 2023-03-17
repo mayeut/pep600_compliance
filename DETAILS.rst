@@ -236,8 +236,9 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_37", "|archlinux-latest| |clearlinux-latest| |fedora-rawhide| |opensuse-tumbleweed| |slackware-current|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-rolling|"
+   "manylinux_2_37", "|archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -284,8 +285,9 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_37", "|fedora-rawhide| |opensuse-tumbleweed|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10| |ubuntu-rolling|"
+   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
@@ -307,7 +309,8 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-22.10| |ubuntu-rolling|"
+   "manylinux_2_37", "|ubuntu-devel|"
 .. end compatibility_ppc64le
 
 .. begin compatibility_s390x
@@ -327,8 +330,8 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_37", "|opensuse-tumbleweed|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10| |ubuntu-rolling|"
+   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_s390x
 
 .. begin compatibility_armv7l
@@ -349,8 +352,8 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|ubuntu-21.04|"
    "manylinux_2_34", "|ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_37", "|opensuse-tumbleweed|"
+   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10| |ubuntu-rolling|"
+   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
