@@ -87,7 +87,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
-   "mageia 8", "2023-04-30", "", ""
+   "mageia 8", "2023-07-31", "", ""
    "mageia 7", "2021-05-26", "", ""
    "mageia 6", "2019-09-30", "", ""
    "mageia 5", "2017-12-31", "", ""
@@ -151,6 +151,7 @@ This mostly mimics Debian lifecycle.
 
    "ubuntu devel", "rolling", "", ""
    "ubuntu rolling", "rolling", "", ""
+   "ubuntu 23.04", "2024-01-31", "", ""
    "ubuntu 22.10", "2023-07-20", "", ""
    "ubuntu 22.04", "2027-04-30", "", "2032-04-30"
    "ubuntu 21.10", "2022-07-31", "", ""

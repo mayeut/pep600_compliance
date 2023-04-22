@@ -45,7 +45,7 @@
 .. |fedora-21| image:: https://img.shields.io/static/v1?label=fedora&message=21%20(EOL%3A2015-12-01)&color=black&logo=fedora&logoColor=white
 .. |fedora-20| image:: https://img.shields.io/static/v1?label=fedora&message=20%20(EOL%3A2015-06-23)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
-.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-04-30)&color=yellow
+.. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-07-31)&color=yellow
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
@@ -85,6 +85,7 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
+.. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-21.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.10%20(EOL%3A2022-07-31)&color=black&logo=ubuntu&logoColor=white
@@ -238,7 +239,7 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
-   "manylinux_2_37", "|archlinux-latest| |clearlinux-latest| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_37", "|archlinux-latest| |clearlinux-latest| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -287,7 +288,7 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
-   "manylinux_2_37", "|fedora-38| |opensuse-tumbleweed| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_37", "|fedora-38| |opensuse-tumbleweed| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -311,7 +312,7 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|alt-sisyphus| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-22.10|"
-   "manylinux_2_37", "|ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_37", "|ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_ppc64le
 
 .. begin compatibility_s390x
@@ -332,7 +333,7 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10|"
-   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_s390x
 
 .. begin compatibility_armv7l
@@ -354,7 +355,7 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|ubuntu-21.10|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-22.10|"
-   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_37", "|opensuse-tumbleweed| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
@@ -363,5 +364,5 @@ If your favorite distro does not appear here:
 
    "manylinux_2_31", "|ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-unstable| |ubuntu-22.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|debian-experimental| |debian-unstable| |ubuntu-22.10| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_riscv64
