@@ -244,7 +244,7 @@ def _get_symbols(library):
             for nsym, symbol in enumerate(section.iter_symbols()):
                 version_str = ""
                 version = _symbol_version(version_info, nsym)
-                if version["name"] == symbol.name:
+                if version is None or version["name"] == symbol.name:
                     continue
                 if version["index"] not in ("VER_NDX_LOCAL", "VER_NDX_GLOBAL"):
                     if version["filename"]:
