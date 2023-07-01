@@ -87,7 +87,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
-   "mageia 8", "2023-07-31", "", ""
+   "mageia 8", "2023-09-30", "", ""
    "mageia 7", "2021-05-26", "", ""
    "mageia 6", "2019-09-30", "", ""
    "mageia 5", "2017-12-31", "", ""
