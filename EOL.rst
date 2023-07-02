@@ -116,9 +116,9 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "oraclelinux 9", "2032-06-30", "", ""
-   "oraclelinux 8", "2029-07-31", "", ""
-   "oraclelinux 7", "2024-07-31", "", ""
+   "oraclelinux 9", "2032-06-30", "", "2034-06-30"
+   "oraclelinux 8", "2029-07-01", "", "2031-07-01"
+   "oraclelinux 7", "2024-07-01", "", "2026-06-01"
    "oraclelinux 6", "2021-03-31", "", "2024-03-31"
 .. csv-table:: photon
    :header: "distro", "EOL", "LTS", "ELTS"
