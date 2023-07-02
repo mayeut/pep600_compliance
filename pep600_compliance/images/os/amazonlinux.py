@@ -63,7 +63,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     # https://aws.amazon.com/fr/blogs/aws/update-on-amazon-linux-ami-end-of-life/
     AmazonLinux(
         "amazonlinux:1",
-        ("EOL:2020-12-31", "LTS:2023-06-30"),
+        ("EOL:2020-12-31", "LTS:2023-12-31"),
         machines=["x86_64"],
         pkg_manager=package_manager.YUM(),
         packages=[
