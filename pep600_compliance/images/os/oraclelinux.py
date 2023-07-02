@@ -25,7 +25,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     # EOL info: https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf
     OracleLinux(
         "oraclelinux:9-slim",
-        ("EOL:2032-06-30",),
+        ("EOL:2032-06-30", "ELTS:2034-06-30"),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.MICRODNF(),
         packages=[
@@ -46,7 +46,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     ),
     OracleLinux(
         "oraclelinux:8-slim",
-        ("EOL:2029-07-31",),
+        ("EOL:2029-07-01", "ELTS:2031-07-01"),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.MICRODNF(),
         packages=[
@@ -67,7 +67,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     ),
     OracleLinux(
         "oraclelinux:7-slim",
-        ("EOL:2024-07-31",),
+        ("EOL:2024-07-01", "ELTS:2026-06-01"),
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.YUM(),
         packages=[
