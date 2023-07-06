@@ -55,6 +55,7 @@ This mostly mimics Debian lifecycle.
    "debian experimental", "rolling", "", ""
    "debian unstable", "rolling", "", ""
    "debian testing", "rolling", "", ""
+   "debian 12", "2026-06-10", "2028-06-10", ""
    "debian 11", "2024-08-14", "2026-06-30", ""
    "debian 10", "2022-07-31", "2024-06-30", "2029-06-30"
    "debian 9", "2020-07-05", "2022-06-30", "2027-06-30"

@@ -24,6 +24,7 @@
 .. |debian-experimental| image:: https://img.shields.io/static/v1?label=debian&message=experimental%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-unstable| image:: https://img.shields.io/static/v1?label=debian&message=unstable%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-testing| image:: https://img.shields.io/static/v1?label=debian&message=testing%20(rolling)&color=purple&logo=debian&logoColor=white
+.. |debian-12| image:: https://img.shields.io/static/v1?label=debian&message=12%20(EOL%3A2026-06-10%20/%20LTS%3A2028-06-10)&color=green&logo=debian&logoColor=white
 .. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-10| image:: https://img.shields.io/static/v1?label=debian&message=10%20(EOL%3A2022-07-31%20/%20LTS%3A2024-06-30%20/%20ELTS%3A2029-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=debian&logoColor=white
@@ -188,7 +189,7 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
+   "manylinux_2_36", "|debian-12| |debian-experimental| |debian-testing| |debian-unstable| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility
