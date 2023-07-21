@@ -93,7 +93,7 @@
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=green&logo=ubuntu&logoColor=white
-.. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=yellow&logo=ubuntu&logoColor=white
+.. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-21.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.10%20(EOL%3A2022-07-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-21.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.04%20(EOL%3A2022-01-31)&color=black&logo=ubuntu&logoColor=white
@@ -189,8 +189,8 @@ If your favorite distro does not appear here:
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
-   "manylinux_2_36", "|debian-12| |debian-experimental| |debian-testing| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
-   "manylinux_2_37", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |debian-unstable| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|debian-12| |debian-testing| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
+   "manylinux_2_37", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-unstable| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_37_9000", "|fedora-rawhide|"
 .. end compatibility
 
