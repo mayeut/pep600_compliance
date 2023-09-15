@@ -243,8 +243,8 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |slackware-current| |ubuntu-23.04| |ubuntu-rolling|"
-   "manylinux_2_37_9000", "|fedora-rawhide|"
    "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_38_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -268,8 +268,8 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11|"
    "manylinux_2_32", "|alt-p10|"
    "manylinux_2_36", "|debian-12|"
-   "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed|"
-   "manylinux_2_38", "|alt-sisyphus|"
+   "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable|"
+   "manylinux_2_38", "|alt-sisyphus| |opensuse-tumbleweed|"
 .. end compatibility_i686
 
 .. begin compatibility_aarch64
@@ -293,8 +293,8 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04| |ubuntu-rolling|"
-   "manylinux_2_37_9000", "|fedora-rawhide|"
    "manylinux_2_38", "|alt-sisyphus| |opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_38_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
