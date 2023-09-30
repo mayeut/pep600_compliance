@@ -56,7 +56,7 @@ UBUNTU_PACKAGES = [
     "libxrender1",
     "libice6",
     "libsm6",
-    "libgl1-mesa-glx",
+    "libgl1",
     "libglib2.0-0",
 ]
 UBUNTU_LIST: list[base.Base] = [
