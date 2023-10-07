@@ -1,7 +1,7 @@
 # No build-system here, used for tool configuration only
 
 [tool.black]
-target-version = ["py311"]
+target-version = ["py312"]
 
 [tool.isort]
 profile = "black"
