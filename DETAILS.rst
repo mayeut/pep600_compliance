@@ -373,6 +373,6 @@ If your favorite distro does not appear here:
 
    "manylinux_2_31", "|ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04|"
    "manylinux_2_37", "|debian-experimental| |debian-unstable|"
 .. end compatibility_riscv64
