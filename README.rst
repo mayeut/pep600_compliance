@@ -92,6 +92,7 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
+.. |ubuntu-23.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.10%20(EOL%3A2024-07-14)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-30)&color=green&logo=ubuntu&logoColor=white
@@ -191,7 +192,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04| |ubuntu-rolling|"
-   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.10| |ubuntu-devel|"
    "manylinux_2_38_9000", "|fedora-rawhide|"
 .. end compatibility
 
