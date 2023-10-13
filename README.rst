@@ -190,8 +190,8 @@ If your favorite distro does not appear here:
    "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
-   "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.04| |ubuntu-rolling|"
-   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |ubuntu-devel|"
+   "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04| |ubuntu-rolling|"
+   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_38_9000", "|fedora-rawhide|"
 .. end compatibility
 
