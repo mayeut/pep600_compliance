@@ -29,7 +29,15 @@ FEDORA_LIST: list[base.Base] = [
     Fedora(
         "fedora:rawhide",
         "rolling",
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        pkg_manager=DNF(),
+        packages=[["libnsl"] + FEDORA_PACKAGES],
+    ),
+    Fedora(
+        "fedora:39",
+        # https://fedorapeople.org/groups/schedule/f-41/f-41-key-tasks.html
+        ("EOL:2024-11-12",),
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
@@ -37,7 +45,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:38",
         # https://fedorapeople.org/groups/schedule/f-40/f-40-key-tasks.html
         ("EOL:2024-05-14",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
@@ -45,7 +53,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:37",
         # https://fedorapeople.org/groups/schedule/f-39/f-39-key-tasks.html
         ("EOL:2023-11-14",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
@@ -53,7 +61,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:36",
         # https://fedorapeople.org/groups/schedule/f-38/f-38-key-tasks.html
         ("EOL:2023-05-16",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
@@ -61,7 +69,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:35",
         # https://fedorapeople.org/groups/schedule/f-37/f-37-key-tasks.html
         ("EOL:2022-11-15",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
@@ -69,7 +77,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:34",
         # https://fedorapeople.org/groups/schedule/f-36/f-36-key-tasks.html
         ("EOL:2022-05-17",),
-        machines=["x86_64", "aarch64"],
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
         pkg_manager=DNF(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),

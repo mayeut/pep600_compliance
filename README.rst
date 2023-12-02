@@ -31,6 +31,7 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-12)&color=green&logo=fedora&logoColor=white
 .. |fedora-38| image:: https://img.shields.io/static/v1?label=fedora&message=38%20(EOL%3A2024-05-14)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-37| image:: https://img.shields.io/static/v1?label=fedora&message=37%20(EOL%3A2023-11-14)&color=black&logo=fedora&logoColor=white
 .. |fedora-36| image:: https://img.shields.io/static/v1?label=fedora&message=36%20(EOL%3A2023-05-16)&color=black&logo=fedora&logoColor=white
@@ -76,8 +77,8 @@
 .. |oraclelinux-7| image:: https://img.shields.io/static/v1?label=oraclelinux&message=7%20(EOL%3A2024-07-01%20/%20ELTS%3A2026-06-01)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-6| image:: https://img.shields.io/static/v1?label=oraclelinux&message=6%20(EOL%3A2021-03-31%20/%20ELTS%3A2024-03-31)&color=red&logo=oracle&logoColor=white
 .. |photon-5.0| image:: https://img.shields.io/static/v1?label=photon&message=5.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
-.. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
-.. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
+.. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(EOL%3A2025-07-01)&color=green&logo=vmware&logoColor=white
+.. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(EOL%3A2024-02-01)&color=yellow&logo=vmware&logoColor=white
 .. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(EOL%3A2022-12-31)&color=black&logo=vmware&logoColor=white
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(EOL%3A2022-02-28)&color=black&logo=vmware&logoColor=white
 .. |rhubi-9| image:: https://img.shields.io/static/v1?label=rhubi&message=9%20(EOL%3A2032-05-31)&color=green&logo=red-hat&logoColor=white
@@ -192,7 +193,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-cauldron| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04|"
-   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_38", "|alt-sisyphus| |archlinux-latest| |clearlinux-latest| |fedora-39| |opensuse-tumbleweed| |slackware-current| |ubuntu-23.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_38_9000", "|fedora-rawhide|"
 .. end compatibility
 

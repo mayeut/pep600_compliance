@@ -65,6 +65,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "fedora rawhide", "rolling", "", ""
+   "fedora 39", "2024-11-12", "", ""
    "fedora 38", "2024-05-14", "", ""
    "fedora 37", "2023-11-14", "", ""
    "fedora 36", "2023-05-16", "", ""
@@ -125,8 +126,8 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "photon 5.0", "unknown", "", ""
-   "photon 4.0", "unknown", "", ""
-   "photon 3.0", "unknown", "", ""
+   "photon 4.0", "2025-07-01", "", ""
+   "photon 3.0", "2024-02-01", "", ""
    "photon 2.0", "2022-12-31", "", ""
    "photon 1.0", "2022-02-28", "", ""
 .. csv-table:: rhubi
