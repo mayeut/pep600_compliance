@@ -34,7 +34,7 @@ jobs:
         exit $EXIT_CODE
     - name: Create Pull Request
       if: github.ref == 'refs/heads/master' && always()
-      uses: peter-evans/create-pull-request@v5
+      uses: peter-evans/create-pull-request@v6
       with:
         commit-message: auto-update cache and/or README.rst
         title: '[Bot] auto-update cache and/or README.rst'
