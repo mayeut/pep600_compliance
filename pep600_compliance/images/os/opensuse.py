@@ -34,7 +34,7 @@ OPENSUSE_LIST: list[base.Base] = [
         "opensuse/tumbleweed:latest",
         "rolling",
         machines=["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
-        packages=[OPENSUSE_PACKAGES],
+        packages=[OPENSUSE_PACKAGES, ["libnsl1"]],
         version="tumbleweed",
     ),
     OpenSUSE(
