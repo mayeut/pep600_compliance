@@ -137,7 +137,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_x86_64
 
@@ -162,7 +162,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_aarch64
 
@@ -174,7 +174,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_ppc64le
 
@@ -186,7 +186,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|centos-stream9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
 .. end base_images_s390x
 
