@@ -105,7 +105,15 @@ def has_symbol_conflict(distro, policy):
 
 
 def filter_image(distro_name, distro_version):
-    if distro_name not in ["almalinux", "centos", "clefos", "debian", "rockylinux", "ubuntu", "manylinux"]:
+    if distro_name not in [
+        "almalinux",
+        "centos",
+        "clefos",
+        "debian",
+        "rockylinux",
+        "ubuntu",
+        "manylinux",
+    ]:
         return True
     if distro_name == "debian":
         if distro_version in {"testing", "unstable", "experimental"}:
