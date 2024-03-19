@@ -90,6 +90,7 @@ UBUNTU_LIST: list[base.Base] = [
         ("EOL:2023-07-20",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"],
         packages=[["python3-pip"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
         "ubuntu:22.04",
@@ -102,18 +103,21 @@ UBUNTU_LIST: list[base.Base] = [
         ("EOL:2022-07-31",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
         "ubuntu:21.04",
         ("EOL:2022-01-31",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
         "ubuntu:20.10",
         ("EOL:2021-07-17",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x", "armv7l"],
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES],
+        apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
         "ubuntu:20.04",
