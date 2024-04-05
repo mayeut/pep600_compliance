@@ -40,12 +40,16 @@ MAGEIA_LIST: list[base.Base] = [
         "rolling",
         machines=["x86_64", "aarch64"],
         pkg_manager=package_manager.DNF(),
-        packages=[
-            MAGEIA_PACKAGES
-            + ["libgcc1-1[2-9].*", "lib64zlib1-1.2.1[3-9]*", "libstdc++6-1[2-9].*"]
-        ],
+        packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
     # eol info https://www.mageia.org/en/support/
+    Mageia(
+        "mageia:9",
+        ("EOL:2025-03-31",),
+        machines=["x86_64", "aarch64"],
+        pkg_manager=package_manager.DNF(),
+        packages=[MAGEIA_PACKAGES],
+    ),
     Mageia(
         "mageia:8",
         ("EOL:2023-11-30",),
