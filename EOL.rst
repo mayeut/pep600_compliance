@@ -148,9 +148,9 @@ This mostly mimics Debian lifecycle.
 
    "slackware current", "rolling", "", ""
    "slackware 15.0", "unknown", "", ""
-   "slackware 14.2", "unknown", "", ""
-   "slackware 14.1", "unknown", "", ""
-   "slackware 14.0", "unknown", "", ""
+   "slackware 14.2", "2024-01-01", "", ""
+   "slackware 14.1", "2024-01-01", "", ""
+   "slackware 14.0", "2024-01-01", "", ""
 .. csv-table:: ubuntu
    :header: "distro", "EOL", "LTS", "ELTS"
 

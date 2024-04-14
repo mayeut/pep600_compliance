@@ -57,7 +57,7 @@ SLACKWARE_LIST: list[base.Base] = [
     ),
     Slackware(
         "vbatts/slackware:14.2",
-        "unknown",
+        ("EOL:2024-01-01",),
         pkg_manager=package_manager.SLACKPKG(),
         packages=[
             [
@@ -74,7 +74,7 @@ SLACKWARE_LIST: list[base.Base] = [
     ),
     Slackware(
         "vbatts/slackware:14.1",
-        "unknown",
+        ("EOL:2024-01-01",),
         pkg_manager=package_manager.SLACKPKG(),
         packages=[
             [
@@ -91,7 +91,7 @@ SLACKWARE_LIST: list[base.Base] = [
     ),
     Slackware(
         "vbatts/slackware:14.0",
-        "unknown",
+        ("EOL:2024-01-01",),
         pkg_manager=package_manager.SLACKPKG(),
         packages=[
             [
