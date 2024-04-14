@@ -35,7 +35,7 @@ ALT_LIST: list[base.Base] = [
         "alt:sisyphus",
         "rolling",
         machines=["i686", "x86_64", "aarch64", "ppc64le"],
-        packages=[["libnsl1"] + ALT_PACKAGES],
+        packages=[["libnsl1", "glibc-pthread"] + ALT_PACKAGES],
     ),
     Alt(
         "alt:p10",
