@@ -65,6 +65,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "fedora rawhide", "rolling", "", ""
+   "fedora 40", "2025-05-13", "", ""
    "fedora 39", "2024-11-12", "", ""
    "fedora 38", "2024-05-14", "", ""
    "fedora 37", "2023-11-14", "", ""
@@ -155,6 +156,7 @@ This mostly mimics Debian lifecycle.
 
    "ubuntu devel", "rolling", "", ""
    "ubuntu rolling", "rolling", "", ""
+   "ubuntu 24.04", "2029-04-30", "", "2034-04-30"
    "ubuntu 23.10", "2024-07-14", "", ""
    "ubuntu 23.04", "2024-01-31", "", ""
    "ubuntu 22.10", "2023-07-20", "", ""

@@ -26,6 +26,7 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-40| image:: https://img.shields.io/static/v1?label=fedora&message=40%20(EOL%3A2025-05-13)&color=green&logo=fedora&logoColor=white
 .. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-12)&color=green&logo=fedora&logoColor=white
 .. |fedora-38| image:: https://img.shields.io/static/v1?label=fedora&message=38%20(EOL%3A2024-05-14)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-37| image:: https://img.shields.io/static/v1?label=fedora&message=37%20(EOL%3A2023-11-14)&color=black&logo=fedora&logoColor=white
@@ -89,6 +90,7 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(unknown)&color=lightgray&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
+.. |ubuntu-24.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.04%20(EOL%3A2029-04-30%20/%20ELTS%3A2034-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-23.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.10%20(EOL%3A2024-07-14)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=black&logo=ubuntu&logoColor=white
@@ -177,6 +179,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
+   "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -189,6 +192,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
+   "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -198,6 +202,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_13", "|debian-7|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
+   "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_armv7l
 
 .. begin base_images_riscv64
@@ -247,7 +252,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |fedora-39| |ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|archlinux-latest| |clearlinux-latest| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_39", "|archlinux-latest| |clearlinux-latest| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-24.04| |ubuntu-devel|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -299,7 +304,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |fedora-39| |ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|mageia-cauldron| |opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_39", "|fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -325,7 +330,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |fedora-39| |ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_39", "|fedora-40| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -349,7 +354,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|fedora-39| |opensuse-tumbleweed| |ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|ubuntu-devel|"
+   "manylinux_2_39", "|fedora-40| |ubuntu-24.04| |ubuntu-devel|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
@@ -374,7 +379,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-23.04|"
    "manylinux_2_38", "|ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|opensuse-tumbleweed| |ubuntu-devel|"
+   "manylinux_2_39", "|opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
