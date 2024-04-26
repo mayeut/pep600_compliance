@@ -378,8 +378,8 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |ubuntu-22.10|"
    "manylinux_2_37", "|debian-experimental| |debian-testing| |debian-unstable| |ubuntu-23.04|"
-   "manylinux_2_38", "|ubuntu-23.10| |ubuntu-rolling|"
-   "manylinux_2_39", "|opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel|"
+   "manylinux_2_38", "|ubuntu-23.10|"
+   "manylinux_2_39", "|opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
