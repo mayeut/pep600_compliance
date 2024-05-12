@@ -168,7 +168,7 @@ class SLACKPKG(_PackageManager):
             )
             assert exit_code == 0, output.decode("utf-8")
             exit_code, output = container.exec_run(
-                ["slackpkg", "-default_answer=yes", "-batch=on", "update", "gpg"]
+                ["sed", "-i", "s/CHECKGPG=on/CHECKGPG=off/g", "/etc/slackpkg/slackpkg.conf"]
             )
             assert exit_code == 0, output.decode("utf-8")
         super()._update(container)
