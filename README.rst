@@ -156,7 +156,6 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images
 
 Distro compatibility
@@ -198,7 +197,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|archlinux-latest| |clearlinux-latest| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_39", "|archlinux-latest| |clearlinux-latest| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility
 
