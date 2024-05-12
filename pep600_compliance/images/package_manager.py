@@ -168,7 +168,12 @@ class SLACKPKG(_PackageManager):
             )
             assert exit_code == 0, output.decode("utf-8")
             exit_code, output = container.exec_run(
-                ["sed", "-i", "s/CHECKGPG=on/CHECKGPG=off/g", "/etc/slackpkg/slackpkg.conf"]
+                [
+                    "sed",
+                    "-i",
+                    "s/CHECKGPG=on/CHECKGPG=off/g",
+                    "/etc/slackpkg/slackpkg.conf",
+                ]
             )
             assert exit_code == 0, output.decode("utf-8")
         super()._update(container)
@@ -185,4 +190,8 @@ class SLACKPKG(_PackageManager):
                 exit_code, output = container.exec_run(
                     ["slackpkg", "-default_answer=yes", "-batch=on", "upgrade-all"]
                 )
-                assert exit_code in {0, 20, 50}, f"exit_code: {exit_code}\n" + output.decode("utf-8")
+                assert exit_code in {
+                    0,
+                    20,
+                    50,
+                }, f"exit_code: {exit_code}\n" + output.decode("utf-8")
