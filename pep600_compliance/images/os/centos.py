@@ -31,6 +31,27 @@ CENTOS_YUM_OLD = [
 
 CENTOS_LIST: list[base.Base] = [
     CentOS(
+        "quay.io/centos/centos:stream10-development",
+        "rolling",
+        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        pkg_manager=package_manager.DNF(),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+            ]
+        ],
+    ),
+    CentOS(
         "quay.io/centos/centos:stream9",
         ("EOL:2027-05-31",),
         machines=["x86_64", "aarch64", "ppc64le", "s390x"],

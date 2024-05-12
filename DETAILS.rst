@@ -9,6 +9,7 @@
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2025-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-12-31)&color=black&logo=amazon-aws&logoColor=white
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
+.. |centos-stream10| image:: https://img.shields.io/static/v1?label=centos&message=stream10%20(rolling)&color=purple&logo=centos&logoColor=white
 .. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(EOL%3A2027-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=yellow&logo=centos&logoColor=white
 .. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
@@ -304,7 +305,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_39", "|centos-stream10| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -330,7 +331,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|fedora-40| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_39", "|centos-stream10| |fedora-40| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -354,7 +355,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|fedora-40| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_39", "|centos-stream10| |fedora-40| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
