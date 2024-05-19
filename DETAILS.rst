@@ -61,6 +61,7 @@
 .. |manylinux-2010| image:: https://img.shields.io/static/v1?label=manylinux&message=2010%20(EOL%3A2020-11-30)&color=black&logo=python&logoColor=white
 .. |manylinux-1| image:: https://img.shields.io/static/v1?label=manylinux&message=1%20(EOL%3A2017-03-31)&color=black&logo=python&logoColor=white
 .. |opensuse-tumbleweed| image:: https://img.shields.io/static/v1?label=opensuse&message=tumbleweed%20(rolling)&color=purple&logo=opensuse&logoColor=white
+.. |opensuse-15.6| image:: https://img.shields.io/static/v1?label=opensuse&message=15.6%20(EOL%3A2025-12-31)&color=green&logo=opensuse&logoColor=white
 .. |opensuse-15.5| image:: https://img.shields.io/static/v1?label=opensuse&message=15.5%20(EOL%3A2024-12-31)&color=yellow&logo=opensuse&logoColor=white
 .. |opensuse-15.4| image:: https://img.shields.io/static/v1?label=opensuse&message=15.4%20(EOL%3A2023-12-07)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-15.3| image:: https://img.shields.io/static/v1?label=opensuse&message=15.3%20(EOL%3A2022-12-01)&color=black&logo=opensuse&logoColor=white
@@ -255,7 +256,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
-   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
+   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |debian-testing| |debian-unstable| |fedora-39| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|archlinux-latest| |centos-stream10| |clearlinux-latest| |debian-experimental| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
@@ -306,7 +307,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
-   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |debian-testing| |debian-unstable| |fedora-39| |ubuntu-23.10|"
+   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |debian-testing| |debian-unstable| |fedora-39| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |debian-experimental| |fedora-40| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_39_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64

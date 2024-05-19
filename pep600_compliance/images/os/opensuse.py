@@ -38,6 +38,12 @@ OPENSUSE_LIST: list[base.Base] = [
         version="tumbleweed",
     ),
     OpenSUSE(
+        "opensuse/leap:15.6",
+        ("EOL:2025-12-31",),
+        machines=("x86_64", "aarch64"),
+        packages=[OPENSUSE_PACKAGES, ["libnsl1"]],
+    ),
+    OpenSUSE(
         "opensuse/leap:15.5",
         ("EOL:2024-12-31",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
