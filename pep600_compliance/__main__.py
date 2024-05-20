@@ -105,12 +105,15 @@ def replace_badges(lines: list[str]) -> list[str]:
             continue
         keys.append(key)
         if image.eol == "rolling":
+            assert isinstance(image.eol, str)
             color = "purple"
             eol = image.eol
         elif image.eol == "unknown":
+            assert isinstance(image.eol, str)
             color = "lightgray"
             eol = image.eol
         else:
+            assert isinstance(image.eol, tuple)
             last_eol_type, last_eol_date = image.eol[-1].split(":")
             free_eol_date = datetime.date.fromisoformat(last_eol_date)
             paid_eol_date = free_eol_date

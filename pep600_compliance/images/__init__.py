@@ -1,3 +1,6 @@
+from collections.abc import Iterator
+
+from pep600_compliance.images.base import Base
 from pep600_compliance.images.os.almalinux import ALMALINUX_LIST
 from pep600_compliance.images.os.alt import ALT_LIST
 from pep600_compliance.images.os.amazonlinux import AMAZONLINUX_LIST
@@ -39,7 +42,7 @@ IMAGE_LIST = (
 )
 
 
-def get_images(machine):
+def get_images(machine: str | None) -> Iterator[Base]:
     for image in IMAGE_LIST:
         if machine is None or machine in image.machines:
             yield image

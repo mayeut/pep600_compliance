@@ -33,7 +33,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "quay.io/centos/centos:stream10-development",
         "rolling",
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -54,7 +54,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "quay.io/centos/centos:stream9",
         ("EOL:2027-05-31",),
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -75,7 +75,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "quay.io/centos/centos:stream8",
         ("EOL:2024-05-31",),
-        machines=["x86_64", "aarch64", "ppc64le"],
+        machines=("x86_64", "aarch64", "ppc64le"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -96,7 +96,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "centos:8",
         ("EOL:2021-12-31",),
-        machines=["x86_64", "aarch64", "ppc64le"],
+        machines=("x86_64", "aarch64", "ppc64le"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -117,7 +117,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "centos:7",
         ("EOL:2024-06-30",),
-        machines=["i686", "x86_64", "aarch64", "ppc64le"],
+        machines=("i686", "x86_64", "aarch64", "ppc64le"),
         pkg_manager=package_manager.YUM(),
         packages=[
             [
@@ -138,7 +138,7 @@ CENTOS_LIST: list[base.Base] = [
     CentOS(
         "centos:6",
         ("EOL:2020-11-30",),
-        machines=["i686", "x86_64"],
+        machines=("i686", "x86_64"),
         pkg_manager=package_manager.YUM(run_once=CENTOS_YUM_OLD),
         packages=[
             ["epel-release"],

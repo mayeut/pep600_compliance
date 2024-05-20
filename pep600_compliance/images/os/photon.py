@@ -6,14 +6,16 @@ class Photon(base.Base):
         _, version = image.split(":")
         self._packages = packages
         # no X11 on photon
-        skip_lib = [
-            "libX11.so.6",
-            "libXext.so.6",
-            "libXrender.so.1",
-            "libICE.so.6",
-            "libSM.so.6",
-            "libGL.so.1",
-        ]
+        skip_lib = frozenset(
+            (
+                "libX11.so.6",
+                "libXext.so.6",
+                "libXrender.so.1",
+                "libICE.so.6",
+                "libSM.so.6",
+                "libGL.so.1",
+            )
+        )
         super().__init__(
             image,
             "photon",
@@ -34,31 +36,31 @@ PHOTON_LIST: list[base.Base] = [
     Photon(
         "photon:5.0",
         "unknown",
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:4.0",
         ("EOL:2025-07-01",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:3.0",
         ("EOL:2024-02-01",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         packages=[["which", "python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:2.0",
         ("EOL:2022-12-31",),
-        machines=["x86_64"],
+        machines=("x86_64",),
         packages=[["python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:1.0",
         ("EOL:2022-02-28",),
-        machines=["x86_64"],
+        machines=("x86_64",),
         packages=[["which", "python2", "python3", "libstdc++", "glib"]],
     ),
 ]

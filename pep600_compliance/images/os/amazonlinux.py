@@ -18,7 +18,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     AmazonLinux(
         "amazonlinux:2023",
         ("EOL:2028-01-01",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -41,7 +41,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     AmazonLinux(
         "amazonlinux:2",
         ("EOL:2025-06-30",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.YUM(),
         packages=[
             [
@@ -64,7 +64,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     AmazonLinux(
         "amazonlinux:1",
         ("EOL:2020-12-31", "LTS:2023-12-31"),
-        machines=["x86_64"],
+        machines=("x86_64",),
         pkg_manager=package_manager.YUM(),
         packages=[
             ["epel-release"],

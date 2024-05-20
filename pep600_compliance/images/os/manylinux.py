@@ -24,7 +24,7 @@ _MANYLINUX_2_28: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux_2_28_{machine}:latest",
         ("EOL:2029-05-31",),
-        machines=[f"{machine}"],
+        machines=(machine,),
     )
     for machine in {"x86_64", "aarch64", "ppc64le", "s390x"}
 ]
@@ -32,7 +32,7 @@ _MANYLINUX_2_24: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux_2_24_{machine}:latest",
         ("EOL:2020-07-05", "LTS:2022-06-30", "ELTS:2027-06-30"),
-        machines=[f"{machine}"],
+        machines=(machine,),
     )
     for machine in {"x86_64", "i686", "aarch64", "ppc64le", "s390x"}
 ]
@@ -40,7 +40,7 @@ _MANYLINUX_2014: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux2014_{machine}:latest",
         ("EOL:2024-06-30",),
-        machines=[f"{machine}"],
+        machines=(machine,),
     )
     for machine in {"x86_64", "i686", "aarch64", "ppc64le", "s390x"}
 ]
@@ -48,7 +48,7 @@ _MANYLINUX_2010: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux2010_{machine}:latest",
         ("EOL:2020-11-30",),
-        machines=[f"{machine}"],
+        machines=(machine,),
     )
     for machine in {"x86_64", "i686"}
 ]
@@ -56,7 +56,7 @@ _MANYLINUX_1: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux1_{machine}:latest",
         ("EOL:2017-03-31",),
-        machines=[f"{machine}"],
+        machines=(machine,),
     )
     for machine in {"x86_64", "i686"}
 ]

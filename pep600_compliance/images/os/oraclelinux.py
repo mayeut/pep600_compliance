@@ -26,7 +26,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     OracleLinux(
         "oraclelinux:9-slim",
         ("EOL:2032-06-30", "ELTS:2034-06-30"),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.MICRODNF(),
         packages=[
             [
@@ -47,7 +47,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     OracleLinux(
         "oraclelinux:8-slim",
         ("EOL:2029-07-01", "ELTS:2031-07-01"),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.MICRODNF(),
         packages=[
             [
@@ -68,7 +68,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     OracleLinux(
         "oraclelinux:7-slim",
         ("EOL:2024-07-01", "ELTS:2026-06-01"),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.YUM(),
         packages=[
             [
@@ -90,7 +90,7 @@ ORACLELINUX_LIST: list[base.Base] = [
     OracleLinux(
         "oraclelinux:6-slim",
         ("EOL:2021-03-31", "ELTS:2024-03-31"),
-        machines=["x86_64"],
+        machines=("x86_64",),
         pkg_manager=package_manager.YUM(
             run_once=[["yum-config-manager", "--enable", "ol6_software_collections"]]
         ),

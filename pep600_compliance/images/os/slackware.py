@@ -6,7 +6,7 @@ class Slackware(base.Base):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "slackware", version, eol, pkg_manager, ["x86_64"], python=python
+            image, "slackware", version, eol, pkg_manager, ("x86_64",), python=python
         )
 
     def install_packages(self, container, machine):

@@ -17,7 +17,7 @@ ROCKYLINUX_LIST: list[base.Base] = [
     RockyLinux(
         "rockylinux:9",
         ("EOL:2032-05-31",),
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         packages=[
             [
                 "which",
@@ -37,7 +37,7 @@ ROCKYLINUX_LIST: list[base.Base] = [
     RockyLinux(
         "rockylinux:8",
         ("EOL:2029-05-31",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         packages=[
             [
                 "which",

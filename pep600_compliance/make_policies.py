@@ -43,7 +43,7 @@ class Policy:
 @dataclasses.dataclass
 class Incompatibility:
     policy: str | None = None
-    libs: list[str] = dataclasses.field(default_factory=list)
+    libs: frozenset[str] = dataclasses.field(default_factory=frozenset)
 
 
 def load_distros(path: Path) -> list[Distribution]:

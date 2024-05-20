@@ -27,7 +27,7 @@ RHUBI_LIST: list[base.Base] = [
     RHUBI(
         "redhat/ubi9:9.0.0",
         ("EOL:2032-05-31",),
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -43,12 +43,12 @@ RHUBI_LIST: list[base.Base] = [
                 "libSM",
             ]
         ],
-        skip_lib=["libnsl.so.1"],
+        skip_lib=frozenset(("libnsl.so.1",)),
     ),
     RHUBI(
         "redhat/ubi8:8.4",
         ("EOL:2029-05-31",),
-        machines=["x86_64", "aarch64", "ppc64le", "s390x"],
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -64,12 +64,12 @@ RHUBI_LIST: list[base.Base] = [
                 "libSM",
             ]
         ],
-        skip_lib=["libnsl.so.1"],
+        skip_lib=frozenset(("libnsl.so.1",)),
     ),
     RHUBI(
         "registry.access.redhat.com/ubi7/ubi:7.8",
         ("EOL:2024-06-30",),
-        machines=["x86_64", "ppc64le", "s390x"],
+        machines=("x86_64", "ppc64le", "s390x"),
         pkg_manager=package_manager.YUM(),
         packages=[
             [

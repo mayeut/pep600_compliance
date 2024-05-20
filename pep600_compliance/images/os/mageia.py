@@ -38,7 +38,7 @@ MAGEIA_LIST: list[base.Base] = [
     Mageia(
         "mageia:cauldron",
         "rolling",
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
@@ -46,28 +46,28 @@ MAGEIA_LIST: list[base.Base] = [
     Mageia(
         "mageia:9",
         ("EOL:2025-03-31",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
     ),
     Mageia(
         "mageia:8",
         ("EOL:2023-11-30",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
     Mageia(
         "mageia:7",
         ("EOL:2021-05-26",),
-        machines=["x86_64", "aarch64"],
+        machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
     Mageia(
         "mageia:6",
         ("EOL:2019-09-30",),
-        machines=["x86_64"],
+        machines=("x86_64",),
         pkg_manager=package_manager.DNF(run_once=MAGEIA6_RUNONCE),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'

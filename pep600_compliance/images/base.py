@@ -48,14 +48,14 @@ def get_docker_platform_prefix(machine):
 class Base:
     def __init__(
         self,
-        image,
-        name,
-        version,
-        eol,
+        image: str,
+        name: str,
+        version: str,
+        eol: tuple[str, ...] | str,
         package_manager,
-        machines=["x86_64"],
-        skip_lib=[],
-        python="python3",
+        machines: tuple[str, ...] = ("x86_64",),
+        skip_lib: frozenset[str] = frozenset(),
+        python: str = "python3",
     ):
         self.image = image
         self.name = name

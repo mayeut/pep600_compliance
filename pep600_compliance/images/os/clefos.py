@@ -15,7 +15,7 @@ CLEFOS_LIST: list[base.Base] = [
     ClefOS(
         "clefos:7",
         ("EOL:2024-06-30",),
-        machines=["s390x"],
+        machines=("s390x",),
         pkg_manager=package_manager.YUM(),
         packages=[
             [
