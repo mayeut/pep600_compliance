@@ -80,8 +80,8 @@ def create_cache(machine: str, force_rolling: bool, continue_on_error: bool) -> 
 
 def replace_badges(lines: list[str]) -> list[str]:
     start, end = get_start_end(lines, ".. begin distro_badges", ".. end distro_badges")
-    new_lines = []
-    keys = []
+    new_lines: list[str] = []
+    keys: list[str] = []
     six_months = datetime.timedelta(days=182)
     today = datetime.date.today()
     logos = {
@@ -229,8 +229,8 @@ def update_eol():
         lines, ".. begin eol_information", ".. end eol_information"
     )
     old_name = ""
-    new_lines = []
-    done = set()
+    new_lines: list[str] = []
+    done: set[str] = set()
     for image in get_images(None):
         shortname = image.name.replace("-slim", "")
         if shortname != old_name:

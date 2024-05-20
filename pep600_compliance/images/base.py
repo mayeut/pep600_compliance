@@ -67,7 +67,7 @@ class Base:
         self.python = python
 
     @contextmanager
-    def docker_container(self, machine):
+    def docker_container(self, machine: str):
         client = docker.from_env()
 
         image_name = self.image
@@ -214,7 +214,7 @@ class Base:
                 policy,
                 "/home/pep600_compliance/manylinux-policy.json",
             ]
-            + self.skip_lib,
+            + list(self.skip_lib),
             demux=True,
         )
         assert exit_code == 0, output[1].decode("utf-8")
