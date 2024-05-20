@@ -2,11 +2,11 @@ import argparse
 import datetime
 import json
 import logging
-import os
 import platform
 import subprocess
 import sys
 import urllib.parse
+from pathlib import Path
 
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import (
@@ -18,15 +18,15 @@ from pep600_compliance.make_policies import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-HERE = os.path.abspath(os.path.dirname(__file__))
-CACHE_PATH = os.path.abspath(os.path.join(HERE, "..", "cache"))
-README_PATH = os.path.abspath(os.path.join(HERE, "..", "README.rst"))
-DETAILS_PATH = os.path.abspath(os.path.join(HERE, "..", "DETAILS.rst"))
-EOL_PATH = os.path.abspath(os.path.join(HERE, "..", "EOL.rst"))
+HERE = Path(__file__).resolve(strict=True).parent
+CACHE_PATH = HERE / ".." / "cache"
+README_PATH = HERE / ".." / "README.rst"
+DETAILS_PATH = HERE / ".." / "DETAILS.rst"
+EOL_PATH = HERE / ".." / "EOL.rst"
 MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"}
 
 
-def get_start_end(lines, start_tag, end_tag):
+def get_start_end(lines: list[str], start_tag: str, end_tag: str) -> tuple[int, int]:
     start = None
     end = None
     for i in range(len(lines)):
@@ -42,11 +42,10 @@ def get_start_end(lines, start_tag, end_tag):
     return start, end
 
 
-def create_cache(machine, force_rolling, continue_on_error):
+def create_cache(machine: str, force_rolling: bool, continue_on_error: bool) -> int:
     exit_code = 0
-    machine_cache_path = os.path.join(CACHE_PATH, machine)
-    if not os.path.exists(machine_cache_path):
-        os.makedirs(machine_cache_path)
+    machine_cache_path = CACHE_PATH / machine
+    machine_cache_path.mkdir(parents=True, exist_ok=True)
     subprocess.check_call(
         [
             sys.executable,
@@ -57,33 +56,29 @@ def create_cache(machine, force_rolling, continue_on_error):
             "--no-binary",
             ":all:",
             "-d",
-            os.path.join(HERE, "tools"),
+            str(HERE / "tools"),
             "pyelftools==0.26",
         ]
     )
     for image in get_images(machine):
-        cache_name = f"{image.name}-{image.version}"
-        cache_file = os.path.join(machine_cache_path, cache_name + ".json")
-        run = (not os.path.exists(cache_file)) or (
-            force_rolling and image.eol == "rolling"
-        )
+        cache_file = machine_cache_path / f"{image.name}-{image.version}.json"
+        run = (not cache_file.exists()) or (force_rolling and image.eol == "rolling")
         if run:
             try:
                 symbols = image.run_check(machine)
-                with open(cache_file, "w") as f:
-                    json.dump(symbols, f, sort_keys=True)
+                cache_file.write_text(json.dumps(symbols, sort_keys=True))
             except BaseException as e:
                 if continue_on_error:
                     exit_code |= 1
                     logger.exception(
-                        f"Exception occurred while creating cache for {cache_name}"
+                        f"Exception occurred while creating cache for {cache_file.stem}"
                     )
                 else:
                     raise e
     return exit_code
 
 
-def replace_badges(lines):
+def replace_badges(lines: list[str]) -> list[str]:
     start, end = get_start_end(lines, ".. begin distro_badges", ".. end distro_badges")
     new_lines = []
     keys = []
@@ -141,14 +136,11 @@ def replace_badges(lines):
             f"color={color}{logo}"
         )
         new_lines.append(line)
-    lines = lines[: start + 1] + new_lines + lines[end:]
-    return lines
+    return lines[: start + 1] + new_lines + lines[end:]
 
 
 def update_details():
-    with open(DETAILS_PATH) as f:
-        content = f.read()
-    lines = content.splitlines()
+    lines = DETAILS_PATH.read_text().splitlines()
 
     lines = replace_badges(lines)
 
@@ -180,15 +172,11 @@ def update_details():
             new_lines.append(line)
         lines = lines[: start + 1] + new_lines + lines[end:]
 
-    content = "\n".join(lines) + "\n"
-    with open(DETAILS_PATH, "w") as f:
-        f.write(content)
+    DETAILS_PATH.write_text("\n".join(lines) + "\n")
 
 
 def update_readme():
-    with open(README_PATH) as f:
-        content = f.read()
-    lines = content.splitlines()
+    lines = README_PATH.read_text().splitlines()
 
     lines = replace_badges(lines)
 
@@ -223,25 +211,17 @@ def update_readme():
     ]
     for distro in incompatibilities.keys():
         name = f'|{distro.replace(" ", "-")}|'
-        policy = ""
-        libraries = ""
-        if "policy" in incompatibilities[distro].keys():
-            policy = incompatibilities[distro]["policy"]
-        if "lib" in incompatibilities[distro].keys():
-            libraries = ", ".join(sorted(incompatibilities[distro]["lib"]))
+        policy = incompatibilities[distro].policy or ""
+        libraries = ", ".join(sorted(incompatibilities[distro].libs))
         line = f'   "{name}", "{policy}", "{libraries}"'
         new_lines.append(line)
     lines = lines[: start + 1] + new_lines + lines[end:]
 
-    content = "\n".join(lines) + "\n"
-    with open(README_PATH, "w") as f:
-        f.write(content)
+    README_PATH.write_text("\n".join(lines) + "\n")
 
 
 def update_eol():
-    with open(EOL_PATH) as f:
-        content = f.read()
-    lines = content.splitlines()
+    lines = EOL_PATH.read_text().splitlines()
     start, end = get_start_end(
         lines, ".. begin eol_information", ".. end eol_information"
     )
@@ -281,32 +261,28 @@ def update_eol():
         new_lines.append(line)
     lines = lines[: start + 1] + new_lines + lines[end:]
 
-    content = "\n".join(lines) + "\n"
-    with open(EOL_PATH, "w") as f:
-        f.write(content)
+    EOL_PATH.write_text("\n".join(lines) + "\n")
 
 
-def versionify(version_string):
+def versionify(version_string: str) -> tuple[int | str, ...]:
     try:
-        result = [int(n) for n in version_string.split(".")]
+        result = tuple(int(n) for n in version_string.split("."))
         assert len(result) <= 4
     except ValueError:
-        result = [999999, 999999, 999999, version_string]
+        return 999999, 999999, 999999, version_string
     return result
 
 
 def get_zlib_blacklist(min_glibc_version):
     zlib_symbols = {}
     for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
-        cache_path = os.path.join(CACHE_PATH, machine)
+        cache_path = CACHE_PATH / machine
         distros = load_distros(cache_path)
         for distro in distros:
-            glibc_version = tuple(
-                int(part) for part in distro["glibc_version"].split(".")
-            )
-            zlib_versions = distro["symbols"]["ZLIB"]
+            glibc_version = distro.glibc_version_tuple
+            zlib_versions = distro.symbols["ZLIB"]
             zlib_version = "-1" if len(zlib_versions) == 0 else zlib_versions[-1]
-            symbols = [symbol.split("@")[0] for symbol in distro["libz.so.1"]]
+            symbols = [symbol.split("@")[0] for symbol in distro.libz_so_1]
             if zlib_version not in zlib_symbols:
                 zlib_symbols[zlib_version] = {"union": set()}
             zlib_symbols[zlib_version]["union"] |= set(symbols)
@@ -371,20 +347,20 @@ def create_policy(glibc_version):
         },
     }
     for machine in machines:
-        cache_path = os.path.join(CACHE_PATH, machine)
+        cache_path = CACHE_PATH / machine
         distros = load_distros(cache_path)
-        policies = make_policies(distros, machine)
+        policies = make_policies(distros)
         try:
             machine_policy = next(
                 policy_
                 for policy_ in policies
-                if policy_["glibc_version"] == glibc_version
+                if policy_.glibc_version == glibc_version
             )
         except StopIteration:
             continue
         policy["symbol_versions"][machine] = {
-            k: sorted(machine_policy["symbols"][k], key=lambda x: versionify(x))
-            for k in sorted(machine_policy["symbols"].keys())
+            k: sorted(machine_policy.symbols[k], key=lambda x: versionify(x))
+            for k in sorted(machine_policy.symbols.keys())
         }
     print(json.dumps(policy))
 
