@@ -283,7 +283,7 @@ def get_zlib_blacklist(min_glibc_version):
         distros = load_distros(cache_path)
         for distro in distros:
             glibc_version = distro.glibc_version_tuple
-            zlib_versions = distro.symbols["ZLIB"]
+            zlib_versions = sorted(distro.symbols["ZLIB"])
             zlib_version = "-1" if len(zlib_versions) == 0 else zlib_versions[-1]
             symbols = [symbol.split("@")[0] for symbol in distro.libz_so_1]
             if zlib_version not in zlib_symbols:
@@ -388,7 +388,7 @@ def main():
     update_details()
     update_eol()
     # print_zlib_blacklist()
-    # create_policy("2.34")
+    # create_policy("2.36")
     exit(exit_code)
 
 
