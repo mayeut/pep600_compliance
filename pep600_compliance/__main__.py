@@ -13,6 +13,7 @@ from typing import Any
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import (
     OFFICIAL_POLICIES,
+    FinalPolicy,
     dump_manylinux_policies,
     load_distros,
     make_policies,
@@ -320,7 +321,7 @@ def print_zlib_blacklist() -> None:
 
 def create_policy(
     glibc_version: str, priority: int, machines: tuple[str, ...]
-) -> dict[str, Any]:
+) -> FinalPolicy:
     policy: dict[str, Any] = {
         "name": f"manylinux_{glibc_version.replace('.', '_')}",
         "aliases": [],
@@ -371,16 +372,16 @@ def create_policy(
             k: sorted(machine_policy.symbols[k], key=lambda x: versionify(x))
             for k in sorted(machine_policy.symbols.keys())
         }
-    return policy
+    return FinalPolicy(**policy)
 
 
 def update_policies() -> None:
     machines = ("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64")
     policies = deepcopy(OFFICIAL_POLICIES)
     official_glibc = {
-        tuple(map(int, policy["name"][10:].split("_")))
+        tuple(map(int, policy.name[10:].split("_")))
         for policy in policies
-        if policy["name"] != "linux"
+        if policy.name != "linux"
     }
     known_glibc = set()
     for machine in machines:
@@ -389,7 +390,7 @@ def update_policies() -> None:
         known_glibc |= {distro.glibc_version_tuple for distro in distros}
     missing_glibc = sorted(known_glibc - official_glibc)
     min_glibc = max(official_glibc)
-    priority = min(policy["priority"] for policy in policies if policy["priority"] > 0)
+    priority = min(policy.priority for policy in policies if policy.priority > 0)
     for glibc in missing_glibc:
         if glibc <= min_glibc or len(glibc) != 2:
             continue
