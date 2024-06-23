@@ -26,7 +26,10 @@ def _validation(policies: list[Policy]) -> None:
             continue
         if not lib_whitelist.issubset(set(policy.lib_whitelist)):
             diff = lib_whitelist - set(policy.lib_whitelist)
-            msg = f"Invalid policies: missing whitelist libraries in {policy.name!r} compared to previous policies: {diff}"
+            msg = (
+                "Invalid policies: missing whitelist libraries in "
+                f"{policy.name!r} compared to previous policies: {diff}"
+            )
             raise ValueError(msg)
         lib_whitelist.update(policy.lib_whitelist)
         known_arch = set(symbol_versions.keys())
@@ -34,7 +37,10 @@ def _validation(policies: list[Policy]) -> None:
         current_arch = set(policy.symbol_versions.keys())
         if not known_arch.issubset(current_arch):
             diff = known_arch - current_arch
-            msg = f"Invalid policies: missing architecture in {policy.name!r} compared to previous policies: {diff}"
+            msg = (
+                "Invalid policies: missing architecture in "
+                f"{policy.name!r} compared to previous policies: {diff}"
+            )
             raise ValueError(msg)
         for arch in policy.symbol_versions.keys():
             symbol_versions_arch = symbol_versions.get(arch, defaultdict(set))
@@ -42,9 +48,15 @@ def _validation(policies: list[Policy]) -> None:
                 policy_symbol_versions = set(policy.symbol_versions[arch][prefix])
                 if not symbol_versions_arch[prefix].issubset(policy_symbol_versions):
                     diff = symbol_versions_arch[prefix] - policy_symbol_versions
-                    msg = f"Invalid policies: missing symbol versions in '{policy.name}_{arch}' for {prefix} compared to previous policies: {diff}"
+                    msg = (
+                        "Invalid policies: missing symbol versions in "
+                        f"'{policy.name}_{arch}' for {prefix} compared to previous "
+                        f"policies: {diff}"
+                    )
                     raise ValueError(msg)
-                symbol_versions_arch[prefix].update(policy.symbol_versions[arch][prefix])
+                symbol_versions_arch[prefix].update(
+                    policy.symbol_versions[arch][prefix]
+                )
             symbol_versions[arch] = symbol_versions_arch
 
 
