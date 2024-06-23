@@ -306,7 +306,9 @@ class PoliciesJSONEncoder(json.JSONEncoder):
         return json.dumps(o)
 
 
-def format_manylinux_policies() -> None:
-    HERE.joinpath("tools", "manylinux-policy.json").write_text(
-        json.dumps(OFFICIAL_POLICIES, cls=PoliciesJSONEncoder, indent=2) + "\n"
-    )
+def dump_manylinux_policies(policies=None, path: Path | None = None) -> None:
+    if policies is None:
+        policies = OFFICIAL_POLICIES
+    if path is None:
+        path = HERE / "tools" / "manylinux-policy.json"
+    path.write_text(json.dumps(policies, cls=PoliciesJSONEncoder, indent=2) + "\n")

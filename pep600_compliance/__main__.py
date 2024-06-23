@@ -6,11 +6,14 @@ import platform
 import subprocess
 import sys
 import urllib.parse
+from copy import deepcopy
 from pathlib import Path
+from typing import Any
 
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import (
-    format_manylinux_policies,
+    OFFICIAL_POLICIES,
+    dump_manylinux_policies,
     load_distros,
     make_policies,
     manylinux_analysis,
@@ -143,7 +146,7 @@ def replace_badges(lines: list[str]) -> list[str]:
     return lines[: start + 1] + new_lines + lines[end:]
 
 
-def update_details():
+def update_details() -> None:
     lines = DETAILS_PATH.read_text().splitlines()
 
     lines = replace_badges(lines)
@@ -179,7 +182,7 @@ def update_details():
     DETAILS_PATH.write_text("\n".join(lines) + "\n")
 
 
-def update_readme():
+def update_readme() -> None:
     lines = README_PATH.read_text().splitlines()
 
     lines = replace_badges(lines)
@@ -224,7 +227,7 @@ def update_readme():
     README_PATH.write_text("\n".join(lines) + "\n")
 
 
-def update_eol():
+def update_eol() -> None:
     lines = EOL_PATH.read_text().splitlines()
     start, end = get_start_end(
         lines, ".. begin eol_information", ".. end eol_information"
@@ -253,6 +256,7 @@ def update_eol():
             "ELTS": "",
         }
         if image.eol in {"rolling", "unknown"}:
+            assert isinstance(image.eol, str)  # just to silence mypy
             dates["EOL"] = image.eol
         else:
             for eol_info in image.eol:
@@ -277,8 +281,8 @@ def versionify(version_string: str) -> tuple[int | str, ...]:
     return result
 
 
-def get_zlib_blacklist(min_glibc_version):
-    zlib_symbols = {}
+def get_zlib_blacklist(min_glibc_version: tuple[int, ...]) -> list[str]:
+    zlib_symbols: dict[str, dict[str, set[str]]] = {}
     for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
         cache_path = CACHE_PATH / machine
         distros = load_distros(cache_path)
@@ -310,16 +314,17 @@ def get_zlib_blacklist(min_glibc_version):
     return sorted(blacklist)
 
 
-def print_zlib_blacklist():
+def print_zlib_blacklist() -> None:
     print(f"zlib blacklist: {get_zlib_blacklist((2, 35))}")
 
 
-def create_policy(glibc_version):
-    machines = ["i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"]
-    policy = {
+def create_policy(
+    glibc_version: str, priority: int, machines: tuple[str, ...]
+) -> dict[str, Any]:
+    policy: dict[str, Any] = {
         "name": f"manylinux_{glibc_version.replace('.', '_')}",
         "aliases": [],
-        "priority": 64,
+        "priority": priority,
         "symbol_versions": {},
         "lib_whitelist": [
             "libgcc_s.so.1",
@@ -366,10 +371,35 @@ def create_policy(glibc_version):
             k: sorted(machine_policy.symbols[k], key=lambda x: versionify(x))
             for k in sorted(machine_policy.symbols.keys())
         }
-    print(json.dumps(policy))
+    return policy
 
 
-def main():
+def update_policies() -> None:
+    machines = ("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64")
+    policies = deepcopy(OFFICIAL_POLICIES)
+    official_glibc = {
+        tuple(map(int, policy["name"][10:].split("_")))
+        for policy in policies
+        if policy["name"] != "linux"
+    }
+    known_glibc = set()
+    for machine in machines:
+        cache_path = CACHE_PATH / machine
+        distros = load_distros(cache_path)
+        known_glibc |= {distro.glibc_version_tuple for distro in distros}
+    missing_glibc = sorted(known_glibc - official_glibc)
+    min_glibc = max(official_glibc)
+    priority = min(policy["priority"] for policy in policies if policy["priority"] > 0)
+    for glibc in missing_glibc:
+        if glibc <= min_glibc or len(glibc) != 2:
+            continue
+        priority -= 1
+        assert priority > 0
+        policies.append(create_policy("{}.{}".format(*glibc), priority, machines))
+    dump_manylinux_policies(policies, HERE / "tools" / "current-policies.json")
+
+
+def main() -> None:
     platform_machine = platform.machine()
     platform_machine = {"arm64": "aarch64"}.get(platform_machine, platform_machine)
     default_machine = [platform_machine]
@@ -388,8 +418,7 @@ def main():
     update_readme()
     update_details()
     update_eol()
-    # print_zlib_blacklist()
-    # create_policy("2.36")
+    update_policies()
     exit(exit_code)
 
 
