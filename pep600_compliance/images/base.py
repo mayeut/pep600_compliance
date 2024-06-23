@@ -101,9 +101,7 @@ class Base:
                 )
                 logger.info("Pulled image %r", image_name)
 
-        src_folder = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "..", "tools")
-        )
+        src_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         volumes = {src_folder: {"bind": "/home/pep600_compliance", "mode": "rw"}}
 
         logger.info("Starting container with image %r (%r)", image_name, image.id)
@@ -193,7 +191,7 @@ class Base:
                 "-m",
                 "pip",
                 "install",
-                "/home/pep600_compliance/pyelftools-0.26.tar.gz",
+                "/home/pep600_compliance/tools/pyelftools-0.26.tar.gz",
             ],
             environment={"PIP_BREAK_SYSTEM_PACKAGES": "1"},
         )
@@ -210,9 +208,9 @@ class Base:
         exit_code, output = container.exec_run(
             [
                 self.python,
-                "/home/pep600_compliance/calculate_symbol_versions.py",
+                "/home/pep600_compliance/tools/calculate_symbol_versions.py",
                 policy,
-                "/home/pep600_compliance/manylinux-policy.json",
+                "/home/pep600_compliance/policies/manylinux-policy.json",
             ]
             + list(self.skip_lib),
             demux=True,
@@ -226,7 +224,7 @@ class Base:
             exit_code_, output_ = container.exec_run(["ldd", python_path_], demux=True)
             if exit_code_ != 0:
                 exit_code_, output_ = container.exec_run(
-                    [self.python, "/home/pep600_compliance/ldd.py", python_path_],
+                    [self.python, "/home/pep600_compliance/tools/ldd.py", python_path_],
                     demux=True,
                 )
                 assert exit_code == 0, output[1].decode("utf-8")
