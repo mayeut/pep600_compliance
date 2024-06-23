@@ -12,13 +12,12 @@ from typing import Any
 
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import (
-    OFFICIAL_POLICIES,
-    FinalPolicy,
-    dump_manylinux_policies,
     load_distros,
     make_policies,
     manylinux_analysis,
 )
+from pep600_compliance.policies import OFFICIAL_POLICIES, Policy
+from pep600_compliance.policies import dump as dump_policies
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -321,7 +320,7 @@ def print_zlib_blacklist() -> None:
 
 def create_policy(
     glibc_version: str, priority: int, machines: tuple[str, ...]
-) -> FinalPolicy:
+) -> Policy:
     policy: dict[str, Any] = {
         "name": f"manylinux_{glibc_version.replace('.', '_')}",
         "aliases": [],
@@ -372,7 +371,7 @@ def create_policy(
             k: sorted(machine_policy.symbols[k], key=lambda x: versionify(x))
             for k in sorted(machine_policy.symbols.keys())
         }
-    return FinalPolicy(**policy)
+    return Policy(**policy)
 
 
 def update_policies() -> None:
@@ -397,7 +396,7 @@ def update_policies() -> None:
         priority -= 1
         assert priority > 0
         policies.append(create_policy("{}.{}".format(*glibc), priority, machines))
-    dump_manylinux_policies(policies, HERE / "tools" / "current-policies.json")
+    dump_policies(policies, CACHE_PATH / "current-policies.json")
 
 
 def main() -> None:

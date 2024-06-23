@@ -7,6 +7,7 @@ from copy import deepcopy
 from pathlib import Path
 
 from pep600_compliance.images import get_images
+from pep600_compliance.policies import OFFICIAL_POLICIES
 
 MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l"}
 HERE = Path(__file__).resolve(strict=True).parent
@@ -43,24 +44,6 @@ class Policy:
 class Incompatibility:
     policy: str | None = None
     libs: frozenset[str] = dataclasses.field(default_factory=frozenset)
-
-
-@dataclasses.dataclass(frozen=True)
-class FinalPolicy:
-    name: str
-    aliases: list[str]
-    priority: int
-    symbol_versions: dict[str, dict[str, list[str]]]
-    lib_whitelist: list[str]
-    blacklist: dict[str, list[str]]
-
-
-def load_policies(path: Path) -> list[FinalPolicy]:
-    data = json.loads(path.read_text())
-    return list(FinalPolicy(**policy) for policy in data)
-
-
-OFFICIAL_POLICIES = load_policies(HERE / "tools" / "manylinux-policy.json")
 
 
 def load_distros(path: Path) -> list[Distribution]:
@@ -283,53 +266,3 @@ def manylinux_analysis(path: Path, machine: str | None):
     incompatibilities = dict(sorted(incompatibilities.items()))
 
     return base_images, distros, incompatibilities
-
-
-class PoliciesJSONEncoder(json.JSONEncoder):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.current_indent = 0
-
-    def encode(self, o):
-        if isinstance(o, (list, tuple)):
-            last_level = True
-            for item in o:
-                if not isinstance(item, (str, int)):
-                    last_level = False
-                    break
-            if last_level:
-                return json.dumps(o)
-            output = []
-            self.current_indent += self.indent
-            indent_str = " " * self.current_indent
-            for item in o:
-                output.append(f"{indent_str}{self.encode(item)}")
-            self.current_indent -= self.indent
-            indent_str = " " * self.current_indent
-            return f"[\n{',\n'.join(output)}\n{indent_str}]"
-
-        if isinstance(o, (dict, FinalPolicy)):
-            if not o:
-                return "{}"
-            if isinstance(o, FinalPolicy):
-                o = dataclasses.asdict(o)
-            output = []
-            self.current_indent += self.indent
-            indent_str = " " * self.current_indent
-            for key, value in o.items():
-                output.append(f"{indent_str}{json.dumps(key)}: {self.encode(value)}")
-            self.current_indent -= self.indent
-            indent_str = " " * self.current_indent
-            return f"{{\n{',\n'.join(output)}\n{indent_str}}}"
-
-        return json.dumps(o)
-
-
-def dump_manylinux_policies(
-    policies: list[FinalPolicy] | None = None, path: Path | None = None
-) -> None:
-    if policies is None:
-        policies = OFFICIAL_POLICIES
-    if path is None:
-        path = HERE / "tools" / "manylinux-policy.json"
-    path.write_text(json.dumps(policies, cls=PoliciesJSONEncoder, indent=2) + "\n")
