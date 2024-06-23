@@ -10,6 +10,7 @@ from pathlib import Path
 
 from pep600_compliance.images import get_images
 from pep600_compliance.make_policies import (
+    format_manylinux_policies,
     load_distros,
     make_policies,
     manylinux_analysis,

@@ -266,3 +266,47 @@ def manylinux_analysis(path: Path, machine: str | None):
     incompatibilities = dict(sorted(incompatibilities.items()))
 
     return base_images, distros, incompatibilities
+
+
+class PoliciesJSONEncoder(json.JSONEncoder):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.current_indent = 0
+
+    def encode(self, o):
+        if isinstance(o, (list, tuple)):
+            last_level = True
+            for item in o:
+                if not isinstance(item, (str, int)):
+                    last_level = False
+                    break
+            if last_level:
+                return json.dumps(o)
+            output = []
+            self.current_indent += self.indent
+            indent_str = " " * self.current_indent
+            for item in o:
+                output.append(f"{indent_str}{self.encode(item)}")
+            self.current_indent -= self.indent
+            indent_str = " " * self.current_indent
+            return f"[\n{',\n'.join(output)}\n{indent_str}]"
+
+        if isinstance(o, dict):
+            if not o:
+                return "{}"
+            output = []
+            self.current_indent += self.indent
+            indent_str = " " * self.current_indent
+            for key, value in o.items():
+                output.append(f"{indent_str}{json.dumps(key)}: {self.encode(value)}")
+            self.current_indent -= self.indent
+            indent_str = " " * self.current_indent
+            return f"{{\n{',\n'.join(output)}\n{indent_str}}}"
+
+        return json.dumps(o)
+
+
+def format_manylinux_policies() -> None:
+    HERE.joinpath("tools", "manylinux-policy.json").write_text(
+        json.dumps(OFFICIAL_POLICIES, cls=PoliciesJSONEncoder, indent=2) + "\n"
+    )
