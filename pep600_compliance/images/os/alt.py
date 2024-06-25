@@ -34,20 +34,26 @@ ALT_LIST: list[base.Base] = [
     Alt(
         "alt:sisyphus",
         "rolling",
-        machines=("i686", "x86_64", "aarch64", "ppc64le"),
-        packages=[["libnsl1", "glibc-pthread"] + ALT_PACKAGES],
+        machines=("i686", "x86_64", "aarch64"),
+        packages=[["libnsl1", "glibc-pthread", *ALT_PACKAGES]],
+    ),
+    Alt(
+        "alt:p11",
+        "unknown",
+        machines=("i686", "x86_64", "aarch64"),
+        packages=[["libnsl1", "glibc-pthread", *ALT_PACKAGES]],
     ),
     Alt(
         "alt:p10",
         "unknown",
         machines=("i686", "x86_64", "aarch64", "ppc64le"),
-        packages=[["libnsl1"] + ALT_PACKAGES],
+        packages=[["libnsl1", *ALT_PACKAGES]],
     ),
     Alt(
         "alt:p9",
         "unknown",
         machines=("i686", "x86_64", "aarch64", "ppc64le"),
-        packages=[["libnsl1"] + ALT_PACKAGES],
+        packages=[["libnsl1", *ALT_PACKAGES]],
     ),
     Alt("alt:p8", "unknown", machines=("i686", "x86_64"), packages=[ALT_PACKAGES]),
 ]
