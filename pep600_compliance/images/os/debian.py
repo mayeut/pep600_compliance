@@ -60,7 +60,17 @@ DEBIAN_LIST: list[base.Base] = [
         "debian:experimental",
         "rolling",
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
-        packages=[DEBIAN_PACKAGES],
+        packages=[
+            [
+                "-t",
+                "experimental",
+                "libc6",
+                "libc-bin",
+                "libstdc++6",
+                "zlib1g",
+                *DEBIAN_PACKAGES,
+            ]
+        ],
         upgrade=True,
     ),
     Debian(
