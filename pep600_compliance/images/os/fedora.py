@@ -1,5 +1,5 @@
 from pep600_compliance.images import base
-from pep600_compliance.images.package_manager import DNF, YUM
+from pep600_compliance.images.package_manager import DNF, DNF5, YUM
 
 
 class Fedora(base.Base):
@@ -30,7 +30,7 @@ FEDORA_LIST: list[base.Base] = [
         "fedora:rawhide",
         "rolling",
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
+        pkg_manager=DNF5(),
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
     Fedora(
