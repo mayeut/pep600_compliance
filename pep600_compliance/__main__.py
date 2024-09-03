@@ -237,12 +237,17 @@ def update_eol() -> None:
     done: set[str] = set()
     for image in get_images(None):
         shortname = image.name.replace("-slim", "")
+        if shortname == "rhubi":
+            shortname = "rhel / rhubi"
         if shortname != old_name:
             old_name = shortname
+            elts_name = "ELTS"
+            if shortname.startswith("rhel "):
+                elts_name = "ELTS (rhel only)"
             new_lines.extend(
                 [
                     f".. csv-table:: {shortname}",
-                    '   :header: "distro", "EOL", "LTS", "ELTS"',
+                    f'   :header: "distro", "EOL", "LTS", "{elts_name}"',
                     "",
                 ]
             )

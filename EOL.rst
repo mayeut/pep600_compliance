@@ -135,12 +135,12 @@ This mostly mimics Debian lifecycle.
    "photon 3.0", "2024-03-01", "", ""
    "photon 2.0", "2022-12-31", "", ""
    "photon 1.0", "2022-02-28", "", ""
-.. csv-table:: rhubi
-   :header: "distro", "EOL", "LTS", "ELTS"
+.. csv-table:: rhel / rhubi
+   :header: "distro", "EOL", "LTS", "ELTS (rhel only)"
 
-   "rhubi 9", "2032-05-31", "", "2035-05-31"
-   "rhubi 8", "2029-05-31", "", "2032-05-31"
-   "rhubi 7", "2024-06-30", "", "2028-06-30"
+   "rhel / rhubi 9", "2032-05-31", "", "2035-05-31"
+   "rhel / rhubi 8", "2029-05-31", "", "2032-05-31"
+   "rhel / rhubi 7", "2024-06-30", "", "2028-06-30"
 .. csv-table:: rockylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
