@@ -25,8 +25,8 @@ class RHUBI(base.Base):
 RHUBI_LIST: list[base.Base] = [
     # EOL info: https://access.redhat.com/support/policy/updates/errata#Life_Cycle_Dates
     RHUBI(
-        "redhat/ubi9:9.0.0",
-        ("EOL:2032-05-31",),
+        "redhat/ubi9:9.4",
+        ("EOL:2032-05-31", "ELTS:2035-05-31"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
@@ -46,8 +46,8 @@ RHUBI_LIST: list[base.Base] = [
         skip_lib=frozenset(("libnsl.so.1",)),
     ),
     RHUBI(
-        "redhat/ubi8:8.4",
-        ("EOL:2029-05-31",),
+        "redhat/ubi8:8.10",
+        ("EOL:2029-05-31", "ELTS:2032-05-31"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=package_manager.DNF(),
         packages=[
@@ -68,7 +68,7 @@ RHUBI_LIST: list[base.Base] = [
     ),
     RHUBI(
         "registry.access.redhat.com/ubi7/ubi:7.8",
-        ("EOL:2024-06-30",),
+        ("EOL:2024-06-30", "ELTS:2028-06-30"),
         machines=("x86_64", "ppc64le", "s390x"),
         pkg_manager=package_manager.YUM(),
         packages=[

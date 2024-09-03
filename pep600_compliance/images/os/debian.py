@@ -88,13 +88,13 @@ DEBIAN_LIST: list[base.Base] = [
     # LTS: https://wiki.debian.org/LTS
     Debian(
         "debian:12-slim",
-        ("EOL:2026-06-10", "LTS:2028-06-10"),
+        ("EOL:2026-06-10", "LTS:2028-06-10", "ELTS:2033-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[DEBIAN_PACKAGES_OLD],
     ),
     Debian(
         "debian:11-slim",
-        ("EOL:2024-08-14", "LTS:2026-06-30"),
+        ("EOL:2024-08-14", "LTS:2026-08-30", "ELTS:2031-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[DEBIAN_PACKAGES_OLD + ["python"]],
     ),

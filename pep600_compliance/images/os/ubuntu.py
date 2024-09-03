@@ -85,7 +85,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:24.04",
-        ("EOL:2029-04-30", "ELTS:2034-04-30"),
+        ("EOL:2029-04-30", "ELTS:2036-04-30"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[["python3-pip"] + UBUNTU_PACKAGES],
     ),
@@ -110,7 +110,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:22.04",
-        ("EOL:2027-04-30", "ELTS:2032-04-30"),
+        ("EOL:2027-04-30", "ELTS:2032-04-09"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
         packages=[["python3-pip"] + UBUNTU_PACKAGES_OLD],
     ),
@@ -137,7 +137,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:20.04",
-        ("EOL:2025-04-30", "ELTS:2030-04-30"),
+        ("EOL:2025-04-02", "ELTS:2030-04-02"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES_OLD],
     ),
@@ -164,7 +164,7 @@ UBUNTU_LIST: list[base.Base] = [
     ),
     Ubuntu(
         "ubuntu:18.04",
-        ("EOL:2023-04-30", "ELTS:2028-04-30"),
+        ("EOL:2023-05-31", "ELTS:2028-04-01"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[["python", "python3-pip"] + UBUNTU_PACKAGES_OLD],
     ),

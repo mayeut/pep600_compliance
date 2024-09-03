@@ -36,7 +36,7 @@ ALMALINUX_LIST: list[base.Base] = [
     ),
     AlmaLinux(
         "almalinux:8",
-        ("EOL:2029-05-31",),
+        ("EOL:2029-03-01",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         packages=[
             [

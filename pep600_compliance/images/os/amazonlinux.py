@@ -17,7 +17,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
     # https://docs.aws.amazon.com/linux/al2023/ug/release-cadence.html
     AmazonLinux(
         "amazonlinux:2023",
-        ("EOL:2028-01-01",),
+        ("EOL:2028-03-15",),
         machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[

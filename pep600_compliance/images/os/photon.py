@@ -41,13 +41,13 @@ PHOTON_LIST: list[base.Base] = [
     ),
     Photon(
         "photon:4.0",
-        ("EOL:2025-07-01",),
+        ("EOL:2026-03-01",),
         machines=("x86_64", "aarch64"),
         packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),
     Photon(
         "photon:3.0",
-        ("EOL:2024-02-01",),
+        ("EOL:2024-03-01",),
         machines=("x86_64", "aarch64"),
         packages=[["which", "python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
     ),

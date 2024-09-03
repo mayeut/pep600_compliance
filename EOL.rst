@@ -15,7 +15,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "almalinux 9", "2032-05-31", "", ""
-   "almalinux 8", "2029-05-31", "", ""
+   "almalinux 8", "2029-03-01", "", ""
 .. csv-table:: alt
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -27,7 +27,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: amazonlinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "amazonlinux 2023", "2028-01-01", "", ""
+   "amazonlinux 2023", "2028-03-15", "", ""
    "amazonlinux 2", "2025-06-30", "", ""
    "amazonlinux 1", "2020-12-31", "2023-12-31", ""
 .. csv-table:: archlinux
@@ -57,8 +57,8 @@ This mostly mimics Debian lifecycle.
    "debian experimental", "rolling", "", ""
    "debian unstable", "rolling", "", ""
    "debian testing", "rolling", "", ""
-   "debian 12", "2026-06-10", "2028-06-10", ""
-   "debian 11", "2024-08-14", "2026-06-30", ""
+   "debian 12", "2026-06-10", "2028-06-10", "2033-06-30"
+   "debian 11", "2024-08-14", "2026-08-30", "2031-06-30"
    "debian 10", "2022-07-31", "2024-06-30", "2029-06-30"
    "debian 9", "2020-07-05", "2022-06-30", "2027-06-30"
    "debian 8", "2018-06-06", "2020-06-30", "2025-06-30"
@@ -69,7 +69,7 @@ This mostly mimics Debian lifecycle.
    "fedora rawhide", "rolling", "", ""
    "fedora 40", "2025-05-13", "", ""
    "fedora 39", "2024-11-12", "", ""
-   "fedora 38", "2024-05-14", "", ""
+   "fedora 38", "2024-05-21", "", ""
    "fedora 37", "2023-11-14", "", ""
    "fedora 36", "2023-05-16", "", ""
    "fedora 35", "2022-11-15", "", ""
@@ -123,24 +123,24 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "oraclelinux 9", "2032-06-30", "", "2034-06-30"
-   "oraclelinux 8", "2029-07-01", "", "2031-07-01"
-   "oraclelinux 7", "2024-07-01", "", "2026-06-01"
-   "oraclelinux 6", "2021-03-31", "", "2024-03-31"
+   "oraclelinux 9", "2032-06-30", "", "2035-06-30"
+   "oraclelinux 8", "2029-07-31", "", "2032-07-31"
+   "oraclelinux 7", "2024-12-31", "", "2028-06-30"
+   "oraclelinux 6", "2021-03-31", "", "2024-12-31"
 .. csv-table:: photon
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "photon 5.0", "unknown", "", ""
-   "photon 4.0", "2025-07-01", "", ""
-   "photon 3.0", "2024-02-01", "", ""
+   "photon 4.0", "2026-03-01", "", ""
+   "photon 3.0", "2024-03-01", "", ""
    "photon 2.0", "2022-12-31", "", ""
    "photon 1.0", "2022-02-28", "", ""
 .. csv-table:: rhubi
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "rhubi 9", "2032-05-31", "", ""
-   "rhubi 8", "2029-05-31", "", ""
-   "rhubi 7", "2024-06-30", "", ""
+   "rhubi 9", "2032-05-31", "", "2035-05-31"
+   "rhubi 8", "2029-05-31", "", "2032-05-31"
+   "rhubi 7", "2024-06-30", "", "2028-06-30"
 .. csv-table:: rockylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -159,19 +159,19 @@ This mostly mimics Debian lifecycle.
 
    "ubuntu devel", "rolling", "", ""
    "ubuntu rolling", "rolling", "", ""
-   "ubuntu 24.04", "2029-04-30", "", "2034-04-30"
+   "ubuntu 24.04", "2029-04-30", "", "2036-04-30"
    "ubuntu 23.10", "2024-07-14", "", ""
    "ubuntu 23.04", "2024-01-31", "", ""
    "ubuntu 22.10", "2023-07-20", "", ""
-   "ubuntu 22.04", "2027-04-30", "", "2032-04-30"
+   "ubuntu 22.04", "2027-04-30", "", "2032-04-09"
    "ubuntu 21.10", "2022-07-31", "", ""
    "ubuntu 21.04", "2022-01-31", "", ""
    "ubuntu 20.10", "2021-07-17", "", ""
-   "ubuntu 20.04", "2025-04-30", "", "2030-04-30"
+   "ubuntu 20.04", "2025-04-02", "", "2030-04-02"
    "ubuntu 19.10", "2020-07-17", "", ""
    "ubuntu 19.04", "2020-01-23", "", ""
    "ubuntu 18.10", "2019-07-18", "", ""
-   "ubuntu 18.04", "2023-04-30", "", "2028-04-30"
+   "ubuntu 18.04", "2023-05-31", "", "2028-04-01"
    "ubuntu 17.10", "2018-07-19", "", ""
    "ubuntu 17.04", "2018-01-13", "", ""
    "ubuntu 16.10", "2017-07-20", "", ""

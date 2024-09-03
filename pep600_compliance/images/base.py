@@ -117,6 +117,7 @@ class Base:
             detach=True,
             volumes=volumes,
             security_opt=["seccomp:unconfined"],
+            platform=get_docker_platform(machine),
         )
         logger.info("Started container %s", container.id[:12])
 
