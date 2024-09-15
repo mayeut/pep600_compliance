@@ -24,6 +24,8 @@ def get_docker_platform(machine):
         return "linux/s390x"
     if machine == "armv7l":
         return "linux/arm/v7"
+    if machine == "riscv64":
+        return "linux/riscv64"
     raise LookupError(f"No docker platform defined for {machine}")
 
 
