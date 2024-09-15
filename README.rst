@@ -33,8 +33,9 @@
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-7| image:: https://img.shields.io/static/v1?label=debian&message=7%20(EOL%3A2016-04-26%20/%20LTS%3A2018-05-31%20/%20ELTS%3A2020-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-41| image:: https://img.shields.io/static/v1?label=fedora&message=41%20(EOL%3A2025-12-15)&color=green&logo=fedora&logoColor=white
 .. |fedora-40| image:: https://img.shields.io/static/v1?label=fedora&message=40%20(EOL%3A2025-05-13)&color=green&logo=fedora&logoColor=white
-.. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-12)&color=yellow&logo=fedora&logoColor=white
+.. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-19)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-38| image:: https://img.shields.io/static/v1?label=fedora&message=38%20(EOL%3A2024-05-21)&color=black&logo=fedora&logoColor=white
 .. |fedora-37| image:: https://img.shields.io/static/v1?label=fedora&message=37%20(EOL%3A2023-11-14)&color=black&logo=fedora&logoColor=white
 .. |fedora-36| image:: https://img.shields.io/static/v1?label=fedora&message=36%20(EOL%3A2023-05-16)&color=black&logo=fedora&logoColor=white
@@ -202,7 +203,7 @@ If your favorite distro does not appear here:
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |alt-sisyphus| |fedora-39| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |fedora-40| |mageia-cauldron| |ubuntu-24.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_40", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |slackware-current|"
+   "manylinux_2_40", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-41| |opensuse-tumbleweed| |slackware-current|"
    "manylinux_2_40_9000", "|fedora-rawhide|"
 .. end compatibility
 
