@@ -84,6 +84,12 @@ UBUNTU_LIST: list[base.Base] = [
         packages=[["python3-pip"] + UBUNTU_PACKAGES],
     ),
     Ubuntu(
+        "ubuntu:24.10",
+        ("EOL:2025-07-11",),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
+        packages=[["python3-pip"] + UBUNTU_PACKAGES],
+    ),
+    Ubuntu(
         "ubuntu:24.04",
         ("EOL:2029-04-30", "ELTS:2036-04-30"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
