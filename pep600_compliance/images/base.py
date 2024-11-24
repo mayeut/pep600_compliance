@@ -71,11 +71,14 @@ class Base:
     @contextmanager
     def docker_container(self, machine: str):
         client = docker.from_env()
+        platform_machine = platform.machine()
+        if platform_machine == "arm64":
+            platform_machine = "aarch64"
 
         image_name = self.image
         image = None
         has_image = True
-        if platform.machine() != machine:
+        if platform_machine != machine:
             image_name = get_docker_platform_prefix(machine) + "/" + image_name
             try:
                 image = client.images.get(image_name)
@@ -92,7 +95,7 @@ class Base:
         if image is None:
             try:
                 image = client.images.get(image_name)
-                if platform.machine() != machine:
+                if platform_machine != machine:
                     raise NotImplementedError("too dangerous")
                 has_image = True
             except docker.errors.ImageNotFound:

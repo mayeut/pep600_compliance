@@ -56,8 +56,9 @@
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |mageia-6| image:: https://img.shields.io/static/v1?label=mageia&message=6%20(EOL%3A2019-09-30)&color=black
 .. |mageia-5| image:: https://img.shields.io/static/v1?label=mageia&message=5%20(EOL%3A2017-12-31)&color=black
+.. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_28| image:: https://img.shields.io/static/v1?label=manylinux&message=2_28%20(EOL%3A2029-05-31)&color=green&logo=python&logoColor=white
-.. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=python&logoColor=white
+.. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2010| image:: https://img.shields.io/static/v1?label=manylinux&message=2010%20(EOL%3A2020-11-30)&color=black&logo=python&logoColor=white
 .. |manylinux-1| image:: https://img.shields.io/static/v1?label=manylinux&message=1%20(EOL%3A2017-03-31)&color=black&logo=python&logoColor=white
@@ -145,7 +146,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_x86_64
@@ -171,7 +172,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_aarch64
@@ -184,7 +185,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_ppc64le
@@ -197,7 +198,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |rockylinux-9|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_s390x
@@ -254,7 +255,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |manylinux-2_34| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
@@ -306,7 +307,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |manylinux-2_34| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
@@ -333,7 +334,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
    "manylinux_2_32", "|alt-p10| |fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |fedora-35| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |fedora-35| |manylinux-2_34| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
@@ -358,7 +359,7 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |centos-stream9| |fedora-35| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
+   "manylinux_2_34", "|almalinux-9| |centos-stream9| |fedora-35| |manylinux-2_34| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
