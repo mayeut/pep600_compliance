@@ -21,6 +21,7 @@ class Policy:
 def _validation(policies: list[Policy]) -> None:
     symbol_versions: dict[str, dict[str, set[str]]] = {}
     lib_whitelist: set[str] = set()
+    blacklist: dict[str, set[str]] = defaultdict(set)
     for policy in sorted(policies, key=lambda x: x.priority, reverse=True):
         if policy.name == "linux":
             continue
@@ -58,6 +59,30 @@ def _validation(policies: list[Policy]) -> None:
                     policy.symbol_versions[arch][prefix]
                 )
             symbol_versions[arch] = symbol_versions_arch
+
+    for policy in sorted(policies, key=lambda x: x.priority):
+        if policy.name == "linux":
+            continue
+        libraries = set(blacklist.keys())
+        if not libraries.issubset(set(policy.blacklist.keys())):
+            diff = libraries - set(policy.blacklist.keys())
+            msg = (
+                "Invalid policies: missing blacklist libraries in "
+                f"{policy.name!r} compared to next policies: {diff}"
+            )
+            raise ValueError(msg)
+        for library in policy.blacklist:
+            current = set(policy.blacklist[library])
+            future = blacklist[library]
+            if not future.issubset(current):
+                diff = future - current
+                msg = (
+                    "Invalid policies: missing blaclist symbols in "
+                    f"{policy.name!r} for {library} compared to next "
+                    f"policies: {diff}"
+                )
+                raise ValueError(msg)
+            blacklist[library].update(current)
 
 
 def load_policies(path: Path) -> list[Policy]:
