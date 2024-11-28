@@ -20,6 +20,27 @@ class AnolisOS(base.Base):
 
 
 ANOLISOS_LIST: list[base.Base] = [
+    AnolisOS(
+        "openanolis/anolisos:23",
+        "unknown",
+        machines=("x86_64", "aarch64"),
+        pkg_manager=package_manager.DNF(),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+            ]
+        ],
+    ),
     # https://www.alibabacloud.com/help/en/ecs/user-guide/end-of-support-for-operating-systems
     AnolisOS(
         "openanolis/anolisos:8",

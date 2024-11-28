@@ -14,6 +14,7 @@
 .. |amazonlinux-2023| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2023%20(EOL%3A2028-03-15)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-2| image:: https://img.shields.io/static/v1?label=amazonlinux&message=2%20(EOL%3A2026-06-30)&color=green&logo=amazon-aws&logoColor=white
 .. |amazonlinux-1| image:: https://img.shields.io/static/v1?label=amazonlinux&message=1%20(EOL%3A2020-12-31%20/%20LTS%3A2023-12-31)&color=black&logo=amazon-aws&logoColor=white
+.. |anolisos-23| image:: https://img.shields.io/static/v1?label=anolisos&message=23%20(unknown)&color=lightgray
 .. |anolisos-8| image:: https://img.shields.io/static/v1?label=anolisos&message=8%20(EOL%3A2031-06-30)&color=green
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
 .. |centos-stream10| image:: https://img.shields.io/static/v1?label=centos&message=stream10%20(rolling)&color=purple&logo=centos&logoColor=white
@@ -204,7 +205,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
-   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |fedora-39| |opensuse-15.6| |ubuntu-23.10|"
+   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |anolisos-23| |fedora-39| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |fedora-40| |mageia-cauldron| |ubuntu-24.04|"
    "manylinux_2_40", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-41| |opensuse-tumbleweed| |slackware-current| |ubuntu-24.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_40_9000", "|fedora-rawhide|"

@@ -33,6 +33,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: anolisos
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "anolisos 23", "unknown", "", ""
    "anolisos 8", "2031-06-30", "", ""
 .. csv-table:: archlinux
    :header: "distro", "EOL", "LTS", "ELTS"
