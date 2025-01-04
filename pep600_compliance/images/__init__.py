@@ -4,6 +4,7 @@ from pep600_compliance.images.base import Base
 from pep600_compliance.images.os.almalinux import ALMALINUX_LIST
 from pep600_compliance.images.os.alt import ALT_LIST
 from pep600_compliance.images.os.amazonlinux import AMAZONLINUX_LIST
+from pep600_compliance.images.os.anolisos import ANOLISOS_LIST
 from pep600_compliance.images.os.archlinux import ARCHLINUX_LIST
 from pep600_compliance.images.os.centos import CENTOS_LIST
 from pep600_compliance.images.os.clearlinux import CLEARLINUX_LIST
@@ -24,6 +25,7 @@ IMAGE_LIST = (
     ALMALINUX_LIST
     + ALT_LIST
     + AMAZONLINUX_LIST
+    + ANOLISOS_LIST
     + ARCHLINUX_LIST
     + CENTOS_LIST
     + CLEARLINUX_LIST

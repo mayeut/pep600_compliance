@@ -30,6 +30,10 @@ This mostly mimics Debian lifecycle.
    "amazonlinux 2023", "2028-03-15", "", ""
    "amazonlinux 2", "2026-06-30", "", ""
    "amazonlinux 1", "2020-12-31", "2023-12-31", ""
+.. csv-table:: anolisos
+   :header: "distro", "EOL", "LTS", "ELTS"
+
+   "anolisos 8", "2031-06-30", "", ""
 .. csv-table:: archlinux
    :header: "distro", "EOL", "LTS", "ELTS"
 

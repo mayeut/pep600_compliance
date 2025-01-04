@@ -29,7 +29,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -54,7 +54,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -114,7 +114,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -167,7 +167,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -220,7 +220,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -273,7 +273,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -333,7 +333,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "uncompress2", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -393,7 +393,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -453,7 +453,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "bi_windup", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "crc_fold_512to32", "crc_fold_copy", "crc_fold_init", "deflate_copyright", "deflate_medium", "fill_window", "flush_pending", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "longest_match", "slide_hash_sse", "static_ltree", "x86_check_features", "x86_cpu_has_pclmul", "x86_cpu_has_sse2", "x86_cpu_has_sse42", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -513,7 +513,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_acle", "crc32_combine_gen", "crc32_combine_gen64", "crc32_combine_op", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -573,7 +573,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_acle", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -633,7 +633,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_acle", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -693,7 +693,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_acle", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   },
   {
@@ -753,7 +753,7 @@
     },
     "lib_whitelist": ["libgcc_s.so.1", "libstdc++.so.6", "libm.so.6", "libdl.so.2", "librt.so.1", "libc.so.6", "libnsl.so.1", "libutil.so.1", "libpthread.so.0", "libX11.so.6", "libXext.so.6", "libXrender.so.1", "libICE.so.6", "libSM.so.6", "libGL.so.1", "libgobject-2.0.so.0", "libgthread-2.0.so.0", "libglib-2.0.so.0", "libresolv.so.2", "libexpat.so.1", "libz.so.1"],
     "blacklist": {
-      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
+      "libz.so.1": ["_dist_code", "_length_code", "_tr_align", "_tr_flush_block", "_tr_init", "_tr_stored_block", "_tr_tally", "adler32_default", "crc32_acle", "crc32_le_vgfm_16", "crc32_vpmsum", "crc32_z_default", "deflate_copyright", "gzflags", "inflate_copyright", "inflate_fast", "inflate_table", "sse2_slide_hash", "z_errmsg", "z_vstring", "zcalloc", "zcfree"]
     }
   }
 ]
