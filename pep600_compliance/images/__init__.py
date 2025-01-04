@@ -13,6 +13,7 @@ from pep600_compliance.images.os.debian import DEBIAN_LIST
 from pep600_compliance.images.os.fedora import FEDORA_LIST
 from pep600_compliance.images.os.mageia import MAGEIA_LIST
 from pep600_compliance.images.os.manylinux import MANYLINUX_LIST
+from pep600_compliance.images.os.openeuler import OPENEULER_LIST
 from pep600_compliance.images.os.opensuse import OPENSUSE_LIST
 from pep600_compliance.images.os.oraclelinux import ORACLELINUX_LIST
 from pep600_compliance.images.os.photon import PHOTON_LIST
@@ -34,6 +35,7 @@ IMAGE_LIST = (
     + FEDORA_LIST
     + MAGEIA_LIST
     + MANYLINUX_LIST
+    + OPENEULER_LIST
     + OPENSUSE_LIST
     + ORACLELINUX_LIST
     + PHOTON_LIST
