@@ -112,6 +112,11 @@ This mostly mimics Debian lifecycle.
    "manylinux 2014", "2024-06-30", "", ""
    "manylinux 2010", "2020-11-30", "", ""
    "manylinux 1", "2017-03-31", "", ""
+.. csv-table:: opencloudos
+   :header: "distro", "EOL", "LTS", "ELTS"
+
+   "opencloudos 9", "2033-04-30", "", ""
+   "opencloudos 8", "2029-05-31", "", ""
 .. csv-table:: openeuler
    :header: "distro", "EOL", "LTS", "ELTS"
 

@@ -69,6 +69,8 @@
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2010| image:: https://img.shields.io/static/v1?label=manylinux&message=2010%20(EOL%3A2020-11-30)&color=black&logo=python&logoColor=white
 .. |manylinux-1| image:: https://img.shields.io/static/v1?label=manylinux&message=1%20(EOL%3A2017-03-31)&color=black&logo=python&logoColor=white
+.. |opencloudos-9| image:: https://img.shields.io/static/v1?label=opencloudos&message=9%20(EOL%3A2033-04-30)&color=green
+.. |opencloudos-8| image:: https://img.shields.io/static/v1?label=opencloudos&message=8%20(EOL%3A2029-05-31)&color=green
 .. |openeuler-24.03| image:: https://img.shields.io/static/v1?label=openeuler&message=24.03%20(EOL%3A2028-03-31)&color=green
 .. |opensuse-tumbleweed| image:: https://img.shields.io/static/v1?label=opensuse&message=tumbleweed%20(rolling)&color=purple&logo=opensuse&logoColor=white
 .. |opensuse-15.6| image:: https://img.shields.io/static/v1?label=opensuse&message=15.6%20(EOL%3A2025-12-31)&color=green&logo=opensuse&logoColor=white
@@ -196,7 +198,7 @@ If your favorite distro does not appear here:
    "manylinux_2_25", "|fedora-26|"
    "manylinux_2_26", "|amazonlinux-2| |fedora-27| |opensuse-15.0| |opensuse-15.1| |opensuse-15.2| |photon-2.0| |ubuntu-17.10|"
    "manylinux_2_27", "|alt-p9| |fedora-28| |ubuntu-18.04|"
-   "manylinux_2_28", "|almalinux-8| |anolisos-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |manylinux-2_28| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8| |ubuntu-18.10|"
+   "manylinux_2_28", "|almalinux-8| |anolisos-8| |centos-8| |centos-stream8| |debian-10| |fedora-29| |manylinux-2_28| |opencloudos-8| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8| |ubuntu-18.10|"
    "manylinux_2_29", "|fedora-30| |mageia-7| |ubuntu-19.04|"
    "manylinux_2_30", "|fedora-31| |ubuntu-19.10|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
@@ -206,7 +208,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
-   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |anolisos-23| |fedora-39| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
+   "manylinux_2_38", "|alt-p11| |alt-sisyphus| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |fedora-40| |mageia-cauldron| |ubuntu-24.04|"
    "manylinux_2_40", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-41| |opensuse-tumbleweed| |slackware-current| |ubuntu-24.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_40_9000", "|fedora-rawhide|"
