@@ -19,7 +19,7 @@ jobs:
     - name: Install Nox
       run: python -m pip install nox
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v3.3.0
+      uses: docker/setup-qemu-action@v3.4.0
       with:
         platforms: 'arm,arm64,ppc64le,s390x,riscv64'
     - name: Build cache
