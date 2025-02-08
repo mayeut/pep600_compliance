@@ -12,7 +12,7 @@
 .. |anolisos-23| image:: https://img.shields.io/static/v1?label=anolisos&message=23%20(unknown)&color=lightgray
 .. |anolisos-8| image:: https://img.shields.io/static/v1?label=anolisos&message=8%20(EOL%3A2031-06-30)&color=green
 .. |archlinux-latest| image:: https://img.shields.io/static/v1?label=archlinux&message=latest%20(rolling)&color=purple&logo=arch-linux&logoColor=white
-.. |centos-stream10| image:: https://img.shields.io/static/v1?label=centos&message=stream10%20(rolling)&color=purple&logo=centos&logoColor=white
+.. |centos-stream10| image:: https://img.shields.io/static/v1?label=centos&message=stream10%20(EOL%3A2030-01-01)&color=green&logo=centos&logoColor=white
 .. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(EOL%3A2027-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=black&logo=centos&logoColor=white
 .. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
@@ -153,7 +153,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|centos-stream10| |ubuntu-24.04|"
 .. end base_images_x86_64
 
 .. begin base_images_i686
@@ -179,7 +179,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|centos-stream10| |ubuntu-24.04|"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
@@ -192,7 +192,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|centos-stream10| |ubuntu-24.04|"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -205,7 +205,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|centos-stream10| |ubuntu-24.04|"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -224,6 +224,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_31", "|ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
+   "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_riscv64
 
 Distro compatibility

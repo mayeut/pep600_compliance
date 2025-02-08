@@ -42,7 +42,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: centos
    :header: "distro", "EOL", "LTS", "ELTS"
 
-   "centos stream10", "rolling", "", ""
+   "centos stream10", "2030-01-01", "", ""
    "centos stream9", "2027-05-31", "", ""
    "centos stream8", "2024-05-31", "", ""
    "centos 8", "2021-12-31", "", ""
