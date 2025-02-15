@@ -135,26 +135,4 @@ CENTOS_LIST: list[base.Base] = [
             ]
         ],
     ),
-    CentOS(
-        "centos:6",
-        ("EOL:2020-11-30",),
-        machines=("i686", "x86_64"),
-        pkg_manager=package_manager.YUM(run_once=CENTOS_YUM_OLD),
-        packages=[
-            ["epel-release"],
-            [
-                "which",
-                "python",
-                "python34",
-                "libstdc++",
-                "glib2",
-                "libX11",
-                "libXext",
-                "libXrender",
-                "mesa-libGL",
-                "libICE",
-                "libSM",
-            ],
-        ],
-    ),
 ]

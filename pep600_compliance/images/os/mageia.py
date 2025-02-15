@@ -63,19 +63,5 @@ MAGEIA_LIST: list[base.Base] = [
         machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
-    ),  # TODO 'armv7l'
-    Mageia(
-        "mageia:6",
-        ("EOL:2019-09-30",),
-        machines=("x86_64",),
-        pkg_manager=package_manager.DNF(run_once=MAGEIA6_RUNONCE),
-        packages=[MAGEIA_PACKAGES],
-    ),  # TODO 'armv7l'
-    Mageia(
-        "mageia:5",
-        ("EOL:2017-12-31",),
-        machines=["x86_64"],
-        pkg_manager=package_manager.URPM(run_once=MAGEIA5_RUNONCE),
-        packages=[MAGEIA_PACKAGES],
     ),
 ]

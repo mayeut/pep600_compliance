@@ -116,12 +116,5 @@ DEBIAN_LIST: list[base.Base] = [
         ("EOL:2018-06-06", "LTS:2020-06-30", "ELTS:2025-06-30"),
         machines=("i686", "x86_64", "armv7l"),
         packages=[DEBIAN_PACKAGES_OLD + ["python"]],
-    ),  # TODO 'aarch64', 'ppc64le', 's390x'
-    Debian(
-        "debian:7-slim",
-        ("EOL:2016-04-26", "LTS:2018-05-31", "ELTS:2020-06-30"),
-        machines=("i686", "x86_64", "armv7l"),
-        packages=[DEBIAN_PACKAGES_OLD + ["python", "curl"]],
-        apt_sources_update=DEBIAN_APT_OLD,
     ),
 ]

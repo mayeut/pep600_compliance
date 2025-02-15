@@ -73,34 +73,4 @@ OPENSUSE_LIST: list[base.Base] = [
         machines=("x86_64", "aarch64", "ppc64le", "armv7l"),
         packages=[OPENSUSE_PACKAGES],
     ),
-    OpenSUSE(
-        "opensuse/leap:15.0",
-        ("EOL:2019-12-03",),
-        machines=("x86_64", "aarch64", "ppc64le"),
-        packages=[OPENSUSE_PACKAGES],
-    ),
-    OpenSUSE(
-        "opensuse/leap:42.3",
-        ("EOL:2019-07-01",),
-        machines=("x86_64",),
-        packages=[OPENSUSE_PACKAGES],
-    ),
-    OpenSUSE(
-        "opensuse/archive:42.2",
-        ("EOL:2018-01-26",),
-        machines=("x86_64",),
-        packages=[OPENSUSE_PACKAGES],
-    ),
-    OpenSUSE(
-        "opensuse/archive:42.1",
-        ("EOL:2017-05-17",),
-        machines=("x86_64",),
-        packages=[OPENSUSE_PACKAGES],
-    ),
-    OpenSUSE(
-        "opensuse/archive:13.2",
-        ("EOL:2017-01-17",),
-        machines=("x86_64",),
-        packages=[OPENSUSE_PACKAGES],
-    ),
 ]
