@@ -16,7 +16,7 @@ class OpenSUSE(base.Base):
 
 OPENSUSE_PACKAGES = [
     "which",
-    "python",
+    "python3",
     "python3-pip",
     "libX11-6",
     "libXext6",
@@ -33,7 +33,7 @@ OPENSUSE_LIST: list[base.Base] = [
     OpenSUSE(
         "opensuse/tumbleweed:latest",
         "rolling",
-        machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
+        machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
         packages=[OPENSUSE_PACKAGES, ["libnsl1"]],
         version="tumbleweed",
     ),
