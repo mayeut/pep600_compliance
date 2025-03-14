@@ -318,8 +318,8 @@ If your favorite distro does not appear here:
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|fedora-39| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |fedora-40| |ubuntu-24.04|"
-   "manylinux_2_40", "|debian-testing| |debian-unstable| |fedora-41| |opensuse-tumbleweed| |ubuntu-24.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_41", "|debian-experimental|"
+   "manylinux_2_40", "|debian-testing| |debian-unstable| |fedora-41| |ubuntu-24.10| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_41", "|debian-experimental| |opensuse-tumbleweed|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
