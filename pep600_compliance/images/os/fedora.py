@@ -34,6 +34,14 @@ FEDORA_LIST: list[base.Base] = [
         packages=[["libnsl"] + FEDORA_PACKAGES],
     ),
     Fedora(
+        "fedora:42",
+        # https://fedorapeople.org/groups/schedule/f-44/f-44-key-tasks.html
+        ("EOL:2026-05-13",),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
+        pkg_manager=DNF5(),
+        packages=[["libnsl"] + FEDORA_PACKAGES],
+    ),
+    Fedora(
         "fedora:41",
         # https://fedorapeople.org/groups/schedule/f-43/f-43-key-tasks.html
         ("EOL:2025-12-15",),
