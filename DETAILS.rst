@@ -44,6 +44,7 @@
 .. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-11-30)&color=black
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
+.. |manylinux-2_31| image:: https://img.shields.io/static/v1?label=manylinux&message=2_31%20(EOL%3A2030-04-02)&color=green&logo=python&logoColor=white
 .. |manylinux-2_28| image:: https://img.shields.io/static/v1?label=manylinux&message=2_28%20(EOL%3A2029-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=black&logo=python&logoColor=white
@@ -113,7 +114,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_5", "|manylinux-1|"
    "manylinux_2_12", "|manylinux-2010|"
-   "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_17", "|manylinux-2014|"
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
@@ -138,7 +139,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: aarch64
    :header: "policy", "distros"
 
-   "manylinux_2_17", "|centos-7| |manylinux-2014|"
+   "manylinux_2_17", "|manylinux-2014|"
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
@@ -164,7 +165,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: s390x
    :header: "policy", "distros"
 
-   "manylinux_2_17", "|clefos-7| |manylinux-2014|"
+   "manylinux_2_17", "|manylinux-2014|"
    "manylinux_2_24", "|manylinux-2_24|"
    "manylinux_2_28", "|manylinux-2_28|"
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
@@ -177,7 +178,7 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: armv7l
    :header: "policy", "distros"
 
-   "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
+   "manylinux_2_31", "|debian-11| |manylinux-2_31| |ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
 .. end base_images_armv7l
@@ -246,8 +247,8 @@ If your favorite distro does not appear here:
    "manylinux_2_32", "|alt-p10|"
    "manylinux_2_36", "|debian-12|"
    "manylinux_2_38", "|alt-p11|"
-   "manylinux_2_40", "|alt-sisyphus| |opensuse-tumbleweed|"
-   "manylinux_2_41", "|debian-experimental| |debian-testing| |debian-unstable|"
+   "manylinux_2_40", "|alt-sisyphus|"
+   "manylinux_2_41", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed|"
 .. end compatibility_i686
 
 .. begin compatibility_aarch64
@@ -288,7 +289,7 @@ If your favorite distro does not appear here:
    "manylinux_2_27", "|alt-p9| |ubuntu-18.04|"
    "manylinux_2_28", "|almalinux-8| |centos-8| |centos-stream8| |debian-10| |manylinux-2_28| |rhubi-8|"
    "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |fedora-33| |ubuntu-20.10|"
+   "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|fedora-34| |ubuntu-21.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |fedora-35| |manylinux-2_34| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
@@ -334,7 +335,7 @@ If your favorite distro does not appear here:
    "manylinux_2_26", "|opensuse-15.1| |opensuse-15.2|"
    "manylinux_2_27", "|ubuntu-18.04|"
    "manylinux_2_28", "|debian-10|"
-   "manylinux_2_31", "|debian-11| |fedora-32| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
+   "manylinux_2_31", "|debian-11| |fedora-32| |manylinux-2_31| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
    "manylinux_2_32", "|fedora-33| |ubuntu-20.10|"
    "manylinux_2_33", "|ubuntu-21.04|"
    "manylinux_2_34", "|ubuntu-21.10|"
@@ -355,6 +356,5 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
-   "manylinux_2_40", "|opensuse-tumbleweed|"
-   "manylinux_2_41", "|debian-experimental| |debian-unstable|"
+   "manylinux_2_41", "|debian-experimental| |debian-unstable| |opensuse-tumbleweed|"
 .. end compatibility_riscv64

@@ -51,6 +51,8 @@ def load_distros(path: Path) -> list[Distribution]:
     for cache_file_path in path.glob("*.json"):
         distro_parts = cache_file_path.stem.split("-", 1)
         distro_dict = json.loads(cache_file_path.read_text())
+        if "LIBATOMIC" not in distro_dict["symbols"]:
+            distro_dict["symbols"]["LIBATOMIC"] = []
         distro = Distribution(
             name=distro_parts[0],
             version=distro_parts[1].replace("-slim", ""),

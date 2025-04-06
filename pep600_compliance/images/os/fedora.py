@@ -24,6 +24,7 @@ FEDORA_PACKAGES = [
     "mesa-libGL",
     "libICE",
     "libSM",
+    "libatomic",
 ]
 FEDORA_LIST: list[base.Base] = [
     Fedora(

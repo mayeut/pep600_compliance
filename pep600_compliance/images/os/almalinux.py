@@ -31,6 +31,7 @@ ALMALINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -51,6 +52,7 @@ ALMALINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),

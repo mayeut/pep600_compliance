@@ -29,6 +29,7 @@ ALT_PACKAGES = [
     "libSM",
     "libGL",
     "glib2",
+    "libatomic1",
 ]
 ALT_LIST: list[base.Base] = [
     Alt(
@@ -46,7 +47,7 @@ ALT_LIST: list[base.Base] = [
     Alt(
         "alt:p10",
         "unknown",
-        machines=("i686", "x86_64", "aarch64", "ppc64le"),
+        machines=("i686", "x86_64", "aarch64"),
         packages=[["libnsl1", *ALT_PACKAGES]],
     ),
     Alt(

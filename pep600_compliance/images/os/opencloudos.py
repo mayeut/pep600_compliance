@@ -37,6 +37,7 @@ OPENCLOUDOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -57,6 +58,7 @@ OPENCLOUDOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),

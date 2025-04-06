@@ -23,6 +23,7 @@ MAGEIA_PACKAGES = [
     "libmesagl",
     "libice",
     "libsm",
+    "libatomic",
 ]
 MAGEIA_ARCHIVE = "https://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia-archive"
 MAGEIA6_RUNONCE = [

@@ -39,11 +39,11 @@ class APT(_PackageManager):
     def __init__(
         self, has_no_install_recommends=True, run_once=[], ppa_list=[], upgrade=False
     ):
-        install_prefix = ["apt-get", "install", "-qq", "-y"]
+        install_prefix = ["apt-get", "install", "-qq", "-y", "--force-yes"]
         if has_no_install_recommends:
             install_prefix += ["--no-install-recommends"]
         update_command = ["apt-get", "update", "-qq"]
-        upgrade_command = ["apt-get", "upgrade", "-qq", "-y"] if upgrade else None
+        upgrade_command = ["apt-get", "upgrade", "-qq", "-y", "--force-yes"] if upgrade else None
         environment = {"DEBIAN_FRONTEND": "noninteractive"}
         self._run_once = run_once
         self._ppa_list = ppa_list

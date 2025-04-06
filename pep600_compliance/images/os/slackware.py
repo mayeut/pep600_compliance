@@ -69,6 +69,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "mesa",
                 "libICE",
                 "libSM",
+                "gcc",
             ]
         ],
     ),
@@ -86,6 +87,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "mesa",
                 "libICE",
                 "libSM",
+                "gcc",
             ]
         ],
     ),
@@ -103,6 +105,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "mesa",
                 "libICE",
                 "libSM",
+                "gcc",
             ]
         ],
     ),

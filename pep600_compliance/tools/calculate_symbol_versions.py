@@ -146,7 +146,7 @@ def calculate_symbol_versions(libraries, symbol_versions, skip_lib):
                             try:
                                 name, version = vernaux.name.split("_", 1)
                             except ValueError:
-                                pass
+                                continue
                             if (
                                 name in calculated_symbol_versions
                                 and version != "PRIVATE"

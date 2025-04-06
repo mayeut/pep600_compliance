@@ -92,6 +92,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "manylinux 2_34", "2032-05-31", "", ""
+   "manylinux 2_31", "2030-04-02", "", ""
    "manylinux 2_28", "2029-05-31", "", ""
    "manylinux 2_24", "2020-07-05", "2022-06-30", ""
    "manylinux 2014", "2024-06-30", "", ""

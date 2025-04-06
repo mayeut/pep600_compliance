@@ -2,12 +2,12 @@ from pep600_compliance.images import base, package_manager
 
 
 class OpenSUSE(base.Base):
-    def __init__(self, image, eol, packages, machines, version=None):
+    def __init__(self, image, eol, packages, machines, version=None, skip_lib=frozenset()):
         if version is None:
             _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "opensuse", version, eol, package_manager.ZYPPER(), machines=machines
+            image, "opensuse", version, eol, package_manager.ZYPPER(), machines=machines, skip_lib=skip_lib
         )
 
     def install_packages(self, container, machine):
@@ -27,6 +27,7 @@ OPENSUSE_PACKAGES = [
     "libglib-2_0-0",
     "libgobject-2_0-0",
     "libgthread-2_0-0",
+    "libatomic1"
 ]
 OPENSUSE_LIST: list[base.Base] = [
     # EOL info: https://en.opensuse.org/Lifetime
@@ -34,8 +35,9 @@ OPENSUSE_LIST: list[base.Base] = [
         "opensuse/tumbleweed:latest",
         "rolling",
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
-        packages=[OPENSUSE_PACKAGES, ["libnsl1"]],
+        packages=[OPENSUSE_PACKAGES],
         version="tumbleweed",
+        skip_lib=frozenset(("libnsl.so.1",)),
     ),
     OpenSUSE(
         "opensuse/leap:15.6",

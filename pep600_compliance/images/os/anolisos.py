@@ -38,6 +38,7 @@ ANOLISOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -60,6 +61,7 @@ ANOLISOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),

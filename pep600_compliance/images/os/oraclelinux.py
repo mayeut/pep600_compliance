@@ -41,6 +41,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -62,6 +63,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -83,6 +85,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -107,6 +110,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
         python="/opt/rh/rh-python36/root/usr/bin/python3",

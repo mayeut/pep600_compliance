@@ -48,6 +48,7 @@ CENTOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -69,6 +70,7 @@ CENTOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -90,6 +92,7 @@ CENTOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -111,6 +114,7 @@ CENTOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),
@@ -118,7 +122,7 @@ CENTOS_LIST: list[base.Base] = [
         "centos:7",
         ("EOL:2024-06-30",),
         machines=("i686", "x86_64", "aarch64", "ppc64le"),
-        pkg_manager=package_manager.YUM(),
+        pkg_manager=package_manager.YUM(run_once=CENTOS_YUM_OLD),
         packages=[
             [
                 "which",
@@ -132,6 +136,7 @@ CENTOS_LIST: list[base.Base] = [
                 "mesa-libGL",
                 "libICE",
                 "libSM",
+                "libatomic",
             ]
         ],
     ),

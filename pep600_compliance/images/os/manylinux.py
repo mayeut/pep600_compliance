@@ -28,6 +28,14 @@ _MANYLINUX_2_34: list[base.Base] = [
     )
     for machine in {"x86_64", "aarch64", "ppc64le", "s390x"}
 ]
+_MANYLINUX_2_31: list[base.Base] = [
+    Manylinux(
+        f"quay.io/pypa/manylinux_2_31_{machine}:latest",
+        ("EOL:2030-04-02",),
+        machines=(machine,),
+    )
+    for machine in {"armv7l"}
+]
 _MANYLINUX_2_28: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux_2_28_{machine}:latest",
@@ -70,6 +78,7 @@ _MANYLINUX_1: list[base.Base] = [
 ]
 MANYLINUX_LIST = (
     _MANYLINUX_2_34
+    + _MANYLINUX_2_31
     + _MANYLINUX_2_28
     + _MANYLINUX_2_24
     + _MANYLINUX_2014

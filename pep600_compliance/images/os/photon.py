@@ -29,6 +29,7 @@ class Photon(base.Base):
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
 
+PHOTON_PACKAGES = ["which", "libnsl", "libstdc++", "glib", "libgcc-atomic"]
 
 PHOTON_LIST: list[base.Base] = [
     # EOL info:
@@ -37,30 +38,30 @@ PHOTON_LIST: list[base.Base] = [
         "photon:5.0",
         "unknown",
         machines=("x86_64", "aarch64"),
-        packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
+        packages=[["python3-pip", *PHOTON_PACKAGES]],
     ),
     Photon(
         "photon:4.0",
         ("EOL:2026-03-01",),
         machines=("x86_64", "aarch64"),
-        packages=[["which", "python3-pip", "libnsl", "libstdc++", "glib"]],
+        packages=[["python3-pip", *PHOTON_PACKAGES]],
     ),
     Photon(
         "photon:3.0",
         ("EOL:2024-03-01",),
         machines=("x86_64", "aarch64"),
-        packages=[["which", "python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
+        packages=[["python2", "python3-pip", *PHOTON_PACKAGES]],
     ),
     Photon(
         "photon:2.0",
         ("EOL:2022-12-31",),
         machines=("x86_64",),
-        packages=[["python2", "python3-pip", "libnsl", "libstdc++", "glib"]],
+        packages=[["python2", "python3-pip", *PHOTON_PACKAGES]],
     ),
     Photon(
         "photon:1.0",
         ("EOL:2022-02-28",),
         machines=("x86_64",),
-        packages=[["which", "python2", "python3", "libstdc++", "glib"]],
+        packages=[["python2", "python3", *PHOTON_PACKAGES]],
     ),
 ]
