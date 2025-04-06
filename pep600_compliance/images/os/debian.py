@@ -31,7 +31,12 @@ class Debian(base.Base):
 
 DEBIAN_APT_OLD = [
     ["sed", "-i", "s,deb.debian.org,archive.debian.org,g", "/etc/apt/sources.list"],
-    ["sed", "-i", "s,security.debian.org,archive.debian.org,g", "/etc/apt/sources.list"],
+    [
+        "sed",
+        "-i",
+        "s,security.debian.org,archive.debian.org,g",
+        "/etc/apt/sources.list",
+    ],
     # ["sed", "-i", "s,.*security.*,,g", "/etc/apt/sources.list"],
     ["sed", "-i", "s,.*/debian .*updates.*,,g", "/etc/apt/sources.list"],
 ]
@@ -119,7 +124,20 @@ DEBIAN_LIST: list[base.Base] = [
         "debian:8-slim",
         ("EOL:2018-06-06", "LTS:2020-06-30", "ELTS:2025-06-30"),
         machines=("i686", "x86_64", "armv7l"),
-        packages=[["python", "libgl1-mesa-glx", "python3-pip", "libx11-6", "libxext6", "libxrender1", "libice6", "libsm6", "libglib2.0-0", "libatomic1"]],
+        packages=[
+            [
+                "python",
+                "libgl1-mesa-glx",
+                "python3-pip",
+                "libx11-6",
+                "libxext6",
+                "libxrender1",
+                "libice6",
+                "libsm6",
+                "libglib2.0-0",
+                "libatomic1",
+            ]
+        ],
         apt_sources_update=DEBIAN_APT_OLD,
     ),
 ]

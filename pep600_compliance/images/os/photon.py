@@ -29,6 +29,7 @@ class Photon(base.Base):
     def install_packages(self, container, machine):
         super()._install_packages(container, machine, self._packages)
 
+
 PHOTON_PACKAGES = ["which", "libnsl", "libstdc++", "glib", "libgcc-atomic"]
 
 PHOTON_LIST: list[base.Base] = [

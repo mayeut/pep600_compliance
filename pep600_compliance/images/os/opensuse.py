@@ -2,12 +2,20 @@ from pep600_compliance.images import base, package_manager
 
 
 class OpenSUSE(base.Base):
-    def __init__(self, image, eol, packages, machines, version=None, skip_lib=frozenset()):
+    def __init__(
+        self, image, eol, packages, machines, version=None, skip_lib=frozenset()
+    ):
         if version is None:
             _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "opensuse", version, eol, package_manager.ZYPPER(), machines=machines, skip_lib=skip_lib
+            image,
+            "opensuse",
+            version,
+            eol,
+            package_manager.ZYPPER(),
+            machines=machines,
+            skip_lib=skip_lib,
         )
 
     def install_packages(self, container, machine):
@@ -27,7 +35,7 @@ OPENSUSE_PACKAGES = [
     "libglib-2_0-0",
     "libgobject-2_0-0",
     "libgthread-2_0-0",
-    "libatomic1"
+    "libatomic1",
 ]
 OPENSUSE_LIST: list[base.Base] = [
     # EOL info: https://en.opensuse.org/Lifetime

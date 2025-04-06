@@ -43,7 +43,9 @@ class APT(_PackageManager):
         if has_no_install_recommends:
             install_prefix += ["--no-install-recommends"]
         update_command = ["apt-get", "update", "-qq"]
-        upgrade_command = ["apt-get", "upgrade", "-qq", "-y", "--force-yes"] if upgrade else None
+        upgrade_command = (
+            ["apt-get", "upgrade", "-qq", "-y", "--force-yes"] if upgrade else None
+        )
         environment = {"DEBIAN_FRONTEND": "noninteractive"}
         self._run_once = run_once
         self._ppa_list = ppa_list

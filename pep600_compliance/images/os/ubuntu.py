@@ -167,6 +167,19 @@ UBUNTU_LIST: list[base.Base] = [
         "ubuntu:14.04",
         ("EOL:2019-04-25", "ELTS:2022-04-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "armv7l"),
-        packages=[["python", "python3-pip", "libx11-6", "libxext6", "libxrender1", "libice6", "libsm6", "libgl1-mesa-glx", "libglib2.0-0", "libatomic1"]],
+        packages=[
+            [
+                "python",
+                "python3-pip",
+                "libx11-6",
+                "libxext6",
+                "libxrender1",
+                "libice6",
+                "libsm6",
+                "libgl1-mesa-glx",
+                "libglib2.0-0",
+                "libatomic1",
+            ]
+        ],
     ),
 ]
