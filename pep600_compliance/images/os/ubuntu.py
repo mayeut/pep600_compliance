@@ -76,13 +76,19 @@ UBUNTU_LIST: list[base.Base] = [
     Ubuntu(
         "ubuntu:devel",
         "rolling",
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
         packages=[["python3-pip", *UBUNTU_PACKAGES]],
     ),
     Ubuntu(
         "ubuntu:rolling",
         "rolling",
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
+        packages=[["python3-pip", *UBUNTU_PACKAGES]],
+    ),
+    Ubuntu(
+        "ubuntu:25.04",
+        ("EOL:2026-01-31",),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
         packages=[["python3-pip", *UBUNTU_PACKAGES]],
     ),
     Ubuntu(
