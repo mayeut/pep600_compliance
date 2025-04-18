@@ -171,8 +171,8 @@ If your favorite distro does not appear here:
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|centos-stream10| |fedora-40| |ubuntu-24.04|"
-   "manylinux_2_40", "|alt-sisyphus| |fedora-41| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.10| |ubuntu-rolling|"
-   "manylinux_2_41", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |slackware-current| |ubuntu-devel|"
+   "manylinux_2_40", "|alt-sisyphus| |fedora-41| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-24.10|"
+   "manylinux_2_41", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |slackware-current| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
 .. end compatibility
 
