@@ -74,6 +74,7 @@
 .. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(EOL%3A2024-03-01)&color=black&logo=vmware&logoColor=white
 .. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(EOL%3A2022-12-31)&color=black&logo=vmware&logoColor=white
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(EOL%3A2022-02-28)&color=black&logo=vmware&logoColor=white
+.. |rhubi-10| image:: https://img.shields.io/static/v1?label=rhubi&message=10%20(EOL%3A2035-05-31%20/%20ELTS%3A2038-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-9| image:: https://img.shields.io/static/v1?label=rhubi&message=9%20(EOL%3A2032-05-31%20/%20ELTS%3A2035-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31%20/%20ELTS%3A2032-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-7| image:: https://img.shields.io/static/v1?label=rhubi&message=7%20(EOL%3A2024-06-30%20/%20ELTS%3A2028-06-30)&color=red&logo=red-hat&logoColor=white
@@ -171,7 +172,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
-   "manylinux_2_39", "|centos-stream10| |fedora-40| |ubuntu-24.04|"
+   "manylinux_2_39", "|centos-stream10| |fedora-40| |rhubi-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |mageia-cauldron| |ubuntu-24.10|"
    "manylinux_2_41", "|archlinux-latest| |clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
@@ -192,6 +193,7 @@ List of known compatibility issues
    "|photon-3.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-4.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-5.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
+   "|rhubi-10|", "", "libnsl.so.1"
    "|rhubi-8|", "", "libnsl.so.1"
    "|rhubi-9|", "", "libnsl.so.1"
 .. end compatibility_issues

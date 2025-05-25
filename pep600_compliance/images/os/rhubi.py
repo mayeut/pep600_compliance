@@ -25,6 +25,28 @@ class RHUBI(base.Base):
 RHUBI_LIST: list[base.Base] = [
     # EOL info: https://access.redhat.com/support/policy/updates/errata#Life_Cycle_Dates
     RHUBI(
+        "redhat/ubi10:10.0",
+        ("EOL:2035-05-31", "ELTS:2038-05-31"),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
+        pkg_manager=package_manager.DNF(),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+                "libatomic",
+            ]
+        ],
+        skip_lib=frozenset(("libnsl.so.1",)),
+    ),
+    RHUBI(
         "redhat/ubi9:9.4",
         ("EOL:2032-05-31", "ELTS:2035-05-31"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),

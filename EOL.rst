@@ -135,6 +135,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: rhel / rhubi
    :header: "distro", "EOL", "LTS", "ELTS (rhel only)"
 
+   "rhel / rhubi 10", "2035-05-31", "", "2038-05-31"
    "rhel / rhubi 9", "2032-05-31", "", "2035-05-31"
    "rhel / rhubi 8", "2029-05-31", "", "2032-05-31"
    "rhel / rhubi 7", "2024-06-30", "", "2028-06-30"
