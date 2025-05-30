@@ -14,6 +14,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: almalinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "almalinux 10", "2035-05-31", "", ""
    "almalinux 9", "2032-05-31", "", ""
    "almalinux 8", "2029-03-01", "", ""
 .. csv-table:: alt
