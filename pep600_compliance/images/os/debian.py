@@ -111,6 +111,7 @@ DEBIAN_LIST: list[base.Base] = [
         ("EOL:2022-07-31", "LTS:2024-06-30", "ELTS:2029-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[DEBIAN_PACKAGES_OLD + ["python"]],
+        apt_sources_update=DEBIAN_APT_OLD,
     ),
     Debian(
         "debian:9-slim",

@@ -207,6 +207,8 @@ class Base:
         logger.info("Running symbol script")
         if self.name == "manylinux" and self.version == "1":
             policy = "manylinux_2_5"
+        elif self.name == "manylinux" and self.version == "2010":
+            policy = "manylinux_2_12"
         elif machine == "riscv64":
             policy = "manylinux_2_31"
         else:
