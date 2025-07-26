@@ -14,7 +14,7 @@ class RockyLinux(base.Base):
 
 
 ROCKYLINUX_LIST: list[base.Base] = [
-RockyLinux(
+    RockyLinux(
         "rockylinux/rockylinux:10",
         ("EOL:2035-05-31",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "riscv64"),
