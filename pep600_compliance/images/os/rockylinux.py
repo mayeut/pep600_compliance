@@ -14,6 +14,27 @@ class RockyLinux(base.Base):
 
 
 ROCKYLINUX_LIST: list[base.Base] = [
+RockyLinux(
+        "rockylinux/rockylinux:10",
+        ("EOL:2035-05-31",),
+        machines=("x86_64", "aarch64", "ppc64le", "s390x", "riscv64"),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+                "libatomic",
+            ]
+        ],
+    ),
     RockyLinux(
         "rockylinux:9",
         ("EOL:2032-05-31",),

@@ -74,6 +74,7 @@
 .. |rhubi-9| image:: https://img.shields.io/static/v1?label=rhubi&message=9%20(EOL%3A2032-05-31%20/%20ELTS%3A2035-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31%20/%20ELTS%3A2032-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-7| image:: https://img.shields.io/static/v1?label=rhubi&message=7%20(EOL%3A2024-06-30%20/%20ELTS%3A2028-06-30)&color=red&logo=red-hat&logoColor=white
+.. |rockylinux-10| image:: https://img.shields.io/static/v1?label=rockylinux&message=10%20(EOL%3A2035-05-31)&color=green
 .. |rockylinux-9| image:: https://img.shields.io/static/v1?label=rockylinux&message=9%20(EOL%3A2032-05-31)&color=green
 .. |rockylinux-8| image:: https://img.shields.io/static/v1?label=rockylinux&message=8%20(EOL%3A2029-05-31)&color=green
 .. |slackware-current| image:: https://img.shields.io/static/v1?label=slackware&message=current%20(rolling)&color=purple&logo=slackware&logoColor=white
@@ -148,7 +149,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
 .. end base_images_aarch64
 
 .. begin base_images_ppc64le
@@ -161,7 +162,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -174,7 +175,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -192,7 +193,7 @@ distros to build manylinux wheels given different manylinux policies.
 
    "manylinux_2_31", "|ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|rockylinux-10| |ubuntu-24.04|"
 .. end base_images_riscv64
 
 Distro compatibility
@@ -274,7 +275,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
@@ -299,7 +300,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
@@ -322,7 +323,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|fedora-39| |ubuntu-23.10|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_41_9000", "|fedora-rawhide|"
@@ -358,6 +359,6 @@ If your favorite distro does not appear here:
    "manylinux_2_31", "|ubuntu-20.04|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04|"
-   "manylinux_2_39", "|ubuntu-24.04|"
+   "manylinux_2_39", "|rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-experimental| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_riscv64

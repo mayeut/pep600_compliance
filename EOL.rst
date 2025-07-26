@@ -143,6 +143,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: rockylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "rockylinux 10", "2035-05-31", "", ""
    "rockylinux 9", "2032-05-31", "", ""
    "rockylinux 8", "2029-05-31", "", ""
 .. csv-table:: slackware
