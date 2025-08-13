@@ -28,8 +28,9 @@
 .. |debian-experimental| image:: https://img.shields.io/static/v1?label=debian&message=experimental%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-unstable| image:: https://img.shields.io/static/v1?label=debian&message=unstable%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-testing| image:: https://img.shields.io/static/v1?label=debian&message=testing%20(rolling)&color=purple&logo=debian&logoColor=white
-.. |debian-12| image:: https://img.shields.io/static/v1?label=debian&message=12%20(EOL%3A2026-06-10%20/%20LTS%3A2028-06-10%20/%20ELTS%3A2033-06-30)&color=green&logo=debian&logoColor=white
-.. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-08-30%20/%20ELTS%3A2031-06-30)&color=green&logo=debian&logoColor=white
+.. |debian-13| image:: https://img.shields.io/static/v1?label=debian&message=13%20(EOL%3A2028-08-09%20/%20LTS%3A2030-06-30%20/%20ELTS%3A2035-06-30)&color=green&logo=debian&logoColor=white
+.. |debian-12| image:: https://img.shields.io/static/v1?label=debian&message=12%20(EOL%3A2026-06-10%20/%20LTS%3A2028-06-30%20/%20ELTS%3A2033-06-30)&color=green&logo=debian&logoColor=white
+.. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-08-31%20/%20ELTS%3A2031-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-10| image:: https://img.shields.io/static/v1?label=debian&message=10%20(EOL%3A2022-07-31%20/%20LTS%3A2024-06-30%20/%20ELTS%3A2029-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=black&logo=debian&logoColor=white
@@ -139,6 +140,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
+   "manylinux_2_41", "|debian-13|"
 .. end base_images
 
 Distro compatibility
@@ -176,7 +178,7 @@ If your favorite distro does not appear here:
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |ubuntu-24.10|"
-   "manylinux_2_41", "|clearlinux-latest| |debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_41", "|clearlinux-latest| |debian-13| |debian-experimental| |debian-testing| |debian-unstable| |fedora-42| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_42", "|archlinux-latest| |fedora-rawhide| |slackware-current|"
 .. end compatibility
 
