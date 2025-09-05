@@ -67,7 +67,7 @@
 .. |oraclelinux-7| image:: https://img.shields.io/static/v1?label=oraclelinux&message=7%20(EOL%3A2024-12-31%20/%20ELTS%3A2028-06-30)&color=red&logo=oracle&logoColor=white
 .. |oraclelinux-6| image:: https://img.shields.io/static/v1?label=oraclelinux&message=6%20(EOL%3A2021-03-31%20/%20ELTS%3A2024-12-31)&color=black&logo=oracle&logoColor=white
 .. |photon-5.0| image:: https://img.shields.io/static/v1?label=photon&message=5.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
-.. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(EOL%3A2026-03-01)&color=green&logo=vmware&logoColor=white
+.. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(EOL%3A2026-03-01)&color=yellow&logo=vmware&logoColor=white
 .. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(EOL%3A2024-03-01)&color=black&logo=vmware&logoColor=white
 .. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(EOL%3A2022-12-31)&color=black&logo=vmware&logoColor=white
 .. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(EOL%3A2022-02-28)&color=black&logo=vmware&logoColor=white
@@ -374,6 +374,6 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04|"
    "manylinux_2_39", "|rockylinux-10| |ubuntu-24.04|"
-   "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.04| |ubuntu-rolling|"
-   "manylinux_2_42", "|debian-experimental| |ubuntu-devel|"
+   "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |ubuntu-25.04| |ubuntu-rolling|"
+   "manylinux_2_42", "|debian-experimental| |opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_riscv64
