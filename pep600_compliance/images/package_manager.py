@@ -111,11 +111,6 @@ class PACMAN(_PackageManager):
         )
 
 
-class SWUPD(_PackageManager):
-    def __init__(self):
-        super().__init__(["swupd", "bundle-add"])
-
-
 class TDNF(_PackageManager):
     def __init__(self):
         super().__init__(["tdnf", "-y", "install"])

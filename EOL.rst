@@ -48,10 +48,6 @@ This mostly mimics Debian lifecycle.
    "centos stream8", "2024-05-31", "", ""
    "centos 8", "2021-12-31", "", ""
    "centos 7", "2024-06-30", "", ""
-.. csv-table:: clearlinux
-   :header: "distro", "EOL", "LTS", "ELTS"
-
-   "clearlinux latest", "rolling", "", ""
 .. csv-table:: clefos
    :header: "distro", "EOL", "LTS", "ELTS"
 

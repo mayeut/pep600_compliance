@@ -18,7 +18,6 @@
 .. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=black&logo=centos&logoColor=white
 .. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
 .. |centos-7| image:: https://img.shields.io/static/v1?label=centos&message=7%20(EOL%3A2024-06-30)&color=black&logo=centos&logoColor=white
-.. |clearlinux-latest| image:: https://img.shields.io/static/v1?label=clearlinux&message=latest%20(rolling)&color=purple
 .. |clefos-7| image:: https://img.shields.io/static/v1?label=clefos&message=7%20(EOL%3A2024-06-30)&color=black
 .. |debian-experimental| image:: https://img.shields.io/static/v1?label=debian&message=experimental%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-unstable| image:: https://img.shields.io/static/v1?label=debian&message=unstable%20(rolling)&color=purple&logo=debian&logoColor=white
@@ -239,7 +238,7 @@ If your favorite distro does not appear here:
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |ubuntu-24.10|"
-   "manylinux_2_41", "|clearlinux-latest| |debian-13| |debian-testing| |debian-unstable| |fedora-42| |ubuntu-25.04| |ubuntu-rolling|"
+   "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |fedora-42| |ubuntu-25.04| |ubuntu-rolling|"
    "manylinux_2_42", "|archlinux-latest| |debian-experimental| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_42_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
