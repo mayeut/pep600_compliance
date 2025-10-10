@@ -157,6 +157,7 @@ This mostly mimics Debian lifecycle.
 
    "ubuntu devel", "rolling", "", ""
    "ubuntu rolling", "rolling", "", ""
+   "ubuntu 25.10", "2026-07-31", "", ""
    "ubuntu 25.04", "2026-01-31", "", ""
    "ubuntu 24.10", "2025-07-11", "", ""
    "ubuntu 24.04", "2029-04-30", "", "2036-04-30"
