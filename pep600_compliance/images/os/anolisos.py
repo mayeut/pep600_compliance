@@ -2,7 +2,16 @@ from pep600_compliance.images import base, package_manager
 
 
 class AnolisOS(base.Base):
-    def __init__(self, image, eol, pkg_manager, packages, machines, python="python3"):
+    def __init__(
+        self,
+        image: str,
+        eol: tuple[str, ...] | str,
+        pkg_manager,
+        packages: list[list[str]],
+        machines: tuple[str, ...],
+        python: str = "python3",
+        skip_lib: frozenset[str] = frozenset(),
+    ):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
@@ -13,17 +22,24 @@ class AnolisOS(base.Base):
             pkg_manager,
             python=python,
             machines=machines,
+            skip_lib=skip_lib,
         )
 
     def install_packages(self, container, machine):
-        super()._install_packages(container, machine, self._packages)
+        packages = self._packages
+        if machine == "loongarch64":
+            packages = [
+                [package for package in packages_ if package != "libnsl"]
+                for packages_ in packages
+            ]
+        super()._install_packages(container, machine, packages)
 
 
 ANOLISOS_LIST: list[base.Base] = [
     AnolisOS(
         "openanolis/anolisos:23",
         "unknown",
-        machines=("x86_64", "aarch64"),
+        machines=("x86_64", "aarch64", "loongarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[
             [
@@ -41,6 +57,7 @@ ANOLISOS_LIST: list[base.Base] = [
                 "libatomic",
             ]
         ],
+        skip_lib=frozenset(("libnsl.so.1", "libutil.so.1")),
     ),
     # https://www.alibabacloud.com/help/en/ecs/user-guide/end-of-support-for-operating-systems
     AnolisOS(

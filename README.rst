@@ -194,6 +194,7 @@ List of known compatibility issues
 .. csv-table:: Compatibility Issues
    :header: "distro", "incompatible policy", "unavailable libraries"
 
+   "|anolisos-23|", "", "libnsl.so.1"
    "|opensuse-tumbleweed|", "", "libnsl.so.1"
    "|photon-1.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-2.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"

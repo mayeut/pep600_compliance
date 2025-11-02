@@ -26,6 +26,8 @@ def get_docker_platform(machine):
         return "linux/arm/v7"
     if machine == "riscv64":
         return "linux/riscv64"
+    if machine == "loongarch64":
+        return "linux/loong64"
     raise LookupError(f"No docker platform defined for {machine}")
 
 
@@ -76,9 +78,14 @@ class Base:
             platform_machine = "aarch64"
 
         image_name = self.image
+        if machine == "loongarch64":
+            image_name = {
+                "openanolis/anolisos:23": "ghcr.io/loong64/anolis:23",
+                "debian:13-slim": "ghcr.io/loong64/debian:trixie-slim",
+            }.get(image_name, image_name)
         image = None
         has_image = True
-        if platform_machine != machine:
+        if platform_machine != machine and machine not in {"loongarch64"}:
             image_name = get_docker_platform_prefix(machine) + "/" + image_name
             try:
                 image = client.images.get(image_name)
@@ -213,6 +220,8 @@ class Base:
             policy = "manylinux_2_17"
         elif machine == "riscv64":
             policy = "manylinux_2_31"
+        elif machine == "loongarch64":
+            policy = "manylinux_2_36"
         else:
             policy = "manylinux_2_24"
         exit_code, output = container.exec_run(

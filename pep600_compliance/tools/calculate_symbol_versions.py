@@ -82,6 +82,14 @@ elif MACHINE == "riscv64":
         "/lib64",
         "/usr/lib64",
     ]
+elif MACHINE == "loongarch64":
+    LIBRARY_PATHS = [
+        "/lib/loongarch64-linux-gnu",
+        "/usr/lib/loongarch64-linux-gnu",
+        "/usr/lib/loongarch64-linux-gnu/mesa",
+        "/lib64",
+        "/usr/lib64",
+    ]
 else:
     raise NotImplementedError("Platform not supported")
 
@@ -276,6 +284,10 @@ def main():
     skip_lib = set(args.skip_lib)
     if MACHINE not in {"x86_64", "aarch64"}:
         skip_lib.add("libmvec.so.1")
+    if MACHINE == "loongarch64":
+        skip_lib.add("libanl.so.1")
+        skip_lib.add("libnsl.so.1")
+        skip_lib.add("libutil.so.1")
     print(
         json.dumps(
             {

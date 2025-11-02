@@ -3,7 +3,14 @@ from pep600_compliance.images import base, package_manager
 
 class RHUBI(base.Base):
     def __init__(
-        self, image, eol, pkg_manager, packages, machines, python="python3", skip_lib=[]
+        self,
+        image,
+        eol,
+        pkg_manager,
+        packages,
+        machines,
+        python="python3",
+        skip_lib=frozenset(),
     ):
         version = image.split(":")[1].split(".")[0]
         self._packages = packages

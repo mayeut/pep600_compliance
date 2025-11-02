@@ -97,7 +97,16 @@ DEBIAN_LIST: list[base.Base] = [
     Debian(
         "debian:13-slim",
         ("EOL:2028-08-09", "LTS:2030-06-30", "ELTS:2035-06-30"),
-        machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
+        machines=(
+            "i686",
+            "x86_64",
+            "aarch64",
+            "ppc64le",
+            "s390x",
+            "armv7l",
+            "riscv64",
+            "loongarch64",
+        ),
         packages=[DEBIAN_PACKAGES],
     ),
     Debian(
