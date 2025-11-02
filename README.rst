@@ -50,6 +50,7 @@
 .. |mageia-9| image:: https://img.shields.io/static/v1?label=mageia&message=9%20(EOL%3A2025-03-31)&color=black
 .. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-11-30)&color=black
 .. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
+.. |manylinux-2_39| image:: https://img.shields.io/static/v1?label=manylinux&message=2_39%20(EOL%3A2035-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_31| image:: https://img.shields.io/static/v1?label=manylinux&message=2_31%20(EOL%3A2030-04-02)&color=green&logo=python&logoColor=white
 .. |manylinux-2_28| image:: https://img.shields.io/static/v1?label=manylinux&message=2_28%20(EOL%3A2029-05-31)&color=green&logo=python&logoColor=white
@@ -140,7 +141,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_31", "|debian-11| |manylinux-2_31| |ubuntu-20.04|"
    "manylinux_2_34", "|almalinux-9| |centos-stream9| |manylinux-2_34| |rockylinux-9|"
    "manylinux_2_35", "|ubuntu-22.04|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
 .. end base_images
 
@@ -177,7 +178,7 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
-   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
+   "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |manylinux-2_39| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|archlinux-latest| |debian-experimental| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"

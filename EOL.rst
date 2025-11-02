@@ -90,6 +90,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: manylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "manylinux 2_39", "2035-05-31", "", ""
    "manylinux 2_34", "2032-05-31", "", ""
    "manylinux 2_31", "2030-04-02", "", ""
    "manylinux 2_28", "2029-05-31", "", ""

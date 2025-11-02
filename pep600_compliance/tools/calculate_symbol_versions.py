@@ -273,6 +273,9 @@ def main():
     policies = load_policies(args.policyjson)
     policy = choose_policy(args.policy, policies)
     arch, _ = platform.architecture()
+    skip_lib = set(args.skip_lib)
+    if MACHINE not in {"x86_64", "aarch64"}:
+        skip_lib.add("libmvec.so.1")
     print(
         json.dumps(
             {
@@ -280,7 +283,7 @@ def main():
                 "symbols": calculate_symbol_versions(
                     policy["lib_whitelist"],
                     policy["symbol_versions"][MACHINE],
-                    args.skip_lib,
+                    skip_lib,
                 ),
                 "libz.so.1": _get_symbols("libz.so.1"),
             },

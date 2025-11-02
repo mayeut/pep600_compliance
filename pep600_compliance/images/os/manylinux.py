@@ -20,6 +20,14 @@ class Manylinux(base.Base):
         pass
 
 
+_MANYLINUX_2_39: list[base.Base] = [
+    Manylinux(
+        f"quay.io/pypa/manylinux_2_39_{machine}:latest",
+        ("EOL:2035-05-31",),
+        machines=(machine,),
+    )
+    for machine in {"aarch64", "riscv64"}
+]
 _MANYLINUX_2_34: list[base.Base] = [
     Manylinux(
         f"quay.io/pypa/manylinux_2_34_{machine}:latest",
@@ -77,7 +85,8 @@ _MANYLINUX_1: list[base.Base] = [
     for machine in {"x86_64", "i686"}
 ]
 MANYLINUX_LIST = (
-    _MANYLINUX_2_34
+    _MANYLINUX_2_39
+    + _MANYLINUX_2_34
     + _MANYLINUX_2_31
     + _MANYLINUX_2_28
     + _MANYLINUX_2_24
