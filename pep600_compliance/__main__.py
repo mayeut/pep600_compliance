@@ -288,7 +288,16 @@ def versionify(version_string: str) -> tuple[int | str, ...]:
 
 def get_zlib_blacklist(min_glibc_version: tuple[int, ...]) -> list[str]:
     zlib_symbols: dict[str, dict[str, set[str]]] = {}
-    for machine in ["i686", "x86_64", "aarch64", "s390x", "armv7l", "ppc64le"]:
+    for machine in [
+        "i686",
+        "x86_64",
+        "aarch64",
+        "s390x",
+        "armv7l",
+        "ppc64le",
+        "riscv64",
+        "loongarch64",
+    ]:
         cache_path = CACHE_PATH / machine
         distros = load_distros(cache_path)
         for distro in distros:
@@ -332,9 +341,12 @@ def create_policy(
         "priority": priority,
         "symbol_versions": {},
         "lib_whitelist": [
+            "libatomic.so.1",
             "libgcc_s.so.1",
             "libstdc++.so.6",
             "libm.so.6",
+            "libmvec.so.1",
+            "libanl.so.1",
             "libdl.so.2",
             "librt.so.1",
             "libc.so.6",
@@ -380,7 +392,16 @@ def create_policy(
 
 
 def update_policies() -> None:
-    machines = ("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64")
+    machines = (
+        "i686",
+        "x86_64",
+        "aarch64",
+        "ppc64le",
+        "s390x",
+        "armv7l",
+        "riscv64",
+        "loongarch64",
+    )
     policies = deepcopy(OFFICIAL_POLICIES)
     official_glibc = {
         tuple(map(int, policy.name[10:].split("_")))
