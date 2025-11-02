@@ -10,7 +10,6 @@ class AnolisOS(base.Base):
         packages: list[list[str]],
         machines: tuple[str, ...],
         python: str = "python3",
-        skip_lib: frozenset[str] = frozenset(),
     ):
         _, version = image.split(":")
         self._packages = packages
@@ -22,7 +21,6 @@ class AnolisOS(base.Base):
             pkg_manager,
             python=python,
             machines=machines,
-            skip_lib=skip_lib,
         )
 
     def install_packages(self, container, machine):
@@ -57,7 +55,6 @@ ANOLISOS_LIST: list[base.Base] = [
                 "libatomic",
             ]
         ],
-        skip_lib=frozenset(("libnsl.so.1", "libutil.so.1")),
     ),
     # https://www.alibabacloud.com/help/en/ecs/user-guide/end-of-support-for-operating-systems
     AnolisOS(
