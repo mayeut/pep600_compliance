@@ -36,7 +36,7 @@ class AnolisOS(base.Base):
 ANOLISOS_LIST: list[base.Base] = [
     AnolisOS(
         "openanolis/anolisos:23",
-        "unknown",
+        ("EOL:2030-06-30",),
         machines=("x86_64", "aarch64", "loongarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[
@@ -59,7 +59,7 @@ ANOLISOS_LIST: list[base.Base] = [
     # https://www.alibabacloud.com/help/en/ecs/user-guide/end-of-support-for-operating-systems
     AnolisOS(
         "openanolis/anolisos:8",
-        ("EOL:2031-06-30",),
+        ("EOL:2031-03-31",),
         machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[
