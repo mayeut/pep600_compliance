@@ -16,7 +16,13 @@ class OpenEuler(base.Base):
         )
 
     def install_packages(self, container, machine):
-        super()._install_packages(container, machine, self._packages)
+        packages = self._packages
+        if machine == "loongarch64":
+            packages = [
+                [package for package in packages_ if package != "libnsl"]
+                for packages_ in packages
+            ]
+        super()._install_packages(container, machine, packages)
 
 
 OPENEULER_LIST: list[base.Base] = [
@@ -24,7 +30,7 @@ OPENEULER_LIST: list[base.Base] = [
     OpenEuler(
         "openeuler/openeuler:24.03",
         ("EOL:2028-03-31",),
-        machines=("x86_64", "aarch64"),
+        machines=("x86_64", "aarch64", "loongarch64"),
         packages=[
             [
                 "which",
