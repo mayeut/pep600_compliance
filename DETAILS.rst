@@ -208,6 +208,12 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_41", "|debian-13|"
 .. end base_images_riscv64
 
+.. begin base_images_loongarch64
+.. csv-table:: loongarch64
+   :header: "policy", "distros"
+
+.. end base_images_loongarch64
+
 Distro compatibility
 ====================
 
@@ -381,3 +387,11 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-experimental| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_riscv64
+
+.. begin compatibility_loongarch64
+.. csv-table:: loongarch64
+   :header: "policy", "distros"
+
+   "manylinux_2_38", "|anolisos-23| |openeuler-24.03|"
+   "manylinux_2_41", "|debian-13|"
+.. end compatibility_loongarch64

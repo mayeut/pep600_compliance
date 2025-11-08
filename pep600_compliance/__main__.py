@@ -27,7 +27,16 @@ CACHE_PATH = HERE / ".." / "cache"
 README_PATH = HERE / ".." / "README.rst"
 DETAILS_PATH = HERE / ".." / "DETAILS.rst"
 EOL_PATH = HERE / ".." / "EOL.rst"
-MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"}
+MACHINES = (
+    "i686",
+    "x86_64",
+    "aarch64",
+    "ppc64le",
+    "s390x",
+    "armv7l",
+    "riscv64",
+    "loongarch64",
+)
 
 
 def get_start_end(lines: list[str], start_tag: str, end_tag: str) -> tuple[int, int]:
@@ -392,16 +401,6 @@ def create_policy(
 
 
 def update_policies() -> None:
-    machines = (
-        "i686",
-        "x86_64",
-        "aarch64",
-        "ppc64le",
-        "s390x",
-        "armv7l",
-        "riscv64",
-        "loongarch64",
-    )
     policies = deepcopy(OFFICIAL_POLICIES)
     official_glibc = {
         tuple(map(int, policy.name[10:].split("_")))
@@ -409,7 +408,7 @@ def update_policies() -> None:
         if policy.name != "linux"
     }
     known_glibc = set()
-    for machine in machines:
+    for machine in MACHINES:
         cache_path = CACHE_PATH / machine
         distros = load_distros(cache_path)
         known_glibc |= {distro.glibc_version_tuple for distro in distros}
@@ -421,7 +420,7 @@ def update_policies() -> None:
             continue
         priority -= 1
         assert priority > 0
-        policies.append(create_policy("{}.{}".format(*glibc), priority, machines))
+        policies.append(create_policy("{}.{}".format(*glibc), priority, MACHINES))
     dump_policies(policies, CACHE_PATH / "current-policies.json")
 
 
