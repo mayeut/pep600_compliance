@@ -48,8 +48,15 @@ OPENSUSE_LIST: list[base.Base] = [
         skip_lib=frozenset(("libnsl.so.1",)),
     ),
     OpenSUSE(
+        "opensuse/leap:16.0",
+        ("EOL:2027-10-31",),
+        machines=("x86_64", "aarch64", "ppc64le"),
+        packages=[OPENSUSE_PACKAGES],
+        skip_lib=frozenset(("libnsl.so.1",)),
+    ),
+    OpenSUSE(
         "opensuse/leap:15.6",
-        ("EOL:2025-12-31",),
+        ("EOL:2026-04-30",),
         machines=("x86_64", "aarch64"),
         packages=[OPENSUSE_PACKAGES, ["libnsl1"]],
     ),

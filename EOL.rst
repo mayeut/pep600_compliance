@@ -111,7 +111,8 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "opensuse tumbleweed", "rolling", "", ""
-   "opensuse 15.6", "2025-12-31", "", ""
+   "opensuse 16.0", "2027-10-31", "", ""
+   "opensuse 15.6", "2026-04-30", "", ""
    "opensuse 15.5", "2024-12-31", "", ""
    "opensuse 15.4", "2023-12-07", "", ""
    "opensuse 15.3", "2022-12-01", "", ""

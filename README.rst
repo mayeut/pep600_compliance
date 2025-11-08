@@ -62,7 +62,8 @@
 .. |opencloudos-8| image:: https://img.shields.io/static/v1?label=opencloudos&message=8%20(EOL%3A2029-05-31)&color=green
 .. |openeuler-24.03| image:: https://img.shields.io/static/v1?label=openeuler&message=24.03%20(EOL%3A2028-03-31)&color=green
 .. |opensuse-tumbleweed| image:: https://img.shields.io/static/v1?label=opensuse&message=tumbleweed%20(rolling)&color=purple&logo=opensuse&logoColor=white
-.. |opensuse-15.6| image:: https://img.shields.io/static/v1?label=opensuse&message=15.6%20(EOL%3A2025-12-31)&color=yellow&logo=opensuse&logoColor=white
+.. |opensuse-16.0| image:: https://img.shields.io/static/v1?label=opensuse&message=16.0%20(EOL%3A2027-10-31)&color=green&logo=opensuse&logoColor=white
+.. |opensuse-15.6| image:: https://img.shields.io/static/v1?label=opensuse&message=15.6%20(EOL%3A2026-04-30)&color=yellow&logo=opensuse&logoColor=white
 .. |opensuse-15.5| image:: https://img.shields.io/static/v1?label=opensuse&message=15.5%20(EOL%3A2024-12-31)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-15.4| image:: https://img.shields.io/static/v1?label=opensuse&message=15.4%20(EOL%3A2023-12-07)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-15.3| image:: https://img.shields.io/static/v1?label=opensuse&message=15.3%20(EOL%3A2022-12-01)&color=black&logo=opensuse&logoColor=white
@@ -179,7 +180,7 @@ If your favorite distro does not appear here:
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
    "manylinux_2_38", "|alt-p11| |anolisos-23| |fedora-39| |opencloudos-9| |openeuler-24.03| |opensuse-15.6| |ubuntu-23.10|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |manylinux-2_39| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
-   "manylinux_2_40", "|alt-sisyphus| |fedora-41| |ubuntu-24.10|"
+   "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |debian-testing| |debian-unstable| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|archlinux-latest| |debian-experimental| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_42_9000", "|fedora-rawhide|"
@@ -194,6 +195,7 @@ List of known compatibility issues
 .. csv-table:: Compatibility Issues
    :header: "distro", "incompatible policy", "unavailable libraries"
 
+   "|opensuse-16.0|", "", "libnsl.so.1"
    "|opensuse-tumbleweed|", "", "libnsl.so.1"
    "|photon-1.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-2.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
