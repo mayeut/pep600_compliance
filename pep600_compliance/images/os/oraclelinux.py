@@ -24,6 +24,28 @@ class OracleLinux(base.Base):
 ORACLELINUX_LIST: list[base.Base] = [
     # EOL info: https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf
     OracleLinux(
+        "oraclelinux:10-slim",
+        ("EOL:2035-06-30", "ELTS:2038-06-30"),
+        machines=("x86_64", "aarch64"),
+        pkg_manager=package_manager.MICRODNF(),
+        packages=[
+            [
+                "which",
+                "python3-pip",
+                "libnsl",
+                "libstdc++",
+                "glib2",
+                "libX11",
+                "libXext",
+                "libXrender",
+                "mesa-libGL",
+                "libICE",
+                "libSM",
+                "libatomic",
+            ]
+        ],
+    ),
+    OracleLinux(
         "oraclelinux:9-slim",
         ("EOL:2032-06-30", "ELTS:2035-06-30"),
         machines=("x86_64", "aarch64"),

@@ -121,6 +121,7 @@ This mostly mimics Debian lifecycle.
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
+   "oraclelinux 10", "2035-06-30", "", "2038-06-30"
    "oraclelinux 9", "2032-06-30", "", "2035-06-30"
    "oraclelinux 8", "2029-07-31", "", "2032-07-31"
    "oraclelinux 7", "2024-12-31", "", "2028-06-30"
