@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
     - name: Install Python
       uses: actions/setup-python@v6
     - name: Install Nox
