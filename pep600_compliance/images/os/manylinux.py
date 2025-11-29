@@ -34,7 +34,7 @@ _MANYLINUX_2_34: list[base.Base] = [
         ("EOL:2032-05-31",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "aarch64", "ppc64le", "s390x"}
+    for machine in {"x86_64", "aarch64", "ppc64le", "s390x", "i686"}
 ]
 _MANYLINUX_2_31: list[base.Base] = [
     Manylinux(
@@ -50,7 +50,7 @@ _MANYLINUX_2_28: list[base.Base] = [
         ("EOL:2029-05-31",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "aarch64", "ppc64le", "s390x"}
+    for machine in {"x86_64", "aarch64", "ppc64le", "s390x", "i686"}
 ]
 _MANYLINUX_2_24: list[base.Base] = [
     Manylinux(
