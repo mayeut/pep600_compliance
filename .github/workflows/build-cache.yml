@@ -7,13 +7,24 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
 jobs:
   build-cache:
     name: Build cache
+    permissions:
+      contents: write  # needed to create new branch
+      pull-requests: write  # needed to create PR for the new branch
     runs-on: ubuntu-latest
     steps:
     - name: Check out
       uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Install Python
       uses: actions/setup-python@v6
     - name: Install Nox
