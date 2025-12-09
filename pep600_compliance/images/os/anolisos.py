@@ -27,8 +27,7 @@ class AnolisOS(base.Base):
         packages = self._packages
         if machine == "loongarch64":
             packages = [
-                [package for package in packages_ if package != "libnsl"]
-                for packages_ in packages
+                [package for package in packages_ if package != "libnsl"] for packages_ in packages
             ]
         super()._install_packages(container, machine, packages)
 
@@ -53,7 +52,7 @@ ANOLISOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     # https://www.alibabacloud.com/help/en/ecs/user-guide/end-of-support-for-operating-systems
@@ -76,7 +75,7 @@ ANOLISOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

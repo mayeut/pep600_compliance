@@ -31,7 +31,7 @@ CLEFOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

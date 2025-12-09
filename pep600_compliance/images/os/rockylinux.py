@@ -6,7 +6,12 @@ class RockyLinux(base.Base):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "rockylinux", version, eol, package_manager.DNF(), machines
+            image,
+            "rockylinux",
+            version,
+            eol,
+            package_manager.DNF(),
+            machines,
         )
 
     def install_packages(self, container, machine):
@@ -32,7 +37,7 @@ ROCKYLINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     RockyLinux(
@@ -53,7 +58,7 @@ ROCKYLINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     RockyLinux(
@@ -74,7 +79,7 @@ ROCKYLINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

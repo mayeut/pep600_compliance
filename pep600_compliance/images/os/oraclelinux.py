@@ -20,7 +20,6 @@ class OracleLinux(base.Base):
         super()._install_packages(container, machine, self._packages)
 
 
-#
 ORACLELINUX_LIST: list[base.Base] = [
     # EOL info: https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf
     OracleLinux(
@@ -42,7 +41,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     OracleLinux(
@@ -64,7 +63,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     OracleLinux(
@@ -86,7 +85,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     OracleLinux(
@@ -108,7 +107,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     # Extended support
@@ -117,7 +116,7 @@ ORACLELINUX_LIST: list[base.Base] = [
         ("EOL:2021-03-31", "ELTS:2024-12-31"),
         machines=("x86_64",),
         pkg_manager=package_manager.YUM(
-            run_once=[["yum-config-manager", "--enable", "ol6_software_collections"]]
+            run_once=[["yum-config-manager", "--enable", "ol6_software_collections"]],
         ),
         packages=[
             [
@@ -133,7 +132,7 @@ ORACLELINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
         python="/opt/rh/rh-python36/root/usr/bin/python3",
     ),

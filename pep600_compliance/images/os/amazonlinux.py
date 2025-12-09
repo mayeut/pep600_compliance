@@ -6,7 +6,12 @@ class AmazonLinux(base.Base):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "amazonlinux", version, eol, pkg_manager, machines=machines
+            image,
+            "amazonlinux",
+            version,
+            eol,
+            pkg_manager,
+            machines=machines,
         )
 
     def install_packages(self, container, machine):
@@ -35,7 +40,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     # standard eol: https://aws.amazon.com/fr/amazon-linux-2/faqs/
@@ -58,7 +63,7 @@ AMAZONLINUX_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     # extended support date rather than eol:

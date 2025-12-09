@@ -1,7 +1,19 @@
 # No build-system here, used for tool configuration only
 
-[tool.black]
-target-version = ["py314"]
-
-[tool.isort]
-profile = "black"
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+extend-exclude = ["pep600_compliance/tools/calculate_symbol_versions.py", "pep600_compliance/tools/ldd.py"]
+lint.select = [ "ALL" ]
+lint.ignore = [
+    "ANN",     # TODO type annotations
+    # "ANN401",  # any-type
+    "C901",    # Complexity
+    "D",       # Doc
+    "ERA001",  # commented-out code
+    "FIX002",  # Line contains TODO
+    "PLR",     # Design related pylint codes
+    "S101",    # Use of `assert` detected
+    "T201",    # `print` found
+    "TD",      # ToDo formatting
+]

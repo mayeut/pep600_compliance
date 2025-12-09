@@ -14,7 +14,7 @@ class Photon(base.Base):
                 "libICE.so.6",
                 "libSM.so.6",
                 "libGL.so.1",
-            )
+            ),
         )
         super().__init__(
             image,

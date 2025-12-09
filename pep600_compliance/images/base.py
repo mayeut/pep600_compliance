@@ -1,8 +1,8 @@
 import json
 import logging
-import os
 import platform
 from contextlib import contextmanager
+from pathlib import Path
 
 import docker
 import docker.errors
@@ -28,7 +28,8 @@ def get_docker_platform(machine):
         return "linux/riscv64"
     if machine == "loongarch64":
         return "linux/loong64"
-    raise LookupError(f"No docker platform defined for {machine}")
+    msg = f"No docker platform defined for {machine}"
+    raise LookupError(msg)
 
 
 def get_docker_platform_prefix(machine):
@@ -46,7 +47,8 @@ def get_docker_platform_prefix(machine):
         return "arm32v7"
     if machine == "riscv64":
         return "riscv64"
-    raise LookupError(f"No docker platform defined for {machine}")
+    msg = f"No docker platform defined for {machine}"
+    raise LookupError(msg)
 
 
 class Base:
@@ -103,17 +105,19 @@ class Base:
             try:
                 image = client.images.get(image_name)
                 if platform_machine != machine:
-                    raise NotImplementedError("too dangerous")
+                    msg = "too dangerous"
+                    raise NotImplementedError(msg)
                 has_image = True
             except docker.errors.ImageNotFound:
                 has_image = False
                 logger.info("Pulling image %r", image_name)
                 image = client.images.pull(
-                    *image_name.split(":"), platform=get_docker_platform(machine)
+                    *image_name.split(":"),
+                    platform=get_docker_platform(machine),
                 )
                 logger.info("Pulled image %r", image_name)
 
-        src_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        src_folder = Path(__file__).parent.parent.resolve(strict=True)
         volumes = {src_folder: {"bind": "/home/pep600_compliance", "mode": "rw"}}
 
         logger.info("Starting container with image %r (%r)", image_name, image.id)
@@ -154,7 +158,7 @@ class Base:
         self.package_manager.install(container, machine, packages)
 
     def install_packages(self, container, machine):
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def _ensure_pip(self, container):
         logger.info("Installing pip")
@@ -169,7 +173,7 @@ class Base:
                 self.python,
                 "-c",
                 'import sys; print("{}.{}".format(*sys.version_info[0:2]))',
-            ]
+            ],
         )
         assert exit_code == 0
         version = output.decode("utf-8").strip()
@@ -182,9 +186,8 @@ class Base:
                 "-exo",
                 "pipefail",
                 "-c",
-                f"curl -fksSL https://bootstrap.pypa.io/{version_url}get-pip.py "
-                f"| {self.python}",
-            ]
+                f"curl -fksSL https://bootstrap.pypa.io/{version_url}get-pip.py | {self.python}",
+            ],
         )
         assert exit_code == 0, output.decode("utf-8")
         exit_code, _ = container.exec_run([self.python, "-m", "pip", "-V"])
@@ -194,7 +197,7 @@ class Base:
         self._ensure_pip(container)
         logger.info("Installing pyelftools")
         exit_code, output = container.exec_run(
-            [self.python, "-m", "pip", "install", "pyelftools"]
+            [self.python, "-m", "pip", "install", "pyelftools"],
         )
         if exit_code == 0:
             return
@@ -230,8 +233,8 @@ class Base:
                 "/home/pep600_compliance/tools/calculate_symbol_versions.py",
                 policy,
                 "/home/pep600_compliance/policies/manylinux-policy.json",
-            ]
-            + list(self.skip_lib),
+                *self.skip_lib,
+            ],
             demux=True,
         )
         assert exit_code == 0, output[1].decode("utf-8")
@@ -284,11 +287,12 @@ class Base:
         if python_path.startswith("/opt/python/cp"):
             # we are on manylinux, check all versions
             exit_code, output = container.exec_run(
-                ["find", "/opt/python", "-mindepth", "1", "-maxdepth", "1"], demux=True
+                ["find", "/opt/python", "-mindepth", "1", "-maxdepth", "1"],
+                demux=True,
             )
             assert exit_code == 0, output[1].decode("utf-8")
-            for line in output[0].decode("utf-8").strip().splitlines():
-                line = line.strip() + "/bin/python"
+            for line_ in output[0].decode("utf-8").strip().splitlines():
+                line = line_.strip() + "/bin/python"
                 result.extend(_get_dependencies(line))
         # check python
         exit_code, output = container.exec_run(["which", "python"], demux=True)

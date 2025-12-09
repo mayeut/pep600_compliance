@@ -66,7 +66,9 @@ def load_distros(path: Path) -> list[Distribution]:
 
 
 def get_policy(
-    policies: list[Policy], glibc_version: str, machine: str | None
+    policies: list[Policy],
+    glibc_version: str,
+    machine: str | None,
 ) -> Policy | None:
     for policy in policies:
         if policy.glibc_version == glibc_version:
@@ -74,10 +76,10 @@ def get_policy(
     assert machine is not None
     # retrieve official policy
     for official_policy in OFFICIAL_POLICIES:
-        if official_policy.name == f'manylinux_{"_".join(glibc_version.split("."))}':
+        if official_policy.name == f"manylinux_{'_'.join(glibc_version.split('.'))}":
             policy_symbols = official_policy.symbol_versions[machine]
             new_symbols = {}
-            for key in policy_symbols.keys():
+            for key in policy_symbols:
                 new_symbols[key] = set(policy_symbols[key])
             new_policy = Policy(
                 glibc_version=glibc_version,
@@ -102,27 +104,27 @@ def make_policies(distros: list[Distribution]) -> list[Policy]:
             )
             result.append(policy)
         elif not policy.official:
-            for symbol in distro.symbols.keys():
+            for symbol in distro.symbols:
                 policy.symbols[symbol] &= distro.symbols[symbol]
     # make sure symbol policies from official policies are in the next ones
-    for i in range(0, len(result) - 1):
+    for i in range(len(result) - 1):
         if not result[i].official:
             continue
         official_symbols = result[i].symbols
         for j in range(i + 1, len(result)):
-            for symbol in official_symbols.keys():
+            for symbol in official_symbols:
                 result[j].symbols[symbol] |= official_symbols[symbol]
     # make sure a previous policy is compatible with the next one
     for i in range(len(result) - 1, 0, -1):
         next_symbols = result[i].symbols
         previous_symbols = result[i - 1].symbols
-        for symbol in previous_symbols.keys():
+        for symbol in previous_symbols:
             previous_symbols[symbol] &= next_symbols[symbol]
     return result
 
 
 def can_create_manylinux_wheel(distro: Distribution, policy: Policy) -> bool:
-    for symbol in distro.symbols.keys():
+    for symbol in distro.symbols:
         if not policy.symbols[symbol].issuperset(distro.symbols[symbol]):
             return False
     return True
@@ -130,7 +132,7 @@ def can_create_manylinux_wheel(distro: Distribution, policy: Policy) -> bool:
 
 def has_symbol_conflict(distro: Distribution, policy: Policy) -> bool:
     conflicts = {}
-    for symbol in distro.symbols.keys():
+    for symbol in distro.symbols:
         conflicting_symbols = policy.symbols[symbol] - distro.symbols[symbol]
         if conflicting_symbols:
             conflicts[symbol] = conflicting_symbols
@@ -150,9 +152,8 @@ def filter_image(distro_name, distro_version):
         "manylinux",
     ]:
         return True
-    if distro_name == "debian":
-        if distro_version in {"testing", "unstable", "experimental"}:
-            return True
+    if distro_name == "debian" and distro_version in {"testing", "unstable", "experimental"}:
+        return True
     if distro_name == "ubuntu":
         if distro_version in {"rolling", "devel"}:
             return True
@@ -165,7 +166,8 @@ def filter_image(distro_name, distro_version):
 
 
 def make_manylinux_images(
-    distros: list[Distribution], policies: list[Policy]
+    distros: list[Distribution],
+    policies: list[Policy],
 ) -> dict[str, list[str]]:
     result: dict[str, list[str]] = defaultdict(list)
     for distro in distros:
@@ -185,7 +187,8 @@ def make_manylinux_images(
 
 
 def make_distros(
-    distros: list[Distribution], policies: list[Policy]
+    distros: list[Distribution],
+    policies: list[Policy],
 ) -> tuple[dict[str, list[str]], dict[str, Incompatibility]]:
     result: dict[str, list[str]] = defaultdict(list)
     incompatibilities: dict[str, Incompatibility] = defaultdict(Incompatibility)
@@ -205,9 +208,8 @@ def make_distros(
         if has_symbol_conflict(distro, policy):
             incompatibilities[distro_description].policy = policy_name
         for image in get_images(None):
-            if image.name == distro.name and image.version == distro.version:
-                if image.skip_lib:
-                    incompatibilities[distro_description].libs = image.skip_lib
+            if image.name == distro.name and image.version == distro.version and image.skip_lib:
+                incompatibilities[distro_description].libs = image.skip_lib
 
     return result, incompatibilities
 
@@ -223,12 +225,13 @@ def manylinux_analysis(path: Path, machine: str | None):
         machine_base_images = make_manylinux_images(machine_distros_, policies)
         # print(machine_)
         machine_distros, incompatibilities_machine = make_distros(
-            machine_distros_, policies
+            machine_distros_,
+            policies,
         )
         incompatibilities.update(incompatibilities_machine)
 
         # we want a kind of intersection for base_images
-        for policy_name in machine_distros.keys():
+        for policy_name in machine_distros:
             # remove invalid base_image
             for base_image in machine_distros[policy_name]:
                 if (
@@ -241,27 +244,29 @@ def manylinux_analysis(path: Path, machine: str | None):
                 if base_image not in distros_set[policy_name]:
                     base_images_set[policy_name].add(base_image)
         # update distros
-        for policy_name in machine_distros.keys():
+        for policy_name in machine_distros:
             distros_set[policy_name] |= set(machine_distros[policy_name])
 
     base_images = {}
     policy_names = sorted(
-        base_images_set.keys(), key=lambda x: [int(v) for v in x.split("_")[1:]]
+        base_images_set.keys(),
+        key=lambda x: [int(v) for v in x.split("_")[1:]],
     )
     for policy_name in policy_names:
         if base_images_set[policy_name]:
-            base_images[policy_name] = sorted(list(base_images_set[policy_name]))
+            base_images[policy_name] = sorted(base_images_set[policy_name])
 
     distros: dict[str, list[str]] = {}
     all_distros: set[str] = set()
     policy_names = sorted(
-        distros_set.keys(), key=lambda x: [int(v) for v in x.split("_")[1:]]
+        distros_set.keys(),
+        key=lambda x: [int(v) for v in x.split("_")[1:]],
     )
     for policy_name in policy_names:
         current_distros = distros_set[policy_name] - all_distros
         all_distros |= current_distros
         if current_distros:
-            distros[policy_name] = sorted(list(current_distros))
+            distros[policy_name] = sorted(current_distros)
 
     incompatibilities = dict(sorted(incompatibilities.items()))
 

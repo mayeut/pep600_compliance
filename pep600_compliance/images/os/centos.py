@@ -24,8 +24,7 @@ CENTOS_YUM_OLD = [
     [
         "bash",
         "-ec",
-        "sed -i "
-        "'s;^#baseurl=http://mirror;baseurl=https://vault;g' /etc/yum.repos.d/*.repo",
+        "sed -i 's;^#baseurl=http://mirror;baseurl=https://vault;g' /etc/yum.repos.d/*.repo",
     ],
 ]
 
@@ -49,7 +48,7 @@ CENTOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     CentOS(
@@ -71,7 +70,7 @@ CENTOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     CentOS(
@@ -93,7 +92,7 @@ CENTOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     CentOS(
@@ -115,7 +114,7 @@ CENTOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     CentOS(
@@ -137,7 +136,7 @@ CENTOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

@@ -3,7 +3,13 @@ from pep600_compliance.images import base, package_manager
 
 class OpenSUSE(base.Base):
     def __init__(
-        self, image, eol, packages, machines, version=None, skip_lib=frozenset()
+        self,
+        image,
+        eol,
+        packages,
+        machines,
+        version=None,
+        skip_lib=frozenset(),
     ):
         if version is None:
             _, version = image.split(":")

@@ -6,7 +6,11 @@ class ArchLinux(base.Base):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "archlinux", version, "rolling", package_manager.PACMAN()
+            image,
+            "archlinux",
+            version,
+            "rolling",
+            package_manager.PACMAN(),
         )
 
     def install_packages(self, container, machine):

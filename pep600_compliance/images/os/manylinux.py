@@ -13,7 +13,13 @@ class Manylinux(base.Base):
         python = "/opt/python/cp39-cp39/bin/python"
         self._packages = []
         super().__init__(
-            image, "manylinux", version, eol, None, machines, python=python
+            image,
+            "manylinux",
+            version,
+            eol,
+            None,
+            machines,
+            python=python,
         )
 
     def install_packages(self, container, machine):
@@ -26,7 +32,7 @@ _MANYLINUX_2_39: list[base.Base] = [
         ("EOL:2035-05-31",),
         machines=(machine,),
     )
-    for machine in {"aarch64", "riscv64"}
+    for machine in ("aarch64", "riscv64")
 ]
 _MANYLINUX_2_34: list[base.Base] = [
     Manylinux(
@@ -34,7 +40,7 @@ _MANYLINUX_2_34: list[base.Base] = [
         ("EOL:2032-05-31",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "aarch64", "ppc64le", "s390x", "i686"}
+    for machine in ("x86_64", "aarch64", "ppc64le", "s390x", "i686")
 ]
 _MANYLINUX_2_31: list[base.Base] = [
     Manylinux(
@@ -42,7 +48,7 @@ _MANYLINUX_2_31: list[base.Base] = [
         ("EOL:2030-04-02",),
         machines=(machine,),
     )
-    for machine in {"armv7l"}
+    for machine in ("armv7l",)
 ]
 _MANYLINUX_2_28: list[base.Base] = [
     Manylinux(
@@ -50,7 +56,7 @@ _MANYLINUX_2_28: list[base.Base] = [
         ("EOL:2029-05-31",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "aarch64", "ppc64le", "s390x", "i686"}
+    for machine in ("x86_64", "aarch64", "ppc64le", "s390x", "i686")
 ]
 _MANYLINUX_2_24: list[base.Base] = [
     Manylinux(
@@ -58,7 +64,7 @@ _MANYLINUX_2_24: list[base.Base] = [
         ("EOL:2020-07-05", "LTS:2022-06-30"),
         machines=(machine,),
     )
-    for machine in {"x86_64", "i686", "aarch64", "ppc64le", "s390x"}
+    for machine in ("x86_64", "i686", "aarch64", "ppc64le", "s390x")
 ]
 _MANYLINUX_2014: list[base.Base] = [
     Manylinux(
@@ -66,7 +72,7 @@ _MANYLINUX_2014: list[base.Base] = [
         ("EOL:2024-06-30",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "i686", "aarch64", "ppc64le", "s390x"}
+    for machine in ("x86_64", "i686", "aarch64", "ppc64le", "s390x")
 ]
 _MANYLINUX_2010: list[base.Base] = [
     Manylinux(
@@ -74,7 +80,7 @@ _MANYLINUX_2010: list[base.Base] = [
         ("EOL:2020-11-30",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "i686"}
+    for machine in ("x86_64", "i686")
 ]
 _MANYLINUX_1: list[base.Base] = [
     Manylinux(
@@ -82,7 +88,7 @@ _MANYLINUX_1: list[base.Base] = [
         ("EOL:2017-03-31",),
         machines=(machine,),
     )
-    for machine in {"x86_64", "i686"}
+    for machine in ("x86_64", "i686")
 ]
 MANYLINUX_LIST = (
     _MANYLINUX_2_39

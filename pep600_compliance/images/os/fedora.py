@@ -32,7 +32,7 @@ FEDORA_LIST: list[base.Base] = [
         "rolling",
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF5(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:43",
@@ -40,7 +40,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2026-12-02",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF5(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:42",
@@ -48,7 +48,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2026-05-13",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF5(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:41",
@@ -56,7 +56,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2025-12-15",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF5(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:40",
@@ -64,7 +64,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2025-05-13",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:39",
@@ -72,7 +72,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2024-11-19",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:38",
@@ -80,7 +80,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2024-05-21",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:37",
@@ -88,7 +88,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2023-11-14",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:36",
@@ -96,7 +96,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2023-05-16",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:35",
@@ -104,7 +104,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2022-11-15",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:34",
@@ -112,7 +112,7 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2022-05-17",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     # EOL: https://fedoraproject.org/wiki/End_of_life
     Fedora(
@@ -120,13 +120,13 @@ FEDORA_LIST: list[base.Base] = [
         ("EOL:2021-11-16",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
     Fedora(
         "fedora:32",
         ("EOL:2021-05-18",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         pkg_manager=DNF(),
-        packages=[["libnsl"] + FEDORA_PACKAGES],
+        packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
 ]

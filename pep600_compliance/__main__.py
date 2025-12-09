@@ -55,11 +55,11 @@ def get_start_end(lines: list[str], start_tag: str, end_tag: str) -> tuple[int, 
     return start, end
 
 
-def create_cache(machine: str, force_rolling: bool, continue_on_error: bool) -> int:
+def create_cache(machine: str, *, force_rolling: bool, continue_on_error: bool) -> int:
     exit_code = 0
     machine_cache_path = CACHE_PATH / machine
     machine_cache_path.mkdir(parents=True, exist_ok=True)
-    subprocess.check_call(
+    subprocess.check_call(  # noqa: S603
         [
             sys.executable,
             "-m",
@@ -71,7 +71,7 @@ def create_cache(machine: str, force_rolling: bool, continue_on_error: bool) -> 
             "-d",
             str(HERE / "tools"),
             "pyelftools==0.26",
-        ]
+        ],
     )
     for image in get_images(machine):
         cache_file = machine_cache_path / f"{image.name}-{image.version}.json"
@@ -80,14 +80,15 @@ def create_cache(machine: str, force_rolling: bool, continue_on_error: bool) -> 
             try:
                 symbols = image.run_check(machine)
                 cache_file.write_text(json.dumps(symbols, sort_keys=True))
-            except BaseException as e:
+            except BaseException:
                 if continue_on_error:
                     exit_code |= 1
                     logger.exception(
-                        f"Exception occurred while creating cache for {cache_file.stem}"
+                        "Exception occurred while creating cache for %s",
+                        cache_file.stem,
                     )
                 else:
-                    raise e
+                    raise
     return exit_code
 
 
@@ -96,7 +97,7 @@ def replace_badges(lines: list[str]) -> list[str]:
     new_lines: list[str] = []
     keys: list[str] = []
     six_months = datetime.timedelta(days=182)
-    today = datetime.date.today()
+    today = datetime.datetime.now(tz=datetime.UTC).date()
     logos = {
         "centos": "centos",
         "ubuntu": "ubuntu",
@@ -132,7 +133,7 @@ def replace_badges(lines: list[str]) -> list[str]:
             paid_eol_date = free_eol_date
             if last_eol_type == "ELTS":
                 free_eol_date = datetime.date.fromisoformat(image.eol[-2].split(":")[1])
-            eol = " / ".join([date for date in image.eol])
+            eol = " / ".join(date for date in image.eol)
             if paid_eol_date < today:
                 color = "black"
             elif free_eol_date < today:
@@ -142,7 +143,7 @@ def replace_badges(lines: list[str]) -> list[str]:
             else:
                 color = "yellow"
         logo = ""
-        if shortname in logos.keys():
+        if shortname in logos:
             logo = f"&logo={logos[shortname]}&logoColor=white"
         line = (
             f".. |{key}| image:: https://img.shields.io/static/v1?"
@@ -163,12 +164,14 @@ def update_details() -> None:
     for machine in MACHINES:
         base_images, distros, _ = manylinux_analysis(CACHE_PATH, machine)
         start, end = get_start_end(
-            lines, f".. begin base_images_{machine}", f".. end base_images_{machine}"
+            lines,
+            f".. begin base_images_{machine}",
+            f".. end base_images_{machine}",
         )
         new_lines = [f".. csv-table:: {machine}", '   :header: "policy", "distros"', ""]
-        for policy_name in base_images.keys():
+        for policy_name in base_images:
             distros_ = " ".join(
-                [f'|{d.replace(" ", "-")}|' for d in base_images[policy_name]]
+                [f"|{d.replace(' ', '-')}|" for d in base_images[policy_name]],
             )
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
@@ -180,9 +183,9 @@ def update_details() -> None:
             f".. end compatibility_{machine}",
         )
         new_lines = [f".. csv-table:: {machine}", '   :header: "policy", "distros"', ""]
-        for policy_name in distros.keys():
+        for policy_name in distros:
             distros_ = " ".join(
-                [f'|{d.replace(" ", "-")}|' for d in distros[policy_name]]
+                [f"|{d.replace(' ', '-')}|" for d in distros[policy_name]],
             )
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
@@ -200,10 +203,10 @@ def update_readme() -> None:
 
     start, end = get_start_end(lines, ".. begin base_images", ".. end base_images")
     new_lines = [".. csv-table:: base images", '   :header: "policy", "distros"', ""]
-    for policy_name in base_images.keys():
+    for policy_name in base_images:
         if base_images[policy_name]:
             distros_ = " ".join(
-                [f'|{d.replace(" ", "-")}|' for d in base_images[policy_name]]
+                [f"|{d.replace(' ', '-')}|" for d in base_images[policy_name]],
             )
             line = f'   "{policy_name}", "{distros_}"'
             new_lines.append(line)
@@ -211,22 +214,24 @@ def update_readme() -> None:
 
     start, end = get_start_end(lines, ".. begin compatibility", ".. end compatibility")
     new_lines = [".. csv-table:: compatibility", '   :header: "policy", "distros"', ""]
-    for policy_name in distros.keys():
-        distros_ = " ".join([f'|{d.replace(" ", "-")}|' for d in distros[policy_name]])
+    for policy_name in distros:
+        distros_ = " ".join([f"|{d.replace(' ', '-')}|" for d in distros[policy_name]])
         line = f'   "{policy_name}", "{distros_}"'
         new_lines.append(line)
     lines = lines[: start + 1] + new_lines + lines[end:]
 
     start, end = get_start_end(
-        lines, ".. begin compatibility_issues", ".. end compatibility_issues"
+        lines,
+        ".. begin compatibility_issues",
+        ".. end compatibility_issues",
     )
     new_lines = [
         ".. csv-table:: Compatibility Issues",
         '   :header: "distro", "incompatible policy", "unavailable libraries"',
         "",
     ]
-    for distro in incompatibilities.keys():
-        name = f'|{distro.replace(" ", "-")}|'
+    for distro in incompatibilities:
+        name = f"|{distro.replace(' ', '-')}|"
         policy = incompatibilities[distro].policy or ""
         libraries = ", ".join(sorted(incompatibilities[distro].libs))
         line = f'   "{name}", "{policy}", "{libraries}"'
@@ -239,7 +244,9 @@ def update_readme() -> None:
 def update_eol() -> None:
     lines = EOL_PATH.read_text().splitlines()
     start, end = get_start_end(
-        lines, ".. begin eol_information", ".. end eol_information"
+        lines,
+        ".. begin eol_information",
+        ".. end eol_information",
     )
     old_name = ""
     new_lines: list[str] = []
@@ -258,7 +265,7 @@ def update_eol() -> None:
                     f".. csv-table:: {shortname}",
                     f'   :header: "distro", "EOL", "LTS", "{elts_name}"',
                     "",
-                ]
+                ],
             )
         distro_version = f"{shortname} {image.version}"
         if distro_version in done:
@@ -276,10 +283,7 @@ def update_eol() -> None:
             for eol_info in image.eol:
                 kind, date = eol_info.split(":")
                 dates[kind] = date
-        line = (
-            f'   "{distro_version}",'
-            f' "{dates["EOL"]}", "{dates["LTS"]}", "{dates["ELTS"]}"'
-        )
+        line = f'   "{distro_version}", "{dates["EOL"]}", "{dates["LTS"]}", "{dates["ELTS"]}"'
         new_lines.append(line)
     lines = lines[: start + 1] + new_lines + lines[end:]
 
@@ -342,7 +346,9 @@ def print_zlib_blacklist() -> None:
 
 
 def create_policy(
-    glibc_version: str, priority: int, machines: tuple[str, ...]
+    glibc_version: str,
+    priority: int,
+    machines: tuple[str, ...],
 ) -> Policy:
     policy: dict[str, Any] = {
         "name": f"manylinux_{glibc_version.replace('.', '_')}",
@@ -377,7 +383,7 @@ def create_policy(
         ],
         "blacklist": {
             "libz.so.1": get_zlib_blacklist(
-                tuple(int(part) for part in glibc_version.split("."))
+                tuple(int(part) for part in glibc_version.split(".")),
             ),
         },
     }
@@ -387,9 +393,7 @@ def create_policy(
         policies = make_policies(distros)
         try:
             machine_policy = next(
-                policy_
-                for policy_ in policies
-                if policy_.glibc_version == glibc_version
+                policy_ for policy_ in policies if policy_.glibc_version == glibc_version
             )
         except StopIteration:
             continue
@@ -435,16 +439,20 @@ def main() -> None:
     args = parser.parse_args()
     exit_code = 0
     for machine in args.machine:
-        exit_code |= create_cache(machine, args.force_rolling, args.continue_on_error)
+        exit_code |= create_cache(
+            machine,
+            force_rolling=args.force_rolling,
+            continue_on_error=args.continue_on_error,
+        )
         base_images, _, _ = manylinux_analysis(CACHE_PATH, machine)
-        for policy_name in base_images.keys():
+        for policy_name in base_images:
             distros_ = base_images[policy_name]
             print(f"{policy_name}: {distros_}")
     update_readme()
     update_details()
     update_eol()
     update_policies()
-    exit(exit_code)
+    sys.exit(exit_code)
 
 
 if __name__ == "__main__":

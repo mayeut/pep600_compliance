@@ -6,7 +6,13 @@ class Slackware(base.Base):
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
-            image, "slackware", version, eol, pkg_manager, ("x86_64",), python=python
+            image,
+            "slackware",
+            version,
+            eol,
+            pkg_manager,
+            ("x86_64",),
+            python=python,
         )
 
     def install_packages(self, container, machine):
@@ -17,7 +23,7 @@ SLACKWARE_LIST: list[base.Base] = [
     Slackware(
         "vbatts/slackware:current",
         "rolling",
-        pkg_manager=package_manager.SLACKPKG(True),
+        pkg_manager=package_manager.SLACKPKG(current=True),
         packages=[
             [
                 "aaa_glibc-solibs",
@@ -31,7 +37,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libglvnd",
-            ]
+            ],
         ],
         python="python3",
     ),
@@ -51,7 +57,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libglvnd",
-            ]
+            ],
         ],
         python="python3",
     ),
@@ -70,7 +76,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "gcc",
-            ]
+            ],
         ],
     ),
     Slackware(
@@ -88,7 +94,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "gcc",
-            ]
+            ],
         ],
     ),
     Slackware(
@@ -106,7 +112,7 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "gcc",
-            ]
+            ],
         ],
     ),
 ]

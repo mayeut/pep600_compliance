@@ -19,8 +19,7 @@ class OpenEuler(base.Base):
         packages = self._packages
         if machine == "loongarch64":
             packages = [
-                [package for package in packages_ if package != "libnsl"]
-                for packages_ in packages
+                [package for package in packages_ if package != "libnsl"] for packages_ in packages
             ]
         super()._install_packages(container, machine, packages)
 
@@ -45,7 +44,7 @@ OPENEULER_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

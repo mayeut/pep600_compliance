@@ -49,7 +49,7 @@ RHUBI_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
         skip_lib=frozenset(("libnsl.so.1",)),
     ),
@@ -71,7 +71,7 @@ RHUBI_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
         skip_lib=frozenset(("libnsl.so.1",)),
     ),
@@ -93,7 +93,7 @@ RHUBI_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
         skip_lib=frozenset(("libnsl.so.1",)),
     ),
@@ -116,7 +116,7 @@ RHUBI_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
         python="/opt/rh/rh-python36/root/usr/bin/python3",
     ),

@@ -8,8 +8,9 @@ class Ubuntu(base.Base):
         eol,
         machines,
         packages,
-        apt_sources_update=[],
-        ppa_list=[],
+        *,
+        apt_sources_update=None,
+        ppa_list=None,
         python="python3",
     ):
         _, version = image.split(":")
@@ -191,7 +192,7 @@ UBUNTU_LIST: list[base.Base] = [
                 "libgl1-mesa-glx",
                 "libglib2.0-0",
                 "libatomic1",
-            ]
+            ],
         ],
     ),
 ]

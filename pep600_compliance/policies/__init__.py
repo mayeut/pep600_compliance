@@ -41,9 +41,9 @@ def _validation(policies: list[Policy]) -> None:
                 f"{policy.name!r} compared to previous policies: {diff}"
             )
             raise ValueError(msg)
-        for arch in policy.symbol_versions.keys():
+        for arch in policy.symbol_versions:
             symbol_versions_arch = symbol_versions.get(arch, defaultdict(set))
-            for prefix in policy.symbol_versions[arch].keys():
+            for prefix in policy.symbol_versions[arch]:
                 policy_symbol_versions = set(policy.symbol_versions[arch][prefix])
                 if not symbol_versions_arch[prefix].issubset(policy_symbol_versions):
                     diff = symbol_versions_arch[prefix] - policy_symbol_versions
@@ -54,7 +54,7 @@ def _validation(policies: list[Policy]) -> None:
                     )
                     raise ValueError(msg)
                 symbol_versions_arch[prefix].update(
-                    policy.symbol_versions[arch][prefix]
+                    policy.symbol_versions[arch][prefix],
                 )
             symbol_versions[arch] = symbol_versions_arch
 
@@ -85,7 +85,7 @@ def _validation(policies: list[Policy]) -> None:
 
 def load_policies(path: Path) -> list[Policy]:
     data = json.loads(path.read_text())
-    policies = list(Policy(**policy) for policy in data)
+    policies = [Policy(**policy) for policy in data]
     _validation(policies)
     return policies
 
@@ -104,11 +104,9 @@ class _PoliciesJSONEncoder(json.JSONEncoder):
                     break
             if last_level:
                 return json.dumps(o)
-            output = []
             self.current_indent += self.indent
             indent_str = " " * self.current_indent
-            for item in o:
-                output.append(f"{indent_str}{self.encode(item)}")
+            output = [f"{indent_str}{self.encode(item)}" for item in o]
             self.current_indent -= self.indent
             indent_str = " " * self.current_indent
             return f"[\n{',\n'.join(output)}\n{indent_str}]"
@@ -118,9 +116,9 @@ class _PoliciesJSONEncoder(json.JSONEncoder):
                 return "{}"
             if isinstance(o, Policy):
                 o = dataclasses.asdict(o)
-            output = []
             self.current_indent += self.indent
             indent_str = " " * self.current_indent
+            output = []
             for key, value in o.items():
                 output.append(f"{indent_str}{json.dumps(key)}: {self.encode(value)}")
             self.current_indent -= self.indent

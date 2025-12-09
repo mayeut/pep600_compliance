@@ -8,7 +8,8 @@ class Debian(base.Base):
         eol,
         packages,
         machines,
-        apt_sources_update=[],
+        *,
+        apt_sources_update=None,
         python="python3",
         upgrade=False,
     ):
@@ -77,7 +78,7 @@ DEBIAN_LIST: list[base.Base] = [
                 "libstdc++6",
                 "zlib1g",
                 *DEBIAN_PACKAGES,
-            ]
+            ],
         ],
         upgrade=True,
     ),
@@ -119,20 +120,20 @@ DEBIAN_LIST: list[base.Base] = [
         "debian:11-slim",
         ("EOL:2024-08-14", "LTS:2026-08-31", "ELTS:2031-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        packages=[DEBIAN_PACKAGES_OLD + ["python"]],
+        packages=[[*DEBIAN_PACKAGES_OLD, "python"]],
     ),
     Debian(
         "debian:10-slim",
         ("EOL:2022-07-31", "LTS:2024-06-30", "ELTS:2029-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        packages=[DEBIAN_PACKAGES_OLD + ["python"]],
+        packages=[[*DEBIAN_PACKAGES_OLD, "python"]],
         apt_sources_update=DEBIAN_APT_OLD,
     ),
     Debian(
         "debian:9-slim",
         ("EOL:2020-07-05", "LTS:2022-06-30", "ELTS:2027-06-30"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        packages=[DEBIAN_PACKAGES_OLD + ["python"]],
+        packages=[[*DEBIAN_PACKAGES_OLD, "python"]],
         apt_sources_update=DEBIAN_APT_OLD,
     ),
     # ELTS: https://wiki.debian.org/LTS/Extended
@@ -152,7 +153,7 @@ DEBIAN_LIST: list[base.Base] = [
                 "libsm6",
                 "libglib2.0-0",
                 "libatomic1",
-            ]
+            ],
         ],
         apt_sources_update=DEBIAN_APT_OLD,
     ),

@@ -38,7 +38,7 @@ OPENCLOUDOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
     OpenCloudOS(
@@ -59,7 +59,7 @@ OPENCLOUDOS_LIST: list[base.Base] = [
                 "libICE",
                 "libSM",
                 "libatomic",
-            ]
+            ],
         ],
     ),
 ]

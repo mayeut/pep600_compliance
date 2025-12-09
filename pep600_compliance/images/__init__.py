@@ -1,6 +1,5 @@
-from collections.abc import Iterator
+from typing import TYPE_CHECKING
 
-from pep600_compliance.images.base import Base
 from pep600_compliance.images.os.almalinux import ALMALINUX_LIST
 from pep600_compliance.images.os.alt import ALT_LIST
 from pep600_compliance.images.os.amazonlinux import AMAZONLINUX_LIST
@@ -21,6 +20,11 @@ from pep600_compliance.images.os.rhubi import RHUBI_LIST
 from pep600_compliance.images.os.rockylinux import ROCKYLINUX_LIST
 from pep600_compliance.images.os.slackware import SLACKWARE_LIST
 from pep600_compliance.images.os.ubuntu import UBUNTU_LIST
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
+
+    from pep600_compliance.images.base import Base
 
 IMAGE_LIST = (
     ALMALINUX_LIST
