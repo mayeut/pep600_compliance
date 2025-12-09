@@ -1,18 +1,23 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base, package_manager
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class Debian(base.Base):
     def __init__(
         self,
-        image,
-        eol,
-        packages,
-        machines,
+        image: str,
+        eol: tuple[str, ...] | str,
+        packages: list[list[str]],
+        machines: tuple[str, ...],
         *,
-        apt_sources_update=None,
-        python="python3",
-        upgrade=False,
-    ):
+        apt_sources_update: list[list[str]] | None = None,
+        python: str = "python3",
+        upgrade: bool = False,
+    ) -> None:
         _, version = image.split(":")
         version = version.split("-")[0]
         self._packages = packages
@@ -26,7 +31,7 @@ class Debian(base.Base):
             python=python,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         super()._install_packages(container, machine, self._packages)
 
 

@@ -141,7 +141,7 @@ def has_symbol_conflict(distro: Distribution, policy: Policy) -> bool:
     return bool(conflicts)
 
 
-def filter_image(distro_name, distro_version):
+def filter_image(distro_name: str, distro_version: str) -> bool:
     if distro_name not in [
         "almalinux",
         "centos",
@@ -214,7 +214,10 @@ def make_distros(
     return result, incompatibilities
 
 
-def manylinux_analysis(path: Path, machine: str | None):
+def manylinux_analysis(
+    path: Path,
+    machine: str | None,
+) -> tuple[dict[str, list[str]], dict[str, list[str]], dict[str, Incompatibility]]:
     machines = {machine} if machine else MACHINES
     base_images_set: dict[str, set[str]] = defaultdict(set)
     distros_set: dict[str, set[str]] = defaultdict(set)
@@ -247,7 +250,7 @@ def manylinux_analysis(path: Path, machine: str | None):
         for policy_name in machine_distros:
             distros_set[policy_name] |= set(machine_distros[policy_name])
 
-    base_images = {}
+    base_images: dict[str, list[str]] = {}
     policy_names = sorted(
         base_images_set.keys(),
         key=lambda x: [int(v) for v in x.split("_")[1:]],

@@ -1,8 +1,18 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class Manylinux(base.Base):
-    def __init__(self, image, eol, machines):
+    def __init__(
+        self,
+        image: str,
+        eol: tuple[str, ...] | str,
+        machines: tuple[str, ...],
+    ) -> None:
         manylinux_parts = image.split("/")[-1].split("_")
         if manylinux_parts[0] == "manylinux":
             # PEP600
@@ -11,7 +21,7 @@ class Manylinux(base.Base):
             # manylinux1 / manylinux2010 / manylinux2014
             version = manylinux_parts[0][9:]
         python = "/opt/python/cp39-cp39/bin/python"
-        self._packages = []
+        self._packages: list[list[str]] = []
         super().__init__(
             image,
             "manylinux",
@@ -22,7 +32,7 @@ class Manylinux(base.Base):
             python=python,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         pass
 
 

@@ -1,4 +1,9 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base, package_manager
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class AnolisOS(base.Base):
@@ -6,11 +11,11 @@ class AnolisOS(base.Base):
         self,
         image: str,
         eol: tuple[str, ...] | str,
-        pkg_manager,
+        pkg_manager: package_manager._PackageManager,
         packages: list[list[str]],
         machines: tuple[str, ...],
         python: str = "python3",
-    ):
+    ) -> None:
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
@@ -23,7 +28,7 @@ class AnolisOS(base.Base):
             machines=machines,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         packages = self._packages
         if machine == "loongarch64":
             packages = [

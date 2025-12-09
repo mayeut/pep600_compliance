@@ -1,17 +1,23 @@
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
+
+
 class _PackageManager:
     def __init__(
         self,
-        install_prefix,
-        update_command=None,
-        upgrade_command=None,
-        environment=None,
-    ):
+        install_prefix: list[str],
+        update_command: list[str] | None = None,
+        upgrade_command: list[str] | None = None,
+        environment: dict[str, str] | None = None,
+    ) -> None:
         self._install_prefix = install_prefix
         self._update_command = update_command
         self._upgrade_command = upgrade_command
         self._environment = environment
 
-    def _update(self, container):
+    def _update(self, container: Container) -> None:
         if self._update_command is not None:
             exit_code, output = container.exec_run(
                 self._update_command,
@@ -19,7 +25,7 @@ class _PackageManager:
             )
             assert exit_code == 0, output.decode("utf-8")
 
-    def _upgrade(self, container):
+    def _upgrade(self, container: Container) -> None:
         if self._upgrade_command is not None:
             exit_code, output = container.exec_run(
                 self._upgrade_command,
@@ -27,7 +33,7 @@ class _PackageManager:
             )
             assert exit_code == 0, output.decode("utf-8")
 
-    def install(self, container, machine, packages):  # noqa: ARG002
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:  # noqa: ARG002
         for packages_ in packages:
             self._update(container)
             self._upgrade(container)
@@ -42,11 +48,11 @@ class APT(_PackageManager):
     def __init__(
         self,
         *,
-        has_no_install_recommends=True,
-        run_once=None,
-        ppa_list=None,
-        upgrade=False,
-    ):
+        has_no_install_recommends: bool = True,
+        run_once: list[list[str]] | None = None,
+        ppa_list: list[str] | None = None,
+        upgrade: bool = False,
+    ) -> None:
         install_prefix = ["apt-get", "install", "-qq", "-y", "--force-yes"]
         if has_no_install_recommends:
             install_prefix += ["--no-install-recommends"]
@@ -57,7 +63,7 @@ class APT(_PackageManager):
         self._ppa_list = ppa_list or []
         super().__init__(install_prefix, update_command, upgrade_command, environment)
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         for command in self._run_once:
             exit_code, output = container.exec_run(
                 command,
@@ -80,11 +86,11 @@ class APT(_PackageManager):
 
 
 class DNF(_PackageManager):
-    def __init__(self, run_once=None):
+    def __init__(self, run_once: list[list[str]] | None = None) -> None:
         self._run_once = run_once or []
         super().__init__(["dnf", "-y", "--allowerasing", "install"])
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         for command in self._run_once:
             exit_code, output = container.exec_run(
                 command,
@@ -95,11 +101,11 @@ class DNF(_PackageManager):
 
 
 class DNF5(_PackageManager):
-    def __init__(self, run_once=None):
+    def __init__(self, run_once: list[list[str]] | None = None) -> None:
         self._run_once = run_once or []
         super().__init__(["dnf", "-y", "install"])
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         for command in self._run_once:
             exit_code, output = container.exec_run(
                 command,
@@ -110,12 +116,12 @@ class DNF5(_PackageManager):
 
 
 class MICRODNF(_PackageManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(["microdnf", "-y", "install"])
 
 
 class PACMAN(_PackageManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(
             ["pacman", "-Sy", "--noconfirm"],
             ["pacman", "-Syu", "--noconfirm"],
@@ -123,16 +129,16 @@ class PACMAN(_PackageManager):
 
 
 class TDNF(_PackageManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(["tdnf", "-y", "install"])
 
 
 class URPM(_PackageManager):
-    def __init__(self, run_once=None):
+    def __init__(self, run_once: list[list[str]] | None = None) -> None:
         self._run_once = run_once or []
         super().__init__(["urpmi", "--auto", "--no-recommends"])
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         for command in self._run_once:
             exit_code, output = container.exec_run(
                 command,
@@ -143,11 +149,11 @@ class URPM(_PackageManager):
 
 
 class YUM(_PackageManager):
-    def __init__(self, run_once=None):
+    def __init__(self, run_once: list[list[str]] | None = None) -> None:
         self._run_once = run_once or []
         super().__init__(["yum", "-y", "install"])
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         if machine == "i686":
             exit_code, output = container.exec_run(
                 ["bash", "-c", 'echo "i386" > /etc/yum/vars/basearch'],
@@ -163,10 +169,10 @@ class YUM(_PackageManager):
 
 
 class ZYPPER(_PackageManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(["zypper", "install", "-y"])
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         if machine == "i686":
             exit_code, output = container.exec_run(
                 ["bash", "-c", 'echo "arch = i586" >> /etc/zypp/zypp.conf'],
@@ -176,16 +182,16 @@ class ZYPPER(_PackageManager):
 
 
 class SLACKPKG(_PackageManager):
-    def __init__(self, *, current=False):
+    def __init__(self, *, current: bool = False) -> None:
         self.current = current
         install_prefix = ["slackpkg", "-default_answer=yes", "-batch=on", "install"]
         update_command = ["slackpkg", "-default_answer=yes", "-batch=on", "update"]
         super().__init__(install_prefix, update_command)
 
-    def install(self, container, machine, packages):
+    def install(self, container: Container, machine: str, packages: list[list[str]]) -> None:
         super().install(container, machine, packages)
 
-    def _update(self, container):
+    def _update(self, container: Container) -> None:
         if self.current:
             exit_code, output = container.exec_run(
                 ["touch", "/var/lib/slackpkg/current"],
@@ -202,7 +208,7 @@ class SLACKPKG(_PackageManager):
             assert exit_code == 0, output.decode("utf-8")
         super()._update(container)
 
-    def _upgrade(self, container):
+    def _upgrade(self, container: Container) -> None:
         if self.current:
             exit_code, output = container.exec_run(
                 ["slackpkg", "-default_answer=yes", "-batch=on", "install-new"],

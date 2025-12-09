@@ -1,8 +1,21 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base, package_manager
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class OracleLinux(base.Base):
-    def __init__(self, image, eol, pkg_manager, packages, machines, python="python3"):
+    def __init__(
+        self,
+        image: str,
+        eol: tuple[str, ...] | str,
+        pkg_manager: package_manager._PackageManager,
+        packages: list[list[str]],
+        machines: tuple[str, ...],
+        python: str = "python3",
+    ) -> None:
         _, version = image.split(":")
         version = version.split("-")[0]
         self._packages = packages
@@ -16,7 +29,7 @@ class OracleLinux(base.Base):
             machines=machines,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         super()._install_packages(container, machine, self._packages)
 
 

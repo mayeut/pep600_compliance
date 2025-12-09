@@ -6,8 +6,6 @@ line-length = 100
 extend-exclude = ["pep600_compliance/tools/calculate_symbol_versions.py", "pep600_compliance/tools/ldd.py"]
 lint.select = [ "ALL" ]
 lint.ignore = [
-    "ANN",     # TODO type annotations
-    # "ANN401",  # any-type
     "C901",    # Complexity
     "D",       # Doc
     "ERA001",  # commented-out code

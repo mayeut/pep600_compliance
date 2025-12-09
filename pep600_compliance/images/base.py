@@ -3,15 +3,23 @@ import logging
 import platform
 from contextlib import contextmanager
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import docker
 import docker.errors
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
+
+    from docker.models.containers import Container
+
+    from pep600_compliance.images import package_manager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def get_docker_platform(machine):
+def get_docker_platform(machine: str) -> str:
     if machine == "x86_64":
         return "linux/amd64"
     if machine == "i686":
@@ -32,7 +40,7 @@ def get_docker_platform(machine):
     raise LookupError(msg)
 
 
-def get_docker_platform_prefix(machine):
+def get_docker_platform_prefix(machine: str) -> str:
     if machine == "x86_64":
         return "amd64"
     if machine == "i686":
@@ -58,11 +66,11 @@ class Base:
         name: str,
         version: str,
         eol: tuple[str, ...] | str,
-        package_manager,
+        package_manager: package_manager._PackageManager | None,
         machines: tuple[str, ...] = ("x86_64",),
         skip_lib: frozenset[str] = frozenset(),
         python: str = "python3",
-    ):
+    ) -> None:
         self.image = image
         self.name = name
         self.version = version
@@ -73,7 +81,7 @@ class Base:
         self.python = python
 
     @contextmanager
-    def docker_container(self, machine: str):
+    def docker_container(self, machine: str) -> Generator[Container]:
         client = docker.from_env()
         platform_machine = platform.machine()
         if platform_machine == "arm64":
@@ -153,14 +161,21 @@ class Base:
                 client.images.remove(image.id)
                 logger.info("Removed image %r", image_name)
 
-    def _install_packages(self, container, machine, packages):
+    def _install_packages(
+        self,
+        container: Container,
+        machine: str,
+        packages: list[list[str]],
+    ) -> None:
         logger.info("Installing system packages %r", packages)
+        if self.package_manager is None:
+            raise NotImplementedError
         self.package_manager.install(container, machine, packages)
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         raise NotImplementedError
 
-    def _ensure_pip(self, container):
+    def _ensure_pip(self, container: Container) -> None:
         logger.info("Installing pip")
         exit_code, _ = container.exec_run([self.python, "-m", "pip", "-V"])
         if exit_code == 0:
@@ -193,7 +208,7 @@ class Base:
         exit_code, _ = container.exec_run([self.python, "-m", "pip", "-V"])
         assert exit_code == 0
 
-    def _install_pyelftools(self, container):
+    def _install_pyelftools(self, container: Container) -> None:
         self._ensure_pip(container)
         logger.info("Installing pyelftools")
         exit_code, output = container.exec_run(
@@ -213,7 +228,7 @@ class Base:
         )
         assert exit_code == 0, output.decode("utf-8")
 
-    def _get_symbols(self, container, machine):
+    def _get_symbols(self, container: Container, machine: str):  # noqa: ANN202
         logger.info("Running symbol script")
         if self.name == "manylinux" and self.version == "1":
             policy = "manylinux_2_5"
@@ -240,8 +255,8 @@ class Base:
         assert exit_code == 0, output[1].decode("utf-8")
         return json.loads(output[0].decode("utf-8"))
 
-    def _get_python_dependencies(self, container):
-        def _get_dependencies(python_path_):
+    def _get_python_dependencies(self, container: Container) -> list[str]:
+        def _get_dependencies(python_path_: str) -> list[str]:
             result_ = []
             exit_code_, output_ = container.exec_run(["ldd", python_path_], demux=True)
             if exit_code_ != 0:
@@ -311,7 +326,7 @@ class Base:
             result.extend(_get_dependencies(python_path))
         return sorted(set(result))
 
-    def run_check(self, machine):
+    def run_check(self, machine: str):  # noqa: ANN201
         assert machine in self.machines
         with self.docker_container(machine) as container:
             self.install_packages(container, machine)

@@ -2,6 +2,7 @@ import dataclasses
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
 HERE = Path(__file__).resolve(strict=True).parent
 
@@ -91,11 +92,12 @@ def load_policies(path: Path) -> list[Policy]:
 
 
 class _PoliciesJSONEncoder(json.JSONEncoder):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:  # noqa: ANN002, ANN003
         super().__init__(*args, **kwargs)
         self.current_indent = 0
 
-    def encode(self, o):
+    def encode(self, o: Any) -> str:  # noqa: ANN401
+        assert isinstance(self.indent, int)
         if isinstance(o, (list, tuple)):
             last_level = True
             for item in o:

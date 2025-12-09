@@ -1,8 +1,19 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base, package_manager
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class Photon(base.Base):
-    def __init__(self, image, eol, packages, machines):
+    def __init__(
+        self,
+        image: str,
+        eol: tuple[str, ...] | str,
+        packages: list[list[str]],
+        machines: tuple[str, ...],
+    ) -> None:
         _, version = image.split(":")
         self._packages = packages
         # no X11 on photon
@@ -26,7 +37,7 @@ class Photon(base.Base):
             machines=machines,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         super()._install_packages(container, machine, self._packages)
 
 

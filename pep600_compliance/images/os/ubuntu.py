@@ -1,18 +1,23 @@
+from typing import TYPE_CHECKING
+
 from pep600_compliance.images import base, package_manager
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container
 
 
 class Ubuntu(base.Base):
     def __init__(
         self,
-        image,
-        eol,
-        machines,
-        packages,
+        image: str,
+        eol: tuple[str, ...] | str,
+        packages: list[list[str]],
+        machines: tuple[str, ...],
         *,
-        apt_sources_update=None,
-        ppa_list=None,
-        python="python3",
-    ):
+        apt_sources_update: list[list[str]] | None = None,
+        ppa_list: list[str] | None = None,
+        python: str = "python3",
+    ) -> None:
         _, version = image.split(":")
         self._packages = packages
         super().__init__(
@@ -25,7 +30,7 @@ class Ubuntu(base.Base):
             python=python,
         )
 
-    def install_packages(self, container, machine):
+    def install_packages(self, container: Container, machine: str) -> None:
         super()._install_packages(container, machine, self._packages)
 
 
