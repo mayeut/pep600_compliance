@@ -355,6 +355,7 @@ If your favorite distro does not appear here:
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_36", "|ubuntu-22.10| |ubuntu-23.04|"
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
+   "manylinux_2_40", "|alt-sisyphus|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
 .. end compatibility_riscv64

@@ -46,7 +46,7 @@ ALT_LIST: list[base.Base] = [
     Alt(
         "alt:sisyphus",
         "rolling",
-        machines=("i686", "x86_64", "aarch64"),
+        machines=("i686", "x86_64", "aarch64", "riscv64"),
         packages=[["libnsl1", "glibc-pthread", *ALT_PACKAGES]],
     ),
     Alt(
