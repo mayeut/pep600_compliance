@@ -21,7 +21,6 @@
 .. |centos-stream10| image:: https://img.shields.io/static/v1?label=centos&message=stream10%20(EOL%3A2030-01-01)&color=green&logo=centos&logoColor=white
 .. |centos-stream9| image:: https://img.shields.io/static/v1?label=centos&message=stream9%20(EOL%3A2027-05-31)&color=green&logo=centos&logoColor=white
 .. |centos-stream8| image:: https://img.shields.io/static/v1?label=centos&message=stream8%20(EOL%3A2024-05-31)&color=black&logo=centos&logoColor=white
-.. |centos-8| image:: https://img.shields.io/static/v1?label=centos&message=8%20(EOL%3A2021-12-31)&color=black&logo=centos&logoColor=white
 .. |centos-7| image:: https://img.shields.io/static/v1?label=centos&message=7%20(EOL%3A2024-06-30)&color=black&logo=centos&logoColor=white
 .. |clefos-7| image:: https://img.shields.io/static/v1?label=clefos&message=7%20(EOL%3A2024-06-30)&color=black
 .. |debian-experimental| image:: https://img.shields.io/static/v1?label=debian&message=experimental%20(rolling)&color=purple&logo=debian&logoColor=white
@@ -42,14 +41,9 @@
 .. |fedora-38| image:: https://img.shields.io/static/v1?label=fedora&message=38%20(EOL%3A2024-05-21)&color=black&logo=fedora&logoColor=white
 .. |fedora-37| image:: https://img.shields.io/static/v1?label=fedora&message=37%20(EOL%3A2023-11-14)&color=black&logo=fedora&logoColor=white
 .. |fedora-36| image:: https://img.shields.io/static/v1?label=fedora&message=36%20(EOL%3A2023-05-16)&color=black&logo=fedora&logoColor=white
-.. |fedora-35| image:: https://img.shields.io/static/v1?label=fedora&message=35%20(EOL%3A2022-11-15)&color=black&logo=fedora&logoColor=white
-.. |fedora-34| image:: https://img.shields.io/static/v1?label=fedora&message=34%20(EOL%3A2022-05-17)&color=black&logo=fedora&logoColor=white
-.. |fedora-33| image:: https://img.shields.io/static/v1?label=fedora&message=33%20(EOL%3A2021-11-16)&color=black&logo=fedora&logoColor=white
-.. |fedora-32| image:: https://img.shields.io/static/v1?label=fedora&message=32%20(EOL%3A2021-05-18)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
 .. |mageia-9| image:: https://img.shields.io/static/v1?label=mageia&message=9%20(EOL%3A2025-03-31)&color=black
 .. |mageia-8| image:: https://img.shields.io/static/v1?label=mageia&message=8%20(EOL%3A2023-11-30)&color=black
-.. |mageia-7| image:: https://img.shields.io/static/v1?label=mageia&message=7%20(EOL%3A2021-05-26)&color=black
 .. |manylinux-2_39| image:: https://img.shields.io/static/v1?label=manylinux&message=2_39%20(EOL%3A2035-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_31| image:: https://img.shields.io/static/v1?label=manylinux&message=2_31%20(EOL%3A2030-04-02)&color=green&logo=python&logoColor=white
@@ -57,7 +51,6 @@
 .. |manylinux-2_24| image:: https://img.shields.io/static/v1?label=manylinux&message=2_24%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2014| image:: https://img.shields.io/static/v1?label=manylinux&message=2014%20(EOL%3A2024-06-30)&color=black&logo=python&logoColor=white
 .. |manylinux-2010| image:: https://img.shields.io/static/v1?label=manylinux&message=2010%20(EOL%3A2020-11-30)&color=black&logo=python&logoColor=white
-.. |manylinux-1| image:: https://img.shields.io/static/v1?label=manylinux&message=1%20(EOL%3A2017-03-31)&color=black&logo=python&logoColor=white
 .. |opencloudos-9| image:: https://img.shields.io/static/v1?label=opencloudos&message=9%20(EOL%3A2033-04-30)&color=green
 .. |opencloudos-8| image:: https://img.shields.io/static/v1?label=opencloudos&message=8%20(EOL%3A2029-05-31)&color=green
 .. |openeuler-24.03| image:: https://img.shields.io/static/v1?label=openeuler&message=24.03%20(EOL%3A2028-03-31)&color=green
@@ -66,9 +59,6 @@
 .. |opensuse-15.6| image:: https://img.shields.io/static/v1?label=opensuse&message=15.6%20(EOL%3A2026-04-30)&color=yellow&logo=opensuse&logoColor=white
 .. |opensuse-15.5| image:: https://img.shields.io/static/v1?label=opensuse&message=15.5%20(EOL%3A2024-12-31)&color=black&logo=opensuse&logoColor=white
 .. |opensuse-15.4| image:: https://img.shields.io/static/v1?label=opensuse&message=15.4%20(EOL%3A2023-12-07)&color=black&logo=opensuse&logoColor=white
-.. |opensuse-15.3| image:: https://img.shields.io/static/v1?label=opensuse&message=15.3%20(EOL%3A2022-12-01)&color=black&logo=opensuse&logoColor=white
-.. |opensuse-15.2| image:: https://img.shields.io/static/v1?label=opensuse&message=15.2%20(EOL%3A2021-12-01)&color=black&logo=opensuse&logoColor=white
-.. |opensuse-15.1| image:: https://img.shields.io/static/v1?label=opensuse&message=15.1%20(EOL%3A2021-02-02)&color=black&logo=opensuse&logoColor=white
 .. |oraclelinux-10| image:: https://img.shields.io/static/v1?label=oraclelinux&message=10%20(EOL%3A2035-06-30%20/%20ELTS%3A2038-06-30)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-9| image:: https://img.shields.io/static/v1?label=oraclelinux&message=9%20(EOL%3A2032-06-30%20/%20ELTS%3A2035-06-30)&color=green&logo=oracle&logoColor=white
 .. |oraclelinux-8| image:: https://img.shields.io/static/v1?label=oraclelinux&message=8%20(EOL%3A2029-07-31%20/%20ELTS%3A2032-07-31)&color=green&logo=oracle&logoColor=white
@@ -77,8 +67,6 @@
 .. |photon-5.0| image:: https://img.shields.io/static/v1?label=photon&message=5.0%20(unknown)&color=lightgray&logo=vmware&logoColor=white
 .. |photon-4.0| image:: https://img.shields.io/static/v1?label=photon&message=4.0%20(EOL%3A2026-03-01)&color=yellow&logo=vmware&logoColor=white
 .. |photon-3.0| image:: https://img.shields.io/static/v1?label=photon&message=3.0%20(EOL%3A2024-03-01)&color=black&logo=vmware&logoColor=white
-.. |photon-2.0| image:: https://img.shields.io/static/v1?label=photon&message=2.0%20(EOL%3A2022-12-31)&color=black&logo=vmware&logoColor=white
-.. |photon-1.0| image:: https://img.shields.io/static/v1?label=photon&message=1.0%20(EOL%3A2022-02-28)&color=black&logo=vmware&logoColor=white
 .. |rhubi-10| image:: https://img.shields.io/static/v1?label=rhubi&message=10%20(EOL%3A2035-05-31%20/%20ELTS%3A2038-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-9| image:: https://img.shields.io/static/v1?label=rhubi&message=9%20(EOL%3A2032-05-31%20/%20ELTS%3A2035-05-31)&color=green&logo=red-hat&logoColor=white
 .. |rhubi-8| image:: https://img.shields.io/static/v1?label=rhubi&message=8%20(EOL%3A2029-05-31%20/%20ELTS%3A2032-05-31)&color=green&logo=red-hat&logoColor=white
@@ -101,9 +89,6 @@
 .. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-09)&color=green&logo=ubuntu&logoColor=white
-.. |ubuntu-21.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.10%20(EOL%3A2022-07-31)&color=black&logo=ubuntu&logoColor=white
-.. |ubuntu-21.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=21.04%20(EOL%3A2022-01-31)&color=black&logo=ubuntu&logoColor=white
-.. |ubuntu-20.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.10%20(EOL%3A2021-07-17)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-20.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.04%20(EOL%3A2025-04-02%20/%20ELTS%3A2030-04-02)&color=red&logo=ubuntu&logoColor=white
 .. |ubuntu-18.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=18.04%20(EOL%3A2023-05-31%20/%20ELTS%3A2028-04-01)&color=red&logo=ubuntu&logoColor=white
 .. |ubuntu-16.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=16.04%20(EOL%3A2021-04-30%20/%20ELTS%3A2024-04-30)&color=black&logo=ubuntu&logoColor=white
@@ -135,7 +120,6 @@ distros to build manylinux wheels given different manylinux policies.
 .. csv-table:: base images
    :header: "policy", "distros"
 
-   "manylinux_2_5", "|manylinux-1|"
    "manylinux_2_12", "|manylinux-2010|"
    "manylinux_2_17", "|manylinux-2014|"
    "manylinux_2_24", "|manylinux-2_24|"
@@ -160,22 +144,19 @@ If your favorite distro does not appear here:
 .. csv-table:: compatibility
    :header: "policy", "distros"
 
-   "manylinux_2_5", "|manylinux-1|"
    "manylinux_2_12", "|manylinux-2010| |oraclelinux-6|"
    "manylinux_2_15", "|slackware-14.0|"
    "manylinux_2_17", "|amazonlinux-1| |centos-7| |clefos-7| |manylinux-2014| |oraclelinux-7| |rhubi-7| |slackware-14.1|"
    "manylinux_2_19", "|debian-8| |ubuntu-14.04|"
-   "manylinux_2_22", "|photon-1.0|"
    "manylinux_2_23", "|alt-p8| |slackware-14.2| |ubuntu-16.04|"
    "manylinux_2_24", "|debian-9| |manylinux-2_24|"
-   "manylinux_2_26", "|amazonlinux-2| |opensuse-15.1| |opensuse-15.2| |photon-2.0|"
+   "manylinux_2_26", "|amazonlinux-2|"
    "manylinux_2_27", "|alt-p9| |ubuntu-18.04|"
-   "manylinux_2_28", "|almalinux-8| |anolisos-8| |centos-8| |centos-stream8| |debian-10| |manylinux-2_28| |opencloudos-8| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8|"
-   "manylinux_2_29", "|mageia-7|"
-   "manylinux_2_31", "|debian-11| |fedora-32| |manylinux-2_31| |opensuse-15.3| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
-   "manylinux_2_32", "|alt-p10| |fedora-33| |mageia-8| |photon-4.0| |ubuntu-20.10|"
-   "manylinux_2_33", "|fedora-34| |slackware-15.0| |ubuntu-21.04|"
-   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |fedora-35| |manylinux-2_34| |oraclelinux-9| |rhubi-9| |rockylinux-9| |ubuntu-21.10|"
+   "manylinux_2_28", "|almalinux-8| |anolisos-8| |centos-stream8| |debian-10| |manylinux-2_28| |opencloudos-8| |oraclelinux-8| |photon-3.0| |rhubi-8| |rockylinux-8|"
+   "manylinux_2_31", "|debian-11| |manylinux-2_31| |opensuse-15.4| |opensuse-15.5| |ubuntu-20.04|"
+   "manylinux_2_32", "|alt-p10| |mageia-8| |photon-4.0|"
+   "manylinux_2_33", "|slackware-15.0|"
+   "manylinux_2_34", "|almalinux-9| |amazonlinux-2023| |centos-stream9| |manylinux-2_34| |oraclelinux-9| |rhubi-9| |rockylinux-9|"
    "manylinux_2_35", "|fedora-36| |ubuntu-22.04|"
    "manylinux_2_36", "|debian-12| |fedora-37| |mageia-9| |photon-5.0| |ubuntu-22.10|"
    "manylinux_2_37", "|fedora-38| |ubuntu-23.04|"
@@ -198,8 +179,6 @@ List of known compatibility issues
 
    "|opensuse-16.0|", "", "libnsl.so.1"
    "|opensuse-tumbleweed|", "", "libnsl.so.1"
-   "|photon-1.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
-   "|photon-2.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-3.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-4.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"
    "|photon-5.0|", "", "libGL.so.1, libICE.so.6, libSM.so.6, libX11.so.6, libXext.so.6, libXrender.so.1"

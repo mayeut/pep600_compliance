@@ -46,7 +46,6 @@ This mostly mimics Debian lifecycle.
    "centos stream10", "2030-01-01", "", ""
    "centos stream9", "2027-05-31", "", ""
    "centos stream8", "2024-05-31", "", ""
-   "centos 8", "2021-12-31", "", ""
    "centos 7", "2024-06-30", "", ""
 .. csv-table:: clefos
    :header: "distro", "EOL", "LTS", "ELTS"
@@ -76,17 +75,12 @@ This mostly mimics Debian lifecycle.
    "fedora 38", "2024-05-21", "", ""
    "fedora 37", "2023-11-14", "", ""
    "fedora 36", "2023-05-16", "", ""
-   "fedora 35", "2022-11-15", "", ""
-   "fedora 34", "2022-05-17", "", ""
-   "fedora 33", "2021-11-16", "", ""
-   "fedora 32", "2021-05-18", "", ""
 .. csv-table:: mageia
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
    "mageia 9", "2025-03-31", "", ""
    "mageia 8", "2023-11-30", "", ""
-   "mageia 7", "2021-05-26", "", ""
 .. csv-table:: manylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -97,7 +91,6 @@ This mostly mimics Debian lifecycle.
    "manylinux 2_24", "2020-07-05", "2022-06-30", ""
    "manylinux 2014", "2024-06-30", "", ""
    "manylinux 2010", "2020-11-30", "", ""
-   "manylinux 1", "2017-03-31", "", ""
 .. csv-table:: opencloudos
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -115,9 +108,6 @@ This mostly mimics Debian lifecycle.
    "opensuse 15.6", "2026-04-30", "", ""
    "opensuse 15.5", "2024-12-31", "", ""
    "opensuse 15.4", "2023-12-07", "", ""
-   "opensuse 15.3", "2022-12-01", "", ""
-   "opensuse 15.2", "2021-12-01", "", ""
-   "opensuse 15.1", "2021-02-02", "", ""
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -132,8 +122,6 @@ This mostly mimics Debian lifecycle.
    "photon 5.0", "unknown", "", ""
    "photon 4.0", "2026-03-01", "", ""
    "photon 3.0", "2024-03-01", "", ""
-   "photon 2.0", "2022-12-31", "", ""
-   "photon 1.0", "2022-02-28", "", ""
 .. csv-table:: rhel / rhubi
    :header: "distro", "EOL", "LTS", "ELTS (rhel only)"
 
@@ -168,9 +156,6 @@ This mostly mimics Debian lifecycle.
    "ubuntu 23.04", "2024-01-31", "", ""
    "ubuntu 22.10", "2023-07-20", "", ""
    "ubuntu 22.04", "2027-04-30", "", "2032-04-09"
-   "ubuntu 21.10", "2022-07-31", "", ""
-   "ubuntu 21.04", "2022-01-31", "", ""
-   "ubuntu 20.10", "2021-07-17", "", ""
    "ubuntu 20.04", "2025-04-02", "", "2030-04-02"
    "ubuntu 18.04", "2023-05-31", "", "2028-04-01"
    "ubuntu 16.04", "2021-04-30", "", "2024-04-30"

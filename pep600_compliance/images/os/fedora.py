@@ -110,35 +110,4 @@ FEDORA_LIST: list[base.Base] = [
         pkg_manager=DNF(),
         packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
-    Fedora(
-        "fedora:35",
-        # https://fedorapeople.org/groups/schedule/f-37/f-37-key-tasks.html
-        ("EOL:2022-11-15",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
-    Fedora(
-        "fedora:34",
-        # https://fedorapeople.org/groups/schedule/f-36/f-36-key-tasks.html
-        ("EOL:2022-05-17",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
-    # EOL: https://fedoraproject.org/wiki/End_of_life
-    Fedora(
-        "fedora:33",
-        ("EOL:2021-11-16",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
-    Fedora(
-        "fedora:32",
-        ("EOL:2021-05-18",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
 ]

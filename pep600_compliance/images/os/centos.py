@@ -108,28 +108,6 @@ CENTOS_LIST: list[base.Base] = [
         ],
     ),
     CentOS(
-        "centos:8",
-        ("EOL:2021-12-31",),
-        machines=("x86_64", "aarch64", "ppc64le"),
-        pkg_manager=package_manager.DNF(),
-        packages=[
-            [
-                "which",
-                "python3-pip",
-                "libnsl",
-                "libstdc++",
-                "glib2",
-                "libX11",
-                "libXext",
-                "libXrender",
-                "mesa-libGL",
-                "libICE",
-                "libSM",
-                "libatomic",
-            ],
-        ],
-    ),
-    CentOS(
         "centos:7",
         ("EOL:2024-06-30",),
         machines=("i686", "x86_64", "aarch64", "ppc64le"),

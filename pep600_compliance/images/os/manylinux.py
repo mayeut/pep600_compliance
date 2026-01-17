@@ -92,14 +92,6 @@ _MANYLINUX_2010: list[base.Base] = [
     )
     for machine in ("x86_64", "i686")
 ]
-_MANYLINUX_1: list[base.Base] = [
-    Manylinux(
-        f"quay.io/pypa/manylinux1_{machine}:latest",
-        ("EOL:2017-03-31",),
-        machines=(machine,),
-    )
-    for machine in ("x86_64", "i686")
-]
 MANYLINUX_LIST = (
     _MANYLINUX_2_39
     + _MANYLINUX_2_34
@@ -108,5 +100,4 @@ MANYLINUX_LIST = (
     + _MANYLINUX_2_24
     + _MANYLINUX_2014
     + _MANYLINUX_2010
-    + _MANYLINUX_1
 )
