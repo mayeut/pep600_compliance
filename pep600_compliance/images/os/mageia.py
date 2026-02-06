@@ -52,7 +52,7 @@ MAGEIA_LIST: list[base.Base] = [
         "mageia:cauldron",
         "rolling",
         machines=("x86_64", "aarch64"),
-        pkg_manager=package_manager.DNF(),
+        pkg_manager=package_manager.DNF5([["dnf", "upgrade", "-y", "--refresh"]]),
         packages=[MAGEIA_PACKAGES],
     ),  # TODO 'armv7l'
     # eol info https://www.mageia.org/en/support/
