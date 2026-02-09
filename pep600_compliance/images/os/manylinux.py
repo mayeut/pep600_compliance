@@ -13,7 +13,7 @@ class Manylinux(base.Base):
         eol: tuple[str, ...] | str,
         machines: tuple[str, ...],
     ) -> None:
-        manylinux_parts = image.split("/")[-1].split("_")
+        manylinux_parts = image.rsplit("/", maxsplit=1)[-1].split("_")
         if manylinux_parts[0] == "manylinux":
             # PEP600
             version = f"{manylinux_parts[1]}_{manylinux_parts[2]}"
