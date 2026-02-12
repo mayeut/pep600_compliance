@@ -95,7 +95,7 @@ class Base:
             }.get(image_name, image_name)
         image = None
         has_image = True
-        if platform_machine != machine and machine not in {"loongarch64"}:
+        if platform_machine != machine and machine != "loongarch64":
             image_name = get_docker_platform_prefix(machine) + "/" + image_name
             try:
                 image = client.images.get(image_name)

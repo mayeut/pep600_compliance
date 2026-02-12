@@ -398,7 +398,7 @@ def create_policy(
         except StopIteration:
             continue
         policy["symbol_versions"][machine] = {
-            k: sorted(machine_policy.symbols[k], key=lambda x: versionify(x))
+            k: sorted(machine_policy.symbols[k], key=versionify)
             for k in sorted(machine_policy.symbols.keys())
         }
     return Policy(**policy)
