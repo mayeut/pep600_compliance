@@ -33,6 +33,7 @@
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
+.. |fedora-44| image:: https://img.shields.io/static/v1?label=fedora&message=44%20(EOL%3A2027-05-19)&color=green&logo=fedora&logoColor=white
 .. |fedora-43| image:: https://img.shields.io/static/v1?label=fedora&message=43%20(EOL%3A2026-12-02)&color=green&logo=fedora&logoColor=white
 .. |fedora-42| image:: https://img.shields.io/static/v1?label=fedora&message=42%20(EOL%3A2026-05-13)&color=yellow&logo=fedora&logoColor=white
 .. |fedora-41| image:: https://img.shields.io/static/v1?label=fedora&message=41%20(EOL%3A2025-12-15)&color=black&logo=fedora&logoColor=white
@@ -165,7 +166,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|archlinux-latest| |debian-experimental|"
+   "manylinux_2_43", "|archlinux-latest| |debian-experimental| |fedora-44|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility
 
