@@ -17,7 +17,7 @@ class RHUBI(base.Base):
         python: str = "python3",
         skip_lib: frozenset[str] = frozenset(),
     ) -> None:
-        version = image.split(":")[1].split(".")[0]
+        version = image.split(":")[1].split(".", maxsplit=1)[0]
         self._packages = packages
         super().__init__(
             image,
