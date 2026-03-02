@@ -15,7 +15,7 @@ class OpenCloudOS(base.Base):
         machines: tuple[str, ...],
         python: str = "python3",
     ) -> None:
-        version = image.split("/")[1].split("-")[0][11:]
+        version = image.split("/")[1].split("-", maxsplit=1)[0][11:]
         self._packages = packages
         super().__init__(
             image,
