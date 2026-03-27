@@ -233,8 +233,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |oraclelinux-10| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|archlinux-latest| |debian-experimental| |fedora-44|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|archlinux-latest| |debian-experimental| |fedora-44| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -281,8 +281,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |manylinux-2_39| |oraclelinux-10| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -305,8 +305,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -328,8 +328,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
@@ -350,8 +350,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|ubuntu-24.04|"
    "manylinux_2_40", "|ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|debian-experimental| |ubuntu-devel|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
