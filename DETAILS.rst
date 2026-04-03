@@ -364,8 +364,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|alt-sisyphus|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
+   "manylinux_2_43", "|debian-experimental| |ubuntu-devel|"
 .. end compatibility_riscv64
 
 .. begin compatibility_loongarch64
