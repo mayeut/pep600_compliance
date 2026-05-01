@@ -80,7 +80,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
-   "mageia 9", "2025-03-31", "", ""
+   "mageia 9", "2026-08-30", "", ""
    "mageia 8", "2023-11-30", "", ""
 .. csv-table:: manylinux
    :header: "distro", "EOL", "LTS", "ELTS"
