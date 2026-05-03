@@ -77,10 +77,11 @@
 .. |slackware-14.0| image:: https://img.shields.io/static/v1?label=slackware&message=14.0%20(EOL%3A2024-01-01)&color=black&logo=slackware&logoColor=white
 .. |ubuntu-devel| image:: https://img.shields.io/static/v1?label=ubuntu&message=devel%20(rolling)&color=purple&logo=ubuntu&logoColor=white
 .. |ubuntu-rolling| image:: https://img.shields.io/static/v1?label=ubuntu&message=rolling%20(rolling)&color=purple&logo=ubuntu&logoColor=white
+.. |ubuntu-26.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=26.04%20(EOL%3A2031-05-31%20/%20ELTS%3A2036-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-25.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=25.10%20(EOL%3A2026-07-31)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-25.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=25.04%20(EOL%3A2026-01-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-24.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.10%20(EOL%3A2025-07-11)&color=black&logo=ubuntu&logoColor=white
-.. |ubuntu-24.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.04%20(EOL%3A2029-04-30%20/%20ELTS%3A2036-04-30)&color=green&logo=ubuntu&logoColor=white
+.. |ubuntu-24.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.04%20(EOL%3A2029-04-30%20/%20ELTS%3A2034-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-23.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.10%20(EOL%3A2024-07-14)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-23.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.04%20(EOL%3A2024-01-31)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-22.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.10%20(EOL%3A2023-07-20)&color=black&logo=ubuntu&logoColor=white
@@ -158,6 +159,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
+   "manylinux_2_43", "|ubuntu-26.04|"
 .. end base_images_ppc64le
 
 .. begin base_images_s390x
@@ -172,6 +174,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
+   "manylinux_2_43", "|ubuntu-26.04|"
 .. end base_images_s390x
 
 .. begin base_images_armv7l
@@ -182,6 +185,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
+   "manylinux_2_43", "|ubuntu-26.04|"
 .. end base_images_armv7l
 
 .. begin base_images_riscv64
@@ -192,6 +196,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
+   "manylinux_2_43", "|ubuntu-26.04|"
 .. end base_images_riscv64
 
 .. begin base_images_loongarch64
@@ -234,7 +239,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|archlinux-latest| |debian-experimental| |fedora-44| |ubuntu-devel|"
+   "manylinux_2_43", "|archlinux-latest| |debian-experimental| |fedora-44| |ubuntu-26.04| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -282,7 +287,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|alt-sisyphus| |fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-26.04| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -306,7 +311,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-26.04| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -329,7 +334,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-devel|"
+   "manylinux_2_43", "|debian-experimental| |fedora-44| |ubuntu-26.04| |ubuntu-devel|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
@@ -351,7 +356,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |ubuntu-devel|"
+   "manylinux_2_43", "|debian-experimental| |ubuntu-26.04| |ubuntu-devel|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
@@ -365,7 +370,7 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|alt-sisyphus|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-25.10| |ubuntu-rolling|"
-   "manylinux_2_43", "|debian-experimental| |ubuntu-devel|"
+   "manylinux_2_43", "|debian-experimental| |ubuntu-26.04| |ubuntu-devel|"
 .. end compatibility_riscv64
 
 .. begin compatibility_loongarch64
