@@ -1,8 +1,7 @@
-from typing import TYPE_CHECKING
-
 from pep600_compliance.images import base
 from pep600_compliance.images.package_manager import DNF, DNF5
 
+TYPE_CHECKING = False
 if TYPE_CHECKING:
     from docker.models.containers import Container
 

@@ -1,7 +1,6 @@
-from typing import TYPE_CHECKING
-
 from pep600_compliance.images import base, package_manager
 
+TYPE_CHECKING = False
 if TYPE_CHECKING:
     from docker.models.containers import Container
 
@@ -36,16 +35,6 @@ MAGEIA_PACKAGES = [
     "libice",
     "libsm",
     "libatomic",
-]
-MAGEIA_ARCHIVE = "https://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia-archive"
-MAGEIA6_RUNONCE = [
-    "sed -i 's;mirrorlist=.*;#mirrorlist=;g' /etc/yum.repos.d/mageia-x86_64.repo",
-    f"sed -i 's;#baseurl=https://mirrors.kernel.org/mageia;baseurl={MAGEIA_ARCHIVE};g' "
-    "/etc/yum.repos.d/mageia-x86_64.repo",
-]
-MAGEIA5_RUNONCE = [
-    f"sed -i 's;mirrorlist:.*;mirrorlist: {MAGEIA_ARCHIVE}/distrib/5/x86_64;g' "
-    "/etc/urpmi/urpmi.cfg",
 ]
 MAGEIA_LIST: list[base.Base] = [
     Mageia(

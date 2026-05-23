@@ -1,5 +1,4 @@
-from typing import TYPE_CHECKING
-
+TYPE_CHECKING = False
 if TYPE_CHECKING:
     from docker.models.containers import Container
 

@@ -3,11 +3,11 @@ import logging
 import platform
 from contextlib import contextmanager
 from pathlib import Path
-from typing import TYPE_CHECKING
 
 import docker
 import docker.errors
 
+TYPE_CHECKING = False
 if TYPE_CHECKING:
     from collections.abc import Generator
 

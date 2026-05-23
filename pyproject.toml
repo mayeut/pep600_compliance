@@ -15,3 +15,6 @@ lint.ignore = [
     "T201",    # `print` found
     "TD",      # ToDo formatting
 ]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"typing.TYPE_CHECKING".msg = "Use TYPE_CHECKING=False instead"
