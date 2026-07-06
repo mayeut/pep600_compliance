@@ -47,7 +47,7 @@ MAGEIA_LIST: list[base.Base] = [
     # eol info https://www.mageia.org/en/support/
     Mageia(
         "mageia:9",
-        ("EOL:2026-08-30",),
+        ("EOL:2026-09-29",),
         machines=("x86_64", "aarch64"),
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
