@@ -57,10 +57,4 @@ PHOTON_LIST: list[base.Base] = [
         machines=("x86_64", "aarch64"),
         packages=[["python3-pip", *PHOTON_PACKAGES]],
     ),
-    Photon(
-        "photon:3.0",
-        ("EOL:2024-03-01",),
-        machines=("x86_64", "aarch64"),
-        packages=[["python2", "python3-pip", *PHOTON_PACKAGES]],
-    ),
 ]

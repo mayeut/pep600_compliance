@@ -30,7 +30,6 @@ This mostly mimics Debian lifecycle.
 
    "amazonlinux 2023", "2028-03-15", "", ""
    "amazonlinux 2", "2026-06-30", "", ""
-   "amazonlinux 1", "2020-12-31", "2023-12-31", ""
 .. csv-table:: anolisos
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -45,12 +44,6 @@ This mostly mimics Debian lifecycle.
 
    "centos stream10", "2030-01-01", "", ""
    "centos stream9", "2027-05-31", "", ""
-   "centos stream8", "2024-05-31", "", ""
-   "centos 7", "2024-06-30", "", ""
-.. csv-table:: clefos
-   :header: "distro", "EOL", "LTS", "ELTS"
-
-   "clefos 7", "2024-06-30", "", ""
 .. csv-table:: debian
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -73,15 +66,11 @@ This mostly mimics Debian lifecycle.
    "fedora 41", "2025-12-15", "", ""
    "fedora 40", "2025-05-13", "", ""
    "fedora 39", "2024-11-19", "", ""
-   "fedora 38", "2024-05-21", "", ""
-   "fedora 37", "2023-11-14", "", ""
-   "fedora 36", "2023-05-16", "", ""
 .. csv-table:: mageia
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
    "mageia 9", "2026-09-29", "", ""
-   "mageia 8", "2023-11-30", "", ""
 .. csv-table:: manylinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -108,7 +97,6 @@ This mostly mimics Debian lifecycle.
    "opensuse 16.0", "2027-10-31", "", ""
    "opensuse 15.6", "2026-04-30", "", ""
    "opensuse 15.5", "2024-12-31", "", ""
-   "opensuse 15.4", "2023-12-07", "", ""
 .. csv-table:: oraclelinux
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -122,7 +110,6 @@ This mostly mimics Debian lifecycle.
 
    "photon 5.0", "unknown", "", ""
    "photon 4.0", "2026-03-01", "", ""
-   "photon 3.0", "2024-03-01", "", ""
 .. csv-table:: rhel / rhubi
    :header: "distro", "EOL", "LTS", "ELTS (rhel only)"
 
@@ -141,9 +128,6 @@ This mostly mimics Debian lifecycle.
 
    "slackware current", "rolling", "", ""
    "slackware 15.0", "unknown", "", ""
-   "slackware 14.2", "2024-01-01", "", ""
-   "slackware 14.1", "2024-01-01", "", ""
-   "slackware 14.0", "2024-01-01", "", ""
 .. csv-table:: ubuntu
    :header: "distro", "EOL", "LTS", "ELTS"
 
@@ -155,11 +139,7 @@ This mostly mimics Debian lifecycle.
    "ubuntu 24.10", "2025-07-11", "", ""
    "ubuntu 24.04", "2029-04-30", "", "2034-04-30"
    "ubuntu 23.10", "2024-07-14", "", ""
-   "ubuntu 23.04", "2024-01-31", "", ""
-   "ubuntu 22.10", "2023-07-20", "", ""
    "ubuntu 22.04", "2027-04-30", "", "2032-04-09"
    "ubuntu 20.04", "2025-04-02", "", "2030-04-02"
    "ubuntu 18.04", "2023-05-31", "", "2028-04-01"
-   "ubuntu 16.04", "2021-04-30", "", "2024-04-30"
-   "ubuntu 14.04", "2019-04-25", "", "2022-04-30"
 .. end eol_information

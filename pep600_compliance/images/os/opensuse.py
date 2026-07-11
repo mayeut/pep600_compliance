@@ -76,10 +76,4 @@ OPENSUSE_LIST: list[base.Base] = [
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[OPENSUSE_PACKAGES],
     ),
-    OpenSUSE(
-        "opensuse/leap:15.4",
-        ("EOL:2023-12-07",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        packages=[OPENSUSE_PACKAGES],
-    ),
 ]

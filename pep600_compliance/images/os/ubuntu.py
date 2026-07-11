@@ -128,20 +128,6 @@ UBUNTU_LIST: list[base.Base] = [
         apt_sources_update=UBUNTU_APT_OLD,
     ),
     Ubuntu(
-        "ubuntu:23.04",
-        ("EOL:2024-01-31",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
-        packages=[["python3-pip", *UBUNTU_PACKAGES_OLD]],
-        apt_sources_update=UBUNTU_APT_OLD,
-    ),
-    Ubuntu(
-        "ubuntu:22.10",
-        ("EOL:2023-07-20",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
-        packages=[["python3-pip", *UBUNTU_PACKAGES_OLD]],
-        apt_sources_update=UBUNTU_APT_OLD,
-    ),
-    Ubuntu(
         "ubuntu:22.04",
         ("EOL:2027-04-30", "ELTS:2032-04-09"),
         machines=("x86_64", "aarch64", "ppc64le", "s390x", "armv7l", "riscv64"),
@@ -158,30 +144,5 @@ UBUNTU_LIST: list[base.Base] = [
         ("EOL:2023-05-31", "ELTS:2028-04-01"),
         machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
         packages=[["python", "python3-pip", *UBUNTU_PACKAGES_OLD]],
-    ),
-    Ubuntu(
-        "ubuntu:16.04",
-        ("EOL:2021-04-30", "ELTS:2024-04-30"),
-        machines=("i686", "x86_64", "aarch64", "ppc64le", "s390x", "armv7l"),
-        packages=[["python", "python3-pip", *UBUNTU_PACKAGES_OLD]],
-    ),
-    Ubuntu(
-        "ubuntu:14.04",
-        ("EOL:2019-04-25", "ELTS:2022-04-30"),
-        machines=("i686", "x86_64", "aarch64", "ppc64le", "armv7l"),
-        packages=[
-            [
-                "python",
-                "python3-pip",
-                "libx11-6",
-                "libxext6",
-                "libxrender1",
-                "libice6",
-                "libsm6",
-                "libgl1-mesa-glx",
-                "libglib2.0-0",
-                "libatomic1",
-            ],
-        ],
     ),
 ]

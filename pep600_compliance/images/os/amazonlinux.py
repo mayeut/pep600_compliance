@@ -77,29 +77,4 @@ AMAZONLINUX_LIST: list[base.Base] = [
             ],
         ],
     ),
-    # extended support date rather than eol:
-    # https://aws.amazon.com/fr/blogs/aws/update-on-amazon-linux-ami-end-of-life/
-    AmazonLinux(
-        "amazonlinux:1",
-        ("EOL:2020-12-31", "LTS:2023-12-31"),
-        machines=("x86_64",),
-        pkg_manager=package_manager.YUM(),
-        packages=[
-            ["epel-release"],
-            [
-                "which",
-                "python",
-                "python34",
-                "libstdc++",
-                "glib2",
-                "libX11",
-                "libXext",
-                "libXrender",
-                "mesa-libGL",
-                "libICE",
-                "libSM",
-                "libatomic",
-            ],
-        ],
-    ),
 ]

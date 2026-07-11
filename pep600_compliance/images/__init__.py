@@ -4,7 +4,6 @@ from pep600_compliance.images.os.amazonlinux import AMAZONLINUX_LIST
 from pep600_compliance.images.os.anolisos import ANOLISOS_LIST
 from pep600_compliance.images.os.archlinux import ARCHLINUX_LIST
 from pep600_compliance.images.os.centos import CENTOS_LIST
-from pep600_compliance.images.os.clefos import CLEFOS_LIST
 from pep600_compliance.images.os.debian import DEBIAN_LIST
 from pep600_compliance.images.os.fedora import FEDORA_LIST
 from pep600_compliance.images.os.mageia import MAGEIA_LIST
@@ -32,7 +31,6 @@ IMAGE_LIST = (
     + ANOLISOS_LIST
     + ARCHLINUX_LIST
     + CENTOS_LIST
-    + CLEFOS_LIST
     + DEBIAN_LIST
     + FEDORA_LIST
     + MAGEIA_LIST

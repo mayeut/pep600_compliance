@@ -93,28 +93,4 @@ FEDORA_LIST: list[base.Base] = [
         pkg_manager=DNF(),
         packages=[["libnsl", *FEDORA_PACKAGES]],
     ),
-    Fedora(
-        "fedora:38",
-        # https://fedorapeople.org/groups/schedule/f-40/f-40-key-tasks.html
-        ("EOL:2024-05-21",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
-    Fedora(
-        "fedora:37",
-        # https://fedorapeople.org/groups/schedule/f-39/f-39-key-tasks.html
-        ("EOL:2023-11-14",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
-    Fedora(
-        "fedora:36",
-        # https://fedorapeople.org/groups/schedule/f-38/f-38-key-tasks.html
-        ("EOL:2023-05-16",),
-        machines=("x86_64", "aarch64", "ppc64le", "s390x"),
-        pkg_manager=DNF(),
-        packages=[["libnsl", *FEDORA_PACKAGES]],
-    ),
 ]

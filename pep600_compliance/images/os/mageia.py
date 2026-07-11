@@ -52,11 +52,4 @@ MAGEIA_LIST: list[base.Base] = [
         pkg_manager=package_manager.DNF(),
         packages=[MAGEIA_PACKAGES],
     ),
-    Mageia(
-        "mageia:8",
-        ("EOL:2023-11-30",),
-        machines=("x86_64", "aarch64"),
-        pkg_manager=package_manager.DNF(),
-        packages=[MAGEIA_PACKAGES],
-    ),  # TODO 'armv7l'
 ]
