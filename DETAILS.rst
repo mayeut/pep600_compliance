@@ -31,6 +31,7 @@
 .. |fedora-40| image:: https://img.shields.io/static/v1?label=fedora&message=40%20(EOL%3A2025-05-13)&color=black&logo=fedora&logoColor=white
 .. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-19)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
+.. |mageia-10| image:: https://img.shields.io/static/v1?label=mageia&message=10%20(EOL%3A2028-03-31)&color=green
 .. |mageia-9| image:: https://img.shields.io/static/v1?label=mageia&message=9%20(EOL%3A2026-09-29)&color=yellow
 .. |manylinux-2_39| image:: https://img.shields.io/static/v1?label=manylinux&message=2_39%20(EOL%3A2035-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
@@ -219,7 +220,7 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |oraclelinux-10| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |slackware-current| |ubuntu-25.10|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-10| |mageia-cauldron| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |archlinux-latest| |debian-experimental| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
@@ -263,7 +264,7 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |manylinux-2_39| |oraclelinux-10| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-cauldron| |ubuntu-25.10|"
+   "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-10| |mageia-cauldron| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-experimental| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
    "manylinux_2_43_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64

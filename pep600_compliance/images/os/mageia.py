@@ -46,6 +46,13 @@ MAGEIA_LIST: list[base.Base] = [
     ),  # TODO 'armv7l'
     # eol info https://www.mageia.org/en/support/
     Mageia(
+        "mageia:10",
+        ("EOL:2028-03-31",),
+        machines=("x86_64", "aarch64"),
+        pkg_manager=package_manager.DNF5(),
+        packages=[MAGEIA_PACKAGES],
+    ),
+    Mageia(
         "mageia:9",
         ("EOL:2026-09-29",),
         machines=("x86_64", "aarch64"),

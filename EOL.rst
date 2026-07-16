@@ -70,6 +70,7 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "mageia cauldron", "rolling", "", ""
+   "mageia 10", "2028-03-31", "", ""
    "mageia 9", "2026-09-29", "", ""
 .. csv-table:: manylinux
    :header: "distro", "EOL", "LTS", "ELTS"
