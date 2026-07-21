@@ -89,7 +89,7 @@ PEP600 compliance check
 This project aims to define manylinux policies according to
 `PEP600 <https://www.python.org/dev/peps/pep-0600/>`_.
 
-In order to do that, the project analyses symbols found on different linux distros.
+In order to do that, the project analyzes symbols found on different linux distros.
 
 End-Of-Life information can be found in `EOL <./EOL.rst>`_.
 
