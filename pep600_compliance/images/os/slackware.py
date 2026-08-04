@@ -12,7 +12,7 @@ class Slackware(base.Base):
         eol: tuple[str, ...] | str,
         pkg_manager: package_manager._PackageManager,
         packages: list[list[str]],
-        python: str = "python",
+        machines: tuple[str, ...],
     ) -> None:
         _, version = image.split(":")
         self._packages = packages
@@ -22,8 +22,7 @@ class Slackware(base.Base):
             version,
             eol,
             pkg_manager,
-            ("x86_64",),
-            python=python,
+            machines=machines,
         )
 
     def install_packages(self, container: Container, machine: str) -> None:
@@ -32,8 +31,9 @@ class Slackware(base.Base):
 
 SLACKWARE_LIST: list[base.Base] = [
     Slackware(
-        "vbatts/slackware:current",
+        "aclemons/slackware:current",
         "rolling",
+        machines=("x86_64", "i686", "aarch64"),
         pkg_manager=package_manager.SLACKPKG(current=True),
         packages=[
             [
@@ -50,11 +50,11 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libglvnd",
             ],
         ],
-        python="python3",
     ),
     Slackware(
         "vbatts/slackware:15.0",
         "unknown",
+        machines=("x86_64",),
         pkg_manager=package_manager.SLACKPKG(),
         packages=[
             [
@@ -70,6 +70,5 @@ SLACKWARE_LIST: list[base.Base] = [
                 "libglvnd",
             ],
         ],
-        python="python3",
     ),
 ]
