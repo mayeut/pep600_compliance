@@ -150,8 +150,7 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|debian-testing| |debian-unstable| |fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-experimental| |fedora-44| |mageia-cauldron| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_43_9000", "|fedora-rawhide|"
-   "manylinux_2_44", "|archlinux-latest|"
+   "manylinux_2_44", "|archlinux-latest| |fedora-rawhide|"
 .. end compatibility
 
 Known compatibility issues
