@@ -1,8 +1,8 @@
 import dataclasses
 import json
-from collections import defaultdict
 from pathlib import Path
-from typing import Any
+lazy from collections import defaultdict
+lazy from typing import Any
 
 HERE = Path(__file__).resolve(strict=True).parent
 
