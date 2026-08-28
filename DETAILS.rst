@@ -221,7 +221,8 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-rawhide| |mageia-cauldron|"
+   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |mageia-cauldron|"
+   "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
 .. begin compatibility_i686
@@ -266,7 +267,8 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-rawhide| |mageia-cauldron|"
+   "manylinux_2_44", "|debian-experimental| |mageia-cauldron|"
+   "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
 .. begin compatibility_ppc64le
@@ -287,7 +289,8 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
    "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-rawhide|"
+   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
 .. begin compatibility_s390x
@@ -308,7 +311,8 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
    "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-rawhide|"
+   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
 .. begin compatibility_armv7l
@@ -340,7 +344,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-experimental| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental|"
 .. end compatibility_riscv64
 
 .. begin compatibility_loongarch64
