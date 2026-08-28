@@ -71,7 +71,7 @@ FEDORA_LIST: list[base.Base] = [
     ),
     Fedora(
         "fedora:42",
-        #https://fedorapeople.org/groups/schedule/f-44/f-44-key-tasks.html
+        # https://fedorapeople.org/groups/schedule/f-44/f-44-key-tasks.html
         ("EOL:2026-05-27",),
         machines=("x86_64", "aarch64", "ppc64le", "s390x"),
         pkg_manager=DNF5(),
