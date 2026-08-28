@@ -60,9 +60,10 @@ This mostly mimics Debian lifecycle.
    :header: "distro", "EOL", "LTS", "ELTS"
 
    "fedora rawhide", "rolling", "", ""
-   "fedora 44", "2027-05-19", "", ""
-   "fedora 43", "2026-12-02", "", ""
-   "fedora 42", "2026-05-13", "", ""
+   "fedora 45", "2027-11-24", "", ""
+   "fedora 44", "2027-06-02", "", ""
+   "fedora 43", "2026-12-09", "", ""
+   "fedora 42", "2026-05-27", "", ""
    "fedora 41", "2025-12-15", "", ""
    "fedora 40", "2025-05-13", "", ""
    "fedora 39", "2024-11-19", "", ""

@@ -24,9 +24,10 @@
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=black&logo=debian&logoColor=white
 .. |fedora-rawhide| image:: https://img.shields.io/static/v1?label=fedora&message=rawhide%20(rolling)&color=purple&logo=fedora&logoColor=white
-.. |fedora-44| image:: https://img.shields.io/static/v1?label=fedora&message=44%20(EOL%3A2027-05-19)&color=green&logo=fedora&logoColor=white
-.. |fedora-43| image:: https://img.shields.io/static/v1?label=fedora&message=43%20(EOL%3A2026-12-02)&color=yellow&logo=fedora&logoColor=white
-.. |fedora-42| image:: https://img.shields.io/static/v1?label=fedora&message=42%20(EOL%3A2026-05-13)&color=black&logo=fedora&logoColor=white
+.. |fedora-45| image:: https://img.shields.io/static/v1?label=fedora&message=45%20(EOL%3A2027-11-24)&color=green&logo=fedora&logoColor=white
+.. |fedora-44| image:: https://img.shields.io/static/v1?label=fedora&message=44%20(EOL%3A2027-06-02)&color=green&logo=fedora&logoColor=white
+.. |fedora-43| image:: https://img.shields.io/static/v1?label=fedora&message=43%20(EOL%3A2026-12-09)&color=yellow&logo=fedora&logoColor=white
+.. |fedora-42| image:: https://img.shields.io/static/v1?label=fedora&message=42%20(EOL%3A2026-05-27)&color=black&logo=fedora&logoColor=white
 .. |fedora-41| image:: https://img.shields.io/static/v1?label=fedora&message=41%20(EOL%3A2025-12-15)&color=black&logo=fedora&logoColor=white
 .. |fedora-40| image:: https://img.shields.io/static/v1?label=fedora&message=40%20(EOL%3A2025-05-13)&color=black&logo=fedora&logoColor=white
 .. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-19)&color=black&logo=fedora&logoColor=white
@@ -221,7 +222,7 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |mageia-cauldron|"
+   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-45| |mageia-cauldron|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -267,7 +268,7 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
    "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |mageia-cauldron|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45| |mageia-cauldron|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -289,7 +290,7 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
    "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -311,7 +312,7 @@ If your favorite distro does not appear here:
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
    "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
