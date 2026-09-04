@@ -19,7 +19,7 @@
 .. |debian-testing| image:: https://img.shields.io/static/v1?label=debian&message=testing%20(rolling)&color=purple&logo=debian&logoColor=white
 .. |debian-13| image:: https://img.shields.io/static/v1?label=debian&message=13%20(EOL%3A2028-08-09%20/%20LTS%3A2030-06-30%20/%20ELTS%3A2035-06-30)&color=green&logo=debian&logoColor=white
 .. |debian-12| image:: https://img.shields.io/static/v1?label=debian&message=12%20(EOL%3A2026-06-10%20/%20LTS%3A2028-06-30%20/%20ELTS%3A2033-06-30)&color=green&logo=debian&logoColor=white
-.. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-08-31%20/%20ELTS%3A2031-06-30)&color=yellow&logo=debian&logoColor=white
+.. |debian-11| image:: https://img.shields.io/static/v1?label=debian&message=11%20(EOL%3A2024-08-14%20/%20LTS%3A2026-08-31%20/%20ELTS%3A2031-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-10| image:: https://img.shields.io/static/v1?label=debian&message=10%20(EOL%3A2022-07-31%20/%20LTS%3A2024-06-30%20/%20ELTS%3A2029-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-9| image:: https://img.shields.io/static/v1?label=debian&message=9%20(EOL%3A2020-07-05%20/%20LTS%3A2022-06-30%20/%20ELTS%3A2027-06-30)&color=red&logo=debian&logoColor=white
 .. |debian-8| image:: https://img.shields.io/static/v1?label=debian&message=8%20(EOL%3A2018-06-06%20/%20LTS%3A2020-06-30%20/%20ELTS%3A2025-06-30)&color=black&logo=debian&logoColor=white
@@ -221,8 +221,8 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-45| |mageia-cauldron|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-45| |mageia-cauldron| |opensuse-tumbleweed|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -244,8 +244,8 @@ If your favorite distro does not appear here:
    "manylinux_2_38", "|alt-p11|"
    "manylinux_2_41", "|debian-13|"
    "manylinux_2_42", "|slackware-current|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |opensuse-tumbleweed|"
-   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable|"
+   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed|"
 .. end compatibility_i686
 
 .. begin compatibility_aarch64
