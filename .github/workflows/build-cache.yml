@@ -27,6 +27,8 @@ jobs:
         persist-credentials: false
     - name: Install Python
       uses: actions/setup-python@v7
+      with:
+        allow-prereleases: true
     - name: Install Nox
       run: python -m pip install nox
     - name: Set up QEMU

@@ -1,23 +1,23 @@
-import argparse
-import datetime
-import json
 import logging
-import platform
-import subprocess
 import sys
-import urllib.parse
-from copy import deepcopy
 from pathlib import Path
-from typing import Any
+lazy import argparse
+lazy import datetime
+lazy import json
+lazy import platform
+lazy import subprocess
+lazy import urllib.parse
+lazy from copy import deepcopy
+lazy from typing import Any
 
-from pep600_compliance.images import get_images
-from pep600_compliance.make_policies import (
+lazy from pep600_compliance.images import get_images
+lazy from pep600_compliance.make_policies import (
     load_distros,
     make_policies,
     manylinux_analysis,
 )
-from pep600_compliance.policies import OFFICIAL_POLICIES, Policy
-from pep600_compliance.policies import dump as dump_policies
+lazy from pep600_compliance.policies import OFFICIAL_POLICIES, Policy
+lazy from pep600_compliance.policies import dump as dump_policies
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

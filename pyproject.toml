@@ -1,7 +1,7 @@
 # No build-system here, used for tool configuration only
 
 [tool.ruff]
-target-version = "py314"
+target-version = "py315"
 line-length = 100
 extend-exclude = ["pep600_compliance/tools/calculate_symbol_versions.py", "pep600_compliance/tools/ldd.py"]
 lint.select = [ "ALL" ]
