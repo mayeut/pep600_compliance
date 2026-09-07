@@ -243,9 +243,8 @@ If your favorite distro does not appear here:
    "manylinux_2_36", "|debian-12|"
    "manylinux_2_38", "|alt-p11|"
    "manylinux_2_41", "|debian-13|"
-   "manylinux_2_42", "|slackware-current|"
    "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable|"
-   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed|"
+   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed| |slackware-current|"
 .. end compatibility_i686
 
 .. begin compatibility_aarch64
