@@ -221,8 +221,8 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |mageia-10| |ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-45| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |ubuntu-26.04| |ubuntu-rolling|"
+   "manylinux_2_44", "|archlinux-latest| |debian-experimental| |fedora-45| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_x86_64
 
@@ -265,9 +265,9 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|almalinux-10| |centos-stream10| |fedora-40| |manylinux-2_39| |oraclelinux-10| |rhubi-10| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
-   "manylinux_2_42", "|fedora-43| |mageia-10| |slackware-current| |ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-45| |mageia-cauldron|"
+   "manylinux_2_42", "|fedora-43| |mageia-10| |ubuntu-25.10|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |fedora-44| |ubuntu-26.04| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45| |mageia-cauldron| |opensuse-tumbleweed| |slackware-current| |ubuntu-devel|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_aarch64
 
@@ -288,8 +288,8 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |opensuse-16.0| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
-   "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-45|"
+   "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45| |ubuntu-devel|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_ppc64le
 
@@ -310,8 +310,8 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|fedora-41| |ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |fedora-42| |ubuntu-25.04|"
    "manylinux_2_42", "|fedora-43| |ubuntu-25.10|"
-   "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |fedora-45|"
+   "manylinux_2_43", "|debian-testing| |debian-unstable| |fedora-44| |ubuntu-26.04| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |fedora-45| |opensuse-tumbleweed| |ubuntu-devel|"
    "manylinux_2_44_9000", "|fedora-rawhide|"
 .. end compatibility_s390x
 
@@ -331,8 +331,8 @@ If your favorite distro does not appear here:
    "manylinux_2_40", "|ubuntu-24.10|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|ubuntu-25.10|"
-   "manylinux_2_43", "|debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_43", "|debian-testing| |debian-unstable| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed|"
 .. end compatibility_armv7l
 
 .. begin compatibility_riscv64
@@ -344,8 +344,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |opensuse-tumbleweed| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed|"
 .. end compatibility_riscv64
 
 .. begin compatibility_loongarch64
