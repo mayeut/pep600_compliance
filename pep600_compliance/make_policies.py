@@ -1,11 +1,11 @@
 import dataclasses
-import json
-from collections import defaultdict
-from copy import deepcopy
 from pathlib import Path
+lazy import json
+lazy from collections import defaultdict
+lazy from copy import deepcopy
 
-from pep600_compliance.images import get_images
-from pep600_compliance.policies import OFFICIAL_POLICIES
+lazy from pep600_compliance.images import get_images
+lazy from pep600_compliance.policies import OFFICIAL_POLICIES
 
 MACHINES = {"x86_64", "i686", "aarch64", "ppc64le", "s390x", "armv7l"}
 HERE = Path(__file__).resolve(strict=True).parent
