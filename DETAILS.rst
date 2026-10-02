@@ -33,7 +33,7 @@
 .. |fedora-39| image:: https://img.shields.io/static/v1?label=fedora&message=39%20(EOL%3A2024-11-19)&color=black&logo=fedora&logoColor=white
 .. |mageia-cauldron| image:: https://img.shields.io/static/v1?label=mageia&message=cauldron%20(rolling)&color=purple
 .. |mageia-10| image:: https://img.shields.io/static/v1?label=mageia&message=10%20(EOL%3A2028-03-31)&color=green
-.. |mageia-9| image:: https://img.shields.io/static/v1?label=mageia&message=9%20(EOL%3A2026-09-29)&color=yellow
+.. |mageia-9| image:: https://img.shields.io/static/v1?label=mageia&message=9%20(EOL%3A2026-09-29)&color=black
 .. |manylinux-2_39| image:: https://img.shields.io/static/v1?label=manylinux&message=2_39%20(EOL%3A2035-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_34| image:: https://img.shields.io/static/v1?label=manylinux&message=2_34%20(EOL%3A2032-05-31)&color=green&logo=python&logoColor=white
 .. |manylinux-2_31| image:: https://img.shields.io/static/v1?label=manylinux&message=2_31%20(EOL%3A2030-04-02)&color=green&logo=python&logoColor=white
@@ -344,8 +344,8 @@ If your favorite distro does not appear here:
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13| |ubuntu-25.04|"
    "manylinux_2_42", "|ubuntu-25.10|"
-   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |ubuntu-26.04| |ubuntu-devel| |ubuntu-rolling|"
-   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed|"
+   "manylinux_2_43", "|alt-sisyphus| |debian-testing| |debian-unstable| |ubuntu-26.04| |ubuntu-rolling|"
+   "manylinux_2_44", "|debian-experimental| |opensuse-tumbleweed| |ubuntu-devel|"
 .. end compatibility_riscv64
 
 .. begin compatibility_loongarch64
