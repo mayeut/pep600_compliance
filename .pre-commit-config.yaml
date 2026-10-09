@@ -8,7 +8,7 @@ default_language_version:
 
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v6.0.0
+  rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
   hooks:
   - id: check-builtin-literals
   - id: check-added-large-files
@@ -23,16 +23,24 @@ repos:
   - id: trailing-whitespace
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.16.10
+  rev: f12be1ebaa5351c1fc76472de98db2c3446c8253  # frozen: v0.16.10
   hooks:
   - id: ruff-check
     args: ["--fix", "--show-fixes"]
   - id: ruff-format
 
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v2.4.0
+  rev: 2834ec6639549dd6796205c8f011dedcd587288b  # frozen: v2.4.0
   hooks:
   - id: mypy
     exclude: pep600_compliance/tools/calculate_symbol_versions.py
     additional_dependencies:
       - types-requests
+
+- repo: https://github.com/henryiii/flake8-lazy
+  rev: 2db69f40494cc912ede966160695ede82eb6ebac  # frozen: v0.10.1
+  hooks:
+  - id: flake8-lazy
+    args: ["--apply=native"]
+    files: '^pep600_compliance'
+    exclude: "^pep600_compliance/tools/"
