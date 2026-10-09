@@ -1,11 +1,11 @@
-import json
 import logging
-import platform
-from contextlib import contextmanager
-from pathlib import Path
+lazy import json
+lazy import platform
+lazy from contextlib import contextmanager
+lazy from pathlib import Path
 
-import docker
-import docker.errors
+lazy import docker
+lazy import docker.errors
 
 TYPE_CHECKING = False
 if TYPE_CHECKING:
