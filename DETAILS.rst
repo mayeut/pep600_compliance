@@ -72,7 +72,7 @@
 .. |ubuntu-24.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.10%20(EOL%3A2025-07-11)&color=black&logo=ubuntu&logoColor=white
 .. |ubuntu-24.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=24.04%20(EOL%3A2029-04-30%20/%20ELTS%3A2034-04-30)&color=green&logo=ubuntu&logoColor=white
 .. |ubuntu-23.10| image:: https://img.shields.io/static/v1?label=ubuntu&message=23.10%20(EOL%3A2024-07-14)&color=black&logo=ubuntu&logoColor=white
-.. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-09)&color=green&logo=ubuntu&logoColor=white
+.. |ubuntu-22.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=22.04%20(EOL%3A2027-04-30%20/%20ELTS%3A2032-04-09)&color=yellow&logo=ubuntu&logoColor=white
 .. |ubuntu-20.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=20.04%20(EOL%3A2025-04-02%20/%20ELTS%3A2030-04-02)&color=red&logo=ubuntu&logoColor=white
 .. |ubuntu-18.04| image:: https://img.shields.io/static/v1?label=ubuntu&message=18.04%20(EOL%3A2023-05-31%20/%20ELTS%3A2028-04-01)&color=red&logo=ubuntu&logoColor=white
 .. end distro_badges
