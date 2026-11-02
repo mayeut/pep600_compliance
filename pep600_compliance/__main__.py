@@ -2,7 +2,7 @@ import logging
 import sys
 from pathlib import Path
 lazy import argparse
-lazy import datetime
+lazy import datetime as dt
 lazy import json
 lazy import platform
 lazy import subprocess
@@ -96,8 +96,8 @@ def replace_badges(lines: list[str]) -> list[str]:
     start, end = get_start_end(lines, ".. begin distro_badges", ".. end distro_badges")
     new_lines: list[str] = []
     keys: list[str] = []
-    six_months = datetime.timedelta(days=182)
-    today = datetime.datetime.now(tz=datetime.UTC).date()
+    six_months = dt.timedelta(days=182)
+    today = dt.datetime.now(tz=dt.UTC).date()
     logos = {
         "centos": "centos",
         "ubuntu": "ubuntu",
@@ -129,10 +129,10 @@ def replace_badges(lines: list[str]) -> list[str]:
         else:
             assert isinstance(image.eol, tuple)
             last_eol_type, last_eol_date = image.eol[-1].split(":")
-            free_eol_date = datetime.date.fromisoformat(last_eol_date)
+            free_eol_date = dt.date.fromisoformat(last_eol_date)
             paid_eol_date = free_eol_date
             if last_eol_type == "ELTS":
-                free_eol_date = datetime.date.fromisoformat(image.eol[-2].split(":")[1])
+                free_eol_date = dt.date.fromisoformat(image.eol[-2].split(":")[1])
             eol = " / ".join(date for date in image.eol)
             if paid_eol_date < today:
                 color = "black"

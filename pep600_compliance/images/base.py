@@ -1,7 +1,7 @@
 import logging
+from contextlib import contextmanager
 lazy import json
 lazy import platform
-lazy from contextlib import contextmanager
 lazy from pathlib import Path
 
 lazy import docker
