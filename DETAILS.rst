@@ -183,6 +183,7 @@ distros to build manylinux wheels given different manylinux policies.
    "manylinux_2_35", "|ubuntu-22.04|"
    "manylinux_2_39", "|manylinux-2_39| |rockylinux-10| |ubuntu-24.04|"
    "manylinux_2_41", "|debian-13|"
+   "manylinux_2_43", "|ubuntu-26.04|"
 .. end base_images_riscv64
 
 .. begin base_images_loongarch64
